@@ -9,8 +9,7 @@ public class PotionWobble : UdonSharpBehaviour
     public Renderer rend;
     public float maxFill = 1f;
     public float minFill = 0f;
-
-    [Range(0, 1)]
+    
     public float fillLevel = 1f;
 
     private Material material;
@@ -22,6 +21,8 @@ public class PotionWobble : UdonSharpBehaviour
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
 
+    public bool isPotion = true;
+
     float wobbleAmountX;
     float wobbleAmountZ;
     float wobbleAmountToAddX;
@@ -31,18 +32,28 @@ public class PotionWobble : UdonSharpBehaviour
 
     private void Start()
     {
+        if (isPotion)
         material = rend.materials[1];
+        else
+        material = rend.materials[0];
     }
 
-    public void UpdateColor(Color bottleColor)
+    public void SetColor(Color bottleColor)
     {
-        //int tintID = Shader.PropertyToID("_Tint");
+        if (material == null) material = rend.materials[1];
         material.color = Color.Lerp(material.GetColor("_Tint"), bottleColor, 0.9f);
-        //material.SetColor("_Tint", Color.Lerp(material.GetColor("_Tint"), bottleColor, 0.9f));
-        //int topColorID = Shader.PropertyToID("_TopColor");
-        //material.SetColor(topColorID, Color.Lerp(material.GetColor(tintID), bottleColor, 0.9f));
-        //int foamColorID = Shader.PropertyToID("_FoamColor");
-        //material.SetColor(foamColorID, Color.Lerp(material.GetColor(tintID), bottleColor, 0.9f));
+    }
+
+    public void SetStaticColor(Color bottleColor)
+    {
+        if (material == null) material = rend.materials[1];
+        material.color = bottleColor;
+    }
+
+    public void UpdateFillColor(Color bottleColor, float fillAmount)
+    {
+        if (material == null) material = rend.materials[1];
+        material.color = Color.Lerp(material.color, bottleColor, fillAmount / fillLevel);
     }
 
     public void UpdateFillLevel()
@@ -51,6 +62,11 @@ public class PotionWobble : UdonSharpBehaviour
         if (fillLevel > 0) fill = minFill + (maxFill - minFill) * fillLevel;
         else fill = 1f;
         material.SetFloat("_FillAmount", fill);
+    }
+
+    public Color GetColor()
+    {
+        return material.color;
     }
 
     private void Update()
@@ -69,18 +85,22 @@ public class PotionWobble : UdonSharpBehaviour
         material.SetFloat("_WobbleX", wobbleAmountX);
         material.SetFloat("_WobbleZ", wobbleAmountZ);
 
-        // velocity
-        velocity = (lastPos - transform.position) / Time.deltaTime;
-        angularVelocity = transform.rotation.eulerAngles - lastRot;
 
+        if (isPotion)
+        {
 
-        // add clamped velocity to wobble
-        wobbleAmountToAddX += Mathf.Clamp((velocity.x + (angularVelocity.z * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);
-        wobbleAmountToAddZ += Mathf.Clamp((velocity.z + (angularVelocity.x * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);
+            // velocity
+            velocity = (lastPos - transform.position) / Time.deltaTime;
+            angularVelocity = transform.rotation.eulerAngles - lastRot;
 
-        // keep last position
-        lastPos = transform.position;
-        lastRot = transform.rotation.eulerAngles;
+            // add clamped velocity to wobble
+            wobbleAmountToAddX += Mathf.Clamp((velocity.x + (angularVelocity.z * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);
+            wobbleAmountToAddZ += Mathf.Clamp((velocity.z + (angularVelocity.x * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);
+
+            // keep last position
+            lastPos = transform.position;
+            lastRot = transform.rotation.eulerAngles;
+        }
         UpdateFillLevel();
     }
 }

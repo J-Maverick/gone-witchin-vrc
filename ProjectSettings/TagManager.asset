@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cauldron
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - reserved2
   - reserved3
   - reserved4
-  - 
-  - 
+  - Cauldron
+  - InvisibleWall
   - 
   - 
   - 

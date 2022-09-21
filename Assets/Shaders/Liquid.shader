@@ -19,7 +19,7 @@
 
 		SubShader
 		{
-			Tags {"Queue" = "Geometry"  "DisableBatching" = "True" }
+			Tags {"Queue" = "Geometry+1"  "DisableBatching" = "True" }
 
 					Pass
 			{
