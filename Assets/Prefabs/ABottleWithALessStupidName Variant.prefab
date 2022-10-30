@@ -375,6 +375,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 30c00753ac581c44d86a21d7d37c8da6, type: 3}
   shatterVolume: 1
   audioSource: {fileID: 1771592538}
+  isBroken: 0
+  brokenSequencePlayed: 0
 --- !u!114 &1771592541
 MonoBehaviour:
   m_ObjectHideFlags: 0

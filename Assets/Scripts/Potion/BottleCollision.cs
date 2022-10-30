@@ -24,6 +24,9 @@ public class BottleCollision : UdonSharpBehaviour
     public AudioClip[] shatterClips;
     public float shatterVolume = 1f;
     public AudioSource audioSource;
+
+    [UdonSynced] public bool isBroken = false;
+    public bool brokenSequencePlayed = false;
     
     private float holdSpeedMultiplier = 3f;
 
@@ -33,41 +36,59 @@ public class BottleCollision : UdonSharpBehaviour
         if (pickup.IsHeld) speed /= holdSpeedMultiplier;
 
         Debug.LogFormat("{0}: collision velocity magnitude: {1}", name, speed);
-        AudioClip[] clips;
-        float volume;
 
+        // Determine which audio clips to play based on impact speed, or shatter
         if (speed < softHitSpeedLimit)
         {
-            clips = softHitClips;
-            volume = softHitVolume + ((speed / softHitSpeedLimit) * (mediumHitVolume - softHitVolume));
+            AudioClip[] clips = softHitClips;
+            float volume = softHitVolume + ((speed / softHitSpeedLimit) * (mediumHitVolume - softHitVolume));
+            PlayClip(clips, volume);
         }
         else if (speed < mediumHitSpeedLimit)
         {
-            clips = mediumHitClips;
-            volume = mediumHitVolume + (((speed - softHitSpeedLimit) / (mediumHitSpeedLimit - softHitSpeedLimit)) * (hardHitVolume - mediumHitVolume));
+            AudioClip[] clips = mediumHitClips;
+            float volume = mediumHitVolume + (((speed - softHitSpeedLimit) / (mediumHitSpeedLimit - softHitSpeedLimit)) * (hardHitVolume - mediumHitVolume));
+            PlayClip(clips, volume);
         }
         else if (speed < hardHitSpeedLimit)
         {
-            clips = hardHitClips;
-            volume = hardHitVolume;
+            AudioClip[] clips = hardHitClips;
+            float volume = hardHitVolume;
+            PlayClip(clips, volume);
         }
         else
         {
-            clips = shatterClips;
-            volume = shatterVolume;
-            shatterParticles.SetActive(true);
-            mesh.enabled = false;
-            meshCollider.enabled = false;
-            rigidBody.isKinematic = true;
-            pickup.Drop();
-            pickup.pickupable = false;
-            transform.rotation = Quaternion.identity;
+            isBroken = true;
+            Shatter();
         }
+    }
 
+    private void Shatter()
+    {
+        AudioClip[] clips = shatterClips;
+        float volume = shatterVolume;
+        shatterParticles.SetActive(true);
+        mesh.enabled = false;
+        meshCollider.enabled = false;
+        rigidBody.isKinematic = true;
+        pickup.Drop();
+        pickup.pickupable = false;
+        transform.rotation = Quaternion.identity;
+        brokenSequencePlayed = true;
 
+        PlayClip(clips, volume);
+    }
+
+    private void PlayClip(AudioClip[] clips, float volume)
+    {
         int randIndex = Random.Range(0, clips.Length);
         audioSource.clip = clips[randIndex];
         audioSource.volume = volume;
         audioSource.Play();
+    }
+
+    private void Update()
+    {
+        if (!brokenSequencePlayed && isBroken) Shatter();
     }
 }

@@ -10,7 +10,7 @@ public class PourableBottle : Bottle
     public float pourThreshold = 0.5f;
     public float maxPourThreshold = 0.5f;
     public float minPourThreshold = -0.2f;
-    public float fillLevel = 0f;
+    [UdonSynced] public float fillLevel = 0f;
     public Animator pourAnimator;
     public float pourMultiplier = 0.01f;
 
@@ -18,7 +18,12 @@ public class PourableBottle : Bottle
 
     protected override void Start()
     {
-        base.Start(); 
+        base.Start();
+    }
+
+    public override void OnDeserialization()
+    {
+        if (shaderControl != null) shaderControl.fillLevel = fillLevel;
     }
 
     bool CheckPour()

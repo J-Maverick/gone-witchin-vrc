@@ -38,22 +38,16 @@ public class PotionWobble : UdonSharpBehaviour
         material = rend.materials[0];
     }
 
-    public void SetColor(Color bottleColor)
+    public void SetColor(Color newColor)
     {
         if (material == null) material = rend.materials[1];
-        material.color = Color.Lerp(material.GetColor("_Tint"), bottleColor, 0.9f);
+        material.color = Color.Lerp(material.GetColor("_Tint"), newColor, 0.9f);
     }
 
-    public void SetStaticColor(Color bottleColor)
+    public void SetStaticColor(Color newColor)
     {
         if (material == null) material = rend.materials[1];
-        material.color = bottleColor;
-    }
-
-    public void UpdateFillColor(Color bottleColor, float fillAmount)
-    {
-        if (material == null) material = rend.materials[1];
-        material.color = Color.Lerp(material.color, bottleColor, fillAmount / fillLevel);
+        material.color = newColor;
     }
 
     public void UpdateFillLevel()

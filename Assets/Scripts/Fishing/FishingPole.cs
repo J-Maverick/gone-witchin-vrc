@@ -65,7 +65,7 @@ public class FishingPole : UdonSharpBehaviour
     {
         isHeld = false;
     }
-
+    
     public override void OnPickupUseDown()
     {
         if (casting || casted || inWater)

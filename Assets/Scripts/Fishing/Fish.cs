@@ -6,6 +6,8 @@ using VRC.Udon;
 
 public class Fish : UdonSharpBehaviour
 {
+    public Transform fishBody;
+    public Animator fishAnimator;
     public Transform lure;
     public Rigidbody lureRigidbody;
     public FishingPole fishingPole;
@@ -27,6 +29,7 @@ public class Fish : UdonSharpBehaviour
     public float directionChangeTimer = 0f;
 
     public Vector3 fishforce = Vector3.zero;
+    public Vector3 newDirection;
     public Vector3 forceDirection;
 
     public bool isFighting = false;
@@ -35,8 +38,8 @@ public class Fish : UdonSharpBehaviour
     public float exhaustionRatio = 0.9f;
     public float exhaustion = 1f;
 
-    private float exhaustionTime = 1f;
-    private float exhaustionTimer = 0f;
+    public float exhaustionTime = 1f;
+    public float exhaustionTimer = 0f;
 
     void Start()
     {
@@ -62,8 +65,8 @@ public class Fish : UdonSharpBehaviour
         if (distance.x < 0) angle += 180f;
         angle = Random.Range(-90f + angle - maxAngleTowardsPlayer, 90f + angle + maxAngleTowardsPlayer) * Mathf.Deg2Rad;
         
-        forceDirection = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
-        forceDirection = forceDirection.normalized;
+        newDirection = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
+        newDirection = newDirection.normalized;
         forceMultiplier = fishForceMultiplier * Random.Range(0.8f, 1.2f);
         RandomChangeTime();
     }
@@ -73,7 +76,10 @@ public class Fish : UdonSharpBehaviour
         if (fishingPole.fishOn && isFighting)
         {
             if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
-
+            forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
+            fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+            fishBody.position = transform.position;
+            fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 10f);
             lureRigidbody.AddForce(forceDirection * fishWeight * forceMultiplier * exhaustion);
             directionChangeTimer += Time.fixedDeltaTime;
             exhaustionTimer += Time.fixedDeltaTime;
@@ -90,6 +96,10 @@ public class Fish : UdonSharpBehaviour
                 isFighting = true;
                 RandomWaitTime();
                 RandomDirection();
+                forceDirection = newDirection;
+                fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+                fishBody.position = transform.position;
+
                 fishingPole.FishOn();
                 exhaustion = 1f;
             }
