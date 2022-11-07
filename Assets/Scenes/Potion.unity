@@ -269,7 +269,2362 @@ MonoBehaviour:
   - {fileID: 1241420180}
   - {fileID: 706783552}
   - {fileID: 666855096}
-  recipeList: 
+  recipeList: 'Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+    Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent
+    Bile
+
+    Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+
+    Rod
+    Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+
+    Rod Upgrade 2: 1 Silvered Silt +
+    2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+
+    Rod Upgrade 3: 2 Silvered
+    Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart
+    of Trout
+
+    Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky
+    Mucus + 2 Boiled Bladder
+
+    Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+
+    Frigelic:
+    2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+
+    Player Bait:
+    2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin
+    Slime
+
+    Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+
+    Fire Flask: 3 Flamefin
+    Tears + 2 Boiled Bladder + 1 Stinky Mucus
+
+    Lightning in a Bottle: 3 Bioluminescent
+    Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+
+    Sparking Water:
+    4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+    + 1 Golden Gumbo
+
+    Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin
+    Tears + 2 Ocular Juice
+
+    Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent
+    Bile + 1 Distilled Darkness + 1 Piranha Milk
+
+    Love Potion: 2 Ocular Juice
+    + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+
+    Kaleido-brew:
+    2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1
+    Digestive Mud
+
+    Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence
+    of Water
+
+    Eyedrops: 1 Essence of Water + 1 Fish Oil
+
+    Dogeye Potion: 2
+    Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+
+    Nostalgia Nectar: 2 Ocular Juice
+    + 2 Digestive Mud + 1 Fish Oil
+
+    Rosy Refreshment: 2 Ocular Juice + 2 Flamefin
+    Tears + 1 Heart of Trout
+
+    Bloom Booze: 2 Ocular Juice + 7 Bioluminescent
+    Bile + 5 Stinky Mucus
+
+    Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1
+    Flamefin Tears
+
+    Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+
+    Spooky
+    Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+
+    Mod Bait:
+    2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden
+    Gumbo
+
+    Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime
+    + 7 Mishmash
+
+    SONG CHANGE STAND-IN: 2 Batfish Guano
+
+    Snore in a Bottle:
+    2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+
+    Global Thermonuclear
+    Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt
+    + 5 Golden Gumbo
+
+    Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+
+    Muda
+    Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart
+    of Trout
+
+    Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha
+    Milk + 2 Distilled Darkness
+
+    Creepy Liquid: 2 Batfish Guano + 1 Digestive
+    Mud + 1 Boiled Bladder + 2 Stinky Mucus
+
+    Sus Sauce: 2 Batfish Guano + 1 Ocular
+    Juice + 2 Distilled Darkness + 1 Fish Oil
+
+    Skeletal Tonic: 2 Batfish Guano
+    + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+
+    Power Down Potion:
+    2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent
+    Bile + 2 Boiled Bladder
+
+    Vine Sauce: 2 Batfish Guano + 1 Digestive Mud +
+    3 Stinky Mucus
+
+    Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness
+    + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+
+    Bubbling Brew:
+    2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+
+    Poison: 1 Piranha Milk
+    + 2 Mishmash + 3 Distilled Darkness
+
+    Mace: 2 Golden Gumbo + 1 Fish Oil +
+    3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+
+    April Shower: 2
+    Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+
+    Teleporatium:
+    2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+
+    Unstable
+    Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water +
+    3 Fish Oil
+
+    VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt
+    + 2 Swiftfin Slime
+
+    Apprentice Bait: 1 Mishmash + 1 Fish Oil
+
+    Journeyman
+    Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+
+    Adept Bait: 1 Mishmash
+    + 1 Fish Oil + 1 Stinky Mucus
+
+    Master Bait: 1 Mishmash + 1 Bioluminescent
+    Bile + 1 Distilled Darkness
+
+    Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1
+    Bioluminescent Bile
+
+'
 --- !u!4 &124552486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
@@ -423,6 +2778,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 154250676}
   ID: 7
+  color: {r: 0.067989, g: 0.023495909, b: 0.1509434, a: 1}
 --- !u!114 &154250676
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -607,6 +2963,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -635,27 +2996,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.19925144
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 805246295}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (1)
+      value: Flamefin Tears
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -723,7 +3095,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!4 &201793822 stripped
 Transform:
@@ -769,6 +3142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -797,27 +3175,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.4955866
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1163990995}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (5)
+      value: Heart of Trout
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -885,7 +3274,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1 &291912453
 GameObject:
@@ -1243,6 +3633,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -1271,27 +3666,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.55250657
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1888153451}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (2)
+      value: Essence of Water
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -1359,7 +3765,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1 &322730129
 GameObject:
@@ -1601,6 +4008,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 353261678}
   ID: 13
+  color: {r: 0.3679245, g: 0.15792987, b: 0.15792987, a: 1}
 --- !u!114 &353261678
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2323,6 +4731,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 526971364}
   ID: 14
+  color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
 --- !u!114 &526971364
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2613,6 +5022,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -2641,27 +5055,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.24585873
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1886966595}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (4)
+      value: Digestive Mud
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -2729,7 +5154,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1 &568384613
 GameObject:
@@ -3381,6 +5807,185 @@ MonoBehaviour:
   partsReagent3: 3
   reagent4: {fileID: 0}
   partsReagent4: 0
+--- !u!1001 &726081009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 353261677}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Mishmash
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &726081010 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 726081009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &739212275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,6 +6130,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -3553,12 +6163,12 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.015686275
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -3570,10 +6180,21 @@ PrefabInstance:
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 154250675}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (8)
+      value: Distilled Darkness
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -3641,7 +6262,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1 &795874590
 GameObject:
@@ -3790,6 +6412,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 805246296}
   ID: 1
+  color: {r: 1, g: 0.5053152, b: 0, a: 1}
 --- !u!114 &805246296
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4083,6 +6706,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 925531677}
   ID: 3
+  color: {r: 0.23335709, g: 0.7120406, b: 0.7169812, a: 1}
 --- !u!114 &925531677
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4164,6 +6788,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 947283056}
   ID: 0
+  color: {r: 1, g: 0.8119165, b: 0.495283, a: 1}
 --- !u!114 &947283056
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4248,6 +6873,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -4276,27 +6906,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.5133347
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1045003096}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (6)
+      value: Bioluminescent Bile
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -4364,7 +7005,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!4 &972512568 stripped
 Transform:
@@ -4565,8 +7207,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016032916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.343, y: -0.343, z: 0.909}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.343, y: -0.343, z: 0.901}
+  m_LocalScale: {x: 1, y: 1, z: 0.65321213}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -4718,6 +7360,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1045003097}
   ID: 6
+  color: {r: 0.54453534, g: 1, b: 0.2783019, a: 1}
 --- !u!114 &1045003097
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4758,6 +7401,185 @@ Transform:
   m_Father: {fileID: 1826061336}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1061236933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1738245299}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Golden Gumbo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &1061236934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1061236933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1110922839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +7833,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1127672431}
   ID: 9
+  color: {r: 0.8679245, g: 0.8679245, b: 0.3479886, a: 1}
 --- !u!114 &1127672431
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5176,6 +7999,185 @@ PrefabInstance:
     - {fileID: 4474422719898816515, guid: 846860bb3de0888429996f57e9dfbaf4, type: 3}
     - {fileID: 6338692786142545172, guid: 846860bb3de0888429996f57e9dfbaf4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 846860bb3de0888429996f57e9dfbaf4, type: 3}
+--- !u!1001 &1153325305
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1172833742}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Stinky Mucus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &1153325306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153325305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1155962390
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,6 +8312,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1163990996}
   ID: 5
+  color: {r: 0.47058824, g: 0.08235294, b: 0.10993454, a: 1}
 --- !u!114 &1163990996
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5391,6 +8394,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1172833743}
   ID: 12
+  color: {r: 0.20571549, g: 0.2735849, b: 0.099368095, a: 1}
 --- !u!114 &1172833743
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -5436,6 +8440,185 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
     type: 3}
   m_PrefabInstance: {fileID: 322308926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1235281098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 526971363}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Silvered Silt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &1235281099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1235281098}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1241420176
 GameObject:
@@ -6060,8 +9243,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319562541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.654, y: -0.176, z: 0.909}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.654, y: -0.176, z: 0.905}
+  m_LocalScale: {x: 1, y: 1, z: 0.80027}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -6319,6 +9502,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1392566919}
   ID: 11
+  color: {r: 0.6792453, g: 0.6390143, b: 0.46457815, a: 1}
 --- !u!114 &1392566919
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6821,6 +10005,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -6849,27 +10038,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.62490386
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1127672430}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (10)
+      value: Ocular Juice
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -6937,7 +10137,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1001 &1519524758
 PrefabInstance:
@@ -6969,6 +10170,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -6999,15 +10205,41 @@ PrefabInstance:
       propertyPath: CollisionModule.collidesWith.m_Bits
       value: 8380215
       objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 947283055}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant
+      value: Fish Oil
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -7118,6 +10350,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1531332765}
   ID: 8
+  color: {r: 0.36912602, g: 0.745283, b: 0.41736335, a: 1}
 --- !u!114 &1531332765
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7514,6 +10747,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -7542,27 +10780,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.43397608
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1531332764}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (9)
+      value: Swiftfin Slime
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -7630,7 +10879,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!1 &1612938517
 GameObject:
@@ -7672,6 +10922,12 @@ Transform:
   - {fileID: 964747899}
   - {fileID: 2051411936}
   - {fileID: 1808716423}
+  - {fileID: 1934241350}
+  - {fileID: 2090097509}
+  - {fileID: 1153325306}
+  - {fileID: 726081010}
+  - {fileID: 1235281099}
+  - {fileID: 1061236934}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7945,6 +11201,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1738245300}
   ID: 15
+  color: {r: 0.5, g: 0.308709, b: 0.021226406, a: 1}
 --- !u!114 &1738245300
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8023,6 +11280,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: TriggerModule.inside
@@ -8051,27 +11313,38 @@ PrefabInstance:
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.2957596
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.15294118
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 925531676}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
     - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
       propertyPath: m_Name
-      value: ABottleWithALessStupidName Variant (3)
+      value: Boiled Bladder
       objectReference: {fileID: 0}
     - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
@@ -8139,7 +11412,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
 --- !u!4 &1808716423 stripped
 Transform:
@@ -8619,6 +11893,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1886966596}
   ID: 4
+  color: {r: 0.26415092, g: 0.16110918, b: 0.08597365, a: 1}
 --- !u!114 &1886966596
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8700,6 +11975,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1888153452}
   ID: 2
+  color: {r: 0.055224285, g: 0.35332072, b: 0.6886792, a: 1}
 --- !u!114 &1888153452
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9103,6 +12379,185 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1396069616166882740, guid: 51af6383f9c640644a5f58e209b99503, type: 3}
+--- !u!1001 &1934241349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1941088720}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Batfish Guano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &1934241350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1934241349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1941088719
 GameObject:
   m_ObjectHideFlags: 0
@@ -9144,6 +12599,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1941088721}
   ID: 10
+  color: {r: 0.2, g: 0.13725491, b: 0.18306191, a: 1}
 --- !u!114 &1941088721
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -9725,6 +13181,185 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
     type: 3}
   m_PrefabInstance: {fileID: 1606095179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2090097508
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1612938518}
+    m_Modifications:
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: isPotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592532, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.b
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.g
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: potionColor.r
+      value: 0.6476966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592534, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 1771592540, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 3139166805840294526, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: _syncMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.inside
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 2651978137127889732}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342026294489697979, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477710721504382340, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: reagent
+      value: 
+      objectReference: {fileID: 1392566918}
+    - target: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 3892139356029562450, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    - target: {fileID: 4950094161702764698, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_Name
+      value: Piranha Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: cauldron
+      value: 
+      objectReference: {fileID: 1971029802}
+    - target: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8533048581615368807, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 08c89cb064b28dc4cae66f87f3f5559a, type: 3}
+--- !u!4 &2090097509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5762800773297019424, guid: 08c89cb064b28dc4cae66f87f3f5559a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2090097508}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450653428803243
 Transform:

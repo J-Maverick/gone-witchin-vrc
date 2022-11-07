@@ -14,10 +14,14 @@ public class PourableBottle : Bottle
     public Animator pourAnimator;
     public float pourMultiplier = 0.01f;
 
+    public Renderer particleRenderer;
+    public Material particleMaterial;
     public float pourSpeed = 0f;
 
     protected override void Start()
     {
+        particleMaterial = particleRenderer.material;
+        particleMaterial.color = potionColor;
         base.Start();
     }
 
