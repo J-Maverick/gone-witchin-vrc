@@ -7,8 +7,13 @@ using VRC.Udon;
 public class ReagentList : UdonSharpBehaviour
 {
     public Reagent[] reagents;
-    void Start()
+
+    public Reagent GetReagentByID(int ID)
     {
-        
+        foreach (Reagent reagent in reagents)
+        {
+            if (reagent.ID == ID) return reagent;
+        }
+        return null;
     }
 }

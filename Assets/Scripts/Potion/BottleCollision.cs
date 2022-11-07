@@ -40,31 +40,47 @@ public class BottleCollision : UdonSharpBehaviour
         // Determine which audio clips to play based on impact speed, or shatter
         if (speed < softHitSpeedLimit)
         {
-            AudioClip[] clips = softHitClips;
-            float volume = softHitVolume + ((speed / softHitSpeedLimit) * (mediumHitVolume - softHitVolume));
-            PlayClip(clips, volume);
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlaySoftHit");
         }
         else if (speed < mediumHitSpeedLimit)
         {
-            AudioClip[] clips = mediumHitClips;
-            float volume = mediumHitVolume + (((speed - softHitSpeedLimit) / (mediumHitSpeedLimit - softHitSpeedLimit)) * (hardHitVolume - mediumHitVolume));
-            PlayClip(clips, volume);
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayMediumHit");
         }
         else if (speed < hardHitSpeedLimit)
         {
-            AudioClip[] clips = hardHitClips;
-            float volume = hardHitVolume;
-            PlayClip(clips, volume);
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayHardHit");
         }
         else
         {
-            isBroken = true;
-            Shatter();
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Shatter");
         }
     }
 
-    private void Shatter()
+    public void PlaySoftHit()
     {
+        AudioClip[] clips = softHitClips;
+        audioSource.maxDistance = 8f;
+        PlayClip(clips, softHitVolume);
+    }
+
+    public void PlayMediumHit()
+    {
+        AudioClip[] clips = mediumHitClips;
+        audioSource.maxDistance = 12f;
+        PlayClip(clips, mediumHitVolume);
+    }
+
+    public void PlayHardHit()
+    {
+        AudioClip[] clips = hardHitClips;
+        audioSource.maxDistance = 15f;
+        PlayClip(clips, hardHitVolume);
+    }
+
+    public void Shatter()
+    {
+        isBroken = true;
+        audioSource.maxDistance = 25f;
         AudioClip[] clips = shatterClips;
         float volume = shatterVolume;
         shatterParticles.SetActive(true);

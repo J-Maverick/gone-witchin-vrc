@@ -8,8 +8,4 @@ public class Reagent : UdonSharpBehaviour
 {
     public int ID;
     public Color color;
-    void Start()
-    {
-        
-    }
 }

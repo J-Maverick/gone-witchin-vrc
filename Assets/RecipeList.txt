@@ -20,15 +20,15 @@ Eyedrops: 1 Essence of Water + 1 Fish Oil
 Dogeye Potion: 2 Ocular Juice + 2 Stinky Mucus + 1 Mishmash
 Nostalgia Nectar: 2 Ocular Juice + 2 Digestive Mud + 1 Fish Oil
 Rosy Refreshment: 2 Ocular Juice + 2 Flamefin Tears + 1 Heart of Trout
-Bloom Booze: 2 Ocular Juice + 7 Bioluminescent Bile + 5 Stinky Mucus
+Bloom Booze: 1 Ocular Juice + 7 Bioluminescent Bile + 5 Stinky Mucus
 Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1 Flamefin Tears
 Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
 Spooky Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
 Mod Bait: 2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden Gumbo
-Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime + 7 Mishmash
+Bottled Chaos: 1 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime + 7 Mishmash
 SONG CHANGE STAND-IN: 2 Batfish Guano
 Snore in a Bottle: 2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
-Global Thermonuclear Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt + 5 Golden Gumbo
+Global Thermonuclear Stank: 1 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt + 5 Golden Gumbo
 Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
 Muda Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart of Trout
 Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha Milk + 2 Distilled Darkness

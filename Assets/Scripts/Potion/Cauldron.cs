@@ -16,6 +16,10 @@ public class Cauldron : UdonSharpBehaviour
     public bool isOverflowing = false;
     [UdonSynced] float fillLevel = 0f;
     [UdonSynced] Color fillColor = Color.white;
+    public CauldronRecipe fillRecipe;
+    public Recipes recipes;
+    public Recipe matchingRecipe = null;
+    public bool ratioMatched = false;
 
     void Start()
     {
@@ -29,6 +33,19 @@ public class Cauldron : UdonSharpBehaviour
             liquid.fillLevel = fillLevel;
             liquid.SetStaticColor(fillColor);
         }
+        if (fillRecipe.isDS)
+        {
+            fillRecipe.NormalizeReagents();
+            matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
+            if (matchingRecipe != null)
+            {
+                ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+                Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
+            }
+            else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+
+            fillRecipe.LogReagents();
+        }
     }
 
     private void UpdateFillColor(Color newColor, float fillAmount)
@@ -37,15 +54,19 @@ public class Cauldron : UdonSharpBehaviour
         else fillColor = Color.Lerp(fillColor, newColor, fillAmount / fillLevel);
     }
 
-    public void AddLiquid(PourableBottle bottle)
+    public void AddLiquid(ReagentBottle bottle)
     {
+        Networking.SetOwner(Networking.GetOwner(bottle.gameObject), gameObject);
         Debug.Log("Adding Liquid");
         float fillAmount = (bottle.pourSpeed * bottle.pourMultiplier * Time.deltaTime) / maxFill;
         fillLevel += fillAmount;
         liquid.fillLevel = fillLevel;
 
+        fillRecipe.AddReagent(bottle.reagent, fillAmount);
+
         UpdateFillColor(bottle.potionColor, fillAmount);
 
+        liquid.FillBump(fillAmount * 500f);
         liquid.SetStaticColor(fillColor);
 
         if (liquid.fillLevel > 1)
@@ -55,6 +76,17 @@ public class Cauldron : UdonSharpBehaviour
         else isOverflowing = false;
 
         liquidColliderAnimator.SetFloat("FillLevel", liquid.fillLevel);
+
+        matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
+        if (matchingRecipe != null)
+        {
+            ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+            Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
+        }
+        else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+
+        fillRecipe.LogReagents();
+        RequestSerialization();
     }
 
     private void Update()

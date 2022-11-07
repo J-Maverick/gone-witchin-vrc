@@ -40,7 +40,11 @@ public class PotionWobble : UdonSharpBehaviour
 
     public void SetColor(Color newColor)
     {
-        if (material == null) material = rend.materials[1];
+        if (material == null)
+        {
+            if (isPotion) material = rend.materials[1];
+            else material = rend.materials[0];
+        }
         material.color = Color.Lerp(material.GetColor("_Tint"), newColor, 0.9f);
     }
 
@@ -58,6 +62,12 @@ public class PotionWobble : UdonSharpBehaviour
         material.SetFloat("_FillAmount", fill);
     }
 
+    public void FillBump(float scale=1f)
+    {
+        wobbleAmountToAddX += Random.Range(0, 0.0015f * scale);
+        wobbleAmountToAddZ += Random.Range(0, 0.0015f * scale);
+    }
+
     public Color GetColor()
     {
         return material.color;
@@ -66,6 +76,8 @@ public class PotionWobble : UdonSharpBehaviour
     private void Update()
     {
         time += Time.deltaTime;
+
+
         // decrease wobble over time
         wobbleAmountToAddX = Mathf.Lerp(wobbleAmountToAddX, 0, Time.deltaTime * (Recovery));
         wobbleAmountToAddZ = Mathf.Lerp(wobbleAmountToAddZ, 0, Time.deltaTime * (Recovery));
@@ -79,10 +91,9 @@ public class PotionWobble : UdonSharpBehaviour
         material.SetFloat("_WobbleX", wobbleAmountX);
         material.SetFloat("_WobbleZ", wobbleAmountZ);
 
-
         if (isPotion)
         {
-
+            
             // velocity
             velocity = (lastPos - transform.position) / Time.deltaTime;
             angularVelocity = transform.rotation.eulerAngles - lastRot;
