@@ -2,7 +2,7 @@
 
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Custom/Underwater_Shadow"
+Shader "GoneWitchin/Underwater_Shadow"
 {
     Properties
     {
@@ -83,7 +83,7 @@ Shader "Custom/Underwater_Shadow"
                 // sample the texture
                 clip(_WaterLevel - i.worldPos.y);
 
-                float blendVal = min(_MaxDepth, _WaterLevel - i.worldPos.y) / _MaxDepth;
+                float blendVal = min(_MaxDepth, _WaterLevel - 1 - i.worldPos.y) / _MaxDepth;
                 fixed4 col = lerp(_LightShadowColor, _DarkShadowColor, blendVal);
 
                 return col;

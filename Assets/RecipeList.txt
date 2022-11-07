@@ -1,0 +1,52 @@
+Shilling Chalice: 1 Fish Oil + 3 Silvered Silt + 2 Bioluminescent Bile
+Potion of Vanity: 1 Fish Oil + 4 Silvered Silt + 2 Ocular Juice
+Rod Upgrade 1: 1 Silvered Silt + 2 Fish Oil
+Rod Upgrade 2: 1 Silvered Silt + 2 Fish Oil + 3 Swiftfin Slime + 1 Piranha Milk
+Rod Upgrade 3: 2 Silvered Silt + 2 Golden Gumbo + 2 Bioluminescent Bile + 2 Distilled Darkness + 1 Heart of Trout
+Combustible Brew: 3 Flamefin Tears + 1 Digestive Mud + 1 Stinky Mucus + 2 Boiled Bladder
+Dreadbull: 5 Fish Oil + 1 Swiftfin Slime
+Frigelic: 2 Essence of Water + 2 Boiled Bladder + 1 Distilled Darkness
+Player Bait: 2 Mishmash + 1 Heart of Trout + 1 Golden Gumbo + 3 Piranha Milk + 1 Swiftfin Slime
+Springy Spirit: 3 Boiled Bladder + 1 Fish Oil
+Fire Flask: 3 Flamefin Tears + 2 Boiled Bladder + 1 Stinky Mucus
+Lightning in a Bottle: 3 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt
+Sparking Water: 4 Bioluminescent Bile + 2 Boiled Bladder + 1 Batfish Guano + 1 Silvered Silt + 1 Golden Gumbo
+Spicy Ice: 2 Essence of Water + 2 Boiled Bladder + 1 Flamefin Tears + 2 Ocular Juice
+Catseye Elixir: 2 Ocular Juice + 1 Bioluminescent Bile + 1 Distilled Darkness + 1 Piranha Milk
+Love Potion: 2 Ocular Juice + 3 Heart of Trout + 2 Distilled Darkness + 7 Digestive Mud + 1 Flamefin Tears
+Kaleido-brew: 2 Ocular Juice + 1 Flamefin Tears + 1 Essence of Water + 1 Boiled Bladder + 1 Digestive Mud
+Gloom Goo: 2 Ocular Juice + 3 Distilled Darkness + 1 Essence of Water
+Eyedrops: 1 Essence of Water + 1 Fish Oil
+Dogeye Potion: 2 Ocular Juice + 2 Stinky Mucus + 1 Mishmash
+Nostalgia Nectar: 2 Ocular Juice + 2 Digestive Mud + 1 Fish Oil
+Rosy Refreshment: 2 Ocular Juice + 2 Flamefin Tears + 1 Heart of Trout
+Bloom Booze: 2 Ocular Juice + 7 Bioluminescent Bile + 5 Stinky Mucus
+Drum Dram: 2 Batfish Guano + 2 Boiled Bladder + 1 Flamefin Tears
+Stinky Spritz: 2 Batfish Guano + 3 Stinky Mucus + 1 Mishmash
+Spooky Spirit: 2 Batfish Guano + 1 Distilled Darkness + 3 Digestive Mud
+Mod Bait: 2 Batfish Guano + 1 Flamefin Tears + 3 Piranha Milk + 1 Silvered Silt + 2 Golden Gumbo
+Bottled Chaos: 2 Batfish Guano + 3 Digestive Mud + 5 Swiftfin Slime + 7 Mishmash
+SONG CHANGE STAND-IN: 2 Batfish Guano
+Snore in a Bottle: 2 Batfish Guano + 3 Boiled Bladder + 1 Distilled Darkness
+Global Thermonuclear Stank: 2 Batfish Guano + 3 Boiled Bladder + 9 Stinky Mucus + 7 Silvered Silt + 5 Golden Gumbo
+Brewed Bark: 2 Batfish Guano + 2 Stinky Mucus + 1 Mishmash
+Muda Mixture: 2 Batfish Guano + 1 Distilled Darkness + 3 Swiftfin Slime + 2 Heart of Trout
+Feline Philter: 2 Batfish Guano + 1 Bioluminescent Bile + 3 Piranha Milk + 2 Distilled Darkness
+Creepy Liquid: 2 Batfish Guano + 1 Digestive Mud + 1 Boiled Bladder + 2 Stinky Mucus
+Sus Sauce: 2 Batfish Guano + 1 Ocular Juice + 2 Distilled Darkness + 1 Fish Oil
+Skeletal Tonic: 2 Batfish Guano + 1 Essence of Water + 2 Heart of Trout + 1 Digestive Mud
+Power Down Potion: 2 Batfish Guano + 3 Distilled Darkness + 1 Essence of Water + 4 Bioluminescent Bile + 2 Boiled Bladder
+Vine Sauce: 2 Batfish Guano + 1 Digestive Mud + 3 Stinky Mucus
+Disconnected Draught: 2 Batfish Guano + 4 Distilled Darkness + 2 Heart of Trout + 2 Bioluminescent Bile + 1 Boiled Bladder
+Bubbling Brew: 2 Fish Oil + 1 Essence of Water + 1 Boiled Bladder
+Poison: 1 Piranha Milk + 2 Mishmash + 3 Distilled Darkness
+Mace: 2 Golden Gumbo + 1 Fish Oil + 3 Flamefin Tears + 2 Piranha Milk + 1 Distilled Darkness
+April Shower: 2 Fish Oil + 3 Essence of Water + 2 Digestive Mud + 1 Heart of Trout
+Teleporatium: 2 Golden Gumbo + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+Unstable Teleportatium: 2 Silvered Silt + 1 Bioluminescent Bile + 3 Essence of Water + 3 Fish Oil
+VRChat Plus: 3 Boiled Bladder + 1 Golden Gumbo + 1 Silvered Silt + 2 Swiftfin Slime
+Apprentice Bait: 1 Mishmash + 1 Fish Oil
+Journeyman Bait: 1 Mishmash + 1 Flamefin Tears + 1 Heart of Trout
+Adept Bait: 1 Mishmash + 1 Fish Oil + 1 Stinky Mucus
+Master Bait: 1 Mishmash + 1 Bioluminescent Bile + 1 Distilled Darkness
+Golden Bait: 1 Mishmash + 1 Golden Gumbo + 1 Bioluminescent Bile
