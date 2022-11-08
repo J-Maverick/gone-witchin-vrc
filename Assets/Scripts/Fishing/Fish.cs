@@ -36,6 +36,7 @@ public class Fish : UdonSharpBehaviour
 
     public bool isFighting = false;
     public bool fishTimerIncremented = true;
+    private bool biting = false;
 
     public float exhaustionRatio = 0.9f;
     public float exhaustion = 1f;
@@ -75,64 +76,94 @@ public class Fish : UdonSharpBehaviour
         RandomChangeTime();
     }
 
+
+    private void Fight()
+    {
+        if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
+        forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
+        fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+        fishBody.position = transform.position;
+        fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 50f);
+        lureRigidbody.AddForce(forceDirection * fishWeight * forceMultiplier * exhaustion);
+        directionChangeTimer += Time.fixedDeltaTime;
+        exhaustionTimer += Time.fixedDeltaTime;
+        if (exhaustionTimer > exhaustionTime)
+        {
+            exhaustion *= exhaustionRatio;
+            exhaustionTimer = 0f;
+        }
+    }
+
+    private void Bite()
+    {
+        fishState = fishAnimator.GetCurrentAnimatorStateInfo(1);
+        if (fishState.IsTag("fighting"))
+        {
+            Debug.Log("Start Fighting");
+            RandomWaitTime();
+            isFighting = true;
+            biting = false;
+            fishingPole.FishOn();
+            exhaustion = 1f;
+        }
+        else
+        {
+            Debug.Log("Trigger Bite");
+            fishAnimator.SetBool("Bite", true);
+            if (!biting) RandomDirection();
+            biting = true;
+            forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
+            fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+            fishBody.position = transform.position;
+            fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 50f);
+        }
+    }
+
+    private void LockLure()
+    {
+        Vector3 pos = lure.position;
+        pos.y = 0.02f;
+        lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
+        pos.y = -0.5f;
+        hook.position = pos;
+    }
+
+    private void ResetFish()
+    {
+        RandomWaitTime();
+        RandomChangeTime();
+        isFighting = false;
+        biting = false;
+        fishTimerIncremented = false;
+        fishAnimator.SetBool("Bite", false);
+    }
+
     private void FixedUpdate()
     {
         if (fishingPole.inWater)
         {
-            Vector3 pos = lure.position;
-            pos.y = 0.02f;
-            lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
-            pos.y = -0.5f;
-            hook.position = pos;
+            LockLure();
         }
+
         if (fishingPole.fishOn && isFighting)
         {
-            if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
-            forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
-            fishBody.rotation = Quaternion.LookRotation(-forceDirection);
-            fishBody.position = transform.position;
-            fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 10f);
-            lureRigidbody.AddForce(forceDirection * fishWeight * forceMultiplier * exhaustion);
-            directionChangeTimer += Time.fixedDeltaTime;
-            exhaustionTimer += Time.fixedDeltaTime;
-            if (exhaustionTimer > exhaustionTime)
-            {
-                exhaustion *= exhaustionRatio;
-                exhaustionTimer = 0f;
-            }
+            Fight();
         }
         else if (fishingPole.inWater)
         {
             if (fishTimer > fishWaitTime)
             {
-                fishState = fishAnimator.GetCurrentAnimatorStateInfo(1);
-                if (fishState.tagHash == Animator.StringToHash("fighting"))
-                {
-                    isFighting = true;
-                    RandomWaitTime();
-                    RandomDirection();
-                    forceDirection = newDirection;
-                    fishBody.rotation = Quaternion.LookRotation(-forceDirection);
-                    fishBody.position = transform.position;
-
-                    fishingPole.FishOn();
-                    exhaustion = 1f;
-                }
-                else fishAnimator.SetBool("Bite", true);
+                Bite();
             }
-            else fishTimer += Time.fixedDeltaTime;
+            else
+            {
+                fishTimer += Time.fixedDeltaTime;
+            }
             fishTimerIncremented = true;
         }
-        else
+        else if (isFighting || fishTimerIncremented || biting)
         {
-            if (isFighting || fishTimerIncremented)
-            {
-                RandomWaitTime();
-                RandomChangeTime();
-                isFighting = false;
-                fishTimerIncremented = false;
-                fishAnimator.SetBool("Bite", false);
-            }
+            ResetFish();
         }
     }
 }

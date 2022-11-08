@@ -5640,6 +5640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingpoleLowPolyStandin
       objectReference: {fileID: 0}
+    - target: {fileID: 4292501864900629024, guid: 7f9773c637a1a3a4b98c650fd4a2f5b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4292501864900629031, guid: 7f9773c637a1a3a4b98c650fd4a2f5b0,
         type: 3}
       propertyPath: m_RootOrder
