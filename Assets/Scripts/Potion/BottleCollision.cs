@@ -6,6 +6,9 @@ using VRC.Udon;
 
 public class BottleCollision : UdonSharpBehaviour
 {
+    public Transform spawnTarget;
+    public Vector3 spawnPosition;
+    public Quaternion spawnRotation;
     public AudioClip[] softHitClips;
     public MeshRenderer mesh;
     public Collider meshCollider;
@@ -29,6 +32,19 @@ public class BottleCollision : UdonSharpBehaviour
     public bool brokenSequencePlayed = false;
     
     private float holdSpeedMultiplier = 3f;
+
+    public float respawnTime = 15f;
+    private float respawnTimer = 0f;
+    private bool respawning = false;
+
+    public PourableBottle refillableBottle = null;
+    public bool refillOnRespawn = false;
+
+    private void Start()
+    {
+        spawnPosition = spawnTarget.position;
+        spawnRotation = spawnTarget.rotation;
+    }
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -77,7 +93,7 @@ public class BottleCollision : UdonSharpBehaviour
         PlayClip(clips, hardHitVolume);
     }
 
-    public void Shatter()
+    public virtual void Shatter()
     {
         isBroken = true;
         audioSource.maxDistance = 25f;
@@ -86,13 +102,33 @@ public class BottleCollision : UdonSharpBehaviour
         shatterParticles.SetActive(true);
         mesh.enabled = false;
         meshCollider.enabled = false;
-        rigidBody.isKinematic = true;
+        rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         pickup.Drop();
         pickup.pickupable = false;
         transform.rotation = Quaternion.identity;
         brokenSequencePlayed = true;
 
         PlayClip(clips, volume);
+        TriggerRespawn();
+    }
+
+    private void TriggerRespawn()
+    {
+        respawning = true;
+    }
+
+    public void Respawn()
+    {
+        rigidBody.constraints = RigidbodyConstraints.None;
+        transform.SetPositionAndRotation(spawnPosition, spawnRotation);
+        mesh.enabled = true;
+        meshCollider.enabled = true;
+        shatterParticles.SetActive(false);
+        pickup.pickupable = true;
+        brokenSequencePlayed = false;
+        isBroken = false;
+
+        if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
     }
 
     private void PlayClip(AudioClip[] clips, float volume)
@@ -103,8 +139,23 @@ public class BottleCollision : UdonSharpBehaviour
         audioSource.Play();
     }
 
+    private void UpdateRespawn()
+    {
+        if (respawning)
+        {
+            respawnTimer += Time.deltaTime;
+            if (respawnTimer >= respawnTime)
+            {
+                Respawn();
+                respawnTimer = 0f;
+                respawning = false;
+            }
+        }
+    }
+
     private void Update()
     {
         if (!brokenSequencePlayed && isBroken) Shatter();
+        UpdateRespawn();
     }
 }

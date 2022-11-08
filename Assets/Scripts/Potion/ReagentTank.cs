@@ -25,7 +25,9 @@ public class ReagentTank : UdonSharpBehaviour
         shaderControl.SetColor(reagent.color);
         particleMaterial = particleRenderer.material;
         particleMaterial.color = reagent.color;
+        fillLevel = Random.Range(0.05f, 1f);
         shaderControl.fillLevel = fillLevel;
+        lever.pickup.InteractionText = reagent.name;
     }
 
     void PourControl()

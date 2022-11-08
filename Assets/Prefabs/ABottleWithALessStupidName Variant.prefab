@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -262,6 +262,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 1771592539}
+  spawnTarget: {fileID: 5762800773297019424}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -320,6 +323,9 @@ MonoBehaviour:
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
+  respawnTime: 15
+  refillableBottle: {fileID: 3892139356029562450}
+  refillOnRespawn: 1
 --- !u!114 &1771592541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -597,11 +603,12 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4474422719898816515, guid: 846860bb3de0888429996f57e9dfbaf4,
+        type: 3}
     - target: {fileID: 4474422719898816515, guid: 846860bb3de0888429996f57e9dfbaf4,
         type: 3}
       propertyPath: serializationData.SerializedFormat
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7355062693550023900, guid: 846860bb3de0888429996f57e9dfbaf4,
         type: 3}

@@ -40,7 +40,7 @@ public class PourableBottle : Bottle
         return (pourThreshold - transform.up.y) / (pourThreshold + 1f);
     }
 
-    private void setFill()
+    private void UpdateFill()
     {
         pourThreshold = maxPourThreshold - ((1f - fillLevel) * (maxPourThreshold - minPourThreshold));
         pourSpeed = GetPourSpeed();
@@ -49,11 +49,18 @@ public class PourableBottle : Bottle
         if (shaderControl != null) shaderControl.fillLevel = fillLevel;
     }
 
+    public void SetFill(float fill)
+    {
+        fillLevel = fill;
+        pourThreshold = maxPourThreshold - ((1f - fillLevel) * (maxPourThreshold - minPourThreshold));
+        if (shaderControl != null) shaderControl.fillLevel = fillLevel;
+    }
+
     private void Update()
     {
         if (fillLevel > 0f && CheckPour())
         {
-            setFill();
+            UpdateFill();
             //Debug.LogFormat("{0}: transform.up.y: {1}, pourSpeed: {2}", name, transform.up.y, pourSpeed);
         }
         else pourSpeed = 0f;

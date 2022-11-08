@@ -6,8 +6,6 @@ using VRC.Udon;
 
 public class Potion : UdonSharpBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public Color color;
+    public int ID;
 }

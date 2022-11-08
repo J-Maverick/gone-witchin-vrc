@@ -22,7 +22,6 @@ public class Lever : UdonSharpBehaviour
 
     private Vector3 targetVector;
     private Quaternion targetRotation;
-    private Vector3 defaultTargetLocation;
     private Quaternion maxRotation;
     private Quaternion minRotation;
     public float maxAngle;
@@ -33,9 +32,8 @@ public class Lever : UdonSharpBehaviour
     void Start()
     {
         defaultRotation = transform.localRotation;
-        defaultTargetLocation = handleTarget.position;
         previousRotation = transform.localRotation;
-        previousVector = handleTarget.position - transform.position;
+        previousVector = handleTarget.localPosition - transform.localPosition;
         previousVector.x = 0f;
         previousVector = previousVector.normalized;
     }
@@ -45,19 +43,17 @@ public class Lever : UdonSharpBehaviour
         if (handleTargetHandler.dropped)
         {
             handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
-            previousVector = handleTarget.position - transform.position;
+            previousVector = handleTarget.localPosition - transform.localPosition;
             previousVector.x = 0f;
             previousVector = previousVector.normalized;
             handleTargetHandler.dropped = false;
         }
 
-
-        targetVector = handleTarget.position - transform.position;
+        targetVector = handleTarget.localPosition - transform.localPosition;
         targetVector.x = 0f;
         targetVector = targetVector.normalized;
 
         targetRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
-
 
         previousVector = targetVector;
         float delta = 0f;
@@ -97,7 +93,7 @@ public class Lever : UdonSharpBehaviour
             {
                 transform.localRotation = defaultRotation;
                 previousRotation = transform.localRotation;
-                targetVector = handleTarget.position - transform.position;
+                targetVector = handleTarget.localPosition - transform.localPosition;
                 targetVector.x = 0f;
                 targetVector = targetVector.normalized;
                 previousVector = targetVector;
@@ -108,10 +104,15 @@ public class Lever : UdonSharpBehaviour
             {
                 transform.localRotation = Quaternion.RotateTowards(transform.localRotation, defaultRotation, 1f);
             }
+            handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
         }
 
         if (!pickup.IsHeld)
             if (angle > 0.5f) angle /= 1.5f;
-            else angle = 0f;
+            else
+            {
+                angle = 0f;
+                handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
+            }
     }
 }

@@ -10,6 +10,8 @@ public class Fish : UdonSharpBehaviour
     public Animator fishAnimator;
     public Transform lure;
     public Rigidbody lureRigidbody;
+
+    public Transform hook;
     public FishingPole fishingPole;
 
     public float fishWeight = 10f;
@@ -40,6 +42,8 @@ public class Fish : UdonSharpBehaviour
 
     public float exhaustionTime = 1f;
     public float exhaustionTimer = 0f;
+
+    private AnimatorStateInfo fishState;
 
     void Start()
     {
@@ -73,6 +77,14 @@ public class Fish : UdonSharpBehaviour
 
     private void FixedUpdate()
     {
+        if (fishingPole.inWater)
+        {
+            Vector3 pos = lure.position;
+            pos.y = 0.02f;
+            lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
+            pos.y = -0.5f;
+            hook.position = pos;
+        }
         if (fishingPole.fishOn && isFighting)
         {
             if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
@@ -93,15 +105,20 @@ public class Fish : UdonSharpBehaviour
         {
             if (fishTimer > fishWaitTime)
             {
-                isFighting = true;
-                RandomWaitTime();
-                RandomDirection();
-                forceDirection = newDirection;
-                fishBody.rotation = Quaternion.LookRotation(-forceDirection);
-                fishBody.position = transform.position;
+                fishState = fishAnimator.GetCurrentAnimatorStateInfo(1);
+                if (fishState.tagHash == Animator.StringToHash("fighting"))
+                {
+                    isFighting = true;
+                    RandomWaitTime();
+                    RandomDirection();
+                    forceDirection = newDirection;
+                    fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+                    fishBody.position = transform.position;
 
-                fishingPole.FishOn();
-                exhaustion = 1f;
+                    fishingPole.FishOn();
+                    exhaustion = 1f;
+                }
+                else fishAnimator.SetBool("Bite", true);
             }
             else fishTimer += Time.fixedDeltaTime;
             fishTimerIncremented = true;
@@ -114,6 +131,7 @@ public class Fish : UdonSharpBehaviour
                 RandomChangeTime();
                 isFighting = false;
                 fishTimerIncremented = false;
+                fishAnimator.SetBool("Bite", false);
             }
         }
     }

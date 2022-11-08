@@ -16,6 +16,7 @@
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 /[Aa]ssets/Magic Light Probes/
+/[Aa]ssets/Liquid Particle Systems/
 /[Aa]ssets/TerrainSampleAssets/
 /[Aa]ssets/_TerrainAutoUpgrade/
 /[Aa]ssets/Samples/

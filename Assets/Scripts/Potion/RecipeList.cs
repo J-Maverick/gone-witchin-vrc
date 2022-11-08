@@ -7,13 +7,23 @@ public class RecipeList : MonoBehaviour
 {
     public Recipe[] recipes;
     public string recipeList;
+    public Potion[] potions;
 
     private void Awake()
     {
-        CheckMatches();
-        UpdateString();
+        //CheckMatches();
+        //UpdateString();
+        RandomizeColors();
     }
 
+
+    private void RandomizeColors()
+    {
+        foreach (Potion potion in potions)
+        {
+            potion.color = Random.ColorHSV();
+        }
+    }
 
     private void CheckMatches()
     {

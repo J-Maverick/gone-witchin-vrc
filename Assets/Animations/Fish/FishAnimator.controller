@@ -48,7 +48,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 8643a5dad1a94e342a9a5946e936716c, type: 2}
-  m_Tag: 
+  m_Tag: fighting
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -561,7 +561,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 1
   m_Motion: {fileID: 7400000, guid: a91e66c0ded80e741a24170ea997e6cb, type: 2}
-  m_Tag: 
+  m_Tag: fighting
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 

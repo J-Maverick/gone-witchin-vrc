@@ -20,8 +20,6 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
     private Quaternion previousRotation;
     private Vector3 previousVector;
 
-    
-
     void Start()
     {
         previousRotation = transform.localRotation;
@@ -49,7 +47,7 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
         {
             Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * transform.localRotation;
 
-            float delta = fromPrevToCurrent.eulerAngles.y;
+            float delta = fromPrevToCurrent.eulerAngles.x;
             if (delta > 180) delta -= 360;
             angle -= delta;
 
