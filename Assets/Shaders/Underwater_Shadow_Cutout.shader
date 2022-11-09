@@ -18,7 +18,6 @@ Shader "GoneWitchin/Underwater_Shadow_Cutout"
         _DistortionAmplitude ("Distortion Amplitude", Float) = 0.1
         _DistortionDistance ("Distortion Distance", Float) = 0.1
         _DistortionScaleValue ("Distortion Control Value", Range(0, 1)) = 1
-		_Cutoff ("Don't Touch me", Range(0,1)) = 0.01
     }
     SubShader
     {
