@@ -68,7 +68,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxDepth: 1
+    - _MaxDepth: 2
     - _Metallic: 0
     - _Mode: 1
     - _OcclusionStrength: 1
@@ -81,6 +81,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.30647027, g: 0.3086966, b: 0.6698113, a: 1}
-    - _DarkShadowColor: {r: 0.046858322, g: 0.18284068, b: 0.254717, a: 1}
+    - _DarkShadowColor: {r: 0.03137255, g: 0.22745094, b: 0.19729951, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightShadowColor: {r: 0.08254716, g: 0.3562868, b: 0.5, a: 1}
+    - _LightShadowColor: {r: 0.07450976, g: 0.38823527, b: 0.30996314, a: 1}

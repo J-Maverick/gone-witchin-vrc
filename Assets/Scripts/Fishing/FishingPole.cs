@@ -68,7 +68,8 @@ public class FishingPole : UdonSharpBehaviour
     
     public override void OnPickupUseDown()
     {
-        if (casting || casted || inWater)
+        if (fishOn) FishOff();
+        else if (casting || casted || inWater)
         {
             ResetLure();
         }
@@ -115,6 +116,13 @@ public class FishingPole : UdonSharpBehaviour
             SetLureText();
             fishOn = true;
         }
+    }
+
+    private void FishOff()
+    {
+        casted = true;
+        fishOn = false;
+        SplashDown();
     }
 
     private void ResetLure()

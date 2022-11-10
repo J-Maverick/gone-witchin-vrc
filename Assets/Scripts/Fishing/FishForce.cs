@@ -81,7 +81,7 @@ public class FishForce : UdonSharpBehaviour
     {
         if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
-        fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+        fishBody.rotation = Quaternion.LookRotation(forceDirection);
         fishBody.position = transform.position;
         fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 50f);
         lureRigidbody.AddForce(forceDirection * fishWeight * forceMultiplier * exhaustion);
@@ -113,7 +113,7 @@ public class FishForce : UdonSharpBehaviour
             if (!biting) RandomDirection();
             biting = true;
             forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
-            fishBody.rotation = Quaternion.LookRotation(-forceDirection);
+            fishBody.rotation = Quaternion.LookRotation(forceDirection);
             fishBody.position = transform.position;
             fishAnimator.SetFloat("SwimSpeed", forceMultiplier * exhaustion / 50f);
         }
@@ -151,6 +151,8 @@ public class FishForce : UdonSharpBehaviour
         }
         else if (fishingPole.inWater)
         {
+            if (isFighting) ResetFish();
+
             if (fishTimer > fishWaitTime)
             {
                 Bite();

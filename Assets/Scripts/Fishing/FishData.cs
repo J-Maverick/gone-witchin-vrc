@@ -15,8 +15,8 @@ public class FishData : UdonSharpBehaviour
     public float forceMultiplier = 1f;
     public float minWeight = 1f;
     public float maxWeight = 100f;
-    public float minScale = 1f;
-    public float maxScale = 100f;
+    public float minScale = .1f;
+    public float maxScale = 1f;
 
     [Space(10)]
     public bool foundInLake = false;
@@ -27,11 +27,17 @@ public class FishData : UdonSharpBehaviour
     public float caveCatchChance = 0f;
 
     [Space(10)]
-    public float apprenticeBaitBonus = 0f;
-    public float journeymanBaitBonus = 0f;
-    public float adeptBaitBonus = 0f;
-    public float masterBaitBonus = 0f;
-    public float goldenBaitBonus = 0f;
+    public float apprenticeLakeBaitBonus = 0f;
+    public float journeymanLakeBaitBonus = 0f;
+    public float adeptLakeBaitBonus = 0f;
+    public float masterLakeBaitBonus = 0f;
+    public float goldenLakeBaitBonus = 0f;
+    [Space(5)]
+    public float apprenticeCaveBaitBonus = 0f;
+    public float journeymanCaveBaitBonus = 0f;
+    public float adeptCaveBaitBonus = 0f;
+    public float masterCaveBaitBonus = 0f;
+    public float goldenCaveBaitBonus = 0f;
 
     [Space(10)]
     public float nFishOil = 0f;
@@ -50,4 +56,67 @@ public class FishData : UdonSharpBehaviour
     public float nMishMash = 0f;
     public float nSilveredSilt = 0f;
     public float nGoldenGumbo = 0f;
+
+    public float GetCatchChance(Location location, Bait bait)
+    {
+        if (location == Location.lake && foundInLake) return lakeCatchChance + GetLakeBonus(bait);
+
+        else if (location == Location.cave && foundInCave) return caveCatchChance + GetCaveBonus(bait);
+
+        else return 0f;
+    }
+
+    public float GetLakeBonus(Bait bait)
+    {
+        float bonus = 0f;
+        switch (bait)
+        {
+            case Bait.none:
+                bonus = 0f;
+                break;
+            case Bait.apprentice:
+                bonus = apprenticeLakeBaitBonus;
+                break;
+            case Bait.journeyman:
+                bonus = journeymanLakeBaitBonus;
+                break;
+            case Bait.adept:
+                bonus = adeptLakeBaitBonus;
+                break;
+            case Bait.master:
+                bonus = masterLakeBaitBonus;
+                break;
+            case Bait.golden:
+                bonus = goldenLakeBaitBonus;
+                break;
+        }
+        return bonus;
+    }
+
+    public float GetCaveBonus(Bait bait)
+    {
+        float bonus = 0f;
+        switch (bait)
+        {
+            case Bait.none:
+                bonus = 0f;
+                break;
+            case Bait.apprentice:
+                bonus = apprenticeCaveBaitBonus;
+                break;
+            case Bait.journeyman:
+                bonus = journeymanCaveBaitBonus;
+                break;
+            case Bait.adept:
+                bonus = adeptCaveBaitBonus;
+                break;
+            case Bait.master:
+                bonus = masterCaveBaitBonus;
+                break;
+            case Bait.golden:
+                bonus = goldenCaveBaitBonus;
+                break;
+        }
+        return bonus;
+    }
 }

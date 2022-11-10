@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17760657, g: 0.22235885, b: 0.30454868, a: 1}
+  m_IndirectSpecularColor: {r: 0.18190075, g: 0.2275822, b: 0.30741817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,7 +320,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
         type: 3}
@@ -460,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1701632271386830261, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
         type: 3}
@@ -569,7 +569,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 3
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &72845321
 MonoBehaviour:
@@ -626,17 +626,22 @@ MonoBehaviour:
   forceMultiplier: 1.2
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 30
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 15
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -685,6 +690,9 @@ GameObject:
   - component: {fileID: 91661223}
   - component: {fileID: 91661222}
   - component: {fileID: 91661221}
+  - component: {fileID: 91661227}
+  - component: {fileID: 91661226}
+  - component: {fileID: 91661225}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -759,13 +767,52 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91661220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.04, y: 0, z: 9.702999}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.3361113}
+  m_LocalScale: {x: 0.099999994, y: 10, z: 0.5555556}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1927149770}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &91661225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91661220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.5, z: 10}
+  m_Center: {x: -5, y: 0, z: 0}
+--- !u!65 &91661226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91661220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.5, z: 10}
+  m_Center: {x: 5, y: 0, z: 0}
+--- !u!65 &91661227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91661220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.5, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!1 &110527310
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,7 +966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 23
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &138656153
 MonoBehaviour:
@@ -976,17 +1023,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -40
+  journeymanLakeBaitBonus: -80
+  adeptLakeBaitBonus: -80
+  masterLakeBaitBonus: -80
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -1095,7 +1147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 6
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &187825301
 MonoBehaviour:
@@ -1152,17 +1204,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 40
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: -39
+  masterLakeBaitBonus: -20
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -1290,7 +1347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &223221248
 MonoBehaviour:
@@ -1347,17 +1404,22 @@ MonoBehaviour:
   forceMultiplier: 0.9
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 5
   caveCatchChance: 85
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 5
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 500
+  journeymanCaveBaitBonus: -30
+  adeptCaveBaitBonus: -30
+  masterCaveBaitBonus: -75
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -1566,7 +1628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 29
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &325251135
 MonoBehaviour:
@@ -1623,24 +1685,29 @@ MonoBehaviour:
   forceMultiplier: 3
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
-  caveCatchChance: 30
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  caveCatchChance: 15
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 45
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
   nBoiledBladder: 0
   nDigestiveMud: 0
   nHeartOfTrout: 0
-  nBioLuminescentBile: 5
+  nBioLuminescentBile: 2
   nDistilledDarkness: 0
   nSwiftfinSlime: 5
   nOcularJuice: 0
@@ -1650,6 +1717,92 @@ MonoBehaviour:
   nMishMash: 0
   nSilveredSilt: 0
   nGoldenGumbo: 0
+--- !u!1 &326027532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+    type: 3}
+  m_PrefabInstance: {fileID: 335847138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &326027533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+    type: 3}
+  m_PrefabInstance: {fileID: 335847138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &326027534
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326027532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6c8959ddefca6f42820f89ef6423cac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &326027535
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326027532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTextPlacement: {fileID: 0}
+  interactText: Use
+  interactTextGO: {fileID: 0}
+  proximity: 2
+  SynchronizePosition: 0
+  AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
+  _syncMethod: 2
+  serializedProgramAsset: {fileID: 11400000, guid: e468a90ceebc9614ead42e2c599efc72,
+    type: 2}
+  programSource: {fileID: 11400000, guid: 5c4829b3e41233d46ac88b46788eb02e, type: 2}
+  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
+  publicVariablesUnityEngineObjects: []
+  publicVariablesSerializationDataFormat: 0
+--- !u!114 &326027536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326027532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09423548d8ba70408ad407a1182904e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _udonSharpBackingUdonBehaviour: {fileID: 326027535}
+  fishData: {fileID: 1254435692}
+  fishDataPool: {fileID: 0}
+  weight: 1
+  exhaustionMultiplier: 1
+  forceMultiplier: 1
+  meshRenderer: {fileID: 0}
+  randomize: 0
 --- !u!1001 &335847138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,37 +1813,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.751
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.22
+      value: -12.873
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
@@ -1742,6 +1895,96 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0296229
       objectReference: {fileID: 0}
+    - target: {fileID: -6755765277081432889, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6755765277081432889, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6755765277081432889, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6755765277081432889, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6755765277081432889, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1893808131034537174, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1893808131034537174, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1893808131034537174, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1893808131034537174, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1893808131034537174, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1663891538440346497, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
       propertyPath: m_Name
@@ -1755,6 +1998,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1630794972795428178, guid: 7c16456e4e4df3547a84e1f258d6e69b,
         type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4c0ce584e39014a41b1b254dd0803a39, type: 2}
@@ -1763,6 +2011,131 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 24b3d738df7d85f478a2af184549253f, type: 2}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000025288102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000025288108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2380703893269910534, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244057939056430354, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244057939056430354, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244057939056430354, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244057939056430354, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244057939056430354, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562358711580684981, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562358711580684981, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562358711580684981, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562358711580684981, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562358711580684981, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879528566716807029, guid: 7c16456e4e4df3547a84e1f258d6e69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c16456e4e4df3547a84e1f258d6e69b, type: 3}
 --- !u!1 &360978694
@@ -1795,7 +2168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 20
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &360978696
 MonoBehaviour:
@@ -1852,17 +2225,22 @@ MonoBehaviour:
   forceMultiplier: 1.6
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 1
   caveCatchChance: 2
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 2
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -1889,7 +2267,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a4bb332d837fd7746a8d13e50b8d4364,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4bb332d837fd7746a8d13e50b8d4364,
         type: 3}
@@ -2128,7 +2506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &387188761
 MonoBehaviour:
@@ -2185,17 +2563,22 @@ MonoBehaviour:
   forceMultiplier: 1.05
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 70
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -10
+  journeymanLakeBaitBonus: -40
+  adeptLakeBaitBonus: -40
+  masterLakeBaitBonus: -69
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 1
@@ -2282,7 +2665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 27
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &508362788
 MonoBehaviour:
@@ -2339,17 +2722,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 1
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 2
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 10
@@ -2366,6 +2754,36 @@ MonoBehaviour:
   nMishMash: 0
   nSilveredSilt: 0
   nGoldenGumbo: 0
+--- !u!1 &511536371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 511536372}
+  m_Layer: 0
+  m_Name: '########PROGRESSION########'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &511536372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511536371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519960290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 513169965312037268, guid: a4bb332d837fd7746a8d13e50b8d4364,
@@ -2561,7 +2979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 30
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &528050209
 MonoBehaviour:
@@ -2618,17 +3036,22 @@ MonoBehaviour:
   forceMultiplier: 2
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 20
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 10
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -2796,7 +3219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 17
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &587863544
 MonoBehaviour:
@@ -2853,17 +3276,22 @@ MonoBehaviour:
   forceMultiplier: 1.05
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
-  caveCatchChance: 25
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  caveCatchChance: 10
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 10
+  masterCaveBaitBonus: 50
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -3075,7 +3503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &641865208
 MonoBehaviour:
@@ -3132,20 +3560,25 @@ MonoBehaviour:
   forceMultiplier: 1.5
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 1
   caveCatchChance: 40
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 2
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 20
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
-  nEssenceOfWater: 0
+  nEssenceOfWater: 2
   nBoiledBladder: 0
   nDigestiveMud: 0
   nHeartOfTrout: 0
@@ -3408,7 +3841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 24
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &748547406
 MonoBehaviour:
@@ -3465,17 +3898,22 @@ MonoBehaviour:
   forceMultiplier: 1.6
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
-  foundInLake: 0
+  minScale: 0.1
+  maxScale: 1
+  foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 50
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: -25
+  adeptLakeBaitBonus: -25
+  masterLakeBaitBonus: -30
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -3489,7 +3927,7 @@ MonoBehaviour:
   nBatfishGuano: 0
   nPiranhaMilk: 0
   nStinkyMucus: 0
-  nMishMash: 2
+  nMishMash: 4
   nSilveredSilt: 0
   nGoldenGumbo: 0
 --- !u!1 &750537927
@@ -3642,7 +4080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &825688032
 MonoBehaviour:
@@ -3699,17 +4137,22 @@ MonoBehaviour:
   forceMultiplier: 1.5
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 90
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: -89
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: -60
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 5
   nEssenceOfWater: 0
@@ -4484,7 +4927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 15
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &953600456
 MonoBehaviour:
@@ -4541,17 +4984,22 @@ MonoBehaviour:
   forceMultiplier: 2
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 100
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: -20
+  masterCaveBaitBonus: -90
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -4661,7 +5109,7 @@ Transform:
   m_Children:
   - {fileID: 266114661}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980267340
 GameObject:
@@ -4723,7 +5171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &986639363
 MonoBehaviour:
@@ -4780,17 +5228,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -10
+  journeymanLakeBaitBonus: -99
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: -70
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -4813,6 +5266,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4292501865529689651}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1004294184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004294185}
+  m_Layer: 0
+  m_Name: '########LEGENDARY########'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1004294185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004294184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1020831583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5619302609615435187, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
@@ -4940,7 +5423,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023570264}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 575bef5d4aec1f344b76dd34bc60e125, type: 3}
@@ -5041,7 +5524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1032240609 stripped
 GameObject:
@@ -5079,7 +5562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1036094017
 MonoBehaviour:
@@ -5136,17 +5619,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -10
+  journeymanLakeBaitBonus: -30
+  adeptLakeBaitBonus: -99
+  masterLakeBaitBonus: -70
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -5233,7 +5721,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 9
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1069037244
 MonoBehaviour:
@@ -5290,17 +5778,22 @@ MonoBehaviour:
   forceMultiplier: 3
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 30
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 10
+  adeptLakeBaitBonus: 10
+  masterLakeBaitBonus: 15
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -5432,7 +5925,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 8
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1126213957
 MonoBehaviour:
@@ -5489,17 +5982,22 @@ MonoBehaviour:
   forceMultiplier: 2
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 10
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: -9
+  masterLakeBaitBonus: 5
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -5709,7 +6207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 11
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1163777662
 MonoBehaviour:
@@ -5766,24 +6264,29 @@ MonoBehaviour:
   forceMultiplier: 1.1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 75
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
   nBoiledBladder: 0
   nDigestiveMud: 0
   nHeartOfTrout: 0
-  nBioLuminescentBile: 1
+  nBioLuminescentBile: 0.5
   nDistilledDarkness: 4
   nSwiftfinSlime: 0
   nOcularJuice: 0
@@ -5823,7 +6326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 33
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1166407906
 MonoBehaviour:
@@ -5880,17 +6383,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 100
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 250
+  adeptCaveBaitBonus: -99
+  masterCaveBaitBonus: -90
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -6136,7 +6644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1254435691
 MonoBehaviour:
@@ -6193,17 +6701,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -40
+  journeymanLakeBaitBonus: -80
+  adeptLakeBaitBonus: -80
+  masterLakeBaitBonus: -80
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -6326,12 +6839,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307328581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.04, y: 0, z: -18.297}
-  m_LocalScale: {x: 3.5, y: 1.25, z: 12}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.78055555}
+  m_LocalScale: {x: 0.035, y: 1.25, z: 0.66666675}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1927149770}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1312088802 stripped
 GameObject:
@@ -6423,7 +6936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 28
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1361001397
 MonoBehaviour:
@@ -6480,17 +6993,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 100
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: -100
+  adeptCaveBaitBonus: -20
+  masterCaveBaitBonus: -90
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 5
   nEssenceOfWater: 0
@@ -6741,7 +7259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 19
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1414238149
 MonoBehaviour:
@@ -6798,17 +7316,22 @@ MonoBehaviour:
   forceMultiplier: 4
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 500
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 500
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 500
   nFishOil: 1
   nFlamefinTears: 10
   nEssenceOfWater: 10
@@ -6856,7 +7379,7 @@ Transform:
   - {fileID: 1389819608}
   - {fileID: 1450798011}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418353405
 GameObject:
@@ -6967,7 +7490,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 14
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1422430094
 MonoBehaviour:
@@ -7024,17 +7547,22 @@ MonoBehaviour:
   forceMultiplier: 1.5
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
-  caveCatchChance: 10
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  caveCatchChance: 0.75
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 10
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -7165,6 +7693,36 @@ Transform:
   m_Father: {fileID: 1415258567}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1466963229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466963230}
+  m_Layer: 0
+  m_Name: '########COMMON########'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1466963230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466963229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472204731
 GameObject:
   m_ObjectHideFlags: 0
@@ -7195,7 +7753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 25
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1472204733
 MonoBehaviour:
@@ -7252,17 +7810,22 @@ MonoBehaviour:
   forceMultiplier: 1.25
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 90
   caveCatchChance: 60
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -40
+  journeymanLakeBaitBonus: -80
+  adeptLakeBaitBonus: -80
+  masterLakeBaitBonus: -80
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 500
+  journeymanCaveBaitBonus: -30
+  adeptCaveBaitBonus: -30
+  masterCaveBaitBonus: -50
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -7593,7 +8156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 7
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1557980983
 MonoBehaviour:
@@ -7650,17 +8213,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 4.2
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 2.1
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -7872,7 +8440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 16
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1572300823
 MonoBehaviour:
@@ -7929,17 +8497,22 @@ MonoBehaviour:
   forceMultiplier: 1.1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 10
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 5
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -7956,6 +8529,36 @@ MonoBehaviour:
   nMishMash: 0
   nSilveredSilt: 1
   nGoldenGumbo: 0
+--- !u!1 &1576911583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576911584}
+  m_Layer: 0
+  m_Name: '########UNCOMMON########'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1576911584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576911583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589199620
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,7 +8687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 31
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1608814196
 MonoBehaviour:
@@ -8141,17 +8744,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 0.001
   caveCatchChance: 0.001
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0.005
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 100
@@ -8166,6 +8774,125 @@ MonoBehaviour:
   nPiranhaMilk: 1
   nStinkyMucus: 0
   nMishMash: 100
+  nSilveredSilt: 0
+  nGoldenGumbo: 0
+--- !u!1 &1651019377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651019378}
+  - component: {fileID: 1651019380}
+  - component: {fileID: 1651019379}
+  m_Layer: 0
+  m_Name: Albino Koi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1651019378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651019377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1651019379
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651019377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTextPlacement: {fileID: 0}
+  interactText: Use
+  interactTextGO: {fileID: 0}
+  proximity: 2
+  SynchronizePosition: 0
+  AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
+  _syncMethod: 2
+  serializedProgramAsset: {fileID: 11400000, guid: 6314e0fb0b80c9d4d8df7a62bae723f4,
+    type: 2}
+  programSource: {fileID: 11400000, guid: 60f843694a59a7d49916b747087f4037, type: 2}
+  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
+  publicVariablesUnityEngineObjects: []
+  publicVariablesSerializationDataFormat: 0
+--- !u!114 &1651019380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651019377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca1475c53a3a144b833bfa75efb4cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _udonSharpBackingUdonBehaviour: {fileID: 1651019379}
+  mesh: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
+  exhaustionMultiplier: 1.1
+  forceMultiplier: 1.05
+  minWeight: 1
+  maxWeight: 100
+  minScale: 0.1
+  maxScale: 1
+  foundInLake: 0
+  foundInCave: 1
+  lakeCatchChance: 0
+  caveCatchChance: 70
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: -30
+  goldenCaveBaitBonus: 0
+  nFishOil: 1
+  nFlamefinTears: 0
+  nEssenceOfWater: 1
+  nBoiledBladder: 0
+  nDigestiveMud: 0
+  nHeartOfTrout: 0
+  nBioLuminescentBile: 0
+  nDistilledDarkness: 0
+  nSwiftfinSlime: 0
+  nOcularJuice: 0
+  nBatfishGuano: 0
+  nPiranhaMilk: 0
+  nStinkyMucus: 0
+  nMishMash: 1
   nSilveredSilt: 0
   nGoldenGumbo: 0
 --- !u!1 &1654938836 stripped
@@ -8444,7 +9171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 5
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1784404989
 MonoBehaviour:
@@ -8501,17 +9228,22 @@ MonoBehaviour:
   forceMultiplier: 1.8
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 1
   lakeCatchChance: 10
   caveCatchChance: 15
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 5
+  adeptLakeBaitBonus: 5
+  masterLakeBaitBonus: 8
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 2
@@ -8578,7 +9310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 26
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1826577049
 MonoBehaviour:
@@ -8635,17 +9367,22 @@ MonoBehaviour:
   forceMultiplier: 0.95
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
-  caveCatchChance: 40
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  caveCatchChance: 100
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: -20
+  masterCaveBaitBonus: -99
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -8733,6 +9470,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8552134717624371188, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee, type: 3}
+--- !u!1 &1845061771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845061772}
+  m_Layer: 0
+  m_Name: '########RARE########'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1845061772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845061771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1997164710}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851391880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5795911388975913084, guid: a4bb332d837fd7746a8d13e50b8d4364,
@@ -9196,12 +9963,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883649231}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.04, y: 0, z: -32.347}
-  m_LocalScale: {x: 100, y: 1, z: 18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1927149770}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887746700
 GameObject:
@@ -9252,7 +10019,7 @@ Transform:
   m_Children:
   - {fileID: 581642502}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1894791680 stripped
 GameObject:
@@ -9468,7 +10235,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 22
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1909855266
 MonoBehaviour:
@@ -9525,17 +10292,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
-  foundInLake: 0
+  minScale: 0.1
+  maxScale: 1
+  foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -40
+  journeymanLakeBaitBonus: -80
+  adeptLakeBaitBonus: -80
+  masterLakeBaitBonus: -80
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -9552,6 +10324,39 @@ MonoBehaviour:
   nMishMash: 2
   nSilveredSilt: 0
   nGoldenGumbo: 0
+--- !u!1 &1927149769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927149770}
+  m_Layer: 0
+  m_Name: CubeZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1927149770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927149769}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.04, y: 0, z: -32.347}
+  m_LocalScale: {x: 100, y: 1, z: 18}
+  m_Children:
+  - {fileID: 91661224}
+  - {fileID: 1307328585}
+  - {fileID: 1883649235}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935618343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -957662201366111850, guid: a4bb332d837fd7746a8d13e50b8d4364,
@@ -9767,7 +10572,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 21
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1966364993
 MonoBehaviour:
@@ -9824,17 +10629,22 @@ MonoBehaviour:
   forceMultiplier: 0.9
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 100
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: -40
+  journeymanLakeBaitBonus: -80
+  adeptLakeBaitBonus: -80
+  masterLakeBaitBonus: -80
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 2
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -9880,6 +10690,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1997164710}
+  - component: {fileID: 1997164712}
+  - component: {fileID: 1997164711}
+  - component: {fileID: 1997164713}
   m_Layer: 0
   m_Name: FishDataList
   m_TagString: Untagged
@@ -9898,43 +10711,150 @@ Transform:
   m_LocalPosition: {x: -2.0523992, y: 3.554788, z: -23.660872}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 825688031}
-  - {fileID: 1036094016}
-  - {fileID: 223221247}
-  - {fileID: 72845320}
+  - {fileID: 1466963230}
   - {fileID: 1254435690}
-  - {fileID: 1784404988}
-  - {fileID: 187825300}
-  - {fileID: 1557980982}
-  - {fileID: 1126213956}
-  - {fileID: 1069037243}
-  - {fileID: 986639362}
-  - {fileID: 1163777661}
-  - {fileID: 2028391331}
-  - {fileID: 387188760}
-  - {fileID: 1422430093}
-  - {fileID: 953600455}
-  - {fileID: 1572300822}
-  - {fileID: 587863543}
-  - {fileID: 641865207}
-  - {fileID: 1414238148}
-  - {fileID: 360978695}
+  - {fileID: 138656152}
   - {fileID: 1966364992}
   - {fileID: 1909855265}
-  - {fileID: 138656152}
-  - {fileID: 748547405}
   - {fileID: 1472204732}
-  - {fileID: 1826577048}
-  - {fileID: 508362787}
+  - {fileID: 986639362}
+  - {fileID: 1036094016}
+  - {fileID: 223221247}
+  - {fileID: 953600455}
   - {fileID: 1361001396}
+  - {fileID: 1166407905}
+  - {fileID: 1826577048}
+  - {fileID: 825688031}
+  - {fileID: 1576911584}
+  - {fileID: 748547405}
+  - {fileID: 187825300}
+  - {fileID: 1163777661}
+  - {fileID: 387188760}
+  - {fileID: 1651019378}
+  - {fileID: 2028391331}
+  - {fileID: 641865207}
+  - {fileID: 1845061772}
+  - {fileID: 1126213956}
+  - {fileID: 1069037243}
+  - {fileID: 1572300822}
+  - {fileID: 587863543}
   - {fileID: 325251134}
   - {fileID: 528050208}
+  - {fileID: 72845320}
+  - {fileID: 1784404988}
+  - {fileID: 1004294185}
+  - {fileID: 1422430093}
+  - {fileID: 1557980982}
+  - {fileID: 1414238148}
+  - {fileID: 360978695}
   - {fileID: 1608814195}
   - {fileID: 2012758164}
-  - {fileID: 1166407905}
+  - {fileID: 508362787}
+  - {fileID: 511536372}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1997164711
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997164709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTextPlacement: {fileID: 0}
+  interactText: Use
+  interactTextGO: {fileID: 0}
+  proximity: 2
+  SynchronizePosition: 0
+  AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
+  _syncMethod: 2
+  serializedProgramAsset: {fileID: 11400000, guid: 418afa98dae48ce41a347624190fb22d,
+    type: 2}
+  programSource: {fileID: 11400000, guid: 0005b1454a1b5724baf9ca9d69202ff0, type: 2}
+  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
+  publicVariablesUnityEngineObjects: []
+  publicVariablesSerializationDataFormat: 0
+--- !u!114 &1997164712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997164709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc6804c43c15e48ac61c5c0bb99085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _udonSharpBackingUdonBehaviour: {fileID: 1997164711}
+  fishData:
+  - {fileID: 825688033}
+  - {fileID: 1036094018}
+  - {fileID: 223221249}
+  - {fileID: 72845322}
+  - {fileID: 1254435692}
+  - {fileID: 1784404990}
+  - {fileID: 187825302}
+  - {fileID: 1557980984}
+  - {fileID: 1126213958}
+  - {fileID: 1069037245}
+  - {fileID: 986639364}
+  - {fileID: 1163777663}
+  - {fileID: 2028391333}
+  - {fileID: 387188762}
+  - {fileID: 1422430095}
+  - {fileID: 953600457}
+  - {fileID: 1572300824}
+  - {fileID: 587863545}
+  - {fileID: 641865209}
+  - {fileID: 1414238150}
+  - {fileID: 360978697}
+  - {fileID: 1966364994}
+  - {fileID: 1909855267}
+  - {fileID: 138656154}
+  - {fileID: 748547407}
+  - {fileID: 1472204734}
+  - {fileID: 1826577050}
+  - {fileID: 508362789}
+  - {fileID: 1361001398}
+  - {fileID: 325251136}
+  - {fileID: 528050210}
+  - {fileID: 1608814197}
+  - {fileID: 2012758166}
+  - {fileID: 1166407907}
+  testFish: 0
+  testLocation: 0
+  testBait: 0
+  randomFish: {fileID: 0}
+--- !u!114 &1997164713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997164709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471e9ac19ea58646999c59b724bac01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishDataPool: {fileID: 1997164712}
+  path: C:\Users\Joey\Documents\Unity\Projects\GoneWitchinHD\Assets\FishCatchRates.csv
 --- !u!1 &2005945716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee,
@@ -9985,7 +10905,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 32
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2012758165
 MonoBehaviour:
@@ -10042,17 +10962,22 @@ MonoBehaviour:
   forceMultiplier: 1
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 1
   foundInCave: 0
   lakeCatchChance: 0.00001
   caveCatchChance: 0
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 0
   nFlamefinTears: 1000
   nEssenceOfWater: 1000
@@ -10105,7 +11030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1997164710}
-  m_RootOrder: 12
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2028391332
 MonoBehaviour:
@@ -10162,17 +11087,22 @@ MonoBehaviour:
   forceMultiplier: 1.8
   minWeight: 1
   maxWeight: 100
-  minScale: 1
-  maxScale: 100
+  minScale: 0.1
+  maxScale: 1
   foundInLake: 0
   foundInCave: 1
   lakeCatchChance: 0
   caveCatchChance: 65
-  apprenticeBaitBonus: 0
-  journeymanBaitBonus: 0
-  adeptBaitBonus: 0
-  masterBaitBonus: 0
-  goldenBaitBonus: 0
+  apprenticeLakeBaitBonus: 0
+  journeymanLakeBaitBonus: 0
+  adeptLakeBaitBonus: 0
+  masterLakeBaitBonus: 0
+  goldenLakeBaitBonus: 0
+  apprenticeCaveBaitBonus: 0
+  journeymanCaveBaitBonus: 0
+  adeptCaveBaitBonus: 0
+  masterCaveBaitBonus: 0
+  goldenCaveBaitBonus: 0
   nFishOil: 1
   nFlamefinTears: 0
   nEssenceOfWater: 0
@@ -10301,8 +11231,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 2030761974}
-  fishBody: {fileID: 1887746702}
-  fishAnimator: {fileID: 1887746701}
+  fishBody: {fileID: 326027533}
+  fishAnimator: {fileID: 326027534}
   lure: {fileID: 2030761973}
   lureRigidbody: {fileID: 2030761970}
   hook: {fileID: 1831651450}
@@ -10619,7 +11549,7 @@ Transform:
   m_LocalScale: {x: 0.029002784, y: 0.029002784, z: 0.029002784}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2830542806527192842
 MeshRenderer:
@@ -10686,7 +11616,7 @@ PrefabInstance:
     - target: {fileID: 4292501864900629031, guid: 7f9773c637a1a3a4b98c650fd4a2f5b0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4292501864900629031, guid: 7f9773c637a1a3a4b98c650fd4a2f5b0,
         type: 3}
