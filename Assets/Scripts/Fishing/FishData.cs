@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class FishData : UdonSharpBehaviour
 {
-    public Mesh mesh;
+    public Mesh mesh = null;
     public Color color = Color.white;
     public Color emissionColor = Color.black;
 

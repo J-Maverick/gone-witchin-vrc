@@ -10,6 +10,7 @@ Shader "GoneWitchin/Underwater_Shadow"
         _LightShadowColor ("Light Shadow Color", Color) = (0.3,0.3,0.3,1)
         _DarkShadowColor ("Dark Shadow Color", Color) = (0,0,0,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_NormalMap ("Normal", 2D) = "bump" {}
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _WaterLevel ("Water Level for Shadows", Float) = 0.0
@@ -24,6 +25,7 @@ Shader "GoneWitchin/Underwater_Shadow"
 
         Tags { "RenderType"="Opaque" }
         LOD 200
+		Cull Off
 
         Pass
         {
@@ -99,11 +101,13 @@ Shader "GoneWitchin/Underwater_Shadow"
         #pragma target 3.0
 
         sampler2D _MainTex;
+		sampler2D _NormalMap;
 
         struct Input
         {
             float2 uv_MainTex;
             float3 worldPos;
+			float2 uv_BumpMap;
         };
 
         half _Glossiness;
@@ -124,6 +128,7 @@ Shader "GoneWitchin/Underwater_Shadow"
 
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
+			o.Normal = tex2D (_NormalMap, IN.uv_MainTex);
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;

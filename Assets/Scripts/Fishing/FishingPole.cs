@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class FishingPole : UdonSharpBehaviour
 {
     public GameObject lure;
+    public GameObject hook;
 
     public Text lureSpringText = null;
     public Text lureMassText = null;
@@ -15,6 +16,8 @@ public class FishingPole : UdonSharpBehaviour
 
     private SpringJoint lureJoint;
     private Rigidbody lureRigidBody;
+    private SpringJoint hookJoint;
+    private Rigidbody hookRigidBody;
 
     public float castTension = 1f;
     public float castWeight = 1f;
@@ -40,10 +43,17 @@ public class FishingPole : UdonSharpBehaviour
     private float staticDrag;
     private float staticDistance;
 
+    private float staticHookTension;
+    private float staticHookMass;
+    private float staticHookDrag;
+    private float staticHookDistance;
+
     private bool casting = false;
     private bool casted = false;
     public bool inWater = false;
     public bool fishOn = false;
+
+    public Location location = Location.lake;
 
     void Start()
     {
@@ -53,6 +63,14 @@ public class FishingPole : UdonSharpBehaviour
         staticMass = lureRigidBody.mass;
         staticDrag = lureRigidBody.drag;
         staticDistance = lureJoint.minDistance;
+
+        hookJoint = hook.GetComponent<SpringJoint>();
+        hookRigidBody = hook.GetComponent<Rigidbody>();
+        staticHookTension = hookJoint.spring;
+        staticHookMass = hookRigidBody.mass;
+        staticHookDrag = hookRigidBody.drag;
+        staticHookDistance = hookJoint.minDistance;
+
         SetLureText();
     }
 
@@ -85,8 +103,9 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
-    public void SplashDown()
+    public void SplashDown(Location splashDownLocation)
     {
+        if (location != splashDownLocation) location = splashDownLocation;
         if (casted)
         {
             addSpringRatio = castSpringRatio;
@@ -96,6 +115,10 @@ public class FishingPole : UdonSharpBehaviour
             lureRigidBody.drag = castDrag;
             lureJoint.minDistance = (lure.transform.position - transform.position).magnitude;
             lureRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+            hookJoint.spring = staticHookTension;
+            hookRigidBody.mass = staticHookMass;
+            hookRigidBody.drag = staticHookDrag;
+            hookJoint.minDistance = staticHookDistance;
             inWater = true;
             casting = false;
             casted = false;
@@ -105,7 +128,7 @@ public class FishingPole : UdonSharpBehaviour
 
     public void FishOn()
     {
-        if (inWater)
+        if (inWater && !fishOn)
         {
             lureRigidBody.drag = catchDrag;
             lureRigidBody.mass = catchWeight;
@@ -122,16 +145,35 @@ public class FishingPole : UdonSharpBehaviour
     {
         casted = true;
         fishOn = false;
-        SplashDown();
+        SplashDown(location);
     }
 
-    private void ResetLure()
+    public void UnlockLure()
+    {
+        if (fishOn && lureRigidBody.constraints != RigidbodyConstraints.None)
+        {
+            lureRigidBody.constraints = RigidbodyConstraints.None;
+            lureRigidBody.mass /= 10f;
+            lureRigidBody.drag /= 2f;
+            lureRigidBody.angularDrag = 1f;
+            hookRigidBody.mass *= 100f;
+            hookJoint.spring *= 2f;
+            hookJoint.minDistance = 0.1f;
+        }
+    }
+
+    public void ResetLure()
     {
         lureRigidBody.constraints = RigidbodyConstraints.None;
         lureJoint.spring = staticTension;
         lureRigidBody.mass = staticMass;
         lureRigidBody.drag = staticDrag;
         lureJoint.minDistance = staticDistance;
+        lureRigidBody.angularDrag = 0f;
+        hookJoint.spring = staticHookTension;
+        hookRigidBody.mass = staticHookMass;
+        hookRigidBody.drag = staticHookDrag;
+        hookJoint.minDistance = staticHookDistance;
         casting = false;
         inWater = false;
         casted = false;
@@ -171,5 +213,17 @@ public class FishingPole : UdonSharpBehaviour
         {
             lureDragText.text = string.Format("Lure Drag: {0:0.##}", lureRigidBody.drag);
         }
+    }
+
+
+    /* =================================================
+      
+                          NETWORKING
+                          
+      ================================================= */
+
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        if (player.isLocal) Networking.SetOwner(player, lure);
     }
 }
