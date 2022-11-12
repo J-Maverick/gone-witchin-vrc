@@ -10,11 +10,13 @@ public class FishingPole : UdonSharpBehaviour
     public GameObject lure;
     public GameObject hook;
 
+    public FishForce fishForce;
+
     public Text lureSpringText = null;
     public Text lureMassText = null;
     public Text lureDragText = null;
 
-    private SpringJoint lureJoint;
+    public SpringJoint lureJoint;
     private Rigidbody lureRigidBody;
     private SpringJoint hookJoint;
     private Rigidbody hookRigidBody;
@@ -53,7 +55,9 @@ public class FishingPole : UdonSharpBehaviour
     public bool inWater = false;
     public bool fishOn = false;
 
-    public Location location = Location.lake;
+    public Water water = null;
+
+    public float castDistance = 0f;
 
     void Start()
     {
@@ -103,9 +107,19 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
-    public void SplashDown(Location splashDownLocation)
+    public float GetCastDistance()
     {
-        if (location != splashDownLocation) location = splashDownLocation;
+        if (casted)
+        {
+            castDistance = (lure.transform.position - transform.position).magnitude;
+        }
+
+        return castDistance;
+    }
+
+    public void SplashDown(Water splashDownWater)
+    {
+        if (water != splashDownWater) water = splashDownWater;
         if (casted)
         {
             addSpringRatio = castSpringRatio;
@@ -113,7 +127,9 @@ public class FishingPole : UdonSharpBehaviour
             lureJoint.spring = castTension;
             lureRigidBody.mass = castWeight;
             lureRigidBody.drag = castDrag;
-            lureJoint.minDistance = (lure.transform.position - transform.position).magnitude;
+            castDistance = (lure.transform.position - transform.position).magnitude;
+            lureJoint.minDistance = castDistance;
+
             lureRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
             hookJoint.spring = staticHookTension;
             hookRigidBody.mass = staticHookMass;
@@ -145,7 +161,7 @@ public class FishingPole : UdonSharpBehaviour
     {
         casted = true;
         fishOn = false;
-        SplashDown(location);
+        SplashDown(water);
     }
 
     public void UnlockLure()
@@ -156,9 +172,11 @@ public class FishingPole : UdonSharpBehaviour
             lureRigidBody.mass /= 10f;
             lureRigidBody.drag /= 2f;
             lureRigidBody.angularDrag = 1f;
-            hookRigidBody.mass *= 100f;
+            hookRigidBody.mass *= fishForce.fish.weight;
             hookJoint.spring *= 2f;
             hookJoint.minDistance = 0.1f;
+            lureJoint.minDistance = (lure.transform.position - transform.position).magnitude - 0.25f;
+            lureJoint.spring *= 10f;
         }
     }
 

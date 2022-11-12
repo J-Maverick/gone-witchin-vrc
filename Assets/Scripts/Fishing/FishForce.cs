@@ -39,8 +39,6 @@ public class FishForce : UdonSharpBehaviour
     
     public Bait bait = Bait.none;
 
-    public RandomPointGenerator randomPointGenerator;
-
     public float catchDistanceThreshold = 5f;
     
     //Networking.SetOwner(player, objectPool.gameObject);
@@ -84,7 +82,7 @@ public class FishForce : UdonSharpBehaviour
         //angle = Random.Range(-90f + angle - maxAngleTowardsPlayer, 90f + angle + maxAngleTowardsPlayer) * Mathf.Deg2Rad;
 
         //newDirection = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
-        newDirection = randomPointGenerator.GetRandomPointOnYPlane() - transform.position;
+        newDirection = fishingPole.water.GetRandomPointOnYPlane() - transform.position;
         newDirection = newDirection.normalized;
         RandomChangeTime();
     }
@@ -104,6 +102,7 @@ public class FishForce : UdonSharpBehaviour
 
     private void Caught()
     {
+        gameObject.layer = 24;
         Debug.LogFormat("{0}: Caught", name);
         Vector3 rot = fishBody.rotation.eulerAngles;
         rot.x = -90f;
@@ -133,20 +132,25 @@ public class FishForce : UdonSharpBehaviour
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
         fishBody.rotation = Quaternion.LookRotation(forceDirection);
         fishBody.position = transform.position;
-        fish.Bite(fishingPole.location, bait);
+        fish.Bite(fishingPole.water.location, bait);
     }
 
     private void LockLure()
     {
+        float yOffset = 0f;
+        if (fishingPole.water.location == Location.lake) yOffset = 0f;
+        else if (fishingPole.water.location == Location.cave) yOffset = -10.152f;
+
         Vector3 pos = lure.position;
-        pos.y = 0.02f;
+        pos.y = yOffset + 0.02f;
         lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
-        pos.y = -0.5f;
+        pos.y = yOffset - 0.5f;
         hook.position = pos;
     }
     
     public void ResetFish()
     {
+        gameObject.layer = 4;
         Debug.LogFormat("{0}: Resetting", name);
         fish.Reset();
         RandomWaitTime();
@@ -184,6 +188,7 @@ public class FishForce : UdonSharpBehaviour
 
     private void RemoveFish()
     {
+        gameObject.layer = 4;
         fish = null;
         fishBody = null;
         fishingPole.ResetLure();

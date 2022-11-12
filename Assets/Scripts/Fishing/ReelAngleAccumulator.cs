@@ -20,6 +20,19 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
     private Quaternion previousRotation;
     private Vector3 previousVector;
 
+    public Transform fishingLine;
+    public SkinnedMeshRenderer fishingPoleRenderer;
+    public float sinAmplitude = 0.015f;
+
+    public float castDistance = 0f;
+    public float maxCastDistance = 60f;
+    public float maxBlendShapeValue = 59f;
+    private float blendShapeValue = 0f;
+    private float lineYMin = 0.15933f;
+    private float lineZMin = -0.17681f;
+    private float lineYMax = 0.1497f;
+    private float lineZMax = -0.1505f;
+
     void Start()
     {
         previousRotation = transform.localRotation;
@@ -43,6 +56,24 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
         targetVector = targetVector.normalized;
         transform.localRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
         previousVector = targetVector;
+
+        float fishingPoleDistance = fishingPole.GetCastDistance();
+        if (fishingPole.lureJoint != null)
+        {
+            if (fishingPoleDistance != castDistance)
+            {
+                castDistance = fishingPoleDistance;
+                blendShapeValue = 100f * castDistance / maxCastDistance;
+            }
+            else blendShapeValue = 100f * (fishingPole.lureJoint.minDistance / castDistance) * (castDistance / maxCastDistance);
+        }
+        if (blendShapeValue > maxBlendShapeValue) blendShapeValue = maxBlendShapeValue;
+        fishingPoleRenderer.SetBlendShapeWeight(0, blendShapeValue);
+
+        Vector3 pos = fishingLine.localPosition;
+
+        pos.y = lineYMin + ((blendShapeValue / 59f) * (lineYMax - lineYMin));
+        pos.z = lineZMin + ((blendShapeValue / 59f) * (lineZMax - lineZMin));
         if (transform.localRotation != previousRotation)
         {
             Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * transform.localRotation;
@@ -50,6 +81,8 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
             float delta = fromPrevToCurrent.eulerAngles.x;
             if (delta > 180) delta -= 360;
             angle -= delta;
+
+            pos.x = Mathf.Sin(angle / 1000f) * sinAmplitude;
 
             previousRotation = transform.localRotation;
 
@@ -60,7 +93,10 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
             if (fishingPole != null)
             {
                 if (delta < 0f) fishingPole.AddSpring(-delta);
+                
             }
         }
+
+        fishingLine.localPosition = pos;
     }
 }

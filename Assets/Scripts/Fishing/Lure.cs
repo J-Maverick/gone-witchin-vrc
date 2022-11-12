@@ -10,13 +10,7 @@ public class Lure : UdonSharpBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "LakeWater")
-        {
-            fishingPole.SplashDown(Location.lake);
-        }
-        else if (collision.gameObject.name == "CaveWater")
-        {
-            fishingPole.SplashDown(Location.cave);
-        }
+        Water water = collision.gameObject.GetComponent<Water>();
+        if (water != null) fishingPole.SplashDown(water);
     }
 }

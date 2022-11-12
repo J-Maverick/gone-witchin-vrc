@@ -3,7 +3,27 @@ guid: d5ea2b8d6c23c3b43b1a34b4fd7974ee
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DisplacedRocks02
+    second: {fileID: 2100000, guid: d6266385eea90724e945d40fbd514f71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DisplacedRocks04
+    second: {fileID: 2100000, guid: 286cbb1c3f3f16643ade1d72327252de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf
+    second: {fileID: 2100000, guid: c3322b99ab609b147a59471bdaa0c281, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TreeBark
+    second: {fileID: 2100000, guid: deee4171703b186459d800d76645016f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

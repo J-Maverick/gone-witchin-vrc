@@ -11,8 +11,8 @@ public class RandomPointGenerator : UdonSharpBehaviour
     public Transform zMin;
     public Transform zMax;
 
-    public Vector3 GetRandomPointOnYPlane()
+    public Vector3 GetRandomPointOnYPlane(float y)
     {
-        return new Vector3(Random.Range(xMin.position.x, xMax.position.x), 0f, Random.Range(zMin.position.z, zMax.position.z));
+        return new Vector3(Random.Range(xMin.position.x, xMax.position.x), y, Random.Range(zMin.position.z, zMax.position.z));
     }
 }

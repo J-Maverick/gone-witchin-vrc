@@ -20,10 +20,12 @@ public class Fish : UdonSharpBehaviour
 {
     public FishData fishData;
     public FishDataPool fishDataPool;
+    public FishUnderwaterColors underwaterColors;
 
     public FishState state = FishState.reset;
     
     public float weight = 1f;
+    public float size = 1f;
 
     public SkinnedMeshRenderer meshRenderer;
     public Material material;
@@ -53,6 +55,7 @@ public class Fish : UdonSharpBehaviour
 
     public void DisablePickup()
     {
+        Debug.LogFormat("{0}: Disable Pickup", name);
         meshCollider.enabled = false;
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         pickup.pickupable = false;
@@ -68,16 +71,42 @@ public class Fish : UdonSharpBehaviour
     public override void OnPickup()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
-        meshCollider.isTrigger = false;
         state = FishState.caught;
+        meshCollider.isTrigger = false;
+    }
+
+    public override void OnDrop()
+    {
+        meshCollider.isTrigger = false;
+    }
+
+    private void SetWaterLevel(Location location)
+    {
+        if (location == Location.lake)
+        {
+            material.SetFloat("_WaterLevel", 0.001f);
+            material.SetColor("_LightShadowColor", underwaterColors.lakeShadowColor);
+            material.SetColor("_DarkShadowColor", underwaterColors.lakeShadowColor);
+        }
+        else if (location == Location.cave)
+        {
+            material.SetFloat("_WaterLevel", -10.15f);
+            material.SetColor("_LightShadowColor", underwaterColors.caveShadowColor);
+            material.SetColor("_DarkShadowColor", underwaterColors.caveShadowColor);
+        }
     }
 
     public void GetRandomFish(Location location, Bait bait)
     {
         fishData = fishDataPool.GetRandomFishData(location, bait);
-        if (fishData.mesh != null) meshRenderer.sharedMesh = fishData.mesh;
+        if (fishData.mesh != null)
+        {
+            meshRenderer.sharedMesh = fishData.mesh;
+            meshCollider.sharedMesh = fishData.mesh;
+        }
 
         material.color = fishData.color;
+        SetWaterLevel(location);
         //meshRenderer.material = material;
 
         exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio);
@@ -87,7 +116,7 @@ public class Fish : UdonSharpBehaviour
     
     public void SetRandomSize()
     {
-        float size = Random.Range(0f, 1f);
+        size = Random.Range(0f, 1f);
         weight = fishData.minWeight + size * (fishData.maxWeight - fishData.minWeight);
         transform.localScale = Vector3.one * (fishData.minScale + size * (fishData.maxScale - fishData.minScale));
 
@@ -144,13 +173,19 @@ public class Fish : UdonSharpBehaviour
     public void Reset()
     {
         animator.SetBool("Bite", false);
+        animator.SetBool("IsCaught", false);
         state = FishState.reset;
         DisablePickup();
     }
 
     public float GetForce()
     {
-        return (75f + weight) * fishData.forceMultiplier * exhaustion;
+        return (50f + (size * 100f)) * fishData.forceMultiplier * exhaustion;
+    }
+
+    private void Update()
+    {
+        Debug.LogFormat("{0}: collider is trigger: {1}", name, meshCollider.isTrigger);
     }
 
 }
