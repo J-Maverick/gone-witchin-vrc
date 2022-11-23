@@ -89,7 +89,7 @@ public class FishForce : UdonSharpBehaviour
 
     private void Fight()
     {
-        Debug.LogFormat("{0}: Fighting", name);
+        fishingPole.RunOut();
         fish.Fight();
         if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
@@ -102,7 +102,7 @@ public class FishForce : UdonSharpBehaviour
 
     private void Caught()
     {
-        gameObject.layer = 24;
+        gameObject.layer = 27;
         Debug.LogFormat("{0}: Caught", name);
         Vector3 rot = fishBody.rotation.eulerAngles;
         rot.x = -90f;
@@ -119,9 +119,10 @@ public class FishForce : UdonSharpBehaviour
         Debug.LogFormat("{0}: Triggering Fight", name);
         if (fish.TriggerFight())
         {
-            fishingPole.FishOn();
+            fishingPole.FishOn(fish.size);
             Fight();
             RandomWaitTime();
+            Debug.LogFormat("{0}: Fighting!", name);
         }
     }
 
@@ -165,7 +166,6 @@ public class FishForce : UdonSharpBehaviour
         }
         else
         {
-            Debug.LogFormat("{0}: Waiting for bite", name);
             fishTimer += Time.fixedDeltaTime;
         }
     }
@@ -183,6 +183,15 @@ public class FishForce : UdonSharpBehaviour
         if (!fishingPole.fishOn)
         {
             if (fish.state == FishState.fighting | fish.state == FishState.catchable | fish.state == FishState.catching) ResetFish();
+        }
+    }
+
+    private void ResetOnReelTimeout()
+    {
+        if (!fishingPole.reeling)
+        {
+            Debug.LogFormat("{0}: Lost fish due to reel timeout!", name);
+            fishingPole.FishOff();
         }
     }
 
@@ -214,12 +223,16 @@ public class FishForce : UdonSharpBehaviour
                 case FishState.fighting:
                     LockLure();
                     Fight();
+                    ResetOnReelTimeout();
                     break;
                 case FishState.catchable:
                     LockLure();
                     Fight();
-                    float distance = (lure.position - fishingPole.transform.position).magnitude;
-                    if (distance < catchDistanceThreshold) fish.Catch();
+                    Vector3 pos = fishingPole.transform.position;
+                    float yOffset = (pos.y - lure.position.y) / 2f;
+                    pos.y = lure.position.y;
+                    float distance = (lure.position - pos).magnitude;
+                    if (distance < catchDistanceThreshold + yOffset) fish.Catch();
                     break;
                 case FishState.catching:
                     fishingPole.UnlockLure();

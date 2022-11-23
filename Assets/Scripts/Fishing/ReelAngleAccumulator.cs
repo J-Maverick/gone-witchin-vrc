@@ -27,7 +27,7 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
     public float castDistance = 0f;
     public float maxCastDistance = 60f;
     public float maxBlendShapeValue = 59f;
-    private float blendShapeValue = 0f;
+    public float blendShapeValue = 0f;
     private float lineYMin = 0.15933f;
     private float lineZMin = -0.17681f;
     private float lineYMax = 0.1497f;
@@ -65,6 +65,7 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
                 castDistance = fishingPoleDistance;
                 blendShapeValue = 100f * castDistance / maxCastDistance;
             }
+            else if (castDistance == 0f) blendShapeValue = 0f;
             else blendShapeValue = 100f * (fishingPole.lureJoint.minDistance / castDistance) * (castDistance / maxCastDistance);
         }
         if (blendShapeValue > maxBlendShapeValue) blendShapeValue = maxBlendShapeValue;
@@ -96,7 +97,6 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
                 
             }
         }
-
         fishingLine.localPosition = pos;
     }
 }

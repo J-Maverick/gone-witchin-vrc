@@ -47,10 +47,43 @@ public class Fish : UdonSharpBehaviour
 
     private readonly float defaultSwimSpeed = 10f;
 
+    [UdonSynced] public int stateIDSync = 0;
+    [UdonSynced] public bool pickupEnabledSync = false;
+    public bool pickupEnabled = false;
+
     public void Start()
     {
         DisablePickup();
         material = meshRenderer.material;
+    }
+
+    public override void OnPreSerialization()
+    {
+        if (Networking.GetOwner(gameObject) == Networking.LocalPlayer)
+        {
+            stateIDSync = (int)state;
+            pickupEnabledSync = pickupEnabled;
+        }
+    }
+
+    public override void OnDeserialization()
+    {
+        if (Networking.GetOwner(gameObject) != Networking.LocalPlayer)
+        {
+            state = (FishState)stateIDSync;
+            if (pickupEnabled != pickupEnabledSync)
+            {
+                switch (pickupEnabledSync)
+                {
+                    case true:
+                        EnablePickup();
+                        break;
+                    case false:
+                        DisablePickup();
+                        break;
+                }
+            }
+        }
     }
 
     public void DisablePickup()
@@ -60,12 +93,14 @@ public class Fish : UdonSharpBehaviour
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         pickup.pickupable = false;
         meshCollider.isTrigger = true;
+        pickupEnabled = false;
     }
 
     public void EnablePickup()
     {
         meshCollider.enabled = true;
         pickup.pickupable = true;
+        pickupEnabled = true;
     }
 
     public override void OnPickup()
@@ -155,7 +190,11 @@ public class Fish : UdonSharpBehaviour
             exhaustionTimer = 0f;
         }
 
-        if (exhaustion < catchThreshold && state == FishState.fighting) state = FishState.catchable;
+        if (exhaustion < catchThreshold && state == FishState.fighting)
+        {
+            Debug.LogFormat("{0}: Catchable", name);
+            state = FishState.catchable;
+        }
     }
 
     public void Catch()
@@ -178,14 +217,15 @@ public class Fish : UdonSharpBehaviour
         DisablePickup();
     }
 
+    public void Basket()
+    {
+        Reset();
+        state = FishState.basket;
+    }
+
     public float GetForce()
     {
         return (50f + (size * 100f)) * fishData.forceMultiplier * exhaustion;
-    }
-
-    private void Update()
-    {
-        Debug.LogFormat("{0}: collider is trigger: {1}", name, meshCollider.isTrigger);
     }
 
 }

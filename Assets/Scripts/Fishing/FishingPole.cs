@@ -59,6 +59,16 @@ public class FishingPole : UdonSharpBehaviour
 
     public float castDistance = 0f;
 
+    public float minRunoutTime = 0.75f;
+    public float maxRunoutTime = 2f;
+    public float runoutTime = 0f;
+    public float runoutTimer = 0f;
+    public float runoutOffsetDistance = 5f;
+
+    public bool reeling = true;
+    public float reelingTimer = 0f;
+    public float reelingInactiveTime = 10f;
+
     void Start()
     {
         lureJoint = lure.GetComponent<SpringJoint>();
@@ -142,7 +152,7 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
-    public void FishOn()
+    public void FishOn(float fishSize)
     {
         if (inWater && !fishOn)
         {
@@ -153,11 +163,26 @@ public class FishingPole : UdonSharpBehaviour
             addSpringRatio = fishOnSpringRatio;
             distanceRatio = fishOnDistanceRatio;
             SetLureText();
+            runoutTime = minRunoutTime + (fishSize * (maxRunoutTime - minRunoutTime));
+            runoutTimer = 0f;
+            reelingTimer = 0f;
+            reeling = true;
             fishOn = true;
         }
     }
 
-    private void FishOff()
+    public void RunOut()
+    {
+        if (runoutTimer < runoutTime)
+        {
+            float offsetDistance = (lure.transform.position - transform.position).magnitude - runoutOffsetDistance;
+            if (offsetDistance > lureJoint.minDistance) lureJoint.minDistance = offsetDistance;
+            // This is where we would play the runout sound I think
+        }
+        runoutTimer += Time.fixedDeltaTime;
+    }
+
+    public void FishOff()
     {
         casted = true;
         fishOn = false;
@@ -201,6 +226,8 @@ public class FishingPole : UdonSharpBehaviour
 
     public void AddSpring(float spring)
     {
+        reeling = true;
+        reelingTimer = 0f;
         if (inWater)
         {
             if (lureJoint.spring < maxSpring)
@@ -233,6 +260,11 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (reelingTimer > reelingInactiveTime) reeling = false;
+        else reelingTimer += Time.deltaTime;
+    }
 
     /* =================================================
       

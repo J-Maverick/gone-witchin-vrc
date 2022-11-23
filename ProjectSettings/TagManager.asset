@@ -32,8 +32,8 @@ TagManager:
   - InvisibleWall
   - Fish
   - Basket
-  - 
-  - 
+  - FishableWater
+  - NoWaterOrPlayerCollision
   - 
   - 
   - 
