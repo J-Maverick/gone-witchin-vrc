@@ -19,13 +19,15 @@ public enum FishState
 public class Fish : UdonSharpBehaviour
 {
     public FishData fishData;
+    public int fishID;
+    [UdonSynced] public int fishIDSync;
     public FishDataPool fishDataPool;
     public FishUnderwaterColors underwaterColors;
 
     public FishState state = FishState.reset;
-    
-    public float weight = 1f;
-    public float size = 1f;
+
+    [UdonSynced] public float weight = 1f;
+    [UdonSynced] public float size = 1f;
 
     public SkinnedMeshRenderer meshRenderer;
     public Material material;
@@ -38,7 +40,7 @@ public class Fish : UdonSharpBehaviour
 
     public float exhaustionReductionRatio = 0.04f;
     public float exhaustionRatio = 1f;
-    public float exhaustion = 1f;
+    [UdonSynced] public float exhaustion = 1f;
 
     public float exhaustionTime = 1f;
     public float exhaustionTimer = 0f;
@@ -63,12 +65,13 @@ public class Fish : UdonSharpBehaviour
         {
             stateIDSync = (int)state;
             pickupEnabledSync = pickupEnabled;
+            fishIDSync = fishID;
         }
     }
 
     public override void OnDeserialization()
     {
-        if (Networking.GetOwner(gameObject) != Networking.LocalPlayer)
+        if (!Networking.GetOwner(gameObject).isLocal)
         {
             state = (FishState)stateIDSync;
             if (pickupEnabled != pickupEnabledSync)
@@ -83,6 +86,18 @@ public class Fish : UdonSharpBehaviour
                         break;
                 }
             }
+            if (fishID != fishIDSync)
+            {
+                if (fishIDSync == -1) Reset();
+                else
+                {
+                    fishData = fishDataPool.GetFishByID(fishIDSync);
+                    fishID = fishIDSync;
+                    SetFishSizeProperties();
+                }
+            }
+            else if (fishData != null && meshRenderer.sharedMesh != fishData.mesh) SetFishSizeProperties();
+            SetStateFromDeserialization();
         }
     }
 
@@ -119,13 +134,13 @@ public class Fish : UdonSharpBehaviour
     {
         if (location == Location.lake)
         {
-            material.SetFloat("_WaterLevel", 0.001f);
+            material.SetFloat("_WaterLevel", LocationOffset.Lake);
             material.SetColor("_LightShadowColor", underwaterColors.lakeShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.lakeShadowColor);
         }
         else if (location == Location.cave)
         {
-            material.SetFloat("_WaterLevel", -10.15f);
+            material.SetFloat("_WaterLevel", LocationOffset.Cave);
             material.SetColor("_LightShadowColor", underwaterColors.caveShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.caveShadowColor);
         }
@@ -133,7 +148,27 @@ public class Fish : UdonSharpBehaviour
 
     public void GetRandomFish(Location location, Bait bait)
     {
-        fishData = fishDataPool.GetRandomFishData(location, bait);
+        if (Networking.GetOwner(gameObject).isLocal)
+        {
+            fishData = fishDataPool.GetRandomFishData(location, bait);
+            SetWaterLevel(location);
+            exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio);
+            SetFishSizeProperties();
+            fishID = fishData.ID;
+        }
+    }
+
+    public void SetRandomSize()
+    {
+        size = Random.Range(0f, 1f);
+        SetFishSizeProperties();
+        Debug.LogFormat("{0}: Got random fish: {1} | size: {2} | weight: {3} | scale: {4}", name, fishData.name, size, weight, transform.localScale.x);
+    }
+
+    public void SetFishSizeProperties()
+    {
+        weight = fishData.minWeight + size * (fishData.maxWeight - fishData.minWeight);
+        transform.localScale = Vector3.one * (fishData.minScale + size * (fishData.maxScale - fishData.minScale));
         if (fishData.mesh != null)
         {
             meshRenderer.sharedMesh = fishData.mesh;
@@ -141,23 +176,35 @@ public class Fish : UdonSharpBehaviour
         }
 
         material.color = fishData.color;
-        SetWaterLevel(location);
         //meshRenderer.material = material;
 
-        exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio);
         pickup.InteractionText = fishData.name;
-        SetRandomSize();
     }
-    
-    public void SetRandomSize()
+
+    public void SetStateFromDeserialization()
     {
-        size = Random.Range(0f, 1f);
-        weight = fishData.minWeight + size * (fishData.maxWeight - fishData.minWeight);
-        transform.localScale = Vector3.one * (fishData.minScale + size * (fishData.maxScale - fishData.minScale));
-
-        Debug.LogFormat("{0}: Got random fish: {1} | size: {2} | weight: {3} | scale: {4}", name, fishData.name, size, weight, transform.localScale.x);
-
-
+        if (state == FishState.biting)
+        {
+            animator.SetBool("Bite", true);
+            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier);
+        }
+        else if (state == FishState.fighting || state == FishState.catchable)
+        {
+            animator.SetBool("Bite", true);
+            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier * exhaustion);
+        }
+        else if (state == FishState.catching || state == FishState.caught)
+        {
+            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier * exhaustion);
+            animator.SetBool("Bite", true);
+            animator.SetBool("IsCaught", true);
+            material.SetFloat("_WaterLevel", -100f);
+        }
+        else if (state == FishState.reset || state == FishState.basket)
+        {
+            animator.SetBool("Bite", false);
+            animator.SetBool("IsCaught", false);
+        }
     }
 
     public void Bite(Location location, Bait bait)
@@ -213,6 +260,8 @@ public class Fish : UdonSharpBehaviour
     {
         animator.SetBool("Bite", false);
         animator.SetBool("IsCaught", false);
+        fishID = -1;
+        fishData = null;
         state = FishState.reset;
         DisablePickup();
     }

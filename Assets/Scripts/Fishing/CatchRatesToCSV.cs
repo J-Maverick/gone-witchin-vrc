@@ -43,4 +43,15 @@ public class CatchRatesToCSV : MonoBehaviour
             }
         }
     }
+
+    [ContextMenu("Give Fish ID's")]
+    public void GiveFishIDs()
+    {
+        int ID = 0;
+        foreach (FishData fish in fishDataPool.fishData)
+        {
+            ID += 1;
+            fish.ID = ID;
+        }
+    }
 }

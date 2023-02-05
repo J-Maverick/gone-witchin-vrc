@@ -56,6 +56,8 @@ public class FishingPole : UdonSharpBehaviour
     public bool fishOn = false;
 
     public Water water = null;
+    public Water lakeWater;
+    public Water caveWater;
 
     public float castDistance = 0f;
 
@@ -97,23 +99,22 @@ public class FishingPole : UdonSharpBehaviour
     {
         isHeld = false;
     }
-    
+
     public override void OnPickupUseDown()
     {
-        if (fishOn) FishOff();
+        if (fishOn) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(FishOff));
         else if (casting || casted || inWater)
         {
-            ResetLure();
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ResetLure));
         }
-        else casting = true;
+        else SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(CastingEvent));
     }
+
     public override void OnPickupUseUp()
     {
         if (casting)
         {
-            lureJoint.spring = castTension;
-            SetLureText();
-            casted = true;
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(CastEvent));
         }
     }
 
@@ -127,48 +128,87 @@ public class FishingPole : UdonSharpBehaviour
         return castDistance;
     }
 
+    public void CastingEvent()
+    {
+        Debug.Log("Casting Event Triggered");
+        casting = true;
+    }
+
+    public void CastEvent()
+    {
+        Debug.Log("Cast Event Triggered");
+        lureJoint.spring = castTension;
+        SetLureText();
+        casted = true;
+    }
+
+    public void SetWater(Water newWater)
+    {
+        if (newWater == lakeWater) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetLakeWater));
+        else if (newWater == caveWater) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetCaveWater));
+    }
+
+    public void SetLakeWater()
+    {
+        water = lakeWater;
+    }
+
+    public void SetCaveWater()
+    {
+        water = caveWater;
+    }
     public void SplashDown(Water splashDownWater)
     {
-        if (water != splashDownWater) water = splashDownWater;
+        if (water != splashDownWater) SetWater(splashDownWater);
         if (casted)
         {
-            addSpringRatio = castSpringRatio;
-            distanceRatio = castDistanceRatio;
-            lureJoint.spring = castTension;
-            lureRigidBody.mass = castWeight;
-            lureRigidBody.drag = castDrag;
-            castDistance = (lure.transform.position - transform.position).magnitude;
-            lureJoint.minDistance = castDistance;
-
-            lureRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
-            hookJoint.spring = staticHookTension;
-            hookRigidBody.mass = staticHookMass;
-            hookRigidBody.drag = staticHookDrag;
-            hookJoint.minDistance = staticHookDistance;
-            inWater = true;
-            casting = false;
-            casted = false;
-            SetLureText();
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetSplashDownParams));
         }
+    }
+
+    public void SetSplashDownParams()
+    {
+        addSpringRatio = castSpringRatio;
+        distanceRatio = castDistanceRatio;
+        lureJoint.spring = castTension;
+        lureRigidBody.mass = castWeight;
+        lureRigidBody.drag = castDrag;
+        castDistance = (lure.transform.position - transform.position).magnitude;
+        lureJoint.minDistance = castDistance;
+
+        lureRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+        hookJoint.spring = staticHookTension;
+        hookRigidBody.mass = staticHookMass;
+        hookRigidBody.drag = staticHookDrag;
+        hookJoint.minDistance = staticHookDistance;
+        inWater = true;
+        casting = false;
+        casted = false;
+        SetLureText();
     }
 
     public void FishOn(float fishSize)
     {
         if (inWater && !fishOn)
         {
-            lureRigidBody.drag = catchDrag;
-            lureRigidBody.mass = catchWeight;
-            lureJoint.spring = catchTension;
-            lureJoint.minDistance = (lure.transform.position - transform.position).magnitude;
-            addSpringRatio = fishOnSpringRatio;
-            distanceRatio = fishOnDistanceRatio;
-            SetLureText();
             runoutTime = minRunoutTime + (fishSize * (maxRunoutTime - minRunoutTime));
-            runoutTimer = 0f;
-            reelingTimer = 0f;
-            reeling = true;
-            fishOn = true;
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetFishOnParams));
         }
+    }
+
+    public void SetFishOnParams()
+    {
+        lureRigidBody.drag = catchDrag;
+        lureRigidBody.mass = catchWeight;
+        lureJoint.spring = catchTension;
+        lureJoint.minDistance = (lure.transform.position - transform.position).magnitude;
+        addSpringRatio = fishOnSpringRatio;
+        distanceRatio = fishOnDistanceRatio;
+        SetLureText();
+        runoutTimer = 0f;
+        reelingTimer = 0f;
+        reeling = true;
+        fishOn = true;
     }
 
     public void RunOut()
@@ -184,20 +224,25 @@ public class FishingPole : UdonSharpBehaviour
 
     public void FishOff()
     {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetFishOffParams));
+        SplashDown(water);      
+    }
+
+    public void SetFishOffParams()
+    {
         casted = true;
         fishOn = false;
-        SplashDown(water);
     }
 
     public void UnlockLure()
     {
-        if (fishOn && lureRigidBody.constraints != RigidbodyConstraints.None)
+        if (lureRigidBody.constraints != RigidbodyConstraints.None)
         {
             lureRigidBody.constraints = RigidbodyConstraints.None;
             lureRigidBody.mass /= 10f;
             lureRigidBody.drag /= 2f;
             lureRigidBody.angularDrag = 1f;
-            hookRigidBody.mass *= fishForce.fish.weight;
+            if (fishForce.fish != null) hookRigidBody.mass *= fishForce.fish.weight;
             hookJoint.spring *= 2f;
             hookJoint.minDistance = 0.1f;
             lureJoint.minDistance = (lure.transform.position - transform.position).magnitude - 0.25f;
@@ -205,8 +250,14 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
+    public void ResetLureSync()
+    {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ResetLure));
+    }
+
     public void ResetLure()
     {
+        Debug.Log("Reset Lure Event Triggered");
         lureRigidBody.constraints = RigidbodyConstraints.None;
         lureJoint.spring = staticTension;
         lureRigidBody.mass = staticMass;
@@ -274,6 +325,12 @@ public class FishingPole : UdonSharpBehaviour
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
     {
-        if (player.isLocal) Networking.SetOwner(player, lure);
+        if (player.isLocal)
+        {
+            Networking.SetOwner(player, lure);
+            Networking.SetOwner(player, hook);
+            if (fishForce.fish != null) Networking.SetOwner(player, fishForce.fish.gameObject);
+            //TODO add all required objects -- or make ownership transfer cascade
+        }
     }
 }

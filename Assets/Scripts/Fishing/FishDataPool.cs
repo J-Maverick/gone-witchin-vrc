@@ -35,6 +35,15 @@ public class FishDataPool : UdonSharpBehaviour
         return null;
     }
 
+    public FishData GetFishByID(int fishID)
+    {
+        foreach (FishData fish in fishData)
+        {
+            if (fish.ID == fishID) return fish;
+        }
+        return null;
+    }
+
     private void Update()
     {
         if (testFish)

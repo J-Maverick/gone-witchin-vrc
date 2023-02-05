@@ -40,6 +40,12 @@ public class FishForce : UdonSharpBehaviour
     public Bait bait = Bait.none;
 
     public float catchDistanceThreshold = 5f;
+
+    public bool localOwner = false;
+
+    public bool lureLocked = false;
+
+    public int layerSync;
     
     //Networking.SetOwner(player, objectPool.gameObject);
     //    GameObject spawnedStation = objectPool.TryToSpawn();
@@ -48,17 +54,23 @@ public class FishForce : UdonSharpBehaviour
     void Start()
     {
         RandomWaitTime();
+
+        if (Networking.GetOwner(gameObject).isLocal) localOwner = true;
+        else localOwner = false;
     }
 
     public void GetFish()
     {
         if (fish == null)
         {
-            Networking.SetOwner(Networking.GetOwner(gameObject), gameObject);
+            Networking.SetOwner(Networking.GetOwner(gameObject), fishObjectPool.gameObject);
             GameObject spawnedFish = fishObjectPool.TryToSpawn();
-            fish = spawnedFish.GetComponent<Fish>();
-            Networking.SetOwner(Networking.GetOwner(gameObject), spawnedFish);
-            fishBody = spawnedFish.transform;
+            if (spawnedFish != null)
+            {
+                fish = spawnedFish.GetComponent<Fish>();
+                Networking.SetOwner(Networking.GetOwner(gameObject), spawnedFish);
+                fishBody = spawnedFish.transform;
+            }
         }
     }
 
@@ -87,7 +99,7 @@ public class FishForce : UdonSharpBehaviour
         RandomChangeTime();
     }
 
-    private void Fight()
+    public void Fight()
     {
         fishingPole.RunOut();
         fish.Fight();
@@ -100,7 +112,7 @@ public class FishForce : UdonSharpBehaviour
         directionChangeTimer += Time.fixedDeltaTime;
     }
 
-    private void Caught()
+    public void Caught()
     {
         gameObject.layer = 27;
         Debug.LogFormat("{0}: Caught", name);
@@ -114,7 +126,7 @@ public class FishForce : UdonSharpBehaviour
         directionChangeTimer += Time.fixedDeltaTime;
     }
 
-    private void TriggerFight()
+    public void TriggerFight()
     {
         Debug.LogFormat("{0}: Triggering Fight", name);
         if (fish.TriggerFight())
@@ -126,7 +138,7 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
-    private void Bite()
+    public void Bite()
     {
         Debug.LogFormat("{0}: Bite", name);
         RandomDirection();
@@ -136,11 +148,11 @@ public class FishForce : UdonSharpBehaviour
         fish.Bite(fishingPole.water.location, bait);
     }
 
-    private void LockLure()
+    public void OverrideLurePosition()
     {
         float yOffset = 0f;
-        if (fishingPole.water.location == Location.lake) yOffset = 0f;
-        else if (fishingPole.water.location == Location.cave) yOffset = -10.152f;
+        if (fishingPole.water.location == Location.lake) yOffset = LocationOffset.Lake;
+        else if (fishingPole.water.location == Location.cave) yOffset = LocationOffset.Cave;
 
         Vector3 pos = lure.position;
         pos.y = yOffset + 0.02f;
@@ -153,12 +165,12 @@ public class FishForce : UdonSharpBehaviour
     {
         gameObject.layer = 4;
         Debug.LogFormat("{0}: Resetting", name);
-        fish.Reset();
+        if (fish != null) fish.Reset();
         RandomWaitTime();
         RandomChangeTime();
     }
 
-    private void CheckBite()
+    public void CheckBite()
     {
         if (fishTimer > fishWaitTime)
         {
@@ -178,15 +190,15 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
-    private void ResetOnFishOff()
+    public void ResetOnFishOff()
     {
         if (!fishingPole.fishOn)
         {
-            if (fish.state == FishState.fighting | fish.state == FishState.catchable | fish.state == FishState.catching) ResetFish();
+            if (fish.state == FishState.fighting | fish.state == FishState.catchable | fish.state == FishState.catching) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ResetFish));
         }
     }
 
-    private void ResetOnReelTimeout()
+    public void ResetOnReelTimeout()
     {
         if (!fishingPole.reeling)
         {
@@ -195,17 +207,28 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
-    private void RemoveFish()
+    public void RemoveFish()
     {
         gameObject.layer = 4;
         fish = null;
         fishBody = null;
-        fishingPole.ResetLure();
+        fishingPole.ResetLureSync();
+    }
+
+    public void LockLure()
+    {
+        lureLocked = true;
+    }
+
+    public void UnlockLure()
+    {
+        lureLocked = false;
+        fishingPole.UnlockLure();
     }
 
     private void FixedUpdate()
     {
-        if (fishingPole.inWater)
+        if (fishingPole.inWater && localOwner)
         {
             GetFish();
             ResetOnFishOff();
@@ -213,20 +236,20 @@ public class FishForce : UdonSharpBehaviour
             switch (fish.state)
             {
                 case FishState.reset:
-                    LockLure();
+                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
                     CheckBite();
                     break;
                 case FishState.biting:
-                    LockLure();
+                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
                     TriggerFight();
                     break;
                 case FishState.fighting:
-                    LockLure();
+                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
                     Fight();
                     ResetOnReelTimeout();
                     break;
                 case FishState.catchable:
-                    LockLure();
+                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
                     Fight();
                     Vector3 pos = fishingPole.transform.position;
                     float yOffset = (pos.y - lure.position.y) / 2f;
@@ -235,14 +258,33 @@ public class FishForce : UdonSharpBehaviour
                     if (distance < catchDistanceThreshold + yOffset) fish.Catch();
                     break;
                 case FishState.catching:
-                    fishingPole.UnlockLure();
+                    if (lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
                     Caught();
                     break;
                 case FishState.caught:
                     RemoveFish();
                     break;
             }
+
+            if (lureLocked) OverrideLurePosition();
         }
         else if (fish != null && (fish.state != FishState.reset || fishTimer > 0f)) ResetFish();
+        else if (lureLocked) UnlockLure();
+    }
+
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        if (player.isLocal) localOwner = true;
+        else localOwner = false;
+    }
+
+    public override void OnPreSerialization()
+    {
+        if (localOwner) layerSync = gameObject.layer;
+    }
+
+    public override void OnDeserialization()
+    {
+        if (!localOwner) gameObject.layer = layerSync;
     }
 }

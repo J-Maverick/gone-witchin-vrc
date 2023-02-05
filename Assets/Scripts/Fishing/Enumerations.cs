@@ -19,3 +19,10 @@ public enum Location
     lake = 0,
     cave = 1
 }
+
+
+public static class LocationOffset
+{
+    public const float Lake = 0.001f;
+    public const float Cave = -9.654f;
+}
