@@ -3,6 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+using VRC.Udon.Common;
 
 public class Basket : UdonSharpBehaviour
 {
@@ -24,15 +25,15 @@ public class Basket : UdonSharpBehaviour
         while (transform.childCount > 0)
         {
             Transform child = transform.GetChild(0);
-            child.gameObject.SetActive(true);
             child.SetParent(null);
+            child.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DeBasket");
         }
     }
 
     void AddToBasket(GameObject fish)
     {
         fish.transform.SetParent(transform);
-        fish.SetActive(false);
+        fish.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Basket");
     }
 
     private void OnCollisionEnter(Collision other)
@@ -42,5 +43,10 @@ public class Basket : UdonSharpBehaviour
         {
             AddToBasket(other.gameObject);
         }
+    }
+
+    public override void InputUse(bool value, UdonInputEventArgs args)
+    {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DumpContents");
     }
 }

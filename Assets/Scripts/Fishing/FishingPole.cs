@@ -9,6 +9,7 @@ public class FishingPole : UdonSharpBehaviour
 {
     public GameObject lure;
     public GameObject hook;
+    public GameObject[] ownedObjects;
 
     public FishForce fishForce;
 
@@ -93,6 +94,8 @@ public class FishingPole : UdonSharpBehaviour
     public override void OnPickup()
     {
         isHeld = true;
+        hookRigidBody.WakeUp();
+        lureRigidBody.WakeUp();
     }
 
     public override void OnDrop()
@@ -327,9 +330,10 @@ public class FishingPole : UdonSharpBehaviour
     {
         if (player.isLocal)
         {
-            Networking.SetOwner(player, lure);
-            Networking.SetOwner(player, hook);
+            foreach (GameObject obj in ownedObjects) Networking.SetOwner(player, obj);
             if (fishForce.fish != null) Networking.SetOwner(player, fishForce.fish.gameObject);
+            lureRigidBody.WakeUp();
+            hookRigidBody.WakeUp();
             //TODO add all required objects -- or make ownership transfer cascade
         }
     }

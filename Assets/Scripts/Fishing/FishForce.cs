@@ -55,7 +55,7 @@ public class FishForce : UdonSharpBehaviour
     {
         RandomWaitTime();
 
-        if (Networking.GetOwner(gameObject).isLocal) localOwner = true;
+        if (Networking.GetOwner(gameObject) != null && Networking.GetOwner(gameObject).isLocal) localOwner = true;
         else localOwner = false;
     }
 

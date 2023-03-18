@@ -4,6 +4,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class ReagentTank : UdonSharpBehaviour
 {
     public Reagent reagent;
@@ -17,16 +18,20 @@ public class ReagentTank : UdonSharpBehaviour
 
     public float maxFlow = 0.6f;
     public float flow = 0f;
-    public float fillLevel = 1f;
+    [UdonSynced] public float fillLevel = 1f;
     public float pourMultiplier = 0.1f;
+
+    private float nextTime = 0f;
+    public float intervalTime = 3f;
+    private int nJoinSyncs = 10;
+    public int joinSyncCounter = 0;
 
     void Start()
     {
+        if (Networking.LocalPlayer.isMaster) fillLevel = Random.Range(0.05f, 1f);
         shaderControl.SetColor(reagent.color);
         particleMaterial = particleRenderer.material;
         particleMaterial.color = reagent.color;
-        fillLevel = Random.Range(0.05f, 1f);
-        shaderControl.fillLevel = fillLevel;
         lever.pickup.InteractionText = reagent.name;
     }
 
@@ -40,12 +45,27 @@ public class ReagentTank : UdonSharpBehaviour
 
         fillLevel -= flow * pourMultiplier * Time.deltaTime;
         if (fillLevel < 0f) fillLevel = 0f;
-        if (shaderControl != null) shaderControl.fillLevel = fillLevel;
+        if (shaderControl != null) UpdateFill();
     }
 
     private void Update()
     {
         PourControl();
+        if (joinSyncCounter < nJoinSyncs && Time.realtimeSinceStartup > nextTime)
+        {
+            RequestSerialization();
+            joinSyncCounter++;
+            nextTime = Time.realtimeSinceStartup + intervalTime;
+        }
     }
 
+    void UpdateFill()
+    {
+        shaderControl.fillLevel = fillLevel;
+    }
+
+    public void Sync()
+    {
+        RequestSerialization();
+    }
 }

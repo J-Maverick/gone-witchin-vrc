@@ -18,16 +18,17 @@ public enum FishState
 
 public class Fish : UdonSharpBehaviour
 {
+    public FishSync fishSync;
+
     public FishData fishData;
     public int fishID;
-    [UdonSynced] public int fishIDSync;
     public FishDataPool fishDataPool;
     public FishUnderwaterColors underwaterColors;
 
     public FishState state = FishState.reset;
 
-    [UdonSynced] public float weight = 1f;
-    [UdonSynced] public float size = 1f;
+    public float weight = 1f;
+    public float size = 1f;
 
     public SkinnedMeshRenderer meshRenderer;
     public Material material;
@@ -40,65 +41,23 @@ public class Fish : UdonSharpBehaviour
 
     public float exhaustionReductionRatio = 0.04f;
     public float exhaustionRatio = 1f;
-    [UdonSynced] public float exhaustion = 1f;
+    public float exhaustion = 1f;
 
     public float exhaustionTime = 1f;
     public float exhaustionTimer = 0f;
 
     public float catchThreshold = 0.15f;
 
-    private readonly float defaultSwimSpeed = 10f;
-
-    [UdonSynced] public int stateIDSync = 0;
-    [UdonSynced] public bool pickupEnabledSync = false;
+    public readonly float defaultSwimSpeed = 10f;
+    
     public bool pickupEnabled = false;
+
+    private float updateTime = 0f;
 
     public void Start()
     {
         DisablePickup();
         material = meshRenderer.material;
-    }
-
-    public override void OnPreSerialization()
-    {
-        if (Networking.GetOwner(gameObject) == Networking.LocalPlayer)
-        {
-            stateIDSync = (int)state;
-            pickupEnabledSync = pickupEnabled;
-            fishIDSync = fishID;
-        }
-    }
-
-    public override void OnDeserialization()
-    {
-        if (!Networking.GetOwner(gameObject).isLocal)
-        {
-            state = (FishState)stateIDSync;
-            if (pickupEnabled != pickupEnabledSync)
-            {
-                switch (pickupEnabledSync)
-                {
-                    case true:
-                        EnablePickup();
-                        break;
-                    case false:
-                        DisablePickup();
-                        break;
-                }
-            }
-            if (fishID != fishIDSync)
-            {
-                if (fishIDSync == -1) Reset();
-                else
-                {
-                    fishData = fishDataPool.GetFishByID(fishIDSync);
-                    fishID = fishIDSync;
-                    SetFishSizeProperties();
-                }
-            }
-            else if (fishData != null && meshRenderer.sharedMesh != fishData.mesh) SetFishSizeProperties();
-            SetStateFromDeserialization();
-        }
     }
 
     public void DisablePickup()
@@ -181,31 +140,6 @@ public class Fish : UdonSharpBehaviour
         pickup.InteractionText = fishData.name;
     }
 
-    public void SetStateFromDeserialization()
-    {
-        if (state == FishState.biting)
-        {
-            animator.SetBool("Bite", true);
-            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier);
-        }
-        else if (state == FishState.fighting || state == FishState.catchable)
-        {
-            animator.SetBool("Bite", true);
-            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier * exhaustion);
-        }
-        else if (state == FishState.catching || state == FishState.caught)
-        {
-            animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier * exhaustion);
-            animator.SetBool("Bite", true);
-            animator.SetBool("IsCaught", true);
-            material.SetFloat("_WaterLevel", -100f);
-        }
-        else if (state == FishState.reset || state == FishState.basket)
-        {
-            animator.SetBool("Bite", false);
-            animator.SetBool("IsCaught", false);
-        }
-    }
 
     public void Bite(Location location, Bait bait)
     {
@@ -214,6 +148,7 @@ public class Fish : UdonSharpBehaviour
         exhaustion = 1f;
         animator.SetBool("Bite", true);
         animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier);
+        fishSync.Sync();
     }
 
     public bool TriggerFight()
@@ -222,6 +157,7 @@ public class Fish : UdonSharpBehaviour
         if (animatorState.IsTag("fighting"))
         {
             state = FishState.fighting;
+            fishSync.Sync();
             return true;
         }
         else return false;
@@ -235,13 +171,17 @@ public class Fish : UdonSharpBehaviour
             animator.SetFloat("SwimSpeed", defaultSwimSpeed * fishData.forceMultiplier * exhaustion);
             exhaustion *= exhaustionRatio;
             exhaustionTimer = 0f;
+            fishSync.Sync();
         }
 
         if (exhaustion < catchThreshold && state == FishState.fighting)
         {
             Debug.LogFormat("{0}: Catchable", name);
             state = FishState.catchable;
+            fishSync.Sync();
         }
+
+        updateTime = FrequencySerialization(exhaustionTimer, updateTime);
     }
 
     public void Catch()
@@ -252,7 +192,9 @@ public class Fish : UdonSharpBehaviour
             animator.SetBool("IsCaught", true);
             material.SetFloat("_WaterLevel", -100f);
             exhaustion = 0f;
+            animator.SetFloat("SwimSpeed", exhaustion);
             EnablePickup();
+            fishSync.Sync();
         }
     }
 
@@ -264,12 +206,28 @@ public class Fish : UdonSharpBehaviour
         fishData = null;
         state = FishState.reset;
         DisablePickup();
+        fishSync.Sync();
     }
 
     public void Basket()
     {
-        Reset();
+        animator.SetBool("Bite", false);
+        animator.SetBool("IsCaught", false);
+        DisablePickup();
         state = FishState.basket;
+        fishSync.Sync();
+    }
+
+    public void DeBasket()
+    {
+        transform.SetParent(null);
+        state = FishState.caught;
+        animator.SetFloat("SwimSpeed", 0f);
+        animator.SetBool("Bite", true);
+        animator.SetBool("IsCaught", true);
+        material.SetFloat("_WaterLevel", -100f);
+        EnablePickup();
+        fishSync.Sync();
     }
 
     public float GetForce()
@@ -277,4 +235,13 @@ public class Fish : UdonSharpBehaviour
         return (50f + (size * 100f)) * fishData.forceMultiplier * exhaustion;
     }
 
+    public float FrequencySerialization(float time, float nextUpdate, float freq=5f)
+    {
+        if (time >= nextUpdate)
+        {
+            fishSync.Sync();
+            nextUpdate = time + (1f / freq);
+        }
+        return nextUpdate;
+    }
 }

@@ -15,7 +15,9 @@ public class BottleCollision : UdonSharpBehaviour
     public GameObject shatterParticles;
     public Rigidbody rigidBody;
     public VRC_Pickup pickup;
-    
+
+    public VRCPlayerApi owner;
+
     public float softHitSpeedLimit = 2f;
     public float softHitVolume = .25f;
     public AudioClip[] mediumHitClips;
@@ -28,7 +30,7 @@ public class BottleCollision : UdonSharpBehaviour
     public float shatterVolume = 1f;
     public AudioSource audioSource;
 
-    [UdonSynced] public bool isBroken = false;
+    public bool isBroken = false;
     public bool brokenSequencePlayed = false;
     
     private float holdSpeedMultiplier = 3f;
@@ -40,35 +42,45 @@ public class BottleCollision : UdonSharpBehaviour
     public PourableBottle refillableBottle = null;
     public bool refillOnRespawn = false;
 
+    public BottleSync syncObj;
+
     private void Start()
     {
         spawnPosition = spawnTarget.position;
         spawnRotation = spawnTarget.rotation;
+        owner = Networking.GetOwner(gameObject);
+
+        if (owner != null && owner.isLocal) syncObj.RandomizeSounds();
+
+        if (!brokenSequencePlayed && isBroken) Shatter();
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        float speed = collision.relativeVelocity.magnitude;
-        if (pickup.IsHeld) speed /= holdSpeedMultiplier;
+        if (owner != null && owner.isLocal)
+        {
+            float speed = collision.relativeVelocity.magnitude;
+            if (pickup.IsHeld) speed /= holdSpeedMultiplier;
 
-        Debug.LogFormat("{0}: collision velocity magnitude: {1}", name, speed);
+            Debug.LogFormat("{0}: collision velocity magnitude: {1}", name, speed);
 
-        // Determine which audio clips to play based on impact speed, or shatter
-        if (speed < softHitSpeedLimit)
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlaySoftHit");
-        }
-        else if (speed < mediumHitSpeedLimit)
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayMediumHit");
-        }
-        else if (speed < hardHitSpeedLimit)
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayHardHit");
-        }
-        else
-        {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Shatter");
+            // Determine which audio clips to play based on impact speed, or shatter
+            if (speed < softHitSpeedLimit)
+            {
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlaySoftHit");
+            }
+            else if (speed < mediumHitSpeedLimit)
+            {
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayMediumHit");
+            }
+            else if (speed < hardHitSpeedLimit)
+            {
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayHardHit");
+            }
+            else
+            {
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Shatter");
+            }
         }
     }
 
@@ -76,21 +88,24 @@ public class BottleCollision : UdonSharpBehaviour
     {
         AudioClip[] clips = softHitClips;
         audioSource.maxDistance = 8f;
-        PlayClip(clips, softHitVolume);
+        if (owner != null && owner.isLocal) syncObj.RandomizeSoftHit();
+        PlayClip(clips, softHitVolume, syncObj.softHitSoundIndex);
     }
 
     public void PlayMediumHit()
     {
         AudioClip[] clips = mediumHitClips;
         audioSource.maxDistance = 12f;
-        PlayClip(clips, mediumHitVolume);
+        if (owner != null && owner.isLocal) syncObj.RandomizeMediumHit();
+        PlayClip(clips, mediumHitVolume, syncObj.mediumHitSoundIndex);
     }
 
     public void PlayHardHit()
     {
         AudioClip[] clips = hardHitClips;
         audioSource.maxDistance = 15f;
-        PlayClip(clips, hardHitVolume);
+        if (owner != null && owner.isLocal) syncObj.RandomizeHardHit();
+        PlayClip(clips, hardHitVolume, syncObj.hardHitSoundIndex);
     }
 
     public virtual void Shatter()
@@ -108,8 +123,13 @@ public class BottleCollision : UdonSharpBehaviour
         transform.rotation = Quaternion.identity;
         brokenSequencePlayed = true;
 
-        PlayClip(clips, volume);
-        TriggerRespawn();
+        if (owner != null && owner.isLocal)
+        {
+            TriggerRespawn();
+            syncObj.RandomizeShatter();
+            syncObj.SetBroken(isBroken);
+        }
+        PlayClip(clips, volume, syncObj.shatterSoundIndex);
     }
 
     private void TriggerRespawn()
@@ -120,7 +140,6 @@ public class BottleCollision : UdonSharpBehaviour
     public void Respawn()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
-        transform.SetPositionAndRotation(spawnPosition, spawnRotation);
         mesh.enabled = true;
         meshCollider.enabled = true;
         shatterParticles.SetActive(false);
@@ -128,25 +147,29 @@ public class BottleCollision : UdonSharpBehaviour
         brokenSequencePlayed = false;
         isBroken = false;
 
-        if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
+        if (owner != null && owner.isLocal)
+        {
+            transform.SetPositionAndRotation(spawnPosition, spawnRotation);
+            if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
+            syncObj.SetBroken(isBroken);
+        }
     }
 
-    private void PlayClip(AudioClip[] clips, float volume)
+    private void PlayClip(AudioClip[] clips, float volume, int soundIndex)
     {
-        int randIndex = Random.Range(0, clips.Length);
-        audioSource.clip = clips[randIndex];
+        audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
         audioSource.Play();
     }
 
     private void UpdateRespawn()
     {
-        if (respawning)
+        if (owner != null && owner.isLocal && respawning)
         {
             respawnTimer += Time.deltaTime;
             if (respawnTimer >= respawnTime)
             {
-                Respawn();
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Respawn));
                 respawnTimer = 0f;
                 respawning = false;
             }
@@ -155,7 +178,16 @@ public class BottleCollision : UdonSharpBehaviour
 
     private void Update()
     {
-        if (!brokenSequencePlayed && isBroken) Shatter();
         UpdateRespawn();
+    }
+
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        owner = player;
+        if (owner != null && owner.isLocal)
+        {
+            syncObj.RandomizeSounds();
+            Networking.SetOwner(owner, syncObj.gameObject);
+        }
     }
 }
