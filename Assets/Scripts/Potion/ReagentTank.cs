@@ -18,7 +18,7 @@ public class ReagentTank : UdonSharpBehaviour
 
     public float maxFlow = 0.6f;
     public float flow = 0f;
-    [UdonSynced] public float fillLevel = 1f;
+    [UdonSynced] public float fillLevel = 0f;
     public float pourMultiplier = 0.1f;
 
     private float nextTime = 0f;
@@ -28,7 +28,7 @@ public class ReagentTank : UdonSharpBehaviour
 
     void Start()
     {
-        if (Networking.LocalPlayer.isMaster) fillLevel = Random.Range(0.05f, 1f);
+        //if (Networking.LocalPlayer.isMaster) fillLevel = Random.Range(0.05f, 1f);
         shaderControl.SetColor(reagent.color);
         particleMaterial = particleRenderer.material;
         particleMaterial.color = reagent.color;

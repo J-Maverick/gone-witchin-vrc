@@ -112,7 +112,7 @@ public class Fish : UdonSharpBehaviour
             fishData = fishDataPool.GetRandomFishData(location, bait);
             SetWaterLevel(location);
             exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio);
-            SetFishSizeProperties();
+            SetRandomSize();
             fishID = fishData.ID;
         }
     }
@@ -232,7 +232,7 @@ public class Fish : UdonSharpBehaviour
 
     public float GetForce()
     {
-        return (50f + (size * 100f)) * fishData.forceMultiplier * exhaustion;
+        return (75f + (size * 75f)) * fishData.forceMultiplier * exhaustion;
     }
 
     public float FrequencySerialization(float time, float nextUpdate, float freq=5f)
