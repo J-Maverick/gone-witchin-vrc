@@ -12,7 +12,7 @@ public class Bottle : UdonSharpBehaviour
     protected virtual void Start()
     {
         shaderControl = GetComponent<PotionWobble>();
-        shaderControl.SetColor(potionColor);
+        shaderControl.SetStaticColor(potionColor);
     }
 
 }

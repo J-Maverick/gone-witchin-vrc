@@ -53,7 +53,7 @@ public class PourableBottle : Bottle
         {
             fillLevel = 0f;
         }
-        if (shaderControl != null) shaderControl.fillLevel = fillLevel;
+        UpdateShaderFill();
     }
 
     public void SetFill(float fill)

@@ -8,6 +8,7 @@ public class HandleHandler : UdonSharpBehaviour
 {
     public bool dropped = false;
     public ReagentTank tank = null;
+    public GameObject tankPour = null;
 
     public override void OnDrop()
     {
@@ -20,6 +21,7 @@ public class HandleHandler : UdonSharpBehaviour
         if (Networking.LocalPlayer.IsValid())
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
+            Networking.SetOwner(Networking.LocalPlayer, tankPour);
             if (tank != null) Networking.SetOwner(Networking.LocalPlayer, tank.gameObject);
         }
     }

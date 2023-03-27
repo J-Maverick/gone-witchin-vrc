@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4598026905924924081}
-  - component: {fileID: 8248012475888690902}
-  - component: {fileID: 6940861390360332967}
-  m_Layer: 13
+  - component: {fileID: 5324300647419690377}
+  - component: {fileID: 429869699652119589}
+  m_Layer: 28
   m_Name: BottleSync
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 5762800773297019424}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8248012475888690902
+--- !u!114 &5324300647419690377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4013906109387559625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6819df0e8623794197b5e6653db9e24, type: 3}
+  m_Script: {fileID: 11500000, guid: a76d5968cfd09dd47b631f6cac04f255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -53,7 +53,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 6940861390360332967}
+  _udonSharpBackingUdonBehaviour: {fileID: 429869699652119589}
   fillLevel: 0.5
   softHitSoundIndex: 0
   mediumHitSoundIndex: 0
@@ -64,7 +64,10 @@ MonoBehaviour:
   pourableBottle: {fileID: 3892139356029562450}
   updateTimer: 0
   nextUpdate: 0
---- !u!114 &6940861390360332967
+  reagentList: {fileID: 0}
+  reagentID: -1
+  reagentBottle: {fileID: 3892139356029562450}
+--- !u!114 &429869699652119589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +87,9 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: 9a07f7e5dd648aa468faf0f9261cd363,
+  serializedProgramAsset: {fileID: 11400000, guid: 8abb75a3fc7f93748b0ddcc797dfae0b,
     type: 2}
-  programSource: {fileID: 11400000, guid: b3ae39753d26d5840acf3bd1d543df14, type: 2}
+  programSource: {fileID: 11400000, guid: 09ad77156022ce14e852e9ad4fb419c1, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
   publicVariablesUnityEngineObjects: []
   publicVariablesSerializationDataFormat: 0
@@ -120,6 +123,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6170404671871678340, guid: 37778310b67ae7a40be16a3f349bad41, type: 3}
+--- !u!136 &8342528763108221496
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950094161702764698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!82 &1771592538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -419,7 +436,7 @@ MonoBehaviour:
   respawnTime: 15
   refillableBottle: {fileID: 3892139356029562450}
   refillOnRespawn: 1
-  syncObj: {fileID: 8248012475888690902}
+  syncObj: {fileID: 5324300647419690377}
 --- !u!114 &1771592541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +512,7 @@ MonoBehaviour:
   particleRenderer: {fileID: 3342026294489697976}
   particleMaterial: {fileID: 0}
   pourSpeed: 0
-  syncObj: {fileID: 8248012475888690902}
+  syncObj: {fileID: 5324300647419690377}
   reagent: {fileID: 0}
   pickup: {fileID: 1771592536}
 --- !u!1001 &2378892573361212974
@@ -564,6 +581,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243214811195802535, guid: 11cd5d46c718b4e4faa57838c298cbbd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 1243214811195802538, guid: 11cd5d46c718b4e4faa57838c298cbbd,
         type: 3}
@@ -658,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37778310b67ae7a40be16a3f349bad41, type: 3}
@@ -717,6 +739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LiquidPour
+      objectReference: {fileID: 0}
+    - target: {fileID: 7355062693550023901, guid: 846860bb3de0888429996f57e9dfbaf4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7355062693550023902, guid: 846860bb3de0888429996f57e9dfbaf4,
         type: 3}
