@@ -9,6 +9,7 @@ public class ReagentBottle : PourableBottle
     public Reagent reagent = null;
     public VRC_Pickup pickup;
     private float fillAmount = 0.005f;
+    public new BottleType type = BottleType.Reagent;
 
     protected override void Start()
     {
@@ -16,18 +17,18 @@ public class ReagentBottle : PourableBottle
         base.Start();
     }
 
-    public void AddReagent(Reagent newReagent)
+    public void AddReagent(Reagent newReagent, ReagentTank tank)
     {
         if (reagent == null || fillLevel <= 0f)
         {
             reagent = newReagent;
             UpdateReagentProperties();
-            AddFill();
+            AddFill(tank);
         }
 
         else if (reagent == newReagent)
         {
-            AddFill();
+            AddFill(tank);
         }
     }
 
@@ -42,11 +43,11 @@ public class ReagentBottle : PourableBottle
         }
     }
 
-    public void AddFill()
+    public void AddFill(ReagentTank tank)
     {
         if (fillLevel < 1f)
         {
-            fillLevel += fillAmount;
+            fillLevel += fillAmount * tank.flow;
         }
         if (fillLevel > 1f) fillLevel = 1f;
 

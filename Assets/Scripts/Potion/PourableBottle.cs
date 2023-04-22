@@ -10,7 +10,6 @@ public class PourableBottle : Bottle
     public float pourThreshold = 0.5f;
     public float maxPourThreshold = 0.5f;
     public float minPourThreshold = -0.2f;
-    public float fillLevel = 0f;
     public Animator pourAnimator;
     public float pourMultiplier = 0.01f;
     public VRCPlayerApi owner = null;

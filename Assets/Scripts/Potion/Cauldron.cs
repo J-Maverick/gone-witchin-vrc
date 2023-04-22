@@ -11,6 +11,7 @@ public class Cauldron : UdonSharpBehaviour
     public Animator overflowAnimator;
     public Renderer overflowParticleRenderer;
     public Material overflowMaterial;
+    public GemIndicator indicator;
     public float overflowFlowRate = 0.02f;
     public float maxFill = 5f;
     public bool isOverflowing = false;
@@ -83,7 +84,11 @@ public class Cauldron : UdonSharpBehaviour
             ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
             Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
         }
-        else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+        else
+        {
+            ratioMatched = false;
+            Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+        }
 
         fillRecipe.LogReagents();
         RequestSerialization();
@@ -106,6 +111,12 @@ public class Cauldron : UdonSharpBehaviour
         else if (overflowAnimator.GetFloat("pourSpeed") > 0)
         {
             overflowAnimator.SetFloat("pourSpeed", 0.0f);
+        }
+
+        if (ratioMatched != indicator.IsValid())
+        {
+            if (ratioMatched) indicator.SetValid();
+            else indicator.SetInvalid();
         }
     }
 }

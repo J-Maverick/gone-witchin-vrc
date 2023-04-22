@@ -20,7 +20,7 @@ public class TankPourContact : UdonSharpBehaviour
             {
                 Debug.LogFormat("We actually doin the thing lol");
                 CheckBottleObject(other);
-                targetBottle.AddReagent(tank.reagent);
+                targetBottle.AddReagent(tank.reagent, tank);
             }
         }
     }
