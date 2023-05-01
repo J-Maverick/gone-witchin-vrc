@@ -13,7 +13,8 @@ public class RecipeList : MonoBehaviour
     {
         //CheckMatches();
         //UpdateString();
-        RandomizeColors();
+        //RandomizeColors();
+        SetIds();
     }
 
 
@@ -22,6 +23,16 @@ public class RecipeList : MonoBehaviour
         foreach (Potion potion in potions)
         {
             potion.color = Random.ColorHSV();
+        }
+    }
+
+    private void SetIds()
+    {
+        int ID = 1000;
+        foreach (Potion potion in potions)
+        {
+            potion.ID = ID;
+            ID++;
         }
     }
 

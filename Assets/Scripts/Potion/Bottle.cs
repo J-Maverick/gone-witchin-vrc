@@ -17,6 +17,7 @@ public class Bottle : UdonSharpBehaviour
     public PotionWobble shaderControl = null;
     public float fillLevel = 0f;
     public BottleType type = BottleType.None;
+    public LiquidMaterial liquid = null;
 
     protected virtual void Start()
     {

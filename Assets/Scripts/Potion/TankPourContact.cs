@@ -12,16 +12,13 @@ public class TankPourContact : UdonSharpBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.LogFormat("Particle Collision: {0} | Layer: {1}", other.name, other.layer);
         if (other.layer == 28 && tank != null)
         {
-            Debug.LogFormat("We doin the thing lol");
-            if (Networking.GetOwner(other).isLocal && Networking.GetOwner(gameObject).isLocal)
-            {
-                Debug.LogFormat("We actually doin the thing lol");
+            //if (Networking.GetOwner(other).isLocal && Networking.GetOwner(gameObject).isLocal)
+            //{
                 CheckBottleObject(other);
-                targetBottle.AddReagent(tank.reagent, tank);
-            }
+                targetBottle.AddLiquid(tank.reagent, tank.flow);
+            //}
         }
     }
 

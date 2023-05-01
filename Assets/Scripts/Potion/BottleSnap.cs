@@ -6,7 +6,6 @@ using VRC.Udon;
 
 public class BottleSnap : UdonSharpBehaviour
 {
-    bool bottleInPlace = false;
     Bottle bottle = null;
     public Transform snapTarget = null;
 
@@ -33,5 +32,22 @@ public class BottleSnap : UdonSharpBehaviour
         {
             bottle = null;
         }
+    }
+
+    public Bottle GetBottle()
+    {
+        return bottle;
+    }
+
+    public bool CheckFill(float fill)
+    {
+        return bottle.fillLevel == fill;
+    }
+
+    public bool CheckMatch(Recipe recipe)
+    {
+        if (recipe != null)
+            return bottle.liquid == recipe.potion;
+        else return false;
     }
 }

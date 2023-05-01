@@ -70,7 +70,7 @@ public class CauldronRecipe : Recipe
         nReagentsSync = nReagents;
     }
 
-    public int AddNewReagent(Reagent reagent)
+    public int AddNewReagent(LiquidMaterial reagent)
     {
         if (reagent0 == null)
         {
@@ -106,7 +106,7 @@ public class CauldronRecipe : Recipe
 
         return nReagents;
     }
-    public void AddReagent(Reagent reagent, float fillAmount)
+    public void AddReagent(LiquidMaterial reagent, float fillAmount)
     {
         if (!CheckReagent(reagent) && nReagents != -1) AddNewReagent(reagent);
         if (reagent == reagent0) fillReagent0 += fillAmount;
@@ -158,5 +158,66 @@ public class CauldronRecipe : Recipe
         else if (nReagents > 0) Debug.LogFormat("{0}: Current fill: {1} part(s) ({2}) {3} + {4} part(s) ({5}) {6} + {7} part(s) ({8}) {9} + {10} part(s) ({11}) {12} + {13} part(s) ({14}) {15}",
             name, partsReagent0, fillReagent0, reagent0.name, partsReagent1, fillReagent1, reagent1.name, partsReagent2, fillReagent2, reagent2.name, partsReagent3, fillReagent3, reagent3.name, partsReagent4, fillReagent4, reagent4.name);
         else Debug.LogFormat("{0}: Current fill: more than 5 ingredients, too many to brew!", name);
+    }
+
+    public void ResetReagents()
+    {
+        if (nReagents != 0)
+        {
+            nReagentsSync = 0;
+
+            fillReagent0 = 0f;
+            fillReagent1 = 0f;
+            fillReagent2 = 0f;
+            fillReagent3 = 0f;
+            fillReagent4 = 0f;
+
+            syncedReagent0ID = -1;
+            syncedReagent1ID = -1;
+            syncedReagent2ID = -1;
+            syncedReagent3ID = -1;
+            syncedReagent4ID = -1;
+
+            reagent0ID = -1;
+            reagent1ID = -1;
+            reagent2ID = -1;
+            reagent3ID = -1;
+            reagent4ID = -1;
+
+            potion = null;
+            nReagents = 0;
+            reagent0 = null;
+            partsReagent0 = 0;
+            reagent1 = null;
+            partsReagent1 = 0;
+            reagent2 = null;
+            partsReagent2 = 0;
+            reagent3 = null;
+            partsReagent3 = 0;
+            reagent4 = null;
+            partsReagent4 = 0;
+
+            RequestSerialization();
+        }
+    }
+
+    public void ReduceFill(float cauldronFill, float reduceAmount)
+    {
+        if (cauldronFill == 0f)
+        {
+            ResetReagents();
+        }
+        else if (reduceAmount > 0f)
+        {
+            float newRatio = (cauldronFill - reduceAmount) / cauldronFill;
+            fillReagent0 *= newRatio;
+            fillReagent1 *= newRatio;
+            fillReagent2 *= newRatio;
+            fillReagent3 *= newRatio;
+            fillReagent4 *= newRatio;
+
+            NormalizeReagents();
+            RequestSerialization();
+        }
     }
 }

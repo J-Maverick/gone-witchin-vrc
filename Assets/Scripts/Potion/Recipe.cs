@@ -6,20 +6,29 @@ using VRC.Udon;
 
 public class Recipe : UdonSharpBehaviour
 {
-    public Potion potion;
+    public LiquidMaterial potion;
     public int nReagents;
-    public Reagent reagent0 = null;
+    public LiquidMaterial reagent0 = null;
     public int partsReagent0 = 0;
-    public Reagent reagent1 = null;
+    public LiquidMaterial reagent1 = null;
     public int partsReagent1 = 0;
-    public Reagent reagent2 = null;
+    public LiquidMaterial reagent2 = null;
     public int partsReagent2 = 0;
-    public Reagent reagent3 = null;
+    public LiquidMaterial reagent3 = null;
     public int partsReagent3 = 0;
-    public Reagent reagent4 = null;
+    public LiquidMaterial reagent4 = null;
     public int partsReagent4 = 0;
 
     public ReagentList reagentList;
+
+    private void Start()
+    {
+        LiquidMaterial potionComponent = GetComponent<LiquidMaterial>();
+        if (potionComponent != null)
+        {
+            potion = potionComponent;
+        }
+    }
 
     public bool CheckRecipe(Recipe recipe)
     {
@@ -35,7 +44,22 @@ public class Recipe : UdonSharpBehaviour
         return recipeCheck;
     }
 
-    public bool CheckReagent(Reagent reagent)
+    public bool CheckImpossible(Recipe recipe)
+    {
+        bool isImpossible = false;
+        if (recipe.nReagents > nReagents) isImpossible = true;
+        else
+        {
+            if (!isImpossible && recipe.reagent0 != null && !CheckReagent(recipe.reagent0)) isImpossible = true;
+            if (!isImpossible && recipe.reagent1 != null && !CheckReagent(recipe.reagent1)) isImpossible = true;
+            if (!isImpossible && recipe.reagent2 != null && !CheckReagent(recipe.reagent2)) isImpossible = true;
+            if (!isImpossible && recipe.reagent3 != null && !CheckReagent(recipe.reagent3)) isImpossible = true;
+            if (!isImpossible && recipe.reagent4 != null && !CheckReagent(recipe.reagent4)) isImpossible = true;
+        }
+        return isImpossible;
+    }
+
+    public bool CheckReagent(LiquidMaterial reagent)
     {
         if (reagent0 == reagent) return true;
         if (reagent1 == reagent) return true;
@@ -46,7 +70,7 @@ public class Recipe : UdonSharpBehaviour
         return false;
     }
 
-    public bool CheckReagentRatio(Reagent reagent, int nParts)
+    public bool CheckReagentRatio(LiquidMaterial reagent, int nParts)
     {
         if (reagent0 == reagent && partsReagent0 == nParts) return true;
         if (reagent1 == reagent && partsReagent1 == nParts) return true;

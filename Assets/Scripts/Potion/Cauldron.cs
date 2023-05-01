@@ -15,12 +15,13 @@ public class Cauldron : UdonSharpBehaviour
     public float overflowFlowRate = 0.02f;
     public float maxFill = 5f;
     public bool isOverflowing = false;
-    [UdonSynced] float fillLevel = 0f;
-    [UdonSynced] Color fillColor = Color.white;
+    [UdonSynced] public float fillLevel = 0f;
+    [UdonSynced] public Color fillColor = Color.white;
     public CauldronRecipe fillRecipe;
     public Recipes recipes;
     public Recipe matchingRecipe = null;
     public bool ratioMatched = false;
+    public bool impossibleRecipe = false;
 
     void Start()
     {
@@ -63,7 +64,7 @@ public class Cauldron : UdonSharpBehaviour
         fillLevel += fillAmount;
         liquid.fillLevel = fillLevel;
 
-        fillRecipe.AddReagent(bottle.reagent, fillAmount);
+        fillRecipe.AddReagent(bottle.liquid, fillAmount);
 
         UpdateFillColor(bottle.potionColor, fillAmount);
 
@@ -78,20 +79,51 @@ public class Cauldron : UdonSharpBehaviour
 
         liquidColliderAnimator.SetFloat("FillLevel", liquid.fillLevel);
 
-        matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
-        if (matchingRecipe != null)
+        if (!impossibleRecipe) impossibleRecipe = fillRecipe.nReagents == -1 || recipes.RecipeIsImpossible(fillRecipe);
+
+        if (!impossibleRecipe)
         {
-            ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
-            Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
+            matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
+
+            if (matchingRecipe != null)
+            {
+                ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+                Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
+            }
+            else
+            {
+                ratioMatched = false;
+                Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+            }
         }
         else
         {
+            matchingRecipe = null;
             ratioMatched = false;
-            Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
         }
 
         fillRecipe.LogReagents();
         RequestSerialization();
+    }
+
+    public void UpdateFill()
+    {
+        liquid.fillLevel = fillLevel;
+    }
+
+    public void ReduceFill(float reduceAmount)
+    {
+        fillRecipe.ReduceFill(fillLevel, reduceAmount);
+        if (fillLevel > 0f)
+        {
+            fillLevel -= reduceAmount;
+            if (fillLevel <= 0f)
+            {
+                fillLevel = 0f;
+                ratioMatched = false;
+            }
+        }
+        if (liquid != null) UpdateFill();
     }
 
     private void Update()
@@ -113,10 +145,18 @@ public class Cauldron : UdonSharpBehaviour
             overflowAnimator.SetFloat("pourSpeed", 0.0f);
         }
 
-        if (ratioMatched != indicator.IsValid())
+        if (fillLevel > 0f)
         {
             if (ratioMatched) indicator.SetValid();
-            else indicator.SetInvalid();
+            else if (impossibleRecipe) indicator.SetInvalid();
+            else indicator.SetNeutral();
+        }
+        else indicator.SetNeutral();
+
+        if (fillLevel == 0f && fillRecipe.nReagents > 0)
+        {
+            fillRecipe.ResetReagents();
+            impossibleRecipe = false;
         }
     }
 }

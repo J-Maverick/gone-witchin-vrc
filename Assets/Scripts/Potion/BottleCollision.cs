@@ -28,6 +28,8 @@ public class BottleCollision : UdonSharpBehaviour
     public float hardHitVolume = 1f;
     public AudioClip[] shatterClips;
     public float shatterVolume = 1f;
+    public AudioClip[] soundEffectClips;
+    public float soundEffectVolume = 1f;
     public AudioSource audioSource;
 
     public bool isBroken = false;
@@ -108,6 +110,14 @@ public class BottleCollision : UdonSharpBehaviour
         PlayClip(clips, hardHitVolume, syncObj.hardHitSoundIndex);
     }
 
+    public void PlaySoundEffect()
+    {
+        AudioClip[] clips = soundEffectClips;
+        audioSource.maxDistance = 15f;
+        if (owner != null && owner.isLocal) syncObj.RandomizeSoundEffect();
+        PlayClip(clips, soundEffectVolume, syncObj.soundEffectIndex);
+    }
+
     public virtual void Shatter()
     {
         isBroken = true;
@@ -132,7 +142,7 @@ public class BottleCollision : UdonSharpBehaviour
         PlayClip(clips, volume, syncObj.shatterSoundIndex);
     }
 
-    private void TriggerRespawn()
+    protected void TriggerRespawn()
     {
         respawning = true;
     }
@@ -155,7 +165,7 @@ public class BottleCollision : UdonSharpBehaviour
         }
     }
 
-    private void PlayClip(AudioClip[] clips, float volume, int soundIndex)
+    protected void PlayClip(AudioClip[] clips, float volume, int soundIndex)
     {
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;

@@ -7,14 +7,15 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class ReagentBottleSync : BottleSync
 {
-    public ReagentList reagentList;
+    public LiquidList liquidList;
     [UdonSynced] public int reagentID = -1;
     public ReagentBottle reagentBottle;
 
     public override void OnPreSerialization()
     {
-        if (reagentBottle != null && reagentBottle.reagent != null)
-        reagentID = reagentBottle.reagent.ID;
+        if (reagentBottle != null && reagentBottle.liquid != null) reagentID = reagentBottle.liquid.ID;
+        else reagentID = -1;
+
         base.OnPreSerialization();
     }
 
@@ -22,10 +23,10 @@ public class ReagentBottleSync : BottleSync
     {
         if (reagentBottle != null && reagentID != -1)
         {
-            if (reagentBottle.reagent == null || reagentBottle.reagent.ID != reagentID)
+            if (reagentBottle.liquid == null || reagentBottle.liquid.ID != reagentID)
             {
-                reagentBottle.reagent = reagentList.GetReagentByID(reagentID);
-                reagentBottle.UpdateReagentProperties();
+                reagentBottle.liquid = liquidList.GetLiquidByID(reagentID);
+                reagentBottle.UpdateLiquidProperties();
             }
             reagentBottle.fillLevel = fillLevel;
             pourableBottle.UpdateShaderFill();

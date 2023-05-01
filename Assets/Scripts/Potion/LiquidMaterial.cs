@@ -6,8 +6,6 @@ using VRC.Udon;
 
 public class LiquidMaterial : UdonSharpBehaviour
 {
-    void Start()
-    {
-        
-    }
+    public int ID;
+    public Color color;
 }

@@ -6,18 +6,17 @@ using VRC.Udon;
 
 public class ThrowablePotionBottle : Bottle
 {
-    public Potion potion;
     public Renderer particleRenderer;
     public Material particleMaterial;
     public VRC_Pickup pickup;
 
     protected override void Start()
     {
-        potionColor = potion.color;
+        potionColor = liquid.color;
         particleMaterial = particleRenderer.material;
         particleMaterial.color = potionColor;
 
-        pickup.InteractionText = potion.name;
+        pickup.InteractionText = liquid.name;
         base.Start();
     }
 }

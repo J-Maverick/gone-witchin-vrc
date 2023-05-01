@@ -23,4 +23,15 @@ public class Recipes : UdonSharpBehaviour
         return null;
     }
 
+    public bool RecipeIsImpossible(Recipe recipeToMatch)
+    {
+        foreach (Recipe recipe in recipes)
+        {
+            if (!recipe.CheckImpossible(recipeToMatch))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }

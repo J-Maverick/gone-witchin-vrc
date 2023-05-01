@@ -4,8 +4,6 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class Reagent : UdonSharpBehaviour
+public class Reagent : LiquidMaterial
 {
-    public int ID;
-    public Color color;
 }

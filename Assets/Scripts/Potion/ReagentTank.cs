@@ -7,14 +7,13 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class ReagentTank : UdonSharpBehaviour
 {
-    public Reagent reagent;
+    public LiquidMaterial reagent;
     public PotionWobble shaderControl;
     public Renderer particleRenderer;
     public Material particleMaterial;
     public Animator particleAnimator;
 
     public Lever lever;
-    public ReagentBottle targetBottle;
 
     public float maxFlow = 0.6f;
     public float flow = 0f;
@@ -32,6 +31,7 @@ public class ReagentTank : UdonSharpBehaviour
         shaderControl.SetColor(reagent.color);
         particleMaterial = particleRenderer.material;
         particleMaterial.color = reagent.color;
+        particleMaterial.SetColor("_EmissionColor", reagent.color);
         lever.pickup.InteractionText = reagent.name;
     }
 

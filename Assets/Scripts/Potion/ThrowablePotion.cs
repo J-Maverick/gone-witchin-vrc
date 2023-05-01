@@ -6,14 +6,11 @@ using VRC.Udon;
 
 public class ThrowablePotion : BottleCollision
 {
+    public ShatterEffect shatterEffect;
+
     public override void Shatter()
     {
         base.Shatter();
-        ShatterEffect();
-    }
-
-    public virtual void ShatterEffect()
-    {
-
+        shatterEffect.OnShatter();
     }
 }

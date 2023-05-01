@@ -12,6 +12,7 @@ public class BottleSync : UdonSharpBehaviour
     [UdonSynced] public int mediumHitSoundIndex = 0;
     [UdonSynced] public int hardHitSoundIndex = 0;
     [UdonSynced] public int shatterSoundIndex = 0;
+    [UdonSynced] public int soundEffectIndex = 0;
     [UdonSynced] public bool isBroken = false;
 
     public BottleCollision bottleCollision;
@@ -19,6 +20,12 @@ public class BottleSync : UdonSharpBehaviour
 
     public float updateTimer = 0f;
     public float nextUpdate = 0f;
+
+    private int lateJoinRetries = 10;
+    private float lateJoinRetryTime = 1f;
+    private float lateJoinNextTry = 0f;
+    private float lateJoinRetryTimer = 0f;
+    private int lateJoinRetryCount = 0;
 
     public void RandomizeSounds()
     {
@@ -53,6 +60,12 @@ public class BottleSync : UdonSharpBehaviour
         RequestSerialization();
     }
 
+    public void RandomizeSoundEffect()
+    {
+        soundEffectIndex = Random.Range(0, bottleCollision.soundEffectClips.Length);
+        RequestSerialization();
+    }
+
     public void SetBroken(bool newVal)
     {
         isBroken = newVal;
@@ -66,6 +79,18 @@ public class BottleSync : UdonSharpBehaviour
         {
             pourableBottle.fillLevel = fillLevel;
             pourableBottle.UpdateShaderFill();
+        }
+    }
+
+    public override void OnPreSerialization()
+    {
+        if (pourableBottle != null)
+        {
+            fillLevel = pourableBottle.fillLevel;
+        }
+        if (bottleCollision != null)
+        {
+            isBroken = bottleCollision.isBroken;
         }
     }
 
@@ -84,5 +109,31 @@ public class BottleSync : UdonSharpBehaviour
             nextUpdate = updateTimer + (1f / freq);
         }
         updateTimer += Time.deltaTime;
+    }
+
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        if (Networking.GetOwner(gameObject).isLocal)
+        {
+            RequestSerialization();
+            lateJoinRetryTimer = Time.realtimeSinceStartup;
+            lateJoinNextTry = Time.realtimeSinceStartup + lateJoinRetryTime + Random.Range(0f, lateJoinRetryTime);
+            lateJoinRetryCount = 0;
+        }
+    }
+
+    public void Update()
+    {
+        if (lateJoinRetryCount < lateJoinRetries)
+        {
+            if (lateJoinRetryTimer >= lateJoinNextTry)
+            {
+                Debug.LogFormat("{0}: Late joiner serialization retrying", name);
+                lateJoinRetryCount++;
+                lateJoinNextTry += lateJoinRetryTime;
+                RequestSerialization();
+            }
+            lateJoinRetryTimer += Time.deltaTime;
+        }
     }
 }

@@ -437,7 +437,7 @@ Transform:
   - {fileID: 506241896453063540}
   - {fileID: 506241897919082166}
   - {fileID: 506241896863045980}
-  - {fileID: 8612037022368726341}
+  - {fileID: 456446506990368663}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1078,11 +1078,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7355062693550023903, guid: 56d69d47b7070fd4398e5fd507664394,
         type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 7355062693550023903, guid: 56d69d47b7070fd4398e5fd507664394,
-        type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.1
       objectReference: {fileID: 0}
@@ -1119,6 +1114,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 506241897399014121}
     m_Modifications:
+    - target: {fileID: 868339346425164776, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 868339346425164776, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+        type: 3}
+    - target: {fileID: 868339346425164778, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9069532415265257784, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
         type: 3}
       propertyPath: m_RootOrder
@@ -1187,9 +1193,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf8f8808d9b64e4f9d2d3573332cac9, type: 3}
---- !u!4 &8612037022368726341 stripped
+--- !u!4 &456446506990368663 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 9069532415265257784, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+  m_CorrespondingSourceObject: {fileID: 868339346425164778, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
     type: 3}
   m_PrefabInstance: {fileID: 745743379086328957}
   m_PrefabAsset: {fileID: 0}
