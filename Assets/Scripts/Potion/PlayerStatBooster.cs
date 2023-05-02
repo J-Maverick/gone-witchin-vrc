@@ -129,7 +129,8 @@ public class PlayerStatBooster : UdonSharpBehaviour
         switch (boostStacking)
         {
             case BoostStackingMode.None:
-                boostRatio = boostAmount;
+                if (currentRatio < boostAmount) boostRatio = boostAmount;
+                else boostRatio = currentRatio;
                 break;
             case BoostStackingMode.Linear:
                 float scaledBoost = currentRatio + boostAmount - 1;
@@ -155,7 +156,8 @@ public class PlayerStatBooster : UdonSharpBehaviour
         switch (boostStacking)
         {
             case BoostStackingMode.None:
-                reductionRatio = reductionAmount;
+                if (currentRatio < reductionAmount) reductionRatio = reductionAmount;
+                else reductionRatio = currentRatio;
                 break;
             case BoostStackingMode.Linear:
                 reductionRatio = 1 / ((1 / currentRatio) + reductionAmount);
@@ -188,6 +190,47 @@ public class PlayerStatBooster : UdonSharpBehaviour
     public void SetGravityStrength()
     {
         localPlayer.SetGravityStrength(defaultGravityStrength * gravityStrengthBoostRatio * gravityStrengthReductionRatio);
+    }
+
+    public void ResetMoveSpeed()
+    {
+        moveSpeedBoostRatio = 1f;
+        moveSpeedReductionRatio = 1f;
+        moveSpeedBoosted = false;
+        moveSpeedBoostTimer = 0f;
+        moveSpeedReduced = false;
+        moveSpeedReductionTimer = 0f;
+
+    }
+
+    public void ResetJumpImpulse()
+    {
+        jumpImpulseBoostRatio = 1f;
+        jumpImpulseReductionRatio = 1f;
+        jumpImpulseBoosted = false;
+        jumpBoostTimer = 0f;
+        jumpImpulseReduced = false;
+        jumpReductionTimer = 0f;
+    }
+
+    public void ResetGravityStrength()
+    {
+        gravityStrengthBoostRatio = 1f;
+        gravityStrengthReductionRatio = 1f;
+        gravityStrengthBoosted = false;
+        gravityStrengthBoostTimer = 0f;
+        gravityStrengthReduced = false;
+        gravityStrengthReductionTimer = 0f;
+    }
+
+    public void ResetAllModifiers()
+    {
+        ResetMoveSpeed();
+        ResetJumpImpulse();
+        ResetGravityStrength();
+        SetMoveSpeed();
+        SetJumpImpulse();
+        SetGravityStrength();
     }
 
     private void Update()

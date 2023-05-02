@@ -11,6 +11,7 @@ public class ThrowablePotion : BottleCollision
     public override void Shatter()
     {
         base.Shatter();
+        if (shatterEffect != null)
         shatterEffect.OnShatter();
     }
 }
