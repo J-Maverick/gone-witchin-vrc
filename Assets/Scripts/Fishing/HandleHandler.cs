@@ -7,21 +7,29 @@ using VRC.Udon;
 public class HandleHandler : UdonSharpBehaviour
 {
     public bool dropped = false;
+    public bool isHeld = false;
     public ReagentTank tank = null;
     public GameObject tankPour = null;
 
     public override void OnDrop()
     {
         dropped = true;
-        if (tank != null) tank.Sync();
+        isHeld = false;
+        if (tank != null)
+        {
+            tank.Sync();
+            tank.lever.Sleep();
+        }
     }
 
     public override void OnPickup()
     {
+        isHeld = true;
+        if (tank != null) tank.lever.WakeUp();
         if (Networking.LocalPlayer.IsValid())
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            Networking.SetOwner(Networking.LocalPlayer, tankPour);
+            if (tankPour != null) Networking.SetOwner(Networking.LocalPlayer, tankPour);
             if (tank != null) Networking.SetOwner(Networking.LocalPlayer, tank.gameObject);
         }
     }

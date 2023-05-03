@@ -174,7 +174,7 @@ public class BottleCollision : UdonSharpBehaviour
 
     private void UpdateRespawn()
     {
-        if (owner != null && owner.isLocal && respawning)
+        if (respawning && owner != null && owner.isLocal)
         {
             respawnTimer += Time.deltaTime;
             if (respawnTimer >= respawnTime)

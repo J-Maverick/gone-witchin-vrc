@@ -29,6 +29,10 @@ public class Lever : UdonSharpBehaviour
     public float absoluteAngle;
     public VRC_Pickup pickup;
 
+    public bool isSleeping = true;
+    public bool sleepTriggered = false;
+    readonly float sleepTime = 2f;
+
     void Start()
     {
         defaultRotation = transform.localRotation;
@@ -38,81 +42,102 @@ public class Lever : UdonSharpBehaviour
         previousVector = previousVector.normalized;
     }
 
+    public void WakeUp()
+    {
+        isSleeping = false;
+        sleepTriggered = false;
+    }
+
+    public void Sleep()
+    {
+        sleepTriggered = true;
+        SendCustomEventDelayedSeconds("GoToSleep", sleepTime);
+    }
+
+    void GoToSleep()
+    {
+        if (sleepTriggered)
+            isSleeping = true;
+    }
+
     private void FixedUpdate()
     {
-        if (handleTargetHandler.dropped)
+        if (!isSleeping)
         {
-            handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
-            previousVector = handleTarget.localPosition - transform.localPosition;
-            previousVector.x = 0f;
-            previousVector = previousVector.normalized;
-            handleTargetHandler.dropped = false;
-        }
-
-        targetVector = handleTarget.localPosition - transform.localPosition;
-        targetVector.x = 0f;
-        targetVector = targetVector.normalized;
-
-        targetRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
-
-        previousVector = targetVector;
-        float delta = 0f;
-        if (targetRotation != previousRotation)
-        {
-            Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * targetRotation;
-
-            delta = fromPrevToCurrent.eulerAngles.y;
-            if (delta > 180) delta -= 360;
-            angle -= delta;
-
-            if (pickup.IsHeld)
+            if (handleTargetHandler.dropped)
             {
-                if (angle > maxAngle)
+                handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
+                previousVector = handleTarget.localPosition - transform.localPosition;
+                previousVector.x = 0f;
+                previousVector = previousVector.normalized;
+                handleTargetHandler.dropped = false;
+            }
+
+            targetVector = handleTarget.localPosition - transform.localPosition;
+            targetVector.x = 0f;
+            targetVector = targetVector.normalized;
+
+            targetRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
+
+            previousVector = targetVector;
+            float delta = 0f;
+            if (targetRotation != previousRotation)
+            {
+                Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * targetRotation;
+
+                delta = fromPrevToCurrent.eulerAngles.y;
+                if (delta > 180) delta -= 360;
+                angle -= delta;
+
+                if (pickup.IsHeld)
                 {
-                    targetRotation = Quaternion.Euler(-maxAngle, 0f, -90f);
-                    angle = maxAngle;
+                    if (angle > maxAngle)
+                    {
+                        targetRotation = Quaternion.Euler(-maxAngle, 0f, -90f);
+                        angle = maxAngle;
+                    }
+                    else
+                    if (angle < minAngle)
+                    {
+                        targetRotation = Quaternion.Euler(minAngle, 0f, -90f);
+                        angle = minAngle;
+                    }
+                }
+                else if (angle < 0f) angle = 0f;
+
+                transform.localRotation = targetRotation;
+                previousRotation = transform.localRotation;
+            }
+
+
+            if (!pickup.IsHeld && transform.localRotation != defaultRotation)
+            {
+                float tempDelta = (Quaternion.Inverse(defaultRotation) * transform.localRotation).eulerAngles.y;
+                if (Mathf.Abs(tempDelta) < 0.5f)
+                {
+                    transform.localRotation = defaultRotation;
+                    previousRotation = transform.localRotation;
+                    targetVector = handleTarget.localPosition - transform.localPosition;
+                    targetVector.x = 0f;
+                    targetVector = targetVector.normalized;
+                    previousVector = targetVector;
+                    angle = 0f;
+                    Debug.LogFormat("{0}: Snapped.", name);
                 }
                 else
-                if (angle < minAngle)
                 {
-                    targetRotation = Quaternion.Euler(minAngle, 0f, -90f);
-                    angle = minAngle;
+                    transform.localRotation = Quaternion.RotateTowards(transform.localRotation, defaultRotation, 1f);
                 }
-            }
-            else if (angle < 0f) angle = 0f;
-
-            transform.localRotation = targetRotation;
-            previousRotation = transform.localRotation;
-        }
-
-
-        if (!pickup.IsHeld && transform.localRotation != defaultRotation)
-        {
-            float tempDelta = (Quaternion.Inverse(defaultRotation) * transform.localRotation).eulerAngles.y;
-            if (Mathf.Abs(tempDelta) < 0.5f)
-            {
-                transform.localRotation = defaultRotation;
-                previousRotation = transform.localRotation;
-                targetVector = handleTarget.localPosition - transform.localPosition;
-                targetVector.x = 0f;
-                targetVector = targetVector.normalized;
-                previousVector = targetVector;
-                angle = 0f;
-                Debug.LogFormat("{0}: Snapped.", name);
-            }
-            else
-            {
-                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, defaultRotation, 1f);
-            }
-            handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
-        }
-
-        if (!pickup.IsHeld)
-            if (angle > 0.5f) angle /= 1.5f;
-            else
-            {
-                angle = 0f;
                 handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
             }
+
+            if (!pickup.IsHeld)
+                if (angle > 0.5f) angle /= 1.5f;
+                else
+                {
+                    angle = 0f;
+                    handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
+                }
+        }
     }
 }

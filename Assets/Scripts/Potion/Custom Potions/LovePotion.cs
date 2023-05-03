@@ -8,6 +8,7 @@ public class LovePotion : ShatterEffect
 {
     public PostProcessingProfileManager manager;
     public BottleCollision bottleCollision;
+    public SphereCollider potionCollider;
 
     public float collisionEnabledTime = 2f;
     public float collisionEnabledTimer = 0f;
@@ -19,6 +20,7 @@ public class LovePotion : ShatterEffect
     public override void OnShatter()
     {
         effectActive = true;
+        potionCollider.enabled = true;
         collisionEnabledTimer = collisionEnabledTime;
     }
 
@@ -49,6 +51,7 @@ public class LovePotion : ShatterEffect
         {
             if (collisionEnabledTimer <= 0f)
             {
+                potionCollider.enabled = false;
                 soundPlayed = false;
                 soundPlayedLocal = false;
                 effectActive = false;

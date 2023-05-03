@@ -37,15 +37,18 @@ public class ReagentTank : UdonSharpBehaviour
 
     void PourControl()
     {
-        flow = maxFlow * lever.angle / lever.maxAngle;
-        if (fillLevel == 0f) flow = 0f;
-        particleAnimator.SetFloat("pourSpeed", flow);
+        if (!lever.isSleeping)
+        {
+            flow = maxFlow * lever.angle / lever.maxAngle;
+            if (fillLevel == 0f) flow = 0f;
+            particleAnimator.SetFloat("pourSpeed", flow);
 
-        if (flow > 0f) shaderControl.FillBump(flow);
+            if (flow > 0f) shaderControl.FillBump(flow);
 
-        fillLevel -= flow * pourMultiplier * Time.deltaTime;
-        if (fillLevel < 0f) fillLevel = 0f;
-        if (shaderControl != null) UpdateFill();
+            fillLevel -= flow * pourMultiplier * Time.deltaTime;
+            if (fillLevel < 0f) fillLevel = 0f;
+            if (shaderControl != null) UpdateFill();
+        }
     }
 
     private void Update()

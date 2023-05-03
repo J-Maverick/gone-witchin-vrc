@@ -51,52 +51,59 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
             previousVector = previousVector.normalized;
             handleTargetHandler.dropped = false;
         }
-        Vector3 targetVector = handleTarget.localPosition - transform.localPosition;
-        targetVector.x = 0f;
-        targetVector = targetVector.normalized;
-        transform.localRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
-        previousVector = targetVector;
 
-        float fishingPoleDistance = fishingPole.GetCastDistance();
-        if (fishingPole.lureJoint != null)
+        if (fishingPole.isHeld)
         {
-            if (fishingPoleDistance != castDistance)
+            float fishingPoleDistance = fishingPole.GetCastDistance();
+            if (fishingPole.lureJoint != null)
             {
-                castDistance = fishingPoleDistance;
-                blendShapeValue = 100f * castDistance / maxCastDistance;
+                if (fishingPoleDistance != castDistance)
+                {
+                    castDistance = fishingPoleDistance;
+                    blendShapeValue = 100f * castDistance / maxCastDistance;
+                }
+                else if (castDistance == 0f) blendShapeValue = 0f;
+                else blendShapeValue = 100f * (fishingPole.lureJoint.minDistance / castDistance) * (castDistance / maxCastDistance);
             }
-            else if (castDistance == 0f) blendShapeValue = 0f;
-            else blendShapeValue = 100f * (fishingPole.lureJoint.minDistance / castDistance) * (castDistance / maxCastDistance);
+            if (blendShapeValue > maxBlendShapeValue) blendShapeValue = maxBlendShapeValue;
+            fishingPoleRenderer.SetBlendShapeWeight(0, blendShapeValue);
         }
-        if (blendShapeValue > maxBlendShapeValue) blendShapeValue = maxBlendShapeValue;
-        fishingPoleRenderer.SetBlendShapeWeight(0, blendShapeValue);
 
-        Vector3 pos = fishingLine.localPosition;
-
-        pos.y = lineYMin + ((blendShapeValue / 59f) * (lineYMax - lineYMin));
-        pos.z = lineZMin + ((blendShapeValue / 59f) * (lineZMax - lineZMin));
-        if (transform.localRotation != previousRotation)
+        if (handleTargetHandler.isHeld)
         {
-            Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * transform.localRotation;
+            Vector3 targetVector = handleTarget.localPosition - transform.localPosition;
+            targetVector.x = 0f;
+            targetVector = targetVector.normalized;
+            transform.localRotation = Quaternion.FromToRotation(previousVector, targetVector) * transform.localRotation;
+            previousVector = targetVector;
 
-            float delta = fromPrevToCurrent.eulerAngles.x;
-            if (delta > 180) delta -= 360;
-            angle -= delta;
+            Vector3 pos = fishingLine.localPosition;
 
-            pos.x = Mathf.Sin(angle / 1000f) * sinAmplitude;
-
-            previousRotation = transform.localRotation;
-
-            if (angleText != null)
+            pos.y = lineYMin + ((blendShapeValue / 59f) * (lineYMax - lineYMin));
+            pos.z = lineZMin + ((blendShapeValue / 59f) * (lineZMax - lineZMin));
+            if (transform.localRotation != previousRotation)
             {
-                angleText.text = string.Format("Angle: {0:0.##}", angle);
+                Quaternion fromPrevToCurrent = Quaternion.Inverse(previousRotation) * transform.localRotation;
+
+                float delta = fromPrevToCurrent.eulerAngles.x;
+                if (delta > 180) delta -= 360;
+                angle -= delta;
+
+                pos.x = Mathf.Sin(angle / 1000f) * sinAmplitude;
+
+                previousRotation = transform.localRotation;
+
+                if (angleText != null)
+                {
+                    angleText.text = string.Format("Angle: {0:0.##}", angle);
+                }
+                if (fishingPole != null)
+                {
+                    if (delta < 0f) fishingPole.AddSpring(-delta);
+
+                }
             }
-            if (fishingPole != null)
-            {
-                if (delta < 0f) fishingPole.AddSpring(-delta);
-                
-            }
+            fishingLine.localPosition = pos;
         }
-        fishingLine.localPosition = pos;
     }
 }
