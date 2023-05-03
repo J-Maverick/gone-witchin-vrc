@@ -178,6 +178,7 @@ MonoBehaviour:
   maxFill: 0.43
   minFill: 0.58
   fillLevel: 1
+  rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
@@ -260,7 +261,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: owner
+      Entry: 6
+      Data: 
   _udonSharpBackingUdonBehaviour: {fileID: 1771592539}
   spawnTarget: {fileID: 5762800773297019424}
   spawnPosition: {x: 0, y: 0, z: 0}
@@ -320,10 +324,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4d67d45b95d50eb49bc1c513ee52c9ea, type: 3}
   - {fileID: 8300000, guid: 30c00753ac581c44d86a21d7d37c8da6, type: 3}
   shatterVolume: 1
+  soundEffectClips: []
+  soundEffectVolume: 1
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
   respawnTime: 15
+  refillableBottle: {fileID: 0}
+  refillOnRespawn: 0
+  syncObj: {fileID: 0}
 --- !u!114 &1771592541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,20 +392,25 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: owner
+      Entry: 6
+      Data: 
   _udonSharpBackingUdonBehaviour: {fileID: 3139166805840294526}
   potionColor: {r: 0, g: 0, b: 0, a: 0}
   shaderControl: {fileID: 1771592532}
+  fillLevel: 1
+  type: 0
+  liquid: {fileID: 0}
   pourThreshold: 0.6
   maxPourThreshold: 0.5
   minPourThreshold: -0.43
-  fillLevel: 1
   pourAnimator: {fileID: 0}
   pourMultiplier: 0.2
   particleRenderer: {fileID: 0}
   particleMaterial: {fileID: 0}
   pourSpeed: 0
-  reagent: {fileID: 0}
+  syncObj: {fileID: 0}
   pickup: {fileID: 1771592536}
 --- !u!114 &4961604759365935220
 MonoBehaviour:
@@ -448,6 +462,9 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 4961604759365935220}
   potionColor: {r: 0, g: 0, b: 0, a: 0}
   shaderControl: {fileID: 0}
+  fillLevel: 0
+  type: 0
+  liquid: {fileID: 0}
 --- !u!114 &6630422505238914441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +485,10 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: owner
+      Entry: 6
+      Data: 
   _udonSharpBackingUdonBehaviour: {fileID: 7162328204625523656}
   spawnTarget: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
@@ -489,10 +509,16 @@ MonoBehaviour:
   hardHitVolume: 1
   shatterClips: []
   shatterVolume: 1
+  soundEffectClips: []
+  soundEffectVolume: 1
   audioSource: {fileID: 0}
   isBroken: 0
   brokenSequencePlayed: 0
   respawnTime: 15
+  refillableBottle: {fileID: 0}
+  refillOnRespawn: 0
+  syncObj: {fileID: 0}
+  shatterEffect: {fileID: 0}
 --- !u!114 &7162328204625523656
 MonoBehaviour:
   m_ObjectHideFlags: 0

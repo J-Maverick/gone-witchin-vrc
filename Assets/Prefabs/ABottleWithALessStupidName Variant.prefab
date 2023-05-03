@@ -59,12 +59,13 @@ MonoBehaviour:
   mediumHitSoundIndex: 0
   hardHitSoundIndex: 0
   shatterSoundIndex: 0
+  soundEffectIndex: 0
   isBroken: 0
   bottleCollision: {fileID: 1771592540}
   pourableBottle: {fileID: 3892139356029562450}
   updateTimer: 0
   nextUpdate: 0
-  reagentList: {fileID: 0}
+  liquidList: {fileID: 0}
   reagentID: -1
   reagentBottle: {fileID: 3892139356029562450}
 --- !u!114 &429869699652119589
@@ -285,6 +286,7 @@ MonoBehaviour:
   maxFill: 0.43
   minFill: 0.58
   fillLevel: 1
+  rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
@@ -430,6 +432,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4d67d45b95d50eb49bc1c513ee52c9ea, type: 3}
   - {fileID: 8300000, guid: 30c00753ac581c44d86a21d7d37c8da6, type: 3}
   shatterVolume: 1
+  soundEffectClips: []
+  soundEffectVolume: 1
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
@@ -503,17 +507,18 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 3139166805840294526}
   potionColor: {r: 0, g: 0, b: 0, a: 0}
   shaderControl: {fileID: 1771592532}
+  fillLevel: 1
+  type: 0
+  liquid: {fileID: 0}
   pourThreshold: 0.6
   maxPourThreshold: 0.5
   minPourThreshold: -0.43
-  fillLevel: 1
   pourAnimator: {fileID: 7506729400763506133}
   pourMultiplier: 0.2
   particleRenderer: {fileID: 3342026294489697976}
   particleMaterial: {fileID: 0}
   pourSpeed: 0
   syncObj: {fileID: 5324300647419690377}
-  reagent: {fileID: 0}
   pickup: {fileID: 1771592536}
 --- !u!1001 &2378892573361212974
 PrefabInstance:

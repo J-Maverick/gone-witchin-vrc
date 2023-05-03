@@ -178,6 +178,7 @@ MonoBehaviour:
   maxFill: 0.43
   minFill: 0.58
   fillLevel: 1
+  rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1

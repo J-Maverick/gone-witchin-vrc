@@ -14,6 +14,7 @@ public class PotionWobble : UdonSharpBehaviour
     private float prevFillLevel = -1f;
 
     private Material material;
+    public Rigidbody rigidBody;
     Vector3 lastPos;
     Vector3 velocity;
     Vector3 lastRot;  
@@ -80,7 +81,6 @@ public class PotionWobble : UdonSharpBehaviour
 
     private void Update()
     {
-
         if (wobbleAmountToAddX > 0f || wobbleAmountToAddZ > 0f) // Sleepy boi logic
         {
             time += Time.deltaTime;
@@ -102,11 +102,12 @@ public class PotionWobble : UdonSharpBehaviour
 
         if (isPotion)
         {
-            if (lastPos != transform.position)
+            if (!rigidBody.IsSleeping())
             {
-                // velocity
+                //// velocity
                 velocity = (lastPos - transform.position) / Time.deltaTime;
                 angularVelocity = transform.rotation.eulerAngles - lastRot;
+                Debug.LogFormat("{0}: Movement Wobble!", name);
 
                 // add clamped velocity to wobble
                 wobbleAmountToAddX += Mathf.Clamp((velocity.x + (angularVelocity.z * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);

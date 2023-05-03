@@ -26,6 +26,7 @@ public class BottleSync : UdonSharpBehaviour
     private float lateJoinNextTry = 0f;
     private float lateJoinRetryTimer = 0f;
     private int lateJoinRetryCount = 0;
+    private bool lateJoinRetry = false;
 
     public void RandomizeSounds()
     {
@@ -119,12 +120,13 @@ public class BottleSync : UdonSharpBehaviour
             lateJoinRetryTimer = Time.realtimeSinceStartup;
             lateJoinNextTry = Time.realtimeSinceStartup + lateJoinRetryTime + Random.Range(0f, lateJoinRetryTime);
             lateJoinRetryCount = 0;
+            lateJoinRetry = true;
         }
     }
 
     public void Update()
     {
-        if (lateJoinRetryCount < lateJoinRetries)
+        if (lateJoinRetry)
         {
             if (lateJoinRetryTimer >= lateJoinNextTry)
             {
@@ -134,6 +136,7 @@ public class BottleSync : UdonSharpBehaviour
                 RequestSerialization();
             }
             lateJoinRetryTimer += Time.deltaTime;
+            if (lateJoinRetryCount > lateJoinRetries) lateJoinRetry = false;
         }
     }
 }
