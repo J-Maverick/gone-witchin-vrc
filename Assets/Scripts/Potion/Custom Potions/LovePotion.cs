@@ -17,6 +17,11 @@ public class LovePotion : ShatterEffect
     bool soundPlayedLocal = false;
     bool effectActive = false;
 
+    private void Start()
+    {
+        potionCollider.enabled = false;
+    }
+
     public override void OnShatter()
     {
         effectActive = true;
