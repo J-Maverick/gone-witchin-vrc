@@ -61,8 +61,15 @@ public class PostProcessingProfileManager : UdonSharpBehaviour
 
     public void Kaleido()
     {
+        float animSpeed = 1f;
+        Animator animator = kaleidoVolume.GetComponent<Animator>();
+        if (kaleidoVolume.activeSelf)
+        {
+            animSpeed = animator.GetFloat("AnimationSpeed") * 2f;
+        }
         ClearPostProcessing();
         kaleidoVolume.SetActive(true);
+        animator.SetFloat("AnimationSpeed", animSpeed);
     }
 
     public void Love()
