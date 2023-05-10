@@ -3,6 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+using VRC.Udon.Common;
 
 public enum BoostStackingMode
 {
@@ -29,6 +30,8 @@ public class PlayerStatBooster : UdonSharpBehaviour
     public bool moveSpeedBoosted = false;
     public bool jumpImpulseBoosted = false;
     public bool gravityStrengthBoosted = false;
+    public bool doubleJumpActive = false;
+    public bool doubleJumpTriggered = false;
 
     public float moveSpeedReductionRatio = 1f;
     public float jumpImpulseReductionRatio = 1f;
@@ -45,6 +48,8 @@ public class PlayerStatBooster : UdonSharpBehaviour
     public float jumpReductionTimer = 0f;
     public float moveSpeedReductionTimer = 0f;
     public float gravityStrengthReductionTimer = 0f;
+
+    public float doubleJumpTimer = 0f;
 
     private void Start()
     {
@@ -120,6 +125,16 @@ public class PlayerStatBooster : UdonSharpBehaviour
         SetGravityStrength();
 
         gravityStrengthReduced = true;
+    }
+
+    public void ActivateDoubleJump(float doubleJumpTime)
+    {
+        doubleJumpTimer += doubleJumpTime;
+        if (!doubleJumpActive)
+        {
+            doubleJumpTriggered = false;
+            doubleJumpActive = true;
+        }
     }
 
     // Assumes currentRatio >= 1, boostAmount > 1
@@ -233,6 +248,22 @@ public class PlayerStatBooster : UdonSharpBehaviour
         SetGravityStrength();
     }
 
+    public override void InputJump(bool value, UdonInputEventArgs args)
+    {
+        if (args.boolValue && doubleJumpActive && !Networking.LocalPlayer.IsPlayerGrounded() && !doubleJumpTriggered)
+        {
+            Vector3 velocity = Networking.LocalPlayer.GetVelocity();
+            float impulse = Networking.LocalPlayer.GetJumpImpulse();
+            if (impulse > velocity.y)
+            {
+                velocity.y = impulse;
+            }
+            Networking.LocalPlayer.SetVelocity(velocity);
+            doubleJumpTriggered = true;
+        }
+        base.InputJump(value, args);
+    }
+
     private void Update()
     {
         if (moveSpeedBoosted)
@@ -305,6 +336,16 @@ public class PlayerStatBooster : UdonSharpBehaviour
                 SetGravityStrength();
             }
             else gravityStrengthReductionTimer -= Time.deltaTime;
+        }
+
+        if (doubleJumpActive)
+        {
+            if (doubleJumpTriggered && Networking.LocalPlayer.IsPlayerGrounded()) doubleJumpTriggered = false;
+            if (doubleJumpTimer <= 0f)
+            {
+                doubleJumpActive = false;
+            }
+            else doubleJumpTimer -= Time.deltaTime;
         }
     }
 }
