@@ -28314,6 +28314,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 443365130412589829, guid: 4e8db34bdf1abb04887db1f301064b39,
         type: 3}
+      propertyPath: bait
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 443365130412589829, guid: 4e8db34bdf1abb04887db1f301064b39,
+        type: 3}
       propertyPath: maxWaitTime
       value: 1
       objectReference: {fileID: 0}
