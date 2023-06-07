@@ -124,10 +124,15 @@ public class PourableBottle : Bottle
                 else syncObj.SetFill(fillLevel);
             }
             //Debug.LogFormat("{0}: transform.up.y: {1}, pourSpeed: {2}", name, transform.up.y, pourSpeed);
-        }
-        else pourSpeed = 0f;
 
-        pourAnimator.SetFloat("pourSpeed", pourSpeed);
+            pourAnimator.SetFloat("pourSpeed", pourSpeed);
+        }
+        else if (pourSpeed > 0f)
+        {
+            pourSpeed = 0f;
+            pourAnimator.SetFloat("pourSpeed", pourSpeed);
+        }
+
     }
 
     private void TryFill()

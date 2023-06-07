@@ -12,6 +12,8 @@ public class ReagentTank : UdonSharpBehaviour
     public Renderer particleRenderer;
     public Material particleMaterial;
     public Animator particleAnimator;
+    public MeshRenderer labelRenderer;
+    public Material labelMaterial;
 
     public Lever lever;
 
@@ -33,6 +35,10 @@ public class ReagentTank : UdonSharpBehaviour
         particleMaterial.color = reagent.color;
         particleMaterial.SetColor("_EmissionColor", reagent.color);
         lever.pickup.InteractionText = reagent.name;
+
+        labelMaterial = labelRenderer.material;
+        labelMaterial.SetTextureOffset("_MainTex", new Vector2(reagent.UVOffsetX, reagent.UVOffsetY));
+        labelMaterial.SetColor("_EmissionColor", reagent.color);
     }
 
     void PourControl()

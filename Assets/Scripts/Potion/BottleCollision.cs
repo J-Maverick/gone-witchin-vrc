@@ -75,7 +75,7 @@ public class BottleCollision : UdonSharpBehaviour
             {
                 SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayMediumHit");
             }
-            else if (speed < hardHitSpeedLimit)
+            else if (speed < hardHitSpeedLimit || collision.gameObject.layer == 29)
             {
                 SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayHardHit");
             }

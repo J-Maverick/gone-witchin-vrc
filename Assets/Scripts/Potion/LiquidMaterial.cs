@@ -8,4 +8,6 @@ public class LiquidMaterial : UdonSharpBehaviour
 {
     public int ID;
     public Color color;
+    public float UVOffsetX = 0f;
+    public float UVOffsetY = 0f;
 }
