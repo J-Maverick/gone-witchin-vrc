@@ -20,7 +20,7 @@ public class FishDesigner : MonoBehaviour
         smallMaterial = smallBody.material;
     }
 
-    void Update()
+    private void Update()
     {
         if (fishData != null)
         {

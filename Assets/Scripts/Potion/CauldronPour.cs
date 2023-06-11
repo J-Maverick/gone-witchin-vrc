@@ -72,7 +72,7 @@ public class CauldronPour : UdonSharpBehaviour
         lever.pickup.InteractionText = liquid.name;
     }
 
-    private void JoinSync() {
+    public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
             SendCustomEventDelayedSeconds("JoinSync", intervalTime);
             RequestSerialization();

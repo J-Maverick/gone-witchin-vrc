@@ -194,6 +194,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131082957332}
+  rigidBody: {fileID: 443365131082957329}
 --- !u!1 &443365129836016087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1427,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365129967795991}
+  rigidBody: {fileID: 443365129967795984}
 --- !u!1 &2474409441728854352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,6 +1652,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365129950838220}
+  rigidBody: {fileID: 443365129950838217}
 --- !u!1 &2582578754614797024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,6 +1878,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131693790442}
+  rigidBody: {fileID: 443365131693790439}
 --- !u!1 &3901288032307779384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2073,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130578906870}
+  rigidBody: {fileID: 443365130578906867}
 --- !u!1 &4244838230158319985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2454,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131630190666}
+  rigidBody: {fileID: 443365131630190663}
 --- !u!1 &6217237494589810096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,6 +2649,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130266905470}
+  rigidBody: {fileID: 443365130266905467}
 --- !u!1 &6232606277414858512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,6 +3067,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131426741237}
+  rigidBody: {fileID: 0}
 --- !u!1 &6709984519235157641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,6 +3344,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130585785817}
+  rigidBody: {fileID: 443365130585785818}
 --- !u!1 &8972606237516746005
 GameObject:
   m_ObjectHideFlags: 0

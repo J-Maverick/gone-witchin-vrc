@@ -22,7 +22,7 @@ public class PotionOfVanity : ShatterEffect
         SendCustomEventDelayedSeconds("DisableEffect", collisionEnabledTime);
     }
 
-    private void DisableEffect() {
+    public void DisableEffect() {
         potionCollider.enabled = false;
     }
 }

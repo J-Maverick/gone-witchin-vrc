@@ -29,7 +29,7 @@ public class LovePotion : ShatterEffect
         SendCustomEventDelayedSeconds("DisableEffect", collisionEnabledTime);
     }
 
-    private void DisableEffect() {
+    public void DisableEffect() {
         potionCollider.enabled = false;
         effectActive = false;
     }

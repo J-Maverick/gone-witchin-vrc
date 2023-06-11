@@ -109,7 +109,7 @@ public class BottleSync : UdonSharpBehaviour
         updateTimer += Time.deltaTime;
     }
 
-    private void JoinSync() {
+    public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
             SendCustomEventDelayedSeconds("JoinSync", intervalTime);
             RequestSerialization();

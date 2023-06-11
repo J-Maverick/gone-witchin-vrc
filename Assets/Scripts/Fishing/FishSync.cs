@@ -106,7 +106,7 @@ public class FishSync : UdonSharpBehaviour
         RequestSerialization();
     }
 
-    private void JoinSync() {
+    public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
             SendCustomEventDelayedSeconds("JoinSync", intervalTime);
             Sync();

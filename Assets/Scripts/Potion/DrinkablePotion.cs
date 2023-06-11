@@ -30,7 +30,7 @@ public class DrinkablePotion : BottleCollision
         pickup.pickupable = false;
         if (owner != null && owner.isLocal)
         {
-            TriggerRespawn();
+            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
             syncObj.RandomizeSoundEffect();
         }
         PlayClip(clips, volume, syncObj.soundEffectIndex);

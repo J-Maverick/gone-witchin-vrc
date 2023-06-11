@@ -9,8 +9,9 @@ public class AudioTest : UdonSharpBehaviour
     private float defaultVoiceGain = 15f;
     private float defaultVoiceNear = 0f;
     private float defaultVoiceFar = 25f;
+    public bool localPlayerPresent = false;
 
-    public void SetPlayerVoice(VRCPlayerApi player, 
+    private void SetPlayerVoice(VRCPlayerApi player, 
     float gain, 
     float nearDistance,
     float farDistance
@@ -24,7 +25,7 @@ public class AudioTest : UdonSharpBehaviour
         // player.SetVoiceLowpass(lowPass);
     }
 
-    public void ResetPlayerVoice(VRCPlayerApi player) {      
+    private void ResetPlayerVoice(VRCPlayerApi player) {      
         SetPlayerVoice(player, 
         defaultVoiceGain, 
         defaultVoiceNear,

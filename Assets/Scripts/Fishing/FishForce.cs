@@ -227,6 +227,7 @@ public class FishForce : UdonSharpBehaviour
         fishingPole.UnlockLure();
     }
 
+    // TODO: Take an optimization pass
     private void FixedUpdate()
     {
         if (fishingPole.inWater && localOwner)

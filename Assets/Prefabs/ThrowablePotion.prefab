@@ -329,9 +329,9 @@ MonoBehaviour:
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
-  respawnTime: 15
   refillableBottle: {fileID: 0}
   refillOnRespawn: 0
+  respawnTime: 15
   syncObj: {fileID: 0}
 --- !u!114 &1771592541
 MonoBehaviour:
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllowCollisionOwnershipTransfer: 1
+  AllowCollisionOwnershipTransfer: 0
 --- !u!114 &3139166805840294526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,11 +514,12 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   isBroken: 0
   brokenSequencePlayed: 0
-  respawnTime: 15
   refillableBottle: {fileID: 0}
   refillOnRespawn: 0
+  respawnTime: 15
   syncObj: {fileID: 0}
   shatterEffect: {fileID: 0}
+  restrictedLayer: -1
 --- !u!114 &7162328204625523656
 MonoBehaviour:
   m_ObjectHideFlags: 0

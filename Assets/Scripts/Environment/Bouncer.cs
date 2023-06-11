@@ -21,7 +21,7 @@ public class Bouncer : UdonSharpBehaviour
         }
     }
 
-    public void Bounce(VRCPlayerApi player)
+    private void Bounce(VRCPlayerApi player)
     {
         Vector3 velocity = Networking.LocalPlayer.GetVelocity();
         if (minBounceSpeed > velocity.y)

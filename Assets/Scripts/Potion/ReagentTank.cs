@@ -61,7 +61,7 @@ public class ReagentTank : UdonSharpBehaviour
         PourControl();
     }
 
-    private void JoinSync() {
+    public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
             SendCustomEventDelayedSeconds("JoinSync", intervalTime);
             Sync();

@@ -413,8 +413,8 @@ GameObject:
   - component: {fileID: 506241897399014126}
   - component: {fileID: 506241897399014127}
   - component: {fileID: 506241897399014124}
-  - component: {fileID: 506241897399014123}
-  - component: {fileID: 506241897399014120}
+  - component: {fileID: 2690041614593330893}
+  - component: {fileID: 2318824795443973172}
   - component: {fileID: 506241897399014117}
   - component: {fileID: 506241897399014122}
   m_Layer: 0
@@ -505,7 +505,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &506241897399014123
+--- !u!114 &2690041614593330893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 506241897399014125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f4a59fd6d5366243add6a380aa1d50c, type: 3}
+  m_Script: {fileID: 11500000, guid: a3ac18cfef0e18946a633df8b1bef7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -526,17 +526,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 506241897399014120}
+  _udonSharpBackingUdonBehaviour: {fileID: 2318824795443973172}
   rend: {fileID: 506241896453063542}
   maxFill: 0.19
   minFill: 0.81919
-  fillLevel: 1
   rigidBody: {fileID: 0}
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
   isPotion: 0
---- !u!114 &506241897399014120
+--- !u!114 &2318824795443973172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -556,9 +555,9 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: 8855563b34956b0459d1a948404d1550,
+  serializedProgramAsset: {fileID: 11400000, guid: 547be01000b019d4aa7b331ab56242bf,
     type: 2}
-  programSource: {fileID: 11400000, guid: 4ade6339a502df449b290b24fcebb3f1, type: 2}
+  programSource: {fileID: 11400000, guid: 706b79b1f9fde204b928a5e8204399cb, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
   publicVariablesUnityEngineObjects: []
   publicVariablesSerializationDataFormat: 0
@@ -585,7 +584,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 506241897399014122}
   reagent: {fileID: 0}
-  shaderControl: {fileID: 506241897399014123}
+  shaderControl: {fileID: 2690041614593330893}
   particleRenderer: {fileID: 6995469970033622547}
   particleMaterial: {fileID: 0}
   particleAnimator: {fileID: 2835270453326228862}

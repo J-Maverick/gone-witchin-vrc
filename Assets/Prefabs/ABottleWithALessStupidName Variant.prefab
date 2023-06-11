@@ -65,6 +65,8 @@ MonoBehaviour:
   pourableBottle: {fileID: 3892139356029562450}
   updateTimer: 0
   nextUpdate: 0
+  intervalTime: 3
+  joinSyncCounter: 0
   liquidList: {fileID: 0}
   reagentID: -1
   reagentBottle: {fileID: 3892139356029562450}
@@ -437,9 +439,9 @@ MonoBehaviour:
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
-  respawnTime: 15
   refillableBottle: {fileID: 3892139356029562450}
   refillOnRespawn: 1
+  respawnTime: 15
   syncObj: {fileID: 5324300647419690377}
 --- !u!114 &1771592541
 MonoBehaviour:
@@ -453,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: -1783056023, guid: 661092b4961be7145bfbe56e1e62337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllowCollisionOwnershipTransfer: 1
+  AllowCollisionOwnershipTransfer: 0
 --- !u!114 &3139166805840294526
 MonoBehaviour:
   m_ObjectHideFlags: 0

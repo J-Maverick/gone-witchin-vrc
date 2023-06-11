@@ -41,7 +41,6 @@ public class BottleCollision : UdonSharpBehaviour
     public PourableBottle refillableBottle = null;
     public bool refillOnRespawn = false;
     public float respawnTime = 15f;
-    private bool respawning = false;
 
     public BottleSync syncObj;
 
@@ -56,7 +55,7 @@ public class BottleCollision : UdonSharpBehaviour
         if (!brokenSequencePlayed && isBroken) Shatter();
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public virtual void OnCollisionEnter(Collision collision)
     {
         if (owner != null && owner.isLocal)
         {
@@ -134,16 +133,11 @@ public class BottleCollision : UdonSharpBehaviour
 
         if (owner != null && owner.isLocal)
         {
-            TriggerRespawn();
+            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
             syncObj.RandomizeShatter();
             syncObj.SetBroken(isBroken);
         }
         PlayClip(clips, volume, syncObj.shatterSoundIndex);
-    }
-
-    protected void TriggerRespawn()
-    {
-        respawning = true;
     }
 
     public void Respawn()
@@ -171,22 +165,8 @@ public class BottleCollision : UdonSharpBehaviour
         audioSource.Play();
     }
 
-    private void DelayedRespawn() {
+    public void DelayedRespawn() {
         SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Respawn));
-    }
-
-    private void UpdateRespawn()
-    {
-        if (respawning && owner != null && owner.isLocal)
-        {
-            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
-            respawning = false;
-        }
-    }
-
-    private void Update()
-    {
-        UpdateRespawn();
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
