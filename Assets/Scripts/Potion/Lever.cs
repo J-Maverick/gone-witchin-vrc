@@ -122,7 +122,6 @@ public class Lever : UdonSharpBehaviour
                     targetVector = targetVector.normalized;
                     previousVector = targetVector;
                     angle = 0f;
-                    Debug.LogFormat("{0}: Snapped.", name);
                 }
                 else
                 {

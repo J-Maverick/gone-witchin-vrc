@@ -26,7 +26,12 @@ public class LovePotion : ShatterEffect
     {
         effectActive = true;
         potionCollider.enabled = true;
-        collisionEnabledTimer = collisionEnabledTime;
+        SendCustomEventDelayedSeconds("DisableEffect", collisionEnabledTime);
+    }
+
+    private void DisableEffect() {
+        potionCollider.enabled = false;
+        effectActive = false;
     }
 
     public void ActivateLove(VRCPlayerApi player)
@@ -47,21 +52,6 @@ public class LovePotion : ShatterEffect
                 bottleCollision.PlaySoundEffect();
                 soundPlayed = true;
             }
-        }
-    }
-
-    private void Update()
-    {
-        if (effectActive)
-        {
-            if (collisionEnabledTimer <= 0f)
-            {
-                potionCollider.enabled = false;
-                soundPlayed = false;
-                soundPlayedLocal = false;
-                effectActive = false;
-            }
-            collisionEnabledTimer -= Time.deltaTime;
         }
     }
 }

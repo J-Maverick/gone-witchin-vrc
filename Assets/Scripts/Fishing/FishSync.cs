@@ -14,7 +14,7 @@ public class FishSync : UdonSharpBehaviour
     [UdonSynced] public float exhaustion = 1f;
     [UdonSynced] public int stateIDSync = 0;
     [UdonSynced] public bool pickupEnabledSync = false;
-    private float nextTime = 0f;
+
     public float intervalTime = 3f;
     private int nJoinSyncs = 10;
     public int joinSyncCounter = 0;
@@ -106,20 +106,17 @@ public class FishSync : UdonSharpBehaviour
         RequestSerialization();
     }
 
+    private void JoinSync() {
+        if (joinSyncCounter < nJoinSyncs) {
+            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
+            Sync();
+            joinSyncCounter++;
+        }
+    }
+
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
         joinSyncCounter = 0;
-        RequestSerialization();
-    }
-
-    public void Update()
-    {
-        // Late joiner sync protection... friggin vrchat
-        if (joinSyncCounter < nJoinSyncs && Time.realtimeSinceStartup > nextTime)
-        {
-            RequestSerialization();
-            joinSyncCounter++;
-            nextTime = Time.realtimeSinceStartup + intervalTime;
-        }
+        JoinSync();
     }
 }

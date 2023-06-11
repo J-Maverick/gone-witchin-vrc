@@ -21,12 +21,9 @@ public class BottleSync : UdonSharpBehaviour
     public float updateTimer = 0f;
     public float nextUpdate = 0f;
 
-    private int lateJoinRetries = 10;
-    private float lateJoinRetryTime = 1f;
-    private float lateJoinNextTry = 0f;
-    private float lateJoinRetryTimer = 0f;
-    private int lateJoinRetryCount = 0;
-    private bool lateJoinRetry = false;
+    public float intervalTime = 3f;
+    private int nJoinSyncs = 10;
+    public int joinSyncCounter = 0;
 
     public void RandomizeSounds()
     {
@@ -112,31 +109,17 @@ public class BottleSync : UdonSharpBehaviour
         updateTimer += Time.deltaTime;
     }
 
-    public override void OnPlayerJoined(VRCPlayerApi player)
-    {
-        if (Networking.GetOwner(gameObject).isLocal)
-        {
+    private void JoinSync() {
+        if (joinSyncCounter < nJoinSyncs) {
+            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
             RequestSerialization();
-            lateJoinRetryTimer = Time.realtimeSinceStartup;
-            lateJoinNextTry = Time.realtimeSinceStartup + lateJoinRetryTime + Random.Range(0f, lateJoinRetryTime);
-            lateJoinRetryCount = 0;
-            lateJoinRetry = true;
+            joinSyncCounter++;
         }
     }
 
-    public void Update()
+    public override void OnPlayerJoined(VRCPlayerApi player)
     {
-        if (lateJoinRetry)
-        {
-            if (lateJoinRetryTimer >= lateJoinNextTry)
-            {
-                Debug.LogFormat("{0}: Late joiner serialization retrying", name);
-                lateJoinRetryCount++;
-                lateJoinNextTry += lateJoinRetryTime;
-                RequestSerialization();
-            }
-            lateJoinRetryTimer += Time.deltaTime;
-            if (lateJoinRetryCount > lateJoinRetries) lateJoinRetry = false;
-        }
+        joinSyncCounter = 0;
+        JoinSync();
     }
 }

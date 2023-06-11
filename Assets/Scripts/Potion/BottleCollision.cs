@@ -37,12 +37,11 @@ public class BottleCollision : UdonSharpBehaviour
     
     private float holdSpeedMultiplier = 3f;
 
-    public float respawnTime = 15f;
-    private float respawnTimer = 0f;
-    private bool respawning = false;
 
     public PourableBottle refillableBottle = null;
     public bool refillOnRespawn = false;
+    public float respawnTime = 15f;
+    private bool respawning = false;
 
     public BottleSync syncObj;
 
@@ -172,17 +171,16 @@ public class BottleCollision : UdonSharpBehaviour
         audioSource.Play();
     }
 
+    private void DelayedRespawn() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Respawn));
+    }
+
     private void UpdateRespawn()
     {
         if (respawning && owner != null && owner.isLocal)
         {
-            respawnTimer += Time.deltaTime;
-            if (respawnTimer >= respawnTime)
-            {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Respawn));
-                respawnTimer = 0f;
-                respawning = false;
-            }
+            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
+            respawning = false;
         }
     }
 

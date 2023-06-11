@@ -9,9 +9,6 @@ public class ShillingChalice : ShatterEffect
     public SphereCollider potionCollider;
 
     public float collisionEnabledTime = 2f;
-    public float collisionEnabledTimer = 0f;
-    
-    bool effectActive = false;
 
     private void Start()
     {
@@ -20,22 +17,13 @@ public class ShillingChalice : ShatterEffect
 
     public override void OnShatter()
     {
-        effectActive = true;
         potionCollider.enabled = true;
-        collisionEnabledTimer = collisionEnabledTime;
+        SendCustomEventDelayedSeconds("DisableEffect", collisionEnabledTime);
     }
 
-    private void Update()
-    {
-        if (effectActive)
-        {
-            if (collisionEnabledTimer <= 0f)
-            {
-                potionCollider.enabled = false;
-                effectActive = false;
-            }
-            collisionEnabledTimer -= Time.deltaTime;
-        }
+    private void DisableEffect() {
+        potionCollider.enabled = false;
     }
+
 }
 

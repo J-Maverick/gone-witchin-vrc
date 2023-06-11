@@ -75,7 +75,11 @@ public class Cauldron : UdonSharpBehaviour
         {
             isOverflowing = true;
         }
-        else isOverflowing = false;
+        else 
+        {
+            isOverflowing = false;
+            overflowAnimator.SetFloat("pourSpeed", 0.0f);
+        }
 
         liquidColliderAnimator.SetFloat("FillLevel", liquid.fillLevel);
 
@@ -139,10 +143,6 @@ public class Cauldron : UdonSharpBehaviour
                 overflowAnimator.SetFloat("pourSpeed", 0.0f);
                 isOverflowing = false;
             }
-        }
-        else if (overflowAnimator.GetFloat("pourSpeed") > 0)
-        {
-            overflowAnimator.SetFloat("pourSpeed", 0.0f);
         }
 
         if (fillLevel > 0f)
