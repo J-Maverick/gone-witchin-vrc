@@ -8,6 +8,7 @@ public class Elevator : UdonSharpBehaviour
 {
     public Transform startLocation;
     public Transform endLocation;
+    public Vector3 previousPosition;
     private Transform targetLocation;
     public float moveSpeed = .5f;
 
@@ -47,6 +48,7 @@ public class Elevator : UdonSharpBehaviour
             moveActive = true;
             elevatorSwitch.SetOn();
             targetLocation = targetLocation == startLocation ? endLocation : startLocation;
+            previousPosition = transform.position;
         }
     }
 
@@ -60,6 +62,11 @@ public class Elevator : UdonSharpBehaviour
                 moveActive = false;
                 elevatorSwitch.SetOff();
             }
+
+            if (playerColliding) {
+                Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetRotation());
+            }
+            previousPosition = transform.position;
         }
     }
 }

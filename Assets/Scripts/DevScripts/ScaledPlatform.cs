@@ -27,7 +27,6 @@ public class ScaledPlatform : UdonSharpBehaviour
     }
     private void Update()
     {
-
         if (Time.frameCount % 50 == 0)
         {
             currentPlayerSpeedRatio = Networking.LocalPlayer.GetRunSpeed() / playerStatBooster.defaultRunSpeed;
