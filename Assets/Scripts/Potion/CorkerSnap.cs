@@ -4,12 +4,10 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class BottleSnap : UdonSharpBehaviour
+public class CorkerSnap : BottleSnap
 {
-    public Bottle bottle = null;
-    public Transform snapTarget = null;
-
-    public virtual void OnTriggerEnter(Collider other)
+    public Corker corker;
+    public override void OnTriggerEnter(Collider other)
     {
         Bottle tempBottle = other.gameObject.GetComponent<Bottle>();
         if (tempBottle != null && bottle == null)
@@ -23,31 +21,8 @@ public class BottleSnap : UdonSharpBehaviour
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             }
+
+            corker.TryActivate(bottle);
         }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (bottle != null && other.gameObject == bottle.gameObject)
-        {
-            bottle = null;
-        }
-    }
-
-    public Bottle GetBottle()
-    {
-        return bottle;
-    }
-
-    public bool CheckFill(float fill)
-    {
-        return bottle.fillLevel == fill;
-    }
-
-    public bool CheckMatch(Recipe recipe)
-    {
-        if (recipe != null)
-            return bottle.liquid == recipe.potion;
-        else return false;
     }
 }

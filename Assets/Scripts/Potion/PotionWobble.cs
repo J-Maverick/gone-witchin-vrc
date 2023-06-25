@@ -94,11 +94,11 @@ public class PotionWobble : UdonSharpBehaviour
             // decrease wobble over time
             wobbleAmountToAddX = Mathf.Lerp(wobbleAmountToAddX, 0, Time.deltaTime * (Recovery));
             wobbleAmountToAddZ = Mathf.Lerp(wobbleAmountToAddZ, 0, Time.deltaTime * (Recovery));
-            if (wobbleAmountToAddX < 0.001) wobbleAmountToAddX = 0f;
-            if (wobbleAmountToAddZ < 0.001) wobbleAmountToAddZ = 0f;
+            if (Mathf.Abs(wobbleAmountToAddX) < 0.001) wobbleAmountToAddX = 0f;
+            if (Mathf.Abs(wobbleAmountToAddZ) < 0.001) wobbleAmountToAddZ = 0f;
 
             // make a sine wave of the decreasing wobble
-            pulse = 2 * Mathf.PI * WobbleSpeed;
+            pulse = 2f * Mathf.PI * WobbleSpeed;
             wobbleAmountX = wobbleAmountToAddX * Mathf.Sin(pulse * Time.realtimeSinceStartup);
             wobbleAmountZ = wobbleAmountToAddZ * Mathf.Sin(pulse * Time.realtimeSinceStartup);
 
@@ -106,7 +106,7 @@ public class PotionWobble : UdonSharpBehaviour
             material.SetFloat("_WobbleX", wobbleAmountX);
             material.SetFloat("_WobbleZ", wobbleAmountZ);
 
-            if (wobbleAmountToAddX <= 0f && wobbleAmountToAddZ <= 0f) {
+            if (wobbleAmountToAddX == 0f && wobbleAmountToAddZ == 0f) {
                 wobbleActive = false;
             }
         }

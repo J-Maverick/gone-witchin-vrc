@@ -38,6 +38,8 @@ public class ReagentTank : UdonSharpBehaviour
         labelMaterial = labelRenderer.material;
         labelMaterial.SetTextureOffset("_MainTex", new Vector2(reagent.UVOffsetX, reagent.UVOffsetY));
         labelMaterial.SetColor("_EmissionColor", reagent.color);
+
+        shaderControl.fillLevel = fillLevel;
     }
 
     void PourControl()
@@ -48,7 +50,7 @@ public class ReagentTank : UdonSharpBehaviour
             if (fillLevel == 0f) flow = 0f;
             particleAnimator.SetFloat("pourSpeed", flow);
 
-            if (flow > 0f) shaderControl.FillBump(flow);
+            if (flow > 0f) shaderControl.FillBump(5f * flow);
 
             fillLevel -= flow * pourMultiplier * Time.deltaTime;
             if (fillLevel < 0f) fillLevel = 0f;
