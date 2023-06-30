@@ -23,7 +23,7 @@ public class PotionWobble : UdonSharpBehaviour
         get => _fillLevel;
     }
 
-    private Material material;
+    public Material material;
     public Rigidbody rigidBody;
     Vector3 lastPos;
     Vector3 velocity;
@@ -43,7 +43,7 @@ public class PotionWobble : UdonSharpBehaviour
 
     bool wobbleActive = true;
 
-    private void Start()
+    public void Start()
     {
         if (isPotion)
         material = rend.materials[1];

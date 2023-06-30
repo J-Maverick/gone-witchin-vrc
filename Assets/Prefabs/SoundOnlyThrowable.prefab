@@ -177,7 +177,6 @@ MonoBehaviour:
   rend: {fileID: 6895776400857948495}
   maxFill: 0.43
   minFill: 0.58
-  fillLevel: 1
   rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
@@ -255,6 +254,7 @@ MonoBehaviour:
   fillLevel: 0
   type: 0
   liquid: {fileID: 0}
+  spawner: {fileID: 0}
   particleRenderer: {fileID: 1563162867170548177}
   particleMaterial: {fileID: 0}
   pickup: {fileID: 1771592536}
@@ -340,7 +340,9 @@ MonoBehaviour:
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
+  bottle: {fileID: 4029266903221727078}
   refillableBottle: {fileID: 0}
+  respawnOnShatter: 0
   refillOnRespawn: 0
   respawnTime: 15
   syncObj: {fileID: 7733158785387096120}

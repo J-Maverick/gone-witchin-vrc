@@ -19,10 +19,21 @@ public class Bottle : UdonSharpBehaviour
     public BottleType type = BottleType.None;
     public LiquidMaterial liquid = null;
 
+    public BottleSpawner spawner = null;
+
     protected virtual void Start()
     {
         shaderControl = GetComponent<PotionWobble>();
-        shaderControl.SetStaticColor(potionColor);
+        if (liquid != null) shaderControl.SetStaticColor(potionColor);
+    }
+
+    public void Despawn() {
+        if (spawner != null) {
+            spawner.Despawn(gameObject);
+        }
+        else {
+            gameObject.SetActive(false);
+        }
     }
 
 }

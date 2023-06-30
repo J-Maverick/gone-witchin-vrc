@@ -37,7 +37,7 @@ TagManager:
   - NoWaterOrPlayerCollision
   - ReagentBottles
   - Elevator
-  - 
+  - FishPoles
   - 
   m_SortingLayers:
   - name: Default

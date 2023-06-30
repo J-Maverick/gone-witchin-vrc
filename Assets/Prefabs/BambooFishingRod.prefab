@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -194,7 +194,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131082957332}
-  rigidBody: {fileID: 443365131082957329}
 --- !u!1 &443365129836016087
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,8 +463,10 @@ GameObject:
   - component: {fileID: 443365130272504300}
   - component: {fileID: 443365130272504303}
   - component: {fileID: 443365130272504302}
-  - component: {fileID: 443365130272504296}
+  - component: {fileID: 1511092631506688392}
   - component: {fileID: 443365130272504297}
+  - component: {fileID: 4627711529528465628}
+  - component: {fileID: 4282486405234210565}
   m_Layer: 13
   m_Name: HandleCollider
   m_TagString: Untagged
@@ -549,7 +550,7 @@ MonoBehaviour:
   currentlyHeldBy: {fileID: 0}
   pickupable: 1
   proximity: 2
---- !u!114 &443365130272504296
+--- !u!114 &1511092631506688392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,11 +559,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 443365130272504299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13085454e327e4d418e127c985f605c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 63bd72a4fbed963419e2a432dfda6e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -577,6 +578,59 @@ MonoBehaviour:
   lever: {fileID: 0}
   tankPour: {fileID: 0}
 --- !u!114 &443365130272504297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443365130272504299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTextPlacement: {fileID: 0}
+  interactText: Use
+  interactTextGO: {fileID: 0}
+  proximity: 2
+  SynchronizePosition: 0
+  AllowCollisionOwnershipTransfer: 0
+  Reliable: 0
+  _syncMethod: 2
+  serializedProgramAsset: {fileID: 11400000, guid: 0886eb67914986b4f9e234b4edc824bd,
+    type: 2}
+  programSource: {fileID: 11400000, guid: 0d0c80040ebf39e4eb53815afaae262c, type: 2}
+  serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
+  publicVariablesUnityEngineObjects: []
+  publicVariablesSerializationDataFormat: 0
+--- !u!114 &4627711529528465628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443365130272504299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bd72a4fbed963419e2a432dfda6e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 0
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _udonSharpBackingUdonBehaviour: {fileID: 4282486405234210565}
+  dropped: 0
+  isHeld: 0
+  tank: {fileID: 0}
+  lever: {fileID: 0}
+  tankPour: {fileID: 0}
+--- !u!114 &4282486405234210565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -757,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -770,7 +824,7 @@ MonoBehaviour:
   fishForce: {fileID: 443365130412589829}
   lure: {fileID: 443365130412589835}
   reelAngleAccumulator: {fileID: 443365129853066716}
-  handleHandler: {fileID: 443365130272504296}
+  handleHandler: {fileID: 4627711529528465628}
 --- !u!114 &2159631210976670120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -896,7 +950,7 @@ MonoBehaviour:
   fishingPole: {fileID: 443365131476326640}
   angleText: {fileID: 443365130941888418}
   handleTarget: {fileID: 443365130272504301}
-  handleTargetHandler: {fileID: 443365130272504296}
+  handleTargetHandler: {fileID: 4627711529528465628}
   handle: {fileID: 443365131543299519}
   fishingLine: {fileID: 9155876453976685473}
   fishingPoleRenderer: {fileID: 6916346120405300172}
@@ -1050,7 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1124,7 +1178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1418,7 +1472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1427,7 +1481,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365129967795991}
-  rigidBody: {fileID: 443365129967795984}
 --- !u!1 &2474409441728854352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1652,7 +1705,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365129950838220}
-  rigidBody: {fileID: 443365129950838217}
 --- !u!1 &2582578754614797024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -1878,7 +1930,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131693790442}
-  rigidBody: {fileID: 443365131693790439}
 --- !u!1 &3901288032307779384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -2073,7 +2124,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130578906870}
-  rigidBody: {fileID: 443365130578906867}
 --- !u!1 &4244838230158319985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,7 +2495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -2454,7 +2504,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131630190666}
-  rigidBody: {fileID: 443365131630190663}
 --- !u!1 &6217237494589810096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -2649,7 +2698,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130266905470}
-  rigidBody: {fileID: 443365130266905467}
 --- !u!1 &6232606277414858512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -3058,7 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -3067,7 +3115,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131426741237}
-  rigidBody: {fileID: 0}
 --- !u!1 &6709984519235157641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -3344,7 +3391,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365130585785817}
-  rigidBody: {fileID: 443365130585785818}
 --- !u!1 &8972606237516746005
 GameObject:
   m_ObjectHideFlags: 0

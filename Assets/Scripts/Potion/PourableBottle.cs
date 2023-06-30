@@ -32,13 +32,32 @@ public class PourableBottle : Bottle
         particleMaterial.color = potionColor;
         particleMaterial.SetColor("_EmissionColor", potionColor);
         UpdateLiquidProperties();
-        if (owner != null && owner.isLocal) syncObj.SetFill(fillLevel, forceSync: true);
+        if (owner != null && owner.isLocal) 
+        {
+            syncObj.SetFill(fillLevel, forceSync: true);
+        }
         base.Start();
+    }
+
+    public void OnEnable() {
+        shaderControl.Start();
+        Start();
+        Empty();
+    }
+
+    public void Empty() {
+        fillLevel = 0f;
+        syncObj.SetFill(fillLevel, true);
+        UpdateShaderFill();
     }
 
     public void UpdateShaderFill()
     {
-        if (shaderControl != null) shaderControl.fillLevel = fillLevel;
+        if (shaderControl != null) {
+            Debug.Log("Get fucked");
+            shaderControl.fillLevel = fillLevel;
+        }
+        else Debug.Log("FUCK");
     }
 
     bool CheckPour()

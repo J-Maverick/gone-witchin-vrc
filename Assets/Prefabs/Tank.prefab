@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 506241896829970417}
   - component: {fileID: 506241896829970422}
   - component: {fileID: 506241896829970418}
-  - component: {fileID: 506241896829970419}
+  - component: {fileID: 8505910319167099332}
   - component: {fileID: 8947386858544653609}
   m_Layer: 13
   m_Name: HandleCollider
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 506241896829970420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13085454e327e4d418e127c985f605c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 63bd72a4fbed963419e2a432dfda6e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -243,13 +243,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 506241896829970419}
+  _udonSharpBackingUdonBehaviour: {fileID: 8505910319167099332}
   dropped: 0
   isHeld: 0
   tank: {fileID: 506241897399014117}
-  lever: {fileID: 0}
+  lever: {fileID: 506241897794900095}
   tankPour: {fileID: 6995469970033622546}
---- !u!114 &506241896829970419
+--- !u!114 &8505910319167099332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -37,8 +37,9 @@ public class BottleCollision : UdonSharpBehaviour
     
     private float holdSpeedMultiplier = 3f;
 
-
+    public Bottle bottle = null;
     public PourableBottle refillableBottle = null;
+    public bool respawnOnShatter = false;
     public bool refillOnRespawn = false;
     public float respawnTime = 15f;
 
@@ -152,9 +153,14 @@ public class BottleCollision : UdonSharpBehaviour
 
         if (owner != null && owner.isLocal)
         {
-            transform.SetPositionAndRotation(spawnPosition, spawnRotation);
-            if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
             syncObj.SetBroken(isBroken);
+            if (respawnOnShatter) {
+                transform.SetPositionAndRotation(spawnPosition, spawnRotation);
+                if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
+            }
+            else if (bottle != null) {
+                bottle.Despawn();
+            }
         }
     }
 

@@ -13,18 +13,20 @@ public class Corker : UdonSharpBehaviour
     public void TryActivate(Bottle bottle) {
         if (bottle.GetUdonTypeName() == GetUdonTypeName<ReagentBottle>() && bottle.fillLevel >= 1f) {
             indicator.SetValid();
-            GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
-            if (spawnedPotion != null) {
-                
-                Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
-                spawnedPotion.transform.SetPositionAndRotation(bottle.transform.position, bottle.transform.rotation);
+            if (Networking.GetOwner(bottle.gameObject).isLocal) {
+                GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
+                if (spawnedPotion != null) {
+                    
+                    Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
+                    spawnedPotion.transform.SetPositionAndRotation(bottle.transform.position, bottle.transform.rotation);
 
-                bottle.gameObject.SetActive(false); // TODO replace with bottle pooling
-                bottleSnap.bottle = spawnedPotion.GetComponent<Bottle>();
-            }
-            else {
-                indicator.SetInvalid();
-                Debug.LogFormat("{0}: Failed to spawn {1}", name, bottle.liquid.name);
+                    bottle.Despawn();
+                    bottleSnap.bottle = spawnedPotion.GetComponent<Bottle>();
+                }
+                else {
+                    indicator.SetInvalid();
+                    Debug.LogFormat("{0}: Failed to spawn {1}", name, bottle.liquid.name);
+                }
             }
         }
         else {

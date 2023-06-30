@@ -54,13 +54,13 @@ public class Lever : UdonSharpBehaviour
         SendCustomEventDelayedSeconds("GoToSleep", sleepTime);
     }
 
-    void GoToSleep()
+    public void GoToSleep()
     {
         if (sleepTriggered)
             isSleeping = true;
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (!isSleeping)
         {
