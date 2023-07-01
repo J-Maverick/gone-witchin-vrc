@@ -159,7 +159,7 @@ public class BottleCollision : UdonSharpBehaviour
                 if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
             }
             else if (bottle != null) {
-                bottle.Despawn();
+                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
             }
         }
     }

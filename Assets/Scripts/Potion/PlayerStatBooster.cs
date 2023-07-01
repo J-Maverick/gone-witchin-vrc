@@ -54,11 +54,13 @@ public class PlayerStatBooster : UdonSharpBehaviour
     private void Start()
     {
         localPlayer = Networking.LocalPlayer;
-        localPlayer.SetRunSpeed(defaultRunSpeed);
-        localPlayer.SetWalkSpeed(defaultWalkSpeed);
-        localPlayer.SetStrafeSpeed(defaultStrafeSpeed);
-        localPlayer.SetJumpImpulse(defaultJumpImpulse);
-        localPlayer.SetGravityStrength(defaultGravityStrength);
+        if (localPlayer != null) {
+            localPlayer.SetRunSpeed(defaultRunSpeed);
+            localPlayer.SetWalkSpeed(defaultWalkSpeed);
+            localPlayer.SetStrafeSpeed(defaultStrafeSpeed);
+            localPlayer.SetJumpImpulse(defaultJumpImpulse);
+            localPlayer.SetGravityStrength(defaultGravityStrength);
+        }
     }
 
     public void BoostMoveSpeed(float boostAmount, float boostTime, BoostStackingMode boostStacking)

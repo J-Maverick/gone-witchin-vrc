@@ -20,7 +20,7 @@ public class Corker : UdonSharpBehaviour
                     Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
                     spawnedPotion.transform.SetPositionAndRotation(bottle.transform.position, bottle.transform.rotation);
 
-                    bottle.Despawn();
+                    bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
                     bottleSnap.bottle = spawnedPotion.GetComponent<Bottle>();
                 }
                 else {

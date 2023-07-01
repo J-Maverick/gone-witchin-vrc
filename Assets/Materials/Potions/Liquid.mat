@@ -26,7 +26,7 @@ Material:
     m_Floats:
     - _FillAmount: 0.345
     - _LerpCoefficient: 0.2
-    - _Rim: 0.0728
+    - _Rim: 0.0063
     - _RimPower: 0
     - _WobbleX: 0
     - _WobbleZ: 0

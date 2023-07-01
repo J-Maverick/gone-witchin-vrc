@@ -21,6 +21,8 @@ public class SpeechZone : UdonSharpBehaviour
         if (player.isLocal) {
             localPlayerInZone = true;
             speechZoneHandler.localPlayerListening = true;
+            
+            Debug.LogFormat("{0}: Local player entered speech zone", name);
         }
         playerList.Add(player.playerId);
         players = playerList.ToArray();
@@ -32,6 +34,7 @@ public class SpeechZone : UdonSharpBehaviour
             localPlayerInZone = false;
             speechZoneHandler.localPlayerListening = false;
             speechZoneHandler.ResetAllPlayerVoices();
+            Debug.LogFormat("{0}: Local player left speech zone", name);
         }
         playerList.Remove(player.playerId);
         players = playerList.ToArray();
@@ -63,9 +66,8 @@ public class SpeechZone : UdonSharpBehaviour
         }
     }
 
-    public void ResetPlayerVoices() {
-        foreach (int id in players) {
-            VRCPlayerApi player = VRCPlayerApi.GetPlayerById(id);
+    public void ResetPlayerVoices(VRCPlayerApi[] allPlayers) {
+        foreach (VRCPlayerApi player in allPlayers) {
             if (player != null) {
                 ResetPlayerVoice(player);
             }

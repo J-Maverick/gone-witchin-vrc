@@ -54,10 +54,8 @@ public class PourableBottle : Bottle
     public void UpdateShaderFill()
     {
         if (shaderControl != null) {
-            Debug.Log("Get fucked");
             shaderControl.fillLevel = fillLevel;
         }
-        else Debug.Log("FUCK");
     }
 
     bool CheckPour()
@@ -180,6 +178,9 @@ public class PourableBottle : Bottle
     public override void OnOwnershipTransferred(VRCPlayerApi player)
     {
         owner = player;
+        if (player.isLocal) {
+            Networking.SetOwner(player, syncObj.gameObject);
+        }
     }
 
     public override void OnPlayerJoined(VRCPlayerApi player)

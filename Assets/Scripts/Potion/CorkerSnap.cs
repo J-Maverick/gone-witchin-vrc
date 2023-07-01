@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -21,7 +21,7 @@ public class CorkerSnap : BottleSnap
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             }
-
+            
             corker.TryActivate(bottle);
         }
     }

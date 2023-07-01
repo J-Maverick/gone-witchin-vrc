@@ -3,6 +3,7 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+using VRC.SDK3.Components;
 
 public class HandleHandler : UdonSharpBehaviour
 {
@@ -11,6 +12,8 @@ public class HandleHandler : UdonSharpBehaviour
     public ReagentTank tank = null;
     public Lever lever = null;
     public GameObject tankPour = null;
+
+    public GameObject spawnPool = null;
 
     public override void OnDrop()
     {
@@ -34,6 +37,8 @@ public class HandleHandler : UdonSharpBehaviour
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
             if (tankPour != null) Networking.SetOwner(Networking.LocalPlayer, tankPour);
             if (tank != null) Networking.SetOwner(Networking.LocalPlayer, tank.gameObject);
+            if (spawnPool != null) Networking.SetOwner(Networking.LocalPlayer, spawnPool);
+            if (lever != null) Networking.SetOwner(Networking.LocalPlayer, lever.gameObject);
         }
     }
 }

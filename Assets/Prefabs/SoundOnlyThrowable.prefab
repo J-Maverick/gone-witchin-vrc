@@ -177,6 +177,7 @@ MonoBehaviour:
   rend: {fileID: 6895776400857948495}
   maxFill: 0.43
   minFill: 0.58
+  material: {fileID: 0}
   rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
@@ -412,7 +413,7 @@ GameObject:
   - component: {fileID: 7733158785387096120}
   - component: {fileID: 2688121682362370147}
   m_Layer: 13
-  m_Name: BottleSync
+  m_Name: PotionBottleSync
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

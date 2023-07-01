@@ -27,7 +27,7 @@ public class ScaledPlatform : UdonSharpBehaviour
     }
     private void Update()
     {
-        if (Time.frameCount % 50 == 0)
+        if (Time.frameCount % 50 == 0 && Networking.LocalPlayer != null)
         {
             currentPlayerSpeedRatio = Networking.LocalPlayer.GetRunSpeed() / playerStatBooster.defaultRunSpeed;
             currentPlayerJumpRatio = Networking.LocalPlayer.GetJumpImpulse() / playerStatBooster.defaultJumpImpulse;

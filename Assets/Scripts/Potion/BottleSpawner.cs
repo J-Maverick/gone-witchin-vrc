@@ -13,6 +13,7 @@ public class BottleSpawner : UdonSharpBehaviour
     public GameObject Spawn() {
         GameObject spawnedObject = pool.TryToSpawn();
         if (spawnedObject != null) {
+            Networking.SetOwner(Networking.LocalPlayer, spawnedObject);
             spawnedObject.transform.SetPositionAndRotation(spawnTarget.position, spawnTarget.rotation);
         }
         return spawnedObject;

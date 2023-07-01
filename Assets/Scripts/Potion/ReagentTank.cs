@@ -55,6 +55,8 @@ public class ReagentTank : UdonSharpBehaviour
             fillLevel -= flow * pourMultiplier * Time.deltaTime;
             if (fillLevel < 0f) fillLevel = 0f;
             if (shaderControl != null) UpdateFill();
+
+            if (Time.frameCount % 10 == 0) Sync();
         }
     }
 
@@ -84,6 +86,11 @@ public class ReagentTank : UdonSharpBehaviour
 
     public void Sync()
     {
+        Debug.LogFormat("{0}: Requested Serialization", name);
         RequestSerialization();
+    }
+
+    public override void OnDeserialization() {
+        UpdateFill();
     }
 }

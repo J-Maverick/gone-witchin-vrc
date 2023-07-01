@@ -30,9 +30,11 @@ public class SpeechZoneHandler : UdonSharpBehaviour
     }
 
     public void ResetAllPlayerVoices() {
+        VRCPlayerApi[] allPlayers = new VRCPlayerApi[VRCPlayerApi.GetPlayerCount()];
+        VRCPlayerApi.GetPlayers(allPlayers);
+
         foreach (SpeechZone zone in speechZones) {
-            zone.ResetPlayerVoices();
+            zone.ResetPlayerVoices(allPlayers);
         }
     }
-
 }

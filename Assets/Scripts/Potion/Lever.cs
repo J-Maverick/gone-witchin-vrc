@@ -30,8 +30,11 @@ public class Lever : UdonSharpBehaviour
     public VRC_Pickup pickup;
 
     public bool isSleeping = true;
-    public bool sleepTriggered = false;
+    public int sleepID = 0;
+    public int wakeID = 0;
     readonly float sleepTime = 2f;
+
+
 
     void Start()
     {
@@ -45,18 +48,18 @@ public class Lever : UdonSharpBehaviour
     public void WakeUp()
     {
         isSleeping = false;
-        sleepTriggered = false;
+        wakeID += 1;
     }
 
     public void Sleep()
     {
-        sleepTriggered = true;
         SendCustomEventDelayedSeconds("GoToSleep", sleepTime);
     }
 
     public void GoToSleep()
     {
-        if (sleepTriggered)
+        sleepID += 1;
+        if (sleepID == wakeID)
             isSleeping = true;
     }
 
