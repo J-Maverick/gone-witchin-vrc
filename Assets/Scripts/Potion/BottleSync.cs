@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -15,6 +15,22 @@ public class BottleSync : UdonSharpBehaviour
     [UdonSynced] public int soundEffectIndex = 0;
     [UdonSynced] public bool isBroken = false;
 
+    [UdonSynced, FieldChangeCallback(nameof(BottleID))] 
+    private int _bottleID = 2;
+
+    public int BottleID 
+    {
+        set 
+        {
+            if (value != _bottleID) {
+                Debug.LogFormat("{0}: Bottle ID updated to {1}", name, value);
+                _bottleID = value;
+                UpdateBottleMesh();
+            }
+        }
+        get => _bottleID;
+    }
+
     public BottleCollision bottleCollision;
     public PourableBottle pourableBottle = null;
 
@@ -24,6 +40,31 @@ public class BottleSync : UdonSharpBehaviour
     public float intervalTime = 3f;
     private int nJoinSyncs = 10;
     public int joinSyncCounter = 0;
+
+    public BottleDataList bottleDataList;
+    public MeshFilter filter;
+    public PotionWobble wobble;
+
+    public void SetBottleType(int ID) {
+        Debug.LogFormat("{0}: Setting bottle ID to {1}", name, ID);
+        BottleID = ID;
+        RequestSerialization();
+    }
+
+    public void UpdateBottleMesh() {
+        Debug.LogFormat("{0}: Attempting to update bottle data", name);
+        if (bottleDataList != null) {
+            Debug.LogFormat("{0}: Getting bottle data from list", name);
+            BottleData bottleData = bottleDataList.GetBottleByID(_bottleID);
+            if (bottleData != null) {
+                filter.mesh = bottleData.mesh;
+                wobble.minFill = bottleData.minFill;
+                wobble.maxFill = bottleData.maxFill;
+                wobble.UpdateFillLevel();
+                Debug.LogFormat("{0}: Updated bottle data", name);
+            }
+        }
+    }
 
     public void RandomizeSounds()
     {

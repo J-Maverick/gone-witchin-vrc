@@ -67,6 +67,9 @@ MonoBehaviour:
   nextUpdate: 0
   intervalTime: 3
   joinSyncCounter: 0
+  bottleDataList: {fileID: 0}
+  filter: {fileID: 0}
+  wobble: {fileID: 0}
   liquidList: {fileID: 0}
   reagentID: -1
   reagentBottle: {fileID: 3892139356029562450}
@@ -610,6 +613,7 @@ MonoBehaviour:
   type: 0
   liquid: {fileID: 0}
   spawner: {fileID: 0}
+  bottleID: 3
   pourThreshold: 0.6
   maxPourThreshold: 0.5
   minPourThreshold: -0.43

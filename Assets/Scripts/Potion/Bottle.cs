@@ -21,6 +21,8 @@ public class Bottle : UdonSharpBehaviour
 
     public BottleSpawner spawner = null;
 
+    public int bottleID = 2;
+
     protected virtual void Start()
     {
         shaderControl = GetComponent<PotionWobble>();
