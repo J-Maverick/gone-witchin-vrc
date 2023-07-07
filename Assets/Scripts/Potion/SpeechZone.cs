@@ -11,7 +11,8 @@ public class SpeechZone : UdonSharpBehaviour
     public DataToken[] players;
     public bool localPlayerInZone = false;
     public SpeechZoneHandler speechZoneHandler = null;
-    private bool zoneActive = true;
+    
+    // private bool zoneActive = true;
 
     private float defaultVoiceNear = 0f;
     private float defaultVoiceFar = 25f;

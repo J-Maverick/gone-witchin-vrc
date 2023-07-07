@@ -11,34 +11,40 @@ public class HandleHandler : UdonSharpBehaviour
     public bool isHeld = false;
     public ReagentTank tank = null;
     public Lever lever = null;
-    public GameObject tankPour = null;
-
-    public GameObject spawnPool = null;
+    public GameObject[] ownershipItems;
 
     public override void OnDrop()
     {
         dropped = true;
         isHeld = false;
-        if (tank != null)
+        if (tank != null && Networking.GetOwner(gameObject).isLocal)
         {
             tank.Sync();
-            tank.lever.Sleep();
+            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sleep");
         }
-        if (lever != null) lever.Sleep();
+        if (lever != null && Networking.GetOwner(gameObject).isLocal) 
+        {
+            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sleep");
+        }
     }
 
     public override void OnPickup()
     {
         isHeld = true;
-        if (tank != null) tank.lever.WakeUp();
-        if (lever != null) lever.WakeUp();
-        if (Networking.LocalPlayer.IsValid())
-        {
-            Networking.SetOwner(Networking.LocalPlayer, gameObject);
-            if (tankPour != null) Networking.SetOwner(Networking.LocalPlayer, tankPour);
-            if (tank != null) Networking.SetOwner(Networking.LocalPlayer, tank.gameObject);
-            if (spawnPool != null) Networking.SetOwner(Networking.LocalPlayer, spawnPool);
-            if (lever != null) Networking.SetOwner(Networking.LocalPlayer, lever.gameObject);
+        if (tank != null && Networking.GetOwner(gameObject).isLocal) {
+            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "WakeUp");
+        }
+        if (lever != null && Networking.GetOwner(gameObject).isLocal) {
+            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "WakeUp");
+        }
+    }
+
+    public override void OnOwnershipTransferred(VRCPlayerApi player)
+    {
+        if (player.isLocal) {
+            foreach (GameObject ownershipObject in ownershipItems) {
+                Networking.SetOwner(player, ownershipObject);
+            }
         }
     }
 }

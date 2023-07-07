@@ -25,4 +25,8 @@ public class CorkerSnap : BottleSnap
             corker.TryActivate(bottle);
         }
     }
+
+    public void ClearBottle() {
+        bottle = null;
+    }
 }

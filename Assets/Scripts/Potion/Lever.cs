@@ -49,6 +49,7 @@ public class Lever : UdonSharpBehaviour
     {
         isSleeping = false;
         wakeID += 1;
+        Debug.LogFormat("{0}: Waking up... sleepID: {1} | wakeID: {2}", name, sleepID, wakeID);
     }
 
     public void Sleep()
@@ -59,6 +60,7 @@ public class Lever : UdonSharpBehaviour
     public void GoToSleep()
     {
         sleepID += 1;
+        Debug.LogFormat("{0}: Trying Sleep... sleepID: {1} | wakeID: {2}", name, sleepID, wakeID);
         if (sleepID == wakeID)
             isSleeping = true;
     }

@@ -29,7 +29,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6170404671871678340, guid: 37778310b67ae7a40be16a3f349bad41, type: 3}
+  m_Mesh: {fileID: -6170404671871678340, guid: a4dfada5cb8837b4c9cd2f03be57a6a8, type: 3}
 --- !u!82 &1771592538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   type: 0
   liquid: {fileID: 0}
   spawner: {fileID: 0}
+  bottleID: 2
   particleRenderer: {fileID: 1563162867170548177}
   particleMaterial: {fileID: 0}
   pickup: {fileID: 1771592536}
@@ -471,6 +472,8 @@ MonoBehaviour:
   bottleDataList: {fileID: 114530726886803316, guid: 710d8e1439675dc4ba2275a4a5d6729f,
     type: 3}
   filter: {fileID: 8671205337794614661}
+  meshRenderer: {fileID: 6895776400857948495}
+  meshCollider: {fileID: 1771592535}
   wobble: {fileID: 1771592532}
 --- !u!114 &2688121682362370147
 MonoBehaviour:
@@ -656,6 +659,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4626f2ece580ec941ad727f93b565ef2, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 37778310b67ae7a40be16a3f349bad41,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -6170404671871678340, guid: a4dfada5cb8837b4c9cd2f03be57a6a8,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}
       propertyPath: m_Name

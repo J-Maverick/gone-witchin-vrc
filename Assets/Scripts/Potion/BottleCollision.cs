@@ -180,8 +180,8 @@ public class BottleCollision : UdonSharpBehaviour
         owner = player;
         if (owner != null && owner.isLocal)
         {
-            syncObj.RandomizeSounds();
             Networking.SetOwner(owner, syncObj.gameObject);
+            syncObj.RandomizeSounds();
         }
     }
 }

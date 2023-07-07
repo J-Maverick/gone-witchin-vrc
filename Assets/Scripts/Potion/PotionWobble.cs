@@ -24,7 +24,7 @@ public class PotionWobble : UdonSharpBehaviour
     }
 
     public Material material;
-    public Rigidbody rigidBody;
+    public Rigidbody rigidBody = null;
     Vector3 lastPos;
     Vector3 velocity;
     Vector3 lastRot;  
@@ -50,6 +50,9 @@ public class PotionWobble : UdonSharpBehaviour
         else
         material = rend.materials[0];
         UpdateFillLevel();
+        if (rigidBody != null) {
+            rigidBody.WakeUp();
+        }
     }
 
     public void SetColor(Color newColor)

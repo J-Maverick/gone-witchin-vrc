@@ -248,7 +248,20 @@ MonoBehaviour:
   isHeld: 0
   tank: {fileID: 506241897399014117}
   lever: {fileID: 506241897794900095}
-  tankPour: {fileID: 6995469970033622546}
+  ownershipItems:
+  - {fileID: 506241897399014125}
+  - {fileID: 6995469970033622546}
+  - {fileID: 506241896453063541}
+  - {fileID: 506241897919082167}
+  - {fileID: 506241896863045981}
+  - {fileID: 506241898187270708}
+  - {fileID: 506241896125502810}
+  - {fileID: 506241896829970420}
+  - {fileID: 506241897794900066}
+  - {fileID: 506241896924823195}
+  - {fileID: 506241897765866347}
+  - {fileID: 456446506990368744}
+  - {fileID: 3183198507987912479}
 --- !u!114 &8505910319167099332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +543,7 @@ MonoBehaviour:
   rend: {fileID: 506241896453063542}
   maxFill: 0.19
   minFill: 0.81919
+  material: {fileID: 0}
   rigidBody: {fileID: 0}
   MaxWobble: 0.03
   WobbleSpeed: 1
@@ -818,7 +832,8 @@ MonoBehaviour:
   absoluteAngle: 0
   pickup: {fileID: 506241896829970422}
   isSleeping: 1
-  sleepTriggered: 0
+  sleepID: 0
+  wakeID: 0
 --- !u!114 &506241897794900092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1308,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf8f8808d9b64e4f9d2d3573332cac9, type: 3}
+--- !u!1 &456446506990368744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 868339346425164693, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+    type: 3}
+  m_PrefabInstance: {fileID: 745743379086328957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &456446506990368663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 868339346425164778, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,

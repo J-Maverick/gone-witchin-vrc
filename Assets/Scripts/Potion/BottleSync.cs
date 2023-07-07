@@ -34,8 +34,7 @@ public class BottleSync : UdonSharpBehaviour
     public BottleCollision bottleCollision;
     public PourableBottle pourableBottle = null;
 
-    public float updateTimer = 0f;
-    public float nextUpdate = 0f;
+    public bool serializing = false;
 
     public float intervalTime = 3f;
     private int nJoinSyncs = 10;
@@ -43,25 +42,23 @@ public class BottleSync : UdonSharpBehaviour
 
     public BottleDataList bottleDataList;
     public MeshFilter filter;
+    public MeshCollider meshCollider;
     public PotionWobble wobble;
 
     public void SetBottleType(int ID) {
-        Debug.LogFormat("{0}: Setting bottle ID to {1}", name, ID);
         BottleID = ID;
         RequestSerialization();
     }
 
     public void UpdateBottleMesh() {
-        Debug.LogFormat("{0}: Attempting to update bottle data", name);
         if (bottleDataList != null) {
-            Debug.LogFormat("{0}: Getting bottle data from list", name);
             BottleData bottleData = bottleDataList.GetBottleByID(_bottleID);
             if (bottleData != null) {
                 filter.mesh = bottleData.mesh;
+                meshCollider.sharedMesh = bottleData.mesh;
                 wobble.minFill = bottleData.minFill;
                 wobble.maxFill = bottleData.maxFill;
                 wobble.UpdateFillLevel();
-                Debug.LogFormat("{0}: Updated bottle data", name);
             }
         }
     }
@@ -142,12 +139,15 @@ public class BottleSync : UdonSharpBehaviour
 
     public void FrequencySerialization(float freq = 5f)
     {
-        if (updateTimer >= nextUpdate)
-        {
-            RequestSerialization();
-            nextUpdate = updateTimer + (1f / freq);
+        if (!serializing) {
+            SendCustomEventDelayedSeconds("Serialize", 1f / freq);
+            serializing = true;
         }
-        updateTimer += Time.deltaTime;
+    }
+
+    public void Serialize() {
+        RequestSerialization();
+        serializing = false;
     }
 
     public void JoinSync() {

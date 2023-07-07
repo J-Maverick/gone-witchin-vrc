@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class Corker : UdonSharpBehaviour
 {
-    public BottleSnap bottleSnap;
+    public CorkerSnap bottleSnap;
     public GemIndicator indicator;
     public PotionOcean potionPool;
 
@@ -14,7 +14,10 @@ public class Corker : UdonSharpBehaviour
         if (bottle.GetUdonTypeName() == GetUdonTypeName<ReagentBottle>() && bottle.fillLevel >= 1f) {
             indicator.SetValid();
             if (Networking.GetOwner(bottle.gameObject).isLocal) {
+                Networking.SetOwner(Networking.LocalPlayer, potionPool.gameObject);
+
                 GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
+                Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
                 if (spawnedPotion != null) {
                     
                     Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
@@ -23,7 +26,7 @@ public class Corker : UdonSharpBehaviour
                     sync.SetBottleType(bottle.bottleID);
 
                     bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
-                    bottleSnap.bottle = spawnedPotion.GetComponent<Bottle>();
+                    bottleSnap.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "ClearBottle");
                 }
                 else {
                     indicator.SetInvalid();
