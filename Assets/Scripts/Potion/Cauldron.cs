@@ -12,7 +12,7 @@ public class Cauldron : UdonSharpBehaviour
     public Renderer overflowParticleRenderer;
     public Material overflowMaterial;
     public GemIndicator indicator;
-    public float overflowFlowRate = 0.02f;
+    private float overflowFlowRate = 0.05f;
     public float maxFill = 5f;
     public bool isOverflowing = false;
     [UdonSynced] public float fillLevel = 0f;
@@ -135,14 +135,17 @@ public class Cauldron : UdonSharpBehaviour
         if (isOverflowing)
         {
             overflowMaterial.color = liquid.GetColor();
+            overflowMaterial.SetColor("_EmissionColor", liquid.GetColor());
             overflowAnimator.SetFloat("pourSpeed", 0.4f);
-            liquid.fillLevel -= overflowFlowRate * Time.deltaTime;
-            if (liquid.fillLevel < 1)
+            fillLevel -= overflowFlowRate * Time.deltaTime;
+            
+            if (fillLevel < 1)
             {
-                liquid.fillLevel = 1f;
+                fillLevel = 1f;
                 overflowAnimator.SetFloat("pourSpeed", 0.0f);
                 isOverflowing = false;
             }
+            liquid.fillLevel = fillLevel;
         }
 
         if (fillLevel > 0f)

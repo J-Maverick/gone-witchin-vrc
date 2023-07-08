@@ -55,6 +55,10 @@ public class PotionWobble : UdonSharpBehaviour
         }
     }
 
+    public void OnEnable() {
+        Start();
+    }
+
     public void SetColor(Color newColor)
     {
         if (material == null)
@@ -116,12 +120,12 @@ public class PotionWobble : UdonSharpBehaviour
     }
 
     public void MovementWobble() {
-        if (!rigidBody.IsSleeping())
+        if (!rigidBody.IsSleeping() && fillLevel > 0f)
         {
             //// velocity
             velocity = (lastPos - transform.position) / Time.deltaTime;
             angularVelocity = transform.rotation.eulerAngles - lastRot;
-            Debug.LogFormat("{0}: Movement Wobble!", name);
+            // Debug.LogFormat("{0}: Movement Wobble!", name);
 
             // add clamped velocity to wobble
             wobbleAmountToAddX += Mathf.Clamp((velocity.x + (angularVelocity.z * 0.2f)) * MaxWobble, -MaxWobble, MaxWobble);

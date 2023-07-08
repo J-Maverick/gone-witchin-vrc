@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -33,8 +33,6 @@ public class Lever : UdonSharpBehaviour
     public int sleepID = 0;
     public int wakeID = 0;
     readonly float sleepTime = 2f;
-
-
 
     void Start()
     {

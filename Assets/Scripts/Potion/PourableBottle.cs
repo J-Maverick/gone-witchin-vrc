@@ -48,6 +48,7 @@ public class PourableBottle : Bottle
     public void Empty() {
         fillLevel = 0f;
         syncObj.SetFill(fillLevel, true);
+        pickup.InteractionText = "Empty Bottle";
         UpdateShaderFill();
     }
 

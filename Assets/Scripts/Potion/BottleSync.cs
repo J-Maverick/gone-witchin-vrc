@@ -58,7 +58,7 @@ public class BottleSync : UdonSharpBehaviour
                 meshCollider.sharedMesh = bottleData.mesh;
                 wobble.minFill = bottleData.minFill;
                 wobble.maxFill = bottleData.maxFill;
-                wobble.UpdateFillLevel();
+                wobble.Start();
             }
         }
     }

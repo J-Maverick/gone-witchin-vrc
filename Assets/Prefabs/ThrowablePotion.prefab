@@ -41,7 +41,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   rend: {fileID: 6895776400857948495}
   maxFill: 0.43
   minFill: 0.58
-  fillLevel: 1
+  material: {fileID: 0}
   rigidBody: {fileID: 1771592537}
   MaxWobble: 0.03
   WobbleSpeed: 1
@@ -329,7 +329,9 @@ MonoBehaviour:
   audioSource: {fileID: 1771592538}
   isBroken: 0
   brokenSequencePlayed: 0
+  bottle: {fileID: 0}
   refillableBottle: {fileID: 0}
+  respawnOnShatter: 0
   refillOnRespawn: 0
   respawnTime: 15
   syncObj: {fileID: 0}
@@ -402,6 +404,8 @@ MonoBehaviour:
   fillLevel: 1
   type: 0
   liquid: {fileID: 0}
+  spawner: {fileID: 0}
+  bottleID: 2
   pourThreshold: 0.6
   maxPourThreshold: 0.5
   minPourThreshold: -0.43
@@ -465,6 +469,8 @@ MonoBehaviour:
   fillLevel: 0
   type: 0
   liquid: {fileID: 0}
+  spawner: {fileID: 0}
+  bottleID: 2
 --- !u!114 &6630422505238914441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +520,9 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   isBroken: 0
   brokenSequencePlayed: 0
+  bottle: {fileID: 0}
   refillableBottle: {fileID: 0}
+  respawnOnShatter: 0
   refillOnRespawn: 0
   respawnTime: 15
   syncObj: {fileID: 0}

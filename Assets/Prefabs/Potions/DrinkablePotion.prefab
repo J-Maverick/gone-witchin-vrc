@@ -29,7 +29,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6170404671871678340, guid: a4dfada5cb8837b4c9cd2f03be57a6a8, type: 3}
+  m_Mesh: {fileID: -7610272226941562410, guid: a73d534fd230db04ca61f03e2c40e5a1, type: 3}
 --- !u!82 &1771592538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -660,7 +660,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}
@@ -676,12 +676,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 4626f2ece580ec941ad727f93b565ef2, type: 2}
+      objectReference: {fileID: 2100000, guid: e2b868dd7bf2fdf4498518ad6b13fb01, type: 2}
     - target: {fileID: -5754084199372789682, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -6170404671871678340, guid: a4dfada5cb8837b4c9cd2f03be57a6a8,
+      objectReference: {fileID: -7610272226941562410, guid: a73d534fd230db04ca61f03e2c40e5a1,
         type: 3}
     - target: {fileID: 919132149155446097, guid: 37778310b67ae7a40be16a3f349bad41,
         type: 3}

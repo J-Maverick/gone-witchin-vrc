@@ -56,6 +56,10 @@ public class BottleCollision : UdonSharpBehaviour
         if (!brokenSequencePlayed && isBroken) Shatter();
     }
 
+    public void OnEnable() {
+        syncObj.Serialize();
+    }
+
     public virtual void OnCollisionEnter(Collision collision)
     {
         if (owner != null && owner.isLocal)
@@ -166,6 +170,7 @@ public class BottleCollision : UdonSharpBehaviour
 
     protected void PlayClip(AudioClip[] clips, float volume, int soundIndex)
     {
+        Debug.LogFormat("{0}: Playing clip at volume {1}", name, volume);
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
         audioSource.Play();
