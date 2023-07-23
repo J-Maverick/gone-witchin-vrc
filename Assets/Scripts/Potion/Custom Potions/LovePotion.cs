@@ -32,6 +32,8 @@ public class LovePotion : ShatterEffect
     public void DisableEffect() {
         potionCollider.enabled = false;
         effectActive = false;
+        soundPlayed = false;
+        soundPlayedLocal = false;
     }
 
     public void ActivateLove(VRCPlayerApi player)

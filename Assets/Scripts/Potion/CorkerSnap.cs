@@ -23,6 +23,7 @@ public class CorkerSnap : BottleSnap
             }
             
             corker.TryActivate(bottle);
+            SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
         }
     }
 

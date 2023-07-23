@@ -23,14 +23,13 @@ public class DrinkablePotion : BottleCollision
         
         if (Networking.GetOwner(gameObject).isLocal && drinkEffect != null) drinkEffect.OnDrink();
 
-        // TODO replace with object pool logic
         mesh.enabled = false;
         meshCollider.enabled = false;
         pickup.Drop();
         pickup.pickupable = false;
         if (owner != null && owner.isLocal)
         {
-            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
+            SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
             syncObj.RandomizeSoundEffect();
         }
         PlayClip(clips, volume, syncObj.soundEffectIndex);

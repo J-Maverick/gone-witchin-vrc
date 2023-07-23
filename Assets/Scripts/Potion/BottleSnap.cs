@@ -9,6 +9,8 @@ public class BottleSnap : UdonSharpBehaviour
     public Bottle bottle = null;
     public Transform snapTarget = null;
 
+    public float checkDelayTime = 1f;
+
     public virtual void OnTriggerEnter(Collider other)
     {
         Bottle tempBottle = other.gameObject.GetComponent<Bottle>();
@@ -22,6 +24,18 @@ public class BottleSnap : UdonSharpBehaviour
                 Rigidbody rb = bottle.gameObject.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
+            }
+            SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
+        }
+    }
+
+    public void CheckBottleAlive() {
+        if (bottle != null) {
+            if (!bottle.gameObject.activeSelf) {
+                bottle = null;
+            }
+            else {
+                SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
             }
         }
     }

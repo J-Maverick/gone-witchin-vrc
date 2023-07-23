@@ -44,8 +44,10 @@ public class SpeechZone : UdonSharpBehaviour
 
     public override void OnPlayerLeft(VRCPlayerApi player)
     {
-        playerList.Remove(player.playerId);
-        players = playerList.ToArray();
+        if (playerList.Contains(player.playerId)) {
+            playerList.Remove(player.playerId);
+            players = playerList.ToArray();
+        }
     }
 
     private void SetPlayerVoice(VRCPlayerApi player, float nearDistance, float farDistance) {

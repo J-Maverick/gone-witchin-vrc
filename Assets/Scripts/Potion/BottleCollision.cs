@@ -138,7 +138,7 @@ public class BottleCollision : UdonSharpBehaviour
 
         if (owner != null && owner.isLocal)
         {
-            SendCustomEventDelayedSeconds("DelayedRespawn", respawnTime);
+            SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
             syncObj.RandomizeShatter();
             syncObj.SetBroken(isBroken);
         }
@@ -163,7 +163,7 @@ public class BottleCollision : UdonSharpBehaviour
                 if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
             }
             else if (bottle != null) {
-                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
+                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Bottle.Despawn));
             }
         }
     }
@@ -183,7 +183,7 @@ public class BottleCollision : UdonSharpBehaviour
     public override void OnOwnershipTransferred(VRCPlayerApi player)
     {
         owner = player;
-        if (owner != null && owner.isLocal)
+        if (owner != null)
         {
             Networking.SetOwner(owner, syncObj.gameObject);
             syncObj.RandomizeSounds();

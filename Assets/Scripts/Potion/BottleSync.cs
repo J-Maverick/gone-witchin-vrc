@@ -48,6 +48,12 @@ public class BottleSync : UdonSharpBehaviour
     public void SetBottleType(int ID) {
         BottleID = ID;
         RequestSerialization();
+        SendCustomEventDelayedSeconds("Sync", 1f);
+        SendCustomEventDelayedSeconds("Sync", 2f);
+    }
+
+    public void Sync() {
+        RequestSerialization();
     }
 
     public void UpdateBottleMesh() {

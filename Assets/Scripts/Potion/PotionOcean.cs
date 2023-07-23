@@ -11,6 +11,7 @@ public class PotionOcean : UdonSharpBehaviour
     public GameObject TryToSpawnByID(int ID) {
         foreach (PotionPool potionPool in potionPools) {
             if (potionPool.IsMatch(ID)) {
+                Networking.SetOwner(Networking.LocalPlayer, potionPool.gameObject);
                 return potionPool.pool.TryToSpawn();
             }
         }

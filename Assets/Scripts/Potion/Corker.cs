@@ -18,12 +18,12 @@ public class Corker : UdonSharpBehaviour
                 Networking.SetOwner(Networking.LocalPlayer, potionPool.gameObject);
 
                 GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
-                Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
                 if (spawnedPotion != null) {
-                    
+                    Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
                     Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
                     spawnedPotion.transform.SetPositionAndRotation(bottle.transform.position, bottle.transform.rotation);
                     BottleSync sync = spawnedPotion.GetComponentInChildren<BottleSync>();
+                    Networking.SetOwner(Networking.LocalPlayer, sync.gameObject);
                     sync.SetBottleType(bottle.bottleID);
 
                     bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
