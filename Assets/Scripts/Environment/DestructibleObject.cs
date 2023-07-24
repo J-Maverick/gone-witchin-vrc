@@ -10,6 +10,7 @@ public class DestructibleObject : UdonSharpBehaviour
     public GameObject meshObject = null;
     public ParticleSystem destructionParticles = null;
     public AudioSource audioSource = null;
+    public Collider selfCollider = null;
 
     [UdonSynced, FieldChangeCallback(nameof(Destroyed))] 
     private bool _destroyed = false;
@@ -41,6 +42,9 @@ public class DestructibleObject : UdonSharpBehaviour
         }
         if (destructionParticles != null) {
             destructionParticles.Play();
+        }
+        if (selfCollider != null) {
+            selfCollider.enabled = false;
         }
         RequestSerialization();
     }

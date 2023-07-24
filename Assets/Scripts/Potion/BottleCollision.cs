@@ -20,16 +20,21 @@ public class BottleCollision : UdonSharpBehaviour
 
     public float softHitSpeedLimit = 2f;
     public float softHitVolume = .25f;
+    public float softHitMaxDistance = 8f;
     public AudioClip[] mediumHitClips;
     public float mediumHitSpeedLimit = 4f;
     public float mediumHitVolume = .5f;
+    public float mediumHitMaxDistance = 12f;
     public AudioClip[] hardHitClips;
     public float hardHitSpeedLimit = 7f;
     public float hardHitVolume = 1f;
+    public float hardHitMaxDistance = 15f;
     public AudioClip[] shatterClips;
     public float shatterVolume = 1f;
+    public float shatterMaxDistance = 25f;
     public AudioClip[] soundEffectClips;
     public float soundEffectVolume = 1f;
+    public float soundEffectMaxDistance = 25f;
     public AudioSource audioSource;
 
     public bool isBroken = false;
@@ -92,7 +97,7 @@ public class BottleCollision : UdonSharpBehaviour
     public void PlaySoftHit()
     {
         AudioClip[] clips = softHitClips;
-        audioSource.maxDistance = 8f;
+        audioSource.maxDistance = softHitMaxDistance;
         if (owner != null && owner.isLocal) syncObj.RandomizeSoftHit();
         PlayClip(clips, softHitVolume, syncObj.softHitSoundIndex);
     }
@@ -100,7 +105,7 @@ public class BottleCollision : UdonSharpBehaviour
     public void PlayMediumHit()
     {
         AudioClip[] clips = mediumHitClips;
-        audioSource.maxDistance = 12f;
+        audioSource.maxDistance = mediumHitMaxDistance;
         if (owner != null && owner.isLocal) syncObj.RandomizeMediumHit();
         PlayClip(clips, mediumHitVolume, syncObj.mediumHitSoundIndex);
     }
@@ -108,7 +113,7 @@ public class BottleCollision : UdonSharpBehaviour
     public void PlayHardHit()
     {
         AudioClip[] clips = hardHitClips;
-        audioSource.maxDistance = 15f;
+        audioSource.maxDistance = hardHitMaxDistance;
         if (owner != null && owner.isLocal) syncObj.RandomizeHardHit();
         PlayClip(clips, hardHitVolume, syncObj.hardHitSoundIndex);
     }
@@ -116,7 +121,7 @@ public class BottleCollision : UdonSharpBehaviour
     public void PlaySoundEffect()
     {
         AudioClip[] clips = soundEffectClips;
-        audioSource.maxDistance = 15f;
+        audioSource.maxDistance = soundEffectMaxDistance;
         if (owner != null && owner.isLocal) syncObj.RandomizeSoundEffect();
         PlayClip(clips, soundEffectVolume, syncObj.soundEffectIndex);
     }
@@ -124,7 +129,7 @@ public class BottleCollision : UdonSharpBehaviour
     public virtual void Shatter()
     {
         isBroken = true;
-        audioSource.maxDistance = 25f;
+        audioSource.maxDistance = shatterMaxDistance;
         AudioClip[] clips = shatterClips;
         float volume = shatterVolume;
         shatterParticles.SetActive(true);

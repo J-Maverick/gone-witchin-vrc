@@ -72,7 +72,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "2.0.2",
+      "version": "3.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -88,8 +88,8 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.postprocessing": {
-      "version": "3.1.1",
-      "depth": 1,
+      "version": "3.2.2",
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.physics": "1.0.0"
@@ -116,7 +116,7 @@
     },
     "com.unity.textmeshpro": {
       "version": "2.1.6",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
@@ -165,7 +165,7 @@
       "dependencies": {
         "com.unity.burst": "1.4.11",
         "com.unity.mathematics": "1.2.5",
-        "com.unity.nuget.newtonsoft-json": "2.0.2"
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
     "com.vrchat.clientsim": {
@@ -182,7 +182,7 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.2"
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
       }
     },
     "com.vrchat.udonsharp": {
