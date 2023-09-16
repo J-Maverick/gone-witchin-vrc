@@ -6,7 +6,7 @@ using VRC.Udon;
 
 public class PlatformPiece : UdonSharpBehaviour
 {
-    Vector3 startPosition;
+    public Vector3 startPosition;
 
     private void Start()
     {
@@ -17,7 +17,8 @@ public class PlatformPiece : UdonSharpBehaviour
     {
         transform.localScale = scale;
         Vector3 pos = startPosition;
-        pos.y *= 1 / scale.y;
+        pos.y *= 1 / (2f * scale.y);
         transform.localPosition = pos;
     }
+
 }

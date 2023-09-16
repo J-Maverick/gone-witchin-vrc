@@ -1,4 +1,3 @@
-﻿
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -51,6 +50,10 @@ public class PlayerStatBooster : UdonSharpBehaviour
 
     public float doubleJumpTimer = 0f;
 
+    public float sizeModifier = 1f;
+    public float defaultSize = 1.84f;
+    public bool sizeModEnabled = false;
+
     private void Start()
     {
         localPlayer = Networking.LocalPlayer;
@@ -60,6 +63,13 @@ public class PlayerStatBooster : UdonSharpBehaviour
             localPlayer.SetStrafeSpeed(defaultStrafeSpeed);
             localPlayer.SetJumpImpulse(defaultJumpImpulse);
             localPlayer.SetGravityStrength(defaultGravityStrength);
+        }
+    }
+
+    public override void OnAvatarEyeHeightChanged(VRCPlayerApi player, float prevEyeHeightAsMeters)
+    {
+        if (player.isLocal) {
+            SetSizeModifier();
         }
     }
 
@@ -84,7 +94,7 @@ public class PlayerStatBooster : UdonSharpBehaviour
 
         jumpImpulseBoosted = true;
     }
-
+    
     public void BoostGravityStrength(float boostAmount, float boostTime, BoostStackingMode boostStacking)
     {
         gravityStrengthBoostTimer += boostTime;
@@ -103,8 +113,8 @@ public class PlayerStatBooster : UdonSharpBehaviour
         moveSpeedReductionRatio = GetReductionRatio(moveSpeedReductionRatio, reductionAmount, reductionStacking);
 
         SetMoveSpeed();
-
         moveSpeedReduced = true;
+
     }
 
     public void ReduceJumpImpulse(float reductionAmount, float reductionTime, BoostStackingMode reductionStacking)
@@ -192,21 +202,43 @@ public class PlayerStatBooster : UdonSharpBehaviour
         return reductionRatio;
     }
 
+    public void DisableSizeModifier() {
+        sizeModEnabled = false;
+        SetSizeModifier();
+    }
+
+    public void EnableSizeModifier() {
+        sizeModEnabled = true;
+        SetSizeModifier();
+    }
+
+    public void SetSizeModifier() {
+        if (sizeModEnabled) {
+            sizeModifier = localPlayer.GetAvatarEyeHeightAsMeters() / defaultSize;
+        }
+        else {
+            sizeModifier = 1f;
+        }
+        SetMoveSpeed();
+        SetJumpImpulse();
+        SetGravityStrength();
+    }
+
     public void SetMoveSpeed()
     {
-        localPlayer.SetRunSpeed(defaultRunSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio);
-        localPlayer.SetWalkSpeed(defaultWalkSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio);
-        localPlayer.SetStrafeSpeed(defaultStrafeSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio);
+        localPlayer.SetRunSpeed(defaultRunSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio * sizeModifier);
+        localPlayer.SetWalkSpeed(defaultWalkSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio * sizeModifier);
+        localPlayer.SetStrafeSpeed(defaultStrafeSpeed * moveSpeedBoostRatio * moveSpeedReductionRatio * sizeModifier);
     }
 
     public void SetJumpImpulse()
     {
-        localPlayer.SetJumpImpulse(defaultJumpImpulse * jumpImpulseBoostRatio * jumpImpulseReductionRatio);
+        localPlayer.SetJumpImpulse(defaultJumpImpulse * jumpImpulseBoostRatio * jumpImpulseReductionRatio * sizeModifier);
     }
 
     public void SetGravityStrength()
     {
-        localPlayer.SetGravityStrength(defaultGravityStrength * gravityStrengthBoostRatio * gravityStrengthReductionRatio);
+        localPlayer.SetGravityStrength(defaultGravityStrength * gravityStrengthBoostRatio * gravityStrengthReductionRatio * sizeModifier);
     }
 
     public void ResetMoveSpeed()
