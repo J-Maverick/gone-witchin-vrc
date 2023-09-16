@@ -54,8 +54,6 @@ public class ScaledPlatform : UdonSharpBehaviour
                 if (yTarget == yScale) scaleRate = 2f;
                 else scaleRate = (xzTarget - xzScale) / (yTarget - yScale);
             } 
-
-            Debug.LogFormat("{0}: currentPlayerJumpRatio: {1}, yScale: {2}, yTarget: {3}, xzScale: {4}, xzTarget: {5}, currentGravityRatio: {6}, prevGravityRatio: {7}, gravityMultiplier: {8}", name, currentPlayerJumpRatio, yScale, yTarget, xzScale, xzTarget, currentGravityRatio, prevGravityRatio, gravityMultiplier);
         }
 
         if (yScale != yTarget || xzScale != xzTarget)
