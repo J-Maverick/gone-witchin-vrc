@@ -37,7 +37,7 @@ public class FishForce : UdonSharpBehaviour
 
     public VRCObjectPool fishObjectPool;
     
-    public Bait bait = Bait.none;
+    public Bait bait = null;
 
     public float catchDistanceThreshold = 5f;
 
@@ -129,7 +129,6 @@ public class FishForce : UdonSharpBehaviour
 
     public void TriggerFight()
     {
-        Debug.LogFormat("{0}: Triggering Fight", name);
         if (fish.TriggerFight())
         {
             fishingPole.FishOn(fish.size);
@@ -152,8 +151,8 @@ public class FishForce : UdonSharpBehaviour
     public void OverrideLurePosition()
     {
         float yOffset = 0f;
-        if (fishingPole.water.location == Location.lake) yOffset = LocationOffset.Lake;
-        else if (fishingPole.water.location == Location.cave) yOffset = LocationOffset.Cave;
+        if (fishingPole.water.location == Location.Lake) yOffset = LocationOffset.Lake;
+        else if (fishingPole.water.location == Location.Cave) yOffset = LocationOffset.Cave;
 
         Vector3 pos = lure.position;
         pos.y = yOffset + 0.02f;

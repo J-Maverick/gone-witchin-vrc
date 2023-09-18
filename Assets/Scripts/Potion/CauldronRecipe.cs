@@ -121,7 +121,6 @@ public class CauldronRecipe : Recipe
 
     public void NormalizeReagents()
     {
-        float[] reagentFills = new float[] { fillReagent0, fillReagent1, fillReagent2, fillReagent3, fillReagent4 };
         float minReagent = MinReagentFill();
         if (minReagent > 0f)
         {

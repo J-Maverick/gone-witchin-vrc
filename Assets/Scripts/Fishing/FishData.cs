@@ -58,38 +58,50 @@ public class FishData : UdonSharpBehaviour
     public float nSilveredSilt = 0f;
     public float nGoldenGumbo = 0f;
 
+    public FishTag[] tags = null;
+
     public float GetCatchChance(Location location, Bait bait)
     {
-        if (location == Location.lake && foundInLake) return lakeCatchChance + GetLakeBonus(bait);
+        if (location == Location.Lake && foundInLake) return GetBaitModifierBonus(location, bait, lakeCatchChance) + GetLakeBonus(bait);
 
-        else if (location == Location.cave && foundInCave) return caveCatchChance + GetCaveBonus(bait);
+        else if (location == Location.Cave && foundInCave) return GetBaitModifierBonus(location, bait, caveCatchChance) + GetCaveBonus(bait);
 
         else return 0f;
     }
 
+    public float GetBaitModifierBonus(Location location, Bait bait, float catchChance) {
+        float modifier = 1f;
+        if (bait != null && bait.type == BaitType.Tag) {
+            modifier = bait.UpdateCatchRateModifier(modifier, tags, location);
+        }
+        return catchChance * modifier;
+        
+    }
     public float GetLakeBonus(Bait bait)
     {
         float bonus = 0f;
-        switch (bait)
-        {
-            case Bait.none:
-                bonus = 0f;
-                break;
-            case Bait.apprentice:
-                bonus = apprenticeLakeBaitBonus;
-                break;
-            case Bait.journeyman:
-                bonus = journeymanLakeBaitBonus;
-                break;
-            case Bait.adept:
-                bonus = adeptLakeBaitBonus;
-                break;
-            case Bait.master:
-                bonus = masterLakeBaitBonus;
-                break;
-            case Bait.golden:
-                bonus = goldenLakeBaitBonus;
-                break;
+        if (bait != null) {
+            switch (bait.type)
+            {
+                case BaitType.None:
+                    bonus = 0f;
+                    break;
+                case BaitType.Apprentice:
+                    bonus = apprenticeLakeBaitBonus;
+                    break;
+                case BaitType.Journeyman:
+                    bonus = journeymanLakeBaitBonus;
+                    break;
+                case BaitType.Adept:
+                    bonus = adeptLakeBaitBonus;
+                    break;
+                case BaitType.Master:
+                    bonus = masterLakeBaitBonus;
+                    break;
+                case BaitType.Golden:
+                    bonus = goldenLakeBaitBonus;
+                    break;
+            }
         }
         return bonus;
     }
@@ -97,24 +109,24 @@ public class FishData : UdonSharpBehaviour
     public float GetCaveBonus(Bait bait)
     {
         float bonus = 0f;
-        switch (bait)
+        switch (bait.type)
         {
-            case Bait.none:
+            case BaitType.None:
                 bonus = 0f;
                 break;
-            case Bait.apprentice:
+            case BaitType.Apprentice:
                 bonus = apprenticeCaveBaitBonus;
                 break;
-            case Bait.journeyman:
+            case BaitType.Journeyman:
                 bonus = journeymanCaveBaitBonus;
                 break;
-            case Bait.adept:
+            case BaitType.Adept:
                 bonus = adeptCaveBaitBonus;
                 break;
-            case Bait.master:
+            case BaitType.Master:
                 bonus = masterCaveBaitBonus;
                 break;
-            case Bait.golden:
+            case BaitType.Golden:
                 bonus = goldenCaveBaitBonus;
                 break;
         }

@@ -91,13 +91,13 @@ public class Fish : UdonSharpBehaviour
 
     private void SetWaterLevel(Location location)
     {
-        if (location == Location.lake)
+        if (location == Location.Lake)
         {
             material.SetFloat("_WaterLevel", LocationOffset.Lake);
             material.SetColor("_LightShadowColor", underwaterColors.lakeShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.lakeShadowColor);
         }
-        else if (location == Location.cave)
+        else if (location == Location.Cave)
         {
             material.SetFloat("_WaterLevel", LocationOffset.Cave);
             material.SetColor("_LightShadowColor", underwaterColors.caveShadowColor);

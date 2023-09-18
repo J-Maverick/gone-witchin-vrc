@@ -10,11 +10,11 @@ public class FishDataPool : UdonSharpBehaviour
     public FishData[] fishData;
     public bool testFish;
     public Location testLocation;
-    public Bait testBait;
+    public Bait testBait = null;
     public FishData randomFish;
 
     public FishData GetRandomFishData(Location location, Bait bait)
-    {
+    { 
         float[] weights = new float[fishData.Length];
         float sumOfWeights = 0f;
         for (int i = 0; i < fishData.Length; i++)

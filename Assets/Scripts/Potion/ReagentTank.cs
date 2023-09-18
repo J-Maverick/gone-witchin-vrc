@@ -86,7 +86,6 @@ public class ReagentTank : UdonSharpBehaviour
 
     public void Sync()
     {
-        Debug.LogFormat("{0}: Requested Serialization", name);
         RequestSerialization();
     }
 
