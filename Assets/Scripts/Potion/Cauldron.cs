@@ -92,6 +92,9 @@ public class Cauldron : UdonSharpBehaviour
             if (matchingRecipe != null)
             {
                 ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+                if (ratioMatched && !matchingRecipe.unlocked) {
+                        matchingRecipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Unlock");
+                }
                 Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
             }
             else

@@ -22,21 +22,9 @@ public class FishingPole : UdonSharpBehaviour
     private SpringJoint hookJoint;
     private Rigidbody hookRigidBody;
 
-    public float castTension = 1f;
-    public float castWeight = 1f;
-    public float castDrag = 5f;
+    public RodUpgrade rodLevelParams = null;
 
-    public float catchTension = 1000f;
-    public float catchWeight = 100f;
-    public float catchDrag = 10f;
-
-    public float fishOnSpringRatio = 0.05f;
-    public float castSpringRatio = 0.001f;
-    public float castDistanceRatio = 0.003f;
-    public float fishOnDistanceRatio = 0.001f;
-    public float maxSpring = 2500f;
-
-    private float addSpringRatio = 0.05f;
+    public float addSpringRatio = 0.05f;
     private float distanceRatio = 0.001f;
 
     public bool isHeld;
@@ -70,7 +58,6 @@ public class FishingPole : UdonSharpBehaviour
 
     public bool reeling = true;
     public float reelingTimer = 0f;
-    public float reelingInactiveTime = 10f;
 
     void Start()
     {
@@ -105,7 +92,7 @@ public class FishingPole : UdonSharpBehaviour
 
     public override void OnPickupUseDown()
     {
-        if (fishOn) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(FishOff));
+        if (fishOn) {}
         else if (casting || casted || inWater)
         {
             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ResetLure));
@@ -140,7 +127,7 @@ public class FishingPole : UdonSharpBehaviour
     public void CastEvent()
     {
         Debug.Log("Cast Event Triggered");
-        lureJoint.spring = castTension;
+        lureJoint.spring = rodLevelParams.castTension;
         SetLureText();
         casted = true;
     }
@@ -171,11 +158,11 @@ public class FishingPole : UdonSharpBehaviour
 
     public void SetSplashDownParams()
     {
-        addSpringRatio = castSpringRatio;
-        distanceRatio = castDistanceRatio;
-        lureJoint.spring = castTension;
-        lureRigidBody.mass = castWeight;
-        lureRigidBody.drag = castDrag;
+        addSpringRatio = rodLevelParams.castSpringRatio;
+        distanceRatio = rodLevelParams.castDistanceRatio;
+        lureJoint.spring = rodLevelParams.castTension;
+        lureRigidBody.mass = rodLevelParams.castWeight;
+        lureRigidBody.drag = rodLevelParams.castDrag;
         castDistance = (lure.transform.position - transform.position).magnitude;
         lureJoint.minDistance = castDistance;
 
@@ -201,12 +188,12 @@ public class FishingPole : UdonSharpBehaviour
 
     public void SetFishOnParams()
     {
-        lureRigidBody.drag = catchDrag;
-        lureRigidBody.mass = catchWeight;
-        lureJoint.spring = catchTension;
+        lureRigidBody.drag = rodLevelParams.catchDrag;
+        lureRigidBody.mass = rodLevelParams.catchWeight;
+        lureJoint.spring = rodLevelParams.catchTension;
         lureJoint.minDistance = (lure.transform.position - transform.position).magnitude;
-        addSpringRatio = fishOnSpringRatio;
-        distanceRatio = fishOnDistanceRatio;
+        addSpringRatio = rodLevelParams.fishOnSpringRatio;
+        distanceRatio = rodLevelParams.fishOnDistanceRatio;
         SetLureText();
         runoutTimer = 0f;
         reelingTimer = 0f;
@@ -284,7 +271,7 @@ public class FishingPole : UdonSharpBehaviour
         reelingTimer = 0f;
         if (inWater)
         {
-            if (lureJoint.spring < maxSpring)
+            if (lureJoint.spring < rodLevelParams.maxSpring)
             {
                 lureJoint.spring += addSpringRatio * spring;
             }
@@ -314,9 +301,9 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
-    private void Update()
+    public void Update()
     {
-        if (reelingTimer > reelingInactiveTime) reeling = false;
+        if (reelingTimer > rodLevelParams.reelingInactiveTime) reeling = false;
         else reelingTimer += Time.deltaTime;
     }
 

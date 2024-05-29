@@ -49,6 +49,8 @@ public enum FishTag
     Uncommon = 401,
     Rare = 402,
     Legendary = 403,
+
+    Recipe = 501,
 }
 
 public enum Location

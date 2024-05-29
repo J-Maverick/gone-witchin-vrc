@@ -9,6 +9,8 @@ public class ReagentTank : UdonSharpBehaviour
 {
     public LiquidMaterial reagent;
     public PotionWobble shaderControl;
+    public Renderer fishRenderer;
+    public Material fishMaterial;
     public Renderer particleRenderer;
     public Material particleMaterial;
     public Animator particleAnimator;
@@ -18,6 +20,9 @@ public class ReagentTank : UdonSharpBehaviour
     public Lever lever;
 
     public float maxFlow = 0.6f;
+    public float minFlow = 0.1f;
+    public float flowReductionFill = 0.1f;
+    public float currentMaxFlow = 1f;
     public float flow = 0f;
     [UdonSynced] public float fillLevel = 0f;
     public float pourMultiplier = 0.1f;
@@ -39,6 +44,10 @@ public class ReagentTank : UdonSharpBehaviour
         labelMaterial.SetTextureOffset("_MainTex", new Vector2(reagent.UVOffsetX, reagent.UVOffsetY));
         labelMaterial.SetColor("_EmissionColor", reagent.color);
 
+        fishMaterial = fishRenderer.materials[0];
+        fishMaterial.SetColor("_Color", reagent.color);
+
+
         shaderControl.fillLevel = fillLevel;
     }
 
@@ -46,7 +55,8 @@ public class ReagentTank : UdonSharpBehaviour
     {
         if (!lever.isSleeping)
         {
-            flow = maxFlow * lever.angle / lever.maxAngle;
+            currentMaxFlow = fillLevel > flowReductionFill ? maxFlow : minFlow + ((fillLevel / flowReductionFill) * (maxFlow - minFlow));
+            flow = currentMaxFlow * lever.angle / lever.maxAngle;
             if (fillLevel == 0f) flow = 0f;
             particleAnimator.SetFloat("pourSpeed", flow);
 
@@ -86,6 +96,7 @@ public class ReagentTank : UdonSharpBehaviour
 
     public void Sync()
     {
+        UpdateFill();
         RequestSerialization();
     }
 

@@ -116,6 +116,7 @@ public class BottleSync : UdonSharpBehaviour
 
     public override void OnDeserialization()
     {
+        Debug.LogFormat("{0}: Deserializing");
         bottleCollision.isBroken = isBroken;
         if (pourableBottle != null)
         {
@@ -138,6 +139,7 @@ public class BottleSync : UdonSharpBehaviour
 
     public void SetFill(float fill, bool forceSync=false)
     {
+        Debug.LogFormat("{0}: SetFill...", name);
         fillLevel = fill;
         if (forceSync) RequestSerialization();
         else FrequencySerialization();
@@ -145,13 +147,16 @@ public class BottleSync : UdonSharpBehaviour
 
     public void FrequencySerialization(float freq = 5f)
     {
+        Debug.LogFormat("{0}: FrequencySerialization...", name);
         if (!serializing) {
+            Debug.LogFormat("{0}: Triggering Serialize...", name);
             SendCustomEventDelayedSeconds("Serialize", 1f / freq);
             serializing = true;
         }
     }
 
     public void Serialize() {
+        Debug.LogFormat("{0}: Serialize... owner.islocal: {1} localplayer.isMaster: {2}", name, Networking.GetOwner(gameObject).isLocal, Networking.LocalPlayer.isMaster);
         RequestSerialization();
         serializing = false;
     }
@@ -168,5 +173,8 @@ public class BottleSync : UdonSharpBehaviour
     {
         joinSyncCounter = 0;
         JoinSync();
+        if (player.isLocal && isBroken) {
+            bottleCollision.Broken();
+        }
     }
 }

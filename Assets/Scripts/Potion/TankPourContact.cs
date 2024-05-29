@@ -14,11 +14,14 @@ public class TankPourContact : UdonSharpBehaviour
     {
         if (other.layer == 28 && tank != null)
         {
-            //if (Networking.GetOwner(other).isLocal && Networking.GetOwner(gameObject).isLocal)
-            //{
-                CheckBottleObject(other);
+            CheckBottleObject(other);
+            if (Networking.GetOwner(other).isLocal)
+            {
                 targetBottle.AddLiquid(tank.reagent, tank.flow);
-            //}
+            }
+            else {
+                targetBottle.UpdateShaderFill();
+            }
         }
     }
 

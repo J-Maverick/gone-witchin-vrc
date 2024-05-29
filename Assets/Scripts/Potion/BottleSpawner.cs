@@ -15,11 +15,17 @@ public class BottleSpawner : UdonSharpBehaviour
         if (spawnedObject != null) {
             Networking.SetOwner(Networking.LocalPlayer, spawnedObject);
             spawnedObject.transform.SetPositionAndRotation(spawnTarget.position, spawnTarget.rotation);
+            BottleSync sync = spawnedObject.GetComponentInChildren<BottleSync>();
+            if (sync != null) {
+                Networking.SetOwner(Networking.LocalPlayer, sync.gameObject);
+            }
         }
         return spawnedObject;
     }
 
     public void Despawn(GameObject objectToDespawn) {
-        pool.Return(objectToDespawn);
+        if (Networking.GetOwner(pool.gameObject).isLocal) {
+            pool.Return(objectToDespawn);
+        }
     }
 }

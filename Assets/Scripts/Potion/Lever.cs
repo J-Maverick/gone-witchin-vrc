@@ -27,6 +27,7 @@ public class Lever : UdonSharpBehaviour
     public float maxAngle;
     public float minAngle;
     public float absoluteAngle;
+    public float rotationRate = 1f;
     public VRC_Pickup pickup;
 
     public bool isSleeping = true;
@@ -128,18 +129,30 @@ public class Lever : UdonSharpBehaviour
                 }
                 else
                 {
-                    transform.localRotation = Quaternion.RotateTowards(transform.localRotation, defaultRotation, 1f);
+                    transform.localRotation = Quaternion.RotateTowards(transform.localRotation, defaultRotation, rotationRate);
                 }
                 handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
             }
 
-            if (!pickup.IsHeld)
+            if (!pickup.IsHeld) {
                 if (angle > 0.5f) angle /= 1.5f;
                 else
                 {
                     angle = 0f;
                     handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
                 }
+                
+                if (!Networking.GetOwner(gameObject).isLocal) {
+                    transform.localRotation = defaultRotation;
+                    previousRotation = transform.localRotation;
+                    targetVector = handleTarget.localPosition - transform.localPosition;
+                    targetVector.x = 0f;
+                    targetVector = targetVector.normalized;
+                    previousVector = targetVector;
+                    angle = 0f;
+                    return;
+                }
+            }
         }
     }
 }

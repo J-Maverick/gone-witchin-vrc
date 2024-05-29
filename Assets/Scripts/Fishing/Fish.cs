@@ -1,6 +1,7 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -54,6 +55,8 @@ public class Fish : UdonSharpBehaviour
 
     private float updateTime = 0f;
 
+    public Mesh defaultMesh;
+
     public void Start()
     {
         DisablePickup();
@@ -91,6 +94,7 @@ public class Fish : UdonSharpBehaviour
 
     private void SetWaterLevel(Location location)
     {
+        material = meshRenderer.material;
         if (location == Location.Lake)
         {
             material.SetFloat("_WaterLevel", LocationOffset.Lake);
@@ -105,13 +109,13 @@ public class Fish : UdonSharpBehaviour
         }
     }
 
-    public void GetRandomFish(Location location, Bait bait)
+    public void GetRandomFish(Location location, Bait bait, float rodUpgradeMultiplier)
     {
         if (Networking.GetOwner(gameObject).isLocal)
         {
             fishData = fishDataPool.GetRandomFishData(location, bait);
             SetWaterLevel(location);
-            exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio);
+            exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio * rodUpgradeMultiplier);
             SetRandomSize();
             fishID = fishData.ID;
         }
@@ -133,6 +137,10 @@ public class Fish : UdonSharpBehaviour
             meshRenderer.sharedMesh = fishData.mesh;
             meshCollider.sharedMesh = fishData.mesh;
         }
+        else {
+            meshRenderer.sharedMesh = defaultMesh;
+            meshCollider.sharedMesh = defaultMesh;
+        }
 
         material.color = fishData.color;
         //meshRenderer.material = material;
@@ -141,9 +149,9 @@ public class Fish : UdonSharpBehaviour
     }
 
 
-    public void Bite(Location location, Bait bait)
+    public void Bite(Location location, Bait bait, float rodUpgradeMultiplier)
     {
-        GetRandomFish(location, bait);
+        GetRandomFish(location, bait, rodUpgradeMultiplier);
         state = FishState.biting;
         exhaustion = 1f;
         animator.SetBool("Bite", true);

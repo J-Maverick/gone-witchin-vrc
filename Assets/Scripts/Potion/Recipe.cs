@@ -4,9 +4,11 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class Recipe : UdonSharpBehaviour
 {
     public LiquidMaterial potion;
+    [UdonSynced] public bool unlocked = true;
     public int nReagents;
     public LiquidMaterial reagent0 = null;
     public int partsReagent0 = 0;
@@ -21,6 +23,9 @@ public class Recipe : UdonSharpBehaviour
 
     public ReagentList reagentList;
 
+    public AudioSource fanfareAudio;
+    public RecipeBook recipeBook;
+
     private void Start()
     {
         LiquidMaterial potionComponent = GetComponent<LiquidMaterial>();
@@ -28,6 +33,23 @@ public class Recipe : UdonSharpBehaviour
         {
             potion = potionComponent;
         }
+    }
+
+    public void Unlock() {
+        if (!unlocked) {
+            unlocked = true;
+            PlayFanfare();
+
+            if (this == recipeBook.recipeList.recipes[recipeBook.currentRecipeIndex]) {
+                recipeBook.UpdateRecipe();
+                recipeBook.RequestSerialization();
+            }
+        }
+        RequestSerialization();
+    }
+
+    public void PlayFanfare() {
+        fanfareAudio.Play();
     }
 
     public bool CheckRecipe(Recipe recipe)

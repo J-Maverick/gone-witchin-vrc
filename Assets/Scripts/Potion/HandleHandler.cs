@@ -10,6 +10,8 @@ public class HandleHandler : UdonSharpBehaviour
     public bool dropped = false;
     public bool isHeld = false;
     public ReagentTank tank = null;
+    public ReelAngleAccumulator reel = null;
+    public WheelAngleAccumulator wheel = null;
     public Lever lever = null;
     public GameObject[] ownershipItems;
 
@@ -26,6 +28,14 @@ public class HandleHandler : UdonSharpBehaviour
         {
             lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sleep");
         }
+        if (reel != null && Networking.GetOwner(gameObject).isLocal) 
+        {
+            reel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Drop");
+        }
+        if (wheel != null && Networking.GetOwner(gameObject).isLocal) 
+        {
+            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Drop");
+        }
     }
 
     public override void OnPickup()
@@ -36,6 +46,10 @@ public class HandleHandler : UdonSharpBehaviour
         }
         if (lever != null && Networking.GetOwner(gameObject).isLocal) {
             lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "WakeUp");
+        }
+        if (wheel != null && Networking.GetOwner(gameObject).isLocal) 
+        {
+            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PickUp");
         }
     }
 

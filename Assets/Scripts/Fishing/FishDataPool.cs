@@ -8,10 +8,11 @@ using System.Linq;
 public class FishDataPool : UdonSharpBehaviour
 {
     public FishData[] fishData;
-    public bool testFish;
     public Location testLocation;
     public Bait testBait = null;
-    public FishData randomFish;
+    public Recipes recipes;
+    public int recursions = 0;
+    public int maxRecursions = 20;
 
     public FishData GetRandomFishData(Location location, Bait bait)
     { 
@@ -29,7 +30,21 @@ public class FishDataPool : UdonSharpBehaviour
         for (int i = 0; i < weights.Length; ++i)
         {
             randomWeight -= weights[i];
-            if (randomWeight < 0f) return fishData[i];
+            if (randomWeight < 0f) {
+                FishData randomFish = fishData[i];
+                if (randomFish.recipe != null && randomFish.recipe.unlocked) {
+                    recursions++;
+                    if (recursions > maxRecursions) {
+                        Debug.LogFormat("{0}: Hit max recursions depth [{1}/{2}] looking for recipes, trying without bait", name, recursions, maxRecursions);
+                        return GetRandomFishData(location, null);
+                    }
+                    // Picked a recipe but it's already unlocked, get another random fish
+                    Debug.LogFormat("{0}: Tried to pick catchable recipe {1} but it was already unlocked, getting another fish", name, randomFish.name);
+                    return GetRandomFishData(location, bait);
+                }
+                recursions = 0;
+                return randomFish;
+            }
         }
 
         return null;
@@ -44,15 +59,4 @@ public class FishDataPool : UdonSharpBehaviour
         return null;
     }
 
-    private void Update()
-    {
-        if (testFish)
-        {
-            float t1 = Time.realtimeSinceStartup;
-            randomFish = GetRandomFishData(testLocation, testBait);
-            testFish = false;
-            float t2 = Time.realtimeSinceStartup;
-            Debug.LogFormat("{0}: found random fish in {1}s", name, t2 - t1);
-        }
-    }
 }

@@ -11,13 +11,16 @@ public class CauldronPourContact : UdonSharpBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.layer == 28 && cauldronPour != null && cauldronPour.bottleSnap.GetBottle().gameObject == other && cauldronPour.cauldron.matchingRecipe != null)
+        if (other.layer == 28 && cauldronPour != null && cauldronPour.cauldron.matchingRecipe != null)
         {
-            //if (Networking.GetOwner(other).isLocal && Networking.GetOwner(gameObject).isLocal)
-            //{
-                CheckBottleObject(other);
+            CheckBottleObject(other);
+            if (Networking.GetOwner(other).isLocal)
+            {
                 targetBottle.AddLiquid(cauldronPour.cauldron.matchingRecipe.potion, cauldronPour.flow);
-            //}
+            }
+            else {
+                targetBottle.UpdateShaderFill();
+            }
         }
     }
 

@@ -90,7 +90,7 @@ public class CauldronPour : UdonSharpBehaviour
     {
         if (indicator.IsValid() && cauldron.indicator.IsValid())
         {
-            if (liquid != cauldron.matchingRecipe.potion) SetParticleProperties(cauldron.matchingRecipe.potion);
+            if (cauldron.matchingRecipe != null && liquid != cauldron.matchingRecipe.potion) SetParticleProperties(cauldron.matchingRecipe.potion);
             PourControl();
         }
         else if (indicator.IsNeutral()) DumpControl();

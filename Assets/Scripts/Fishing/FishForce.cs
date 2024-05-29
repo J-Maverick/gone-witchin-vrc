@@ -4,13 +4,13 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.SDK3.Components;
+using VRC.Udon.Common;
 
 public class FishForce : UdonSharpBehaviour
 {
     public Transform lure;
     public Rigidbody lureRigidbody;
-
-    public Transform hook;
+    public Hook hook;
     public FishingPole fishingPole;
     
     public float fishForceMultiplier = 100f;
@@ -37,7 +37,7 @@ public class FishForce : UdonSharpBehaviour
 
     public VRCObjectPool fishObjectPool;
     
-    public Bait bait = null;
+    public FishForceSync sync;
 
     public float catchDistanceThreshold = 5f;
 
@@ -75,9 +75,14 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
+
+    public void AddBait(Bait newBait) {
+        sync.AddBait(newBait);
+    }
+
     void RandomWaitTime()
     {
-        fishWaitTime = Random.Range(minWaitTime, maxWaitTime);
+        fishWaitTime = Random.Range(minWaitTime, maxWaitTime) * fishingPole.rodLevelParams.waitTimeModifier;
         fishTimer = 0f;
     }
 
@@ -121,9 +126,9 @@ public class FishForce : UdonSharpBehaviour
         rot.x = -90f;
         fishBody.rotation = Quaternion.RotateTowards(fishBody.rotation, Quaternion.Euler(rot), 1);
         fishBody.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
-        fishBody.position = hook.position;
+        fishBody.position = hook.transform.position;
         fishForce = forceDirection * fishForceMultiplier * fish.GetForce();
-        //hookRigidbody.AddForce(fishForce);
+        //hook.transformRigidbody.AddForce(fishForce);
         directionChangeTimer += Time.fixedDeltaTime;
     }
 
@@ -145,7 +150,19 @@ public class FishForce : UdonSharpBehaviour
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
         fishBody.rotation = Quaternion.LookRotation(forceDirection);
         fishBody.position = transform.position;
-        fish.Bite(fishingPole.water.location, bait);
+        fish.Bite(fishingPole.water.location, sync.bait, fishingPole.rodLevelParams.fishExhaustionMultiplier);
+        if (sync.baitUsesRemaining > 0) {
+            sync.baitUsesRemaining--;
+            if (sync.bait != null) Debug.LogFormat("{0}: Used charge of bait {1}, charges remaining: {2}", name, sync.bait.name, sync.baitUsesRemaining);
+            else Debug.LogFormat("{0}: Bait charge updated with null-valued bait on hook, charges remaining: {2}", name, sync.baitUsesRemaining);
+            sync.RequestSerialization();
+        }
+        if (sync.baitUsesRemaining <= 0 && sync.bait != null) {
+            Debug.LogFormat("{0}: Exhausted bait.", name);
+            sync.bait = null;
+            hook.RemoveBait();
+            RequestSerialization();
+        }
     }
 
     public void OverrideLurePosition()
@@ -158,7 +175,7 @@ public class FishForce : UdonSharpBehaviour
         pos.y = yOffset + 0.02f;
         lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
         pos.y = yOffset - 0.5f;
-        hook.position = pos;
+        hook.transform.position = pos;
     }
     
     public void ResetFish()

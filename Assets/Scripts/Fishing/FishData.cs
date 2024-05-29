@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -10,6 +10,7 @@ public class FishData : UdonSharpBehaviour
     public Mesh mesh = null;
     public Color color = Color.white;
     public Color emissionColor = Color.black;
+    public Recipe recipe = null;
 
     [Space(10)]
     public float exhaustionMultiplier = 1f;

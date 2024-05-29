@@ -1,6 +1,7 @@
 
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -15,6 +16,7 @@ public class BottleCollision : UdonSharpBehaviour
     public GameObject shatterParticles;
     public Rigidbody rigidBody;
     public VRC_Pickup pickup;
+    public VRCObjectSync objectSync;
 
     public VRCPlayerApi owner;
 
@@ -129,25 +131,34 @@ public class BottleCollision : UdonSharpBehaviour
     public virtual void Shatter()
     {
         isBroken = true;
+        Broken();
         audioSource.maxDistance = shatterMaxDistance;
         AudioClip[] clips = shatterClips;
         float volume = shatterVolume;
         shatterParticles.SetActive(true);
+        brokenSequencePlayed = true;
+
+        if (owner != null && owner.isLocal)
+        {
+            if (bottle.spawner != null) {
+                SendCustomEventDelayedSeconds(nameof(DelayedDespawn), respawnTime);
+            }
+            else {
+                SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
+            }
+            syncObj.RandomizeShatter();
+            syncObj.SetBroken(isBroken);
+        }
+        PlayClip(clips, volume, syncObj.shatterSoundIndex);
+    }
+
+    public virtual void Broken() {
         mesh.enabled = false;
         meshCollider.enabled = false;
         rigidBody.constraints = RigidbodyConstraints.FreezeAll;
         pickup.Drop();
         pickup.pickupable = false;
         transform.rotation = Quaternion.identity;
-        brokenSequencePlayed = true;
-
-        if (owner != null && owner.isLocal)
-        {
-            SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
-            syncObj.RandomizeShatter();
-            syncObj.SetBroken(isBroken);
-        }
-        PlayClip(clips, volume, syncObj.shatterSoundIndex);
     }
 
     public void Respawn()
@@ -164,6 +175,7 @@ public class BottleCollision : UdonSharpBehaviour
         {
             syncObj.SetBroken(isBroken);
             if (respawnOnShatter) {
+                objectSync.FlagDiscontinuity();
                 transform.SetPositionAndRotation(spawnPosition, spawnRotation);
                 if (refillOnRespawn && refillableBottle != null) refillableBottle.SetFill(1f);
             }
@@ -183,6 +195,14 @@ public class BottleCollision : UdonSharpBehaviour
 
     public void DelayedRespawn() {
         SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Respawn));
+    }
+
+    public void DelayedDespawn() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Despawn));
+    }
+
+    public void Despawn() {
+        bottle.Despawn();
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)

@@ -8,7 +8,7 @@ using VRC.SDK3.Components;
 public class ReagentTankFiller : UdonSharpBehaviour
 {
     public ReagentTank[] tanks;
-    private float fillMultiplier = 1000f;
+    public float fillQuotient = 1000f;
     public VRCObjectPool pool;
 
     public void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class ReagentTankFiller : UdonSharpBehaviour
     void FillTank(Fish fish)
     {
         Debug.LogFormat("{0}: Filling with fish: {1} | weight: {2}", name, fish.fishData.name, fish.weight);
-        float fishMultiplier = fish.weight / fillMultiplier;
+        float fishMultiplier = fish.weight / fillQuotient;
         Networking.SetOwner(Networking.GetOwner(fish.gameObject), pool.gameObject);
         foreach (ReagentTank tank in tanks)
         {
@@ -81,6 +81,11 @@ public class ReagentTankFiller : UdonSharpBehaviour
             }
             tank.Sync();
         }
+
+        if (fish.fishData.recipe != null) {
+            fish.fishData.recipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Unlock");
+        }
+
         pool.Return(fish.gameObject);
     }
 }

@@ -839,7 +839,7 @@ namespace VRWorldToolkit
 
                         settings.overridden = true;
 
-                        settings.format = TextureImporterFormat.ASTC_RGB_4x4;
+                        settings.format = TextureImporterFormat.ASTC_4x4;
 
                         item.SetPlatformTextureSettings(settings);
 
@@ -859,7 +859,7 @@ namespace VRWorldToolkit
 
                     settings.overridden = true;
 
-                    settings.format = TextureImporterFormat.ASTC_RGB_4x4;
+                    settings.format = TextureImporterFormat.ASTC_4x4;
 
                     textureImporter.SetPlatformTextureSettings(settings);
 

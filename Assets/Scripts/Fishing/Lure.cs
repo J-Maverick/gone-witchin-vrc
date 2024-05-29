@@ -8,7 +8,7 @@ public class Lure : UdonSharpBehaviour
 {
     public FishingPole fishingPole;
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         Water water = collision.gameObject.GetComponent<Water>();
         if (water != null) fishingPole.SplashDown(water);

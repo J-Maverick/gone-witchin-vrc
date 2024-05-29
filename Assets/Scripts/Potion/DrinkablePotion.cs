@@ -18,19 +18,20 @@ public class DrinkablePotion : BottleCollision
         audioSource.maxDistance = 25f;
         AudioClip[] clips = soundEffectClips;
         float volume = soundEffectVolume;
-        rigidBody.constraints = RigidbodyConstraints.FreezeAll;
-        transform.rotation = Quaternion.identity;
         
         if (Networking.GetOwner(gameObject).isLocal && drinkEffect != null) drinkEffect.OnDrink();
 
-        mesh.enabled = false;
-        meshCollider.enabled = false;
-        pickup.Drop();
-        pickup.pickupable = false;
+        Broken();
         if (owner != null && owner.isLocal)
         {
-            SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
+            if (bottle.spawner != null) {
+                SendCustomEventDelayedSeconds(nameof(DelayedDespawn), respawnTime);
+            }
+            else {
+                SendCustomEventDelayedSeconds(nameof(DelayedRespawn), respawnTime);
+            }
             syncObj.RandomizeSoundEffect();
+            syncObj.SetBroken(isBroken);
         }
         PlayClip(clips, volume, syncObj.soundEffectIndex);
     }

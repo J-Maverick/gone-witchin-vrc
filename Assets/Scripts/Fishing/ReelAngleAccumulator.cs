@@ -41,17 +41,16 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
         previousVector = previousVector.normalized;
     }
 
+    public void Drop() {
+        handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
+        previousVector = handleTarget.localPosition - transform.localPosition;
+        previousVector.x = 0f;
+        previousVector = previousVector.normalized;
+        handleTargetHandler.dropped = false;
+    }
+
     private void Update()
     {
-        if (handleTargetHandler.dropped)
-        {
-            handleTarget.SetPositionAndRotation(handle.position, handle.rotation);
-            previousVector = handleTarget.localPosition - transform.localPosition;
-            previousVector.x = 0f;
-            previousVector = previousVector.normalized;
-            handleTargetHandler.dropped = false;
-        }
-
         if (fishingPole.isHeld)
         {
             float fishingPoleDistance = fishingPole.GetCastDistance();

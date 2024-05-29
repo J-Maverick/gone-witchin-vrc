@@ -1,0 +1,19 @@
+
+Collectible bait
+Rod Upgrade
+
+Shared potion Inventory system
+
+Fish revamp?
+
+Fish scale
+leaderboard
+	- Fish are counted when put on the scale or when tossed in the pipe
+	- Jingle for high score?
+
+Collectible recipes
+
+Play a sound when spawning bait to hide the lag
+
+Potions spawning from corker collide with the despawning PourableBottle
+
