@@ -547,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7244526671573101724
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,6 +1083,9 @@ MonoBehaviour:
   labelMaterial: {fileID: 0}
   lever: {fileID: 4278700102523018894}
   maxFlow: 1
+  minFlow: 0.1
+  flowReductionFill: 0.1
+  currentMaxFlow: 1
   flow: 0
   fillLevel: 1
   pourMultiplier: 0.025
@@ -1422,7 +1425,7 @@ PrefabInstance:
     - target: {fileID: 868339346425164778, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.146
+      value: -0.1869
       objectReference: {fileID: 0}
     - target: {fileID: 868339346425164778, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
         type: 3}
@@ -1463,6 +1466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868339346425164782, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
