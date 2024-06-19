@@ -91,6 +91,16 @@ public class Recipe : UdonSharpBehaviour
 
         return false;
     }
+float GetReagentPartsAsFloat(LiquidMaterial reagent)
+    {
+        if (reagent0 == reagent) return partsReagent0;
+        if (reagent1 == reagent) return partsReagent1;
+        if (reagent2 == reagent) return partsReagent2;
+        if (reagent3 == reagent) return partsReagent3;
+        if (reagent4 == reagent) return partsReagent4;
+
+        return 0f;
+    }
 
     public bool CheckReagentRatio(LiquidMaterial reagent, int nParts)
     {
@@ -133,5 +143,40 @@ public class Recipe : UdonSharpBehaviour
         else recipeRatioCheck = false;
 
         return recipeRatioCheck;
+    }
+
+    public float RecipeNearRatio(CauldronRecipe recipe) {
+        float ratio = 0f;
+        float minReagentFill = recipe.MinReagentFill();
+        if (recipe.reagent0 != null) {
+            float reagentPart = GetReagentPartsAsFloat(recipe.reagent0);
+            ratio += (1 - (Mathf.Abs((recipe.fillReagent0 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
+        };
+        if (recipe.reagent1 != null) {
+            float reagentPart = GetReagentPartsAsFloat(recipe.reagent1);
+            ratio += (1 - (Mathf.Abs((recipe.fillReagent1 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
+        };
+        if (recipe.reagent2 != null) {
+            float reagentPart = GetReagentPartsAsFloat(recipe.reagent2);
+            ratio += (1 - (Mathf.Abs((recipe.fillReagent2 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
+        };
+        if (recipe.reagent3 != null) {
+            float reagentPart = GetReagentPartsAsFloat(recipe.reagent3);
+            ratio += (1 - (Mathf.Abs((recipe.fillReagent3 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
+        };
+        if (recipe.reagent4 != null) {
+            float reagentPart = GetReagentPartsAsFloat(recipe.reagent4);
+            ratio += (1 - (Mathf.Abs((recipe.fillReagent4 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
+        };
+
+        float minRatio = 0.7f;
+        if (ratio < minRatio) {
+            ratio = 0f;
+        }
+        else {
+            ratio = (ratio - minRatio) / (1f - minRatio);
+        }
+
+        return ratio;
     }
 }

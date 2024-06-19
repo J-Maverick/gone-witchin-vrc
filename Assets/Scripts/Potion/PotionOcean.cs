@@ -17,4 +17,13 @@ public class PotionOcean : UdonSharpBehaviour
         }
         return null;
     }
+
+    public PotionPool GetPoolByID(int ID) {
+        foreach (PotionPool potionPool in potionPools) {
+            if (potionPool.IsMatch(ID)) {
+                return potionPool;
+            }
+        }
+        return null;
+    }
 }

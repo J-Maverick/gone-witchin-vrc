@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5869456847778509746}
   - component: {fileID: 6573165185658246382}
   - component: {fileID: 8603591547025238608}
+  - component: {fileID: 1189395837068273883}
   m_Layer: 0
   m_Name: containerOutside
   m_TagString: Untagged
@@ -84,6 +85,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1189395837068273883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59642860120282196}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7901126, y: 0.79011256, z: 1.3441142}
+  m_Center: {x: 0.00029158598, y: -0.00010177495, z: 0.6571459}
 --- !u!1 &2001375081762127018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: 868339346425164782, guid: 3bf8f8808d9b64e4f9d2d3573332cac9,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

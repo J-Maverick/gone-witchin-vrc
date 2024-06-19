@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 443365130412589834}
   - component: {fileID: 443365130412589835}
   - component: {fileID: 443365130412589832}
-  m_Layer: 4
+  m_Layer: 30
   m_Name: FishingBobber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,7 +2714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4830589026185875211}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000046329018, y: 0.7068953, z: 0.70731825, w: 0.00000046356737}
+  m_LocalRotation: {x: -0.00000033092155, y: -0.7068953, z: -0.70731825, w: 0.00000033111954}
   m_LocalPosition: {x: 5.1597727e-16, y: -0.0598799, z: -0.035417095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3347,6 +3347,7 @@ MonoBehaviour:
   lureDragText: {fileID: 0}
   lureJoint: {fileID: 0}
   rodLevelParams: {fileID: 0}
+  addSpringRatio: 0.05
   isHeld: 0
   inWater: 0
   fishOn: 0
@@ -3361,7 +3362,6 @@ MonoBehaviour:
   runoutOffsetDistance: 5
   reeling: 1
   reelingTimer: 0
-  reelingInactiveTime: 10
 --- !u!114 &443365131476326641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3759,6 +3759,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 6916346120405300172}
   material: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
+  UpgradeTest: 0
 --- !u!114 &2886585619980129152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4055,7 +4056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8972606237516746005}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7066499, y: -0.000000066161334, z: 0.000000066246855, w: 0.70756334}
+  m_LocalRotation: {x: 0.7066499, y: 0.00000039696803, z: -0.00000039748116, w: 0.70756334}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

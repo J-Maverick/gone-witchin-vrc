@@ -40,6 +40,9 @@ public class PotionOceanPopulator : MonoBehaviour
                 GameObject newPotion = GameObject.Instantiate(potionPrefab);
                 newPotion.transform.SetParent(pool.transform);
                 newPotion.SetActive(false);
+                BottleCollision bottleCollision = newPotion.GetComponent<BottleCollision>();
+                bottleCollision.respawnOnShatter = false;
+                bottleCollision.bottle.spawner = potionPool;
 
                 objectPoolArray[i] = newPotion;
             }

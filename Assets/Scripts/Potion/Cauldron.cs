@@ -30,11 +30,6 @@ public class Cauldron : UdonSharpBehaviour
 
     public override void OnDeserialization()
     {
-        if (liquid != null)
-        {
-            liquid.fillLevel = fillLevel;
-            liquid.SetStaticColor(fillColor);
-        }
         if (fillRecipe.isDS)
         {
             fillRecipe.NormalizeReagents();
@@ -47,6 +42,17 @@ public class Cauldron : UdonSharpBehaviour
             else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
 
             fillRecipe.LogReagents();
+        }
+        if (liquid != null)
+        {
+            liquid.fillLevel = fillLevel;
+            if (matchingRecipe != null)
+            {
+                fillRecipeLerp(matchingRecipe.RecipeNearRatio(fillRecipe));
+            }
+            else {
+                liquid.SetStaticColor(fillColor);
+            }
         }
     }
 
@@ -92,8 +98,10 @@ public class Cauldron : UdonSharpBehaviour
             if (matchingRecipe != null)
             {
                 ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+                fillRecipeLerp(matchingRecipe.RecipeNearRatio(fillRecipe));
+
                 if (ratioMatched && !matchingRecipe.unlocked) {
-                        matchingRecipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Unlock");
+                    matchingRecipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Unlock");
                 }
                 Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
             }
@@ -111,6 +119,11 @@ public class Cauldron : UdonSharpBehaviour
 
         fillRecipe.LogReagents();
         RequestSerialization();
+    }
+
+    public void fillRecipeLerp(float ratio) {
+        Debug.LogFormat("{0}: Lerping color by ratio: {1}", name, ratio);
+        liquid.SetStaticColor(Color.Lerp(fillColor, matchingRecipe.potion.color, ratio));
     }
 
     public void UpdateFill()

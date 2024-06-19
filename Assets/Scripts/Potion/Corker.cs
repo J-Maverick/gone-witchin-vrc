@@ -15,18 +15,18 @@ public class Corker : UdonSharpBehaviour
             indicator.SetValid();
             if (Networking.GetOwner(bottle.gameObject).isLocal) { 
                 // TODO update networking -- this is insufficient for remote players. Need to build "animated" corker system that takes its time to properly spawn
-                Networking.SetOwner(Networking.LocalPlayer, potionPool.gameObject);
-
                 GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
                 if (spawnedPotion != null) {
+                    Vector3 spawnPosition = bottle.transform.position;
+                    Quaternion spawnRotation = bottle.transform.rotation;
                     Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
                     Debug.LogFormat("{0}: Spawned {1}", name, spawnedPotion.name);
-                    spawnedPotion.transform.SetPositionAndRotation(bottle.transform.position, bottle.transform.rotation);
                     BottleSync sync = spawnedPotion.GetComponentInChildren<BottleSync>();
                     Networking.SetOwner(Networking.LocalPlayer, sync.gameObject);
                     sync.SetBottleType(bottle.bottleID);
 
                     bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
+                    spawnedPotion.transform.SetPositionAndRotation(spawnPosition, spawnRotation);
                     bottleSnap.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "ClearBottle");
                 }
                 else {

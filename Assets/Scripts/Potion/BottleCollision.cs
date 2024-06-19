@@ -203,6 +203,18 @@ public class BottleCollision : UdonSharpBehaviour
 
     public void Despawn() {
         bottle.Despawn();
+        rigidBody.constraints = RigidbodyConstraints.None;
+        mesh.enabled = true;
+        meshCollider.enabled = true;
+        shatterParticles.SetActive(false);
+        pickup.pickupable = true;
+        brokenSequencePlayed = false;
+        isBroken = false;
+
+        if (owner != null && owner.isLocal)
+        {
+            syncObj.SetBroken(isBroken);
+        }
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
