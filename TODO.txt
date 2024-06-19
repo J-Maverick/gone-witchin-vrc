@@ -1,5 +1,5 @@
 
-Collectible bait
+Craftable bait
 Rod Upgrade
 
 Shared potion Inventory system
@@ -17,3 +17,4 @@ Play a sound when spawning bait to hide the lag
 
 Potions spawning from corker collide with the despawning PourableBottle
 
+All the potions!!
