@@ -71,6 +71,7 @@ public class FishForce : UdonSharpBehaviour
                 Networking.SetOwner(Networking.GetOwner(gameObject), spawnedFish);
                 Networking.SetOwner(Networking.GetOwner(gameObject), spawnedFish.GetComponent<Fish>().fishSync.gameObject);
                 fishBody = spawnedFish.transform;
+                fish.Reset();
             }
         }
     }

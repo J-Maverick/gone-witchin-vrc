@@ -13,10 +13,15 @@ public class ReagentTankFiller : UdonSharpBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 24 && Networking.GetOwner(other.gameObject).isLocal)
+        if (other.gameObject.layer == 24)
         {
             Fish fish = other.gameObject.GetComponent<Fish>();
-            FillTank(fish);
+            if (fish != null) {
+                fish.state = FishState.caught;
+                if (Networking.GetOwner(other.gameObject).isLocal) {
+                    FillTank(fish);
+                }
+            }
         }
     }
 

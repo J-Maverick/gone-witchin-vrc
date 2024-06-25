@@ -4,6 +4,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using UnityEngine.UI;
+using VRC.SDK3.Components;
 
 public class ReelAngleAccumulator : UdonSharpBehaviour
 {
@@ -15,6 +16,7 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
     public HandleHandler handleTargetHandler;
 
     public Transform handle;
+    public VRCPickup pickup;
 
     private float angle;
     private Quaternion previousRotation;
@@ -32,6 +34,9 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
     private float lineZMin = -0.17681f;
     private float lineYMax = 0.1497f;
     private float lineZMax = -0.1505f;
+
+    private float prevTick = 0f;
+    private float tickAngle = 25f;
 
     void Start()
     {
@@ -99,7 +104,10 @@ public class ReelAngleAccumulator : UdonSharpBehaviour
                 if (fishingPole != null)
                 {
                     if (delta < 0f) fishingPole.AddSpring(-delta);
-
+                    if (Mathf.Abs(angle - prevTick) > tickAngle) {
+                        fishingPole.TickVibration();
+                        prevTick = angle;
+                    }
                 }
             }
             fishingLine.localPosition = pos;

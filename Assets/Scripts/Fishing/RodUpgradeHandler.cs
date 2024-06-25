@@ -15,9 +15,6 @@ public class RodUpgradeHandler : UdonSharpBehaviour
 
     [UdonSynced, FieldChangeCallback(nameof(UpgradeLevel))]
     private int _upgradeLevel;
-
-    public int UpgradeTest = 0;
-
     public int UpgradeLevel
     {
         set
@@ -28,12 +25,6 @@ public class RodUpgradeHandler : UdonSharpBehaviour
             SetRodUpgrade();
         }
         get => _upgradeLevel;
-    }
-
-    public override void OnDeserialization()
-    {
-        material.color = color;
-        base.OnDeserialization();
     }
 
     public void Start() {
@@ -73,12 +64,6 @@ public class RodUpgradeHandler : UdonSharpBehaviour
                     }
                 }
             }
-        }
-    }
-
-    public void Update() {
-        if (UpgradeLevel != UpgradeTest) {
-            UpgradeLevel = UpgradeTest;
         }
     }
 }

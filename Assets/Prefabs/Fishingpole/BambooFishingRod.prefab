@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 443365131082957334}
   - component: {fileID: 443365131082957332}
   - component: {fileID: 443365131082957333}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,6 +213,85 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 443365131082957332}
+--- !u!1 &378027828597050249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7200567679277582483}
+  - component: {fileID: 977208159475224223}
+  - component: {fileID: 5634421131877555759}
+  m_Layer: 30
+  m_Name: Force
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7200567679277582483
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378027828597050249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 443365130095367175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0, y: -142}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &977208159475224223
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378027828597050249}
+  m_CullTransparentMesh: 0
+--- !u!114 &5634421131877555759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378027828597050249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 128
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 128
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Lure Force: '
 --- !u!1 &443365129836016087
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +303,7 @@ GameObject:
   - component: {fileID: 443365129836016084}
   - component: {fileID: 443365129836016085}
   - component: {fileID: 443365129836016090}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: Spring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +382,7 @@ GameObject:
   - component: {fileID: 443365130004740085}
   - component: {fileID: 443365130004740084}
   - component: {fileID: 443365130004740087}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: Mass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +462,7 @@ GameObject:
   - component: {fileID: 443365130095367178}
   - component: {fileID: 443365130095367173}
   - component: {fileID: 443365130095367172}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,6 +484,9 @@ RectTransform:
   - {fileID: 443365130941888445}
   - {fileID: 443365129836016084}
   - {fileID: 443365130004740085}
+  - {fileID: 1650264027447627420}
+  - {fileID: 7200567679277582483}
+  - {fileID: 2277707561069267320}
   m_Father: {fileID: 7138069727476586906}
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -457,7 +539,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &443365130095367172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +573,7 @@ GameObject:
   - component: {fileID: 443365130272504297}
   - component: {fileID: 4627711529528465628}
   - component: {fileID: 4282486405234210565}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: HandleCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +797,7 @@ GameObject:
   - component: {fileID: 443365130941888445}
   - component: {fileID: 443365130941888419}
   - component: {fileID: 443365130941888418}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: Angle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443365131543299519}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: HandleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +907,7 @@ GameObject:
   - component: {fileID: 4674489252059221896}
   - component: {fileID: 3700876502270120523}
   - component: {fileID: 4027842509502447509}
-  m_Layer: 4
+  m_Layer: 30
   m_Name: FishForceSync
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +993,7 @@ GameObject:
   - component: {fileID: 120927869255965223}
   - component: {fileID: 2203180042029391690}
   - component: {fileID: 2159631210976670120}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: BambooFishingRod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1082,7 @@ GameObject:
   - component: {fileID: 443365129853066717}
   - component: {fileID: 443365129853066719}
   - component: {fileID: 443365129853066716}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Reel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,6 +1180,7 @@ MonoBehaviour:
   handleTarget: {fileID: 443365130272504301}
   handleTargetHandler: {fileID: 4627711529528465628}
   handle: {fileID: 443365131543299519}
+  pickup: {fileID: 443365130272504302}
   fishingLine: {fileID: 9155876453976685473}
   fishingPoleRenderer: {fileID: 6916346120405300172}
   sinAmplitude: 0.0184
@@ -1157,8 +1240,8 @@ Rigidbody:
   m_GameObject: {fileID: 952478285409093224}
   serializedVersion: 4
   m_Mass: 5
-  m_Drag: 0.1
-  m_AngularDrag: 0.1
+  m_Drag: 2
+  m_AngularDrag: 2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1188,7 +1271,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 285222400
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -1392,7 +1475,7 @@ GameObject:
   - component: {fileID: 3006970760372266231}
   - component: {fileID: 3766765554484236093}
   - component: {fileID: 2353929418161612690}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishingHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,8 +1508,8 @@ Rigidbody:
   m_GameObject: {fileID: 1176006722984535210}
   serializedVersion: 4
   m_Mass: 200
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 2
+  m_AngularDrag: 2
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1564,7 +1647,7 @@ GameObject:
   - component: {fileID: 443365129967795985}
   - component: {fileID: 443365129967795991}
   - component: {fileID: 443365129967795988}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034507390154748868}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishingBobber.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1891,7 @@ GameObject:
   - component: {fileID: 443365129950838222}
   - component: {fileID: 443365129950838220}
   - component: {fileID: 443365129950838221}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9155876453976685473}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: ReelWire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2051,7 +2134,7 @@ GameObject:
   - component: {fileID: 3190945494071525187}
   - component: {fileID: 2010680832767504614}
   - component: {fileID: 4324485719647831084}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Bait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2136,7 +2219,7 @@ GameObject:
   - component: {fileID: 443365131693790436}
   - component: {fileID: 443365131693790442}
   - component: {fileID: 443365131693790443}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2349,7 +2432,7 @@ GameObject:
   - component: {fileID: 443365130578906864}
   - component: {fileID: 443365130578906870}
   - component: {fileID: 443365130578906871}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059423049924522362}
   - component: {fileID: 6916346120405300172}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: BambooFishingPole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2655,6 +2738,164 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.013391271, y: 1.3363057, z: -0.082755506}
     m_Extent: {x: 0.072589666, y: 1.4989237, z: 0.1146175}
   m_DirtyAABB: 0
+--- !u!1 &4330519360651713517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2277707561069267320}
+  - component: {fileID: 860139847534653825}
+  - component: {fileID: 3045086977159152833}
+  m_Layer: 30
+  m_Name: FishForce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2277707561069267320
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330519360651713517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 443365130095367175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -278}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &860139847534653825
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330519360651713517}
+  m_CullTransparentMesh: 0
+--- !u!114 &3045086977159152833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330519360651713517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 128
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 128
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Fish Force: '
+--- !u!1 &4356312855771364674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650264027447627420}
+  - component: {fileID: 3218310472446035624}
+  - component: {fileID: 7387198457542508665}
+  m_Layer: 30
+  m_Name: Drag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1650264027447627420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356312855771364674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 443365130095367175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3218310472446035624
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356312855771364674}
+  m_CullTransparentMesh: 0
+--- !u!114 &7387198457542508665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356312855771364674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 128
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 128
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Lure Drag: '
 --- !u!1 &4621794876142683197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,7 +2905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6408754955531727030}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: ArmatureFishingpole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2699,7 +2940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 817312184686727629}
   - component: {fileID: 443365130340764248}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishpoleLook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2754,7 +2995,7 @@ GameObject:
   - component: {fileID: 443365131630190660}
   - component: {fileID: 443365131630190666}
   - component: {fileID: 443365131630190667}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2967,7 +3208,7 @@ GameObject:
   - component: {fileID: 443365130266905464}
   - component: {fileID: 443365130266905470}
   - component: {fileID: 443365130266905471}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3182,7 +3423,7 @@ GameObject:
   - component: {fileID: 443365131476326640}
   - component: {fileID: 443365131476326641}
   - component: {fileID: 443365131476326646}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: Fishpole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3341,10 +3582,13 @@ MonoBehaviour:
   - {fileID: 443365129836016087}
   - {fileID: 443365130004740086}
   - {fileID: 4244838230158319985}
+  pickup: {fileID: 443365131476328205}
   fishForce: {fileID: 443365130412589829}
   lureSpringText: {fileID: 443365129836016090}
   lureMassText: {fileID: 443365130004740087}
-  lureDragText: {fileID: 0}
+  lureDragText: {fileID: 7387198457542508665}
+  lureForceText: {fileID: 5634421131877555759}
+  fishForceText: {fileID: 3045086977159152833}
   lureJoint: {fileID: 0}
   rodLevelParams: {fileID: 0}
   addSpringRatio: 0.05
@@ -3362,6 +3606,7 @@ MonoBehaviour:
   runoutOffsetDistance: 5
   reeling: 1
   reelingTimer: 0
+  reelAngleAccumulator: {fileID: 443365129853066716}
 --- !u!114 &443365131476326641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3414,7 +3659,7 @@ GameObject:
   - component: {fileID: 443365131426741239}
   - component: {fileID: 443365131426741237}
   - component: {fileID: 443365131426741242}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishpoleLeaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3624,7 +3869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8065666483286531746}
   - component: {fileID: 443365129628256054}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3689,7 +3934,7 @@ GameObject:
   - component: {fileID: 1239859124966484692}
   - component: {fileID: 2004743119694413779}
   - component: {fileID: 2886585619980129152}
-  m_Layer: 13
+  m_Layer: 30
   m_Name: RodUpgradeHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3795,7 +4040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8704480621577699402}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3831,7 +4076,7 @@ GameObject:
   - component: {fileID: 443365130585785819}
   - component: {fileID: 443365130585785817}
   - component: {fileID: 443365130585785822}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Fishpole.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4041,7 +4286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8389779172230532037}
   - component: {fileID: 443365130925916986}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishingBobberLook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4056,7 +4301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8972606237516746005}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7066499, y: 0.00000039696803, z: -0.00000039748116, w: 0.70756334}
+  m_LocalRotation: {x: 0.7066499, y: 0.0000003969681, z: -0.00000039748122, w: 0.70756334}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4094,7 +4339,7 @@ GameObject:
   - component: {fileID: 3049356625906597848}
   - component: {fileID: 443365130715267726}
   - component: {fileID: 443365130715267721}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: FishingHookLeaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}

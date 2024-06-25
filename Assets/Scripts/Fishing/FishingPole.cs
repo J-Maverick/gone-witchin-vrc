@@ -4,18 +4,23 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using UnityEngine.UI;
+using VRC.SDK3.Components;
+using Unity.Collections;
 
 public class FishingPole : UdonSharpBehaviour
 {
     public GameObject lure;
     public GameObject hook;
     public GameObject[] ownedObjects;
+    public VRCPickup pickup;
 
     public FishForce fishForce;
 
     public Text lureSpringText = null;
     public Text lureMassText = null;
     public Text lureDragText = null;
+    public Text lureForceText = null;
+    public Text fishForceText = null;
 
     public SpringJoint lureJoint;
     private Rigidbody lureRigidBody;
@@ -58,6 +63,7 @@ public class FishingPole : UdonSharpBehaviour
 
     public bool reeling = true;
     public float reelingTimer = 0f;
+    public ReelAngleAccumulator reelAngleAccumulator = null;
 
     void Start()
     {
@@ -108,6 +114,36 @@ public class FishingPole : UdonSharpBehaviour
         }
     }
 
+    public void CatchVibration(float fishSize) {
+        float duration = 1.5f + fishSize;
+        float amplitude = 0.5f + (fishSize / 2f);
+        pickup.GenerateHapticEvent(duration:duration, amplitude:amplitude, frequency:30f);
+    }
+
+    public void TickVibration() {
+        if (fishOn) {
+            float lureMagnitude = lureJoint.currentForce.magnitude;
+            float fishMagnitude = fishForce.fishForce.magnitude;
+            float fishStatsAdd = fishForce.fish != null ? (Mathf.Log(2f * fishForce.fish.weight) * .04f) + (fishForce.fish.size * 0.1f) : 0f;
+            float amplitudeAdd = fishMagnitude > 0f ? 0.1f * lureMagnitude / fishMagnitude : 0.05f + fishStatsAdd;
+            float amplitude =  0.1f + fishStatsAdd + amplitudeAdd;
+            if (pickup.currentPlayer != null) {
+                pickup.currentPlayer.PlayHapticEventInHand(pickup.currentHand, duration:0.005f, amplitude:amplitude, frequency:160f);
+            }
+            if (reelAngleAccumulator.pickup.currentPlayer != null) {
+                reelAngleAccumulator.pickup.currentPlayer.PlayHapticEventInHand(reelAngleAccumulator.pickup.currentHand, duration:0.005f, amplitude:amplitude, frequency:160f);
+            }
+        }
+        else {
+            if (pickup.currentPlayer != null) {
+                pickup.currentPlayer.PlayHapticEventInHand(pickup.currentHand, duration:0.005f, amplitude:0.1f, frequency:160f);
+            }
+            if (reelAngleAccumulator.pickup.currentPlayer != null) {
+                reelAngleAccumulator.pickup.currentPlayer.PlayHapticEventInHand(reelAngleAccumulator.pickup.currentHand, duration:0.005f, amplitude:0.1f, frequency:160f);
+            }
+        }
+    }
+
     public float GetCastDistance()
     {
         if (casted)
@@ -121,6 +157,8 @@ public class FishingPole : UdonSharpBehaviour
     public void CastingEvent()
     {
         Debug.Log("Casting Event Triggered");
+        lureRigidBody.drag = 0.1f;
+        hookRigidBody.drag = 0.1f;
         casting = true;
     }
 
@@ -182,6 +220,7 @@ public class FishingPole : UdonSharpBehaviour
         if (inWater && !fishOn)
         {
             runoutTime = minRunoutTime + (fishSize * (maxRunoutTime - minRunoutTime));
+            CatchVibration(fishSize);
             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetFishOnParams));
         }
     }
@@ -298,6 +337,12 @@ public class FishingPole : UdonSharpBehaviour
         if (lureDragText != null)
         {
             lureDragText.text = string.Format("Lure Drag: {0:0.##}", lureRigidBody.drag);
+        }
+        if (lureForceText != null) {
+            lureForceText.text = string.Format("Lure Joint Force: {0:0.##}", lureJoint.currentForce.magnitude);
+        }
+        if (fishForceText != null) {
+            fishForceText.text = string.Format("Fish Force: {0:0.##}", fishForce.fishForce.magnitude);
         }
     }
 
