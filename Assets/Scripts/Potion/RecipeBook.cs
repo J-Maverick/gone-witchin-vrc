@@ -21,8 +21,9 @@ public class RecipeBook : UdonSharpBehaviour
     public override void OnPlayerJoined(VRCPlayerApi player)
     {
         if (player.isLocal) {
-            SendCustomEventDelayedFrames("UpdateRecipe", 10);
+            SendCustomEventDelayedFrames("UpdateRecipe", 100);
         }
+        RequestSerialization();
     }
 
     public void NextRecipe() {

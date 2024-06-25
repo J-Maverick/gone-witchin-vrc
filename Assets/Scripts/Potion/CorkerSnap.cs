@@ -7,6 +7,7 @@ using VRC.Udon;
 public class CorkerSnap : BottleSnap
 {
     public Corker corker;
+
     public override void OnTriggerEnter(Collider other)
     {
         Bottle tempBottle = other.gameObject.GetComponent<Bottle>();

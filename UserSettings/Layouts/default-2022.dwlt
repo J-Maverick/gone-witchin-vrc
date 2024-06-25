@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 3440
     height: 1357
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Console
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 700}
   m_MaxSize: {x: 10000, y: 10000}
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 274
+  controlID: 123
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: VRCSdkControlPanel
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -97,16 +97,16 @@ MonoBehaviour:
     y: 0
     width: 695
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 517, y: 621}
+  m_MaxSize: {x: 517, y: 2021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 22}
   - {fileID: 19}
   - {fileID: 14}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1526,10 +1526,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: c9a94e6ab3253b749b3f6544b36eacd0,
+  m_AnimatorController: {fileID: 9100000, guid: f6c8959ddefca6f42820f89ef6423cac,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -3882003484659077616, guid: c9a94e6ab3253b749b3f6544b36eacd0,
+  - m_Target: {fileID: -2344700258995974634, guid: f6c8959ddefca6f42820f89ef6423cac,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -1580,7 +1580,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 1519006
+  m_LastSelectedObjectID: 120712
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2771,10 +2771,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 581
+    x: 594
     y: 73
-    width: 1241
-    height: 871
+    width: 994
+    height: 833
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2831,7 +2831,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Potion
+    - Assets/Scripts/Fishing
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2839,15 +2839,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Potion
+  - Assets/Scripts/Fishing
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Users\Joey\Documents\Unity\Projects\GoneWitchinHD
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 191}
-    m_SelectedIDs: e41c0200
-    m_LastClickedID: 138468
+    m_SelectedIDs: 4c1c0200
+    m_LastClickedID: 138316
     m_ExpandedIDs: 00000000fa690000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2928,7 +2928,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 879.5}
+    m_ScrollPosition: {x: 0, y: 300}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 389
@@ -2973,7 +2973,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 120712
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -3017,10 +3017,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 73.5}
-      m_SelectedIDs: eeb60000
-      m_LastClickedID: 46830
-      m_ExpandedIDs: d4faffffa6760100b2d20100
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6ed0fbffcad0fbff2253fcfffca7fcff54abfcff58abfcffdcf6fcffda76fdff6e77fdff7277fdffbc77fdffc077fdff6080fdff6480fdff6e80fdff3afdfeff46fdfeffd4fafffff4ffffff90aa0000e0b1000074b900003cf70000b2fd00001aff000040410100b4740100108e010026ca0100ccf1010012f40100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3135,7 +3135,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 26}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -3414,9 +3414,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.214631, y: 3.1133606, z: -13.619756}
+    m_Target: {x: 8.219962, y: 3.0027986, z: -25.266151}
     speed: 2
-    m_Value: {x: 6.214631, y: 3.1133606, z: -13.619756}
+    m_Value: {x: 8.219962, y: 3.0027986, z: -25.266151}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -3462,13 +3462,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.071
   m_Rotation:
-    m_Target: {x: -0.046214677, y: -0.9035781, z: 0.10067469, w: -0.41392878}
+    m_Target: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
     speed: 2
-    m_Value: {x: 0.046214677, y: 0.90357804, z: -0.10067468, w: 0.41392878}
+    m_Value: {x: 0, y: 0.7071069, z: 0, w: -0.70710677}
   m_Size:
-    m_Target: 0.99292815
+    m_Target: 11.071798
     speed: 2
-    m_Value: 0.9899583
+    m_Value: 11.071798
   m_Ortho:
     m_Target: 0
     speed: 2
