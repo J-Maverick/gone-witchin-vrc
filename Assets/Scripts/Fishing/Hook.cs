@@ -8,11 +8,13 @@ public class Hook : UdonSharpBehaviour
 {
     public FishForce fishForce;
     public MeshFilter baitMesh;
+    public MeshRenderer meshRenderer;
 
     public void AddBait(Bait bait) {
         Debug.LogFormat("{0}: Adding Bait {1}", name, bait.name);
         fishForce.AddBait(bait);
         baitMesh.sharedMesh = bait.mesh;
+        meshRenderer.material.color = bait.material.color;
     }
 
     public void RemoveBait() {

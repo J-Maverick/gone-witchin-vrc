@@ -10,6 +10,7 @@ public class Bait : UdonSharpBehaviour
     public TagModifier[] tagModifiers = null;
     public int castsPerBait = 5;
     public Mesh mesh;
+    public Material material;
     
 
     public float UpdateCatchRateModifier(float catchRateModifier, FishTag[] fishTags, Location location) {

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6609698726696275386}
   - component: {fileID: 5907161469282036136}
   - component: {fileID: 8891419351712154290}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: TestBait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,6 @@ MonoBehaviour:
   bait: {fileID: 0}
   baitPool: {fileID: 0}
   baitSync: {fileID: 8891419351712154290}
-  baitRigidbody: {fileID: 8496100522898666757}
 --- !u!114 &4577321575887467071
 MonoBehaviour:
   m_ObjectHideFlags: 0

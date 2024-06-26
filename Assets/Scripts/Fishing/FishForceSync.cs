@@ -38,6 +38,7 @@ public class FishForceSync : UdonSharpBehaviour
         bait = baitInventory.GetBaitByIndex(baitIndex);
         if (bait != null) {
             hook.baitMesh.sharedMesh = bait.mesh;
+            hook.meshRenderer.material.color = bait.material.color;
         }
         else {
             hook.baitMesh.sharedMesh = null;

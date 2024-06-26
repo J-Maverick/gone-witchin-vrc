@@ -1608,6 +1608,7 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 2353929418161612690}
   fishForce: {fileID: 443365130412589829}
   baitMesh: {fileID: 2010680832767504614}
+  meshRenderer: {fileID: 4324485719647831084}
 --- !u!114 &2353929418161612690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4004,7 +4005,6 @@ MonoBehaviour:
   meshRenderer: {fileID: 6916346120405300172}
   material: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 1}
-  UpgradeTest: 0
 --- !u!114 &2886585619980129152
 MonoBehaviour:
   m_ObjectHideFlags: 0

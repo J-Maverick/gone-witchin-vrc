@@ -50,8 +50,6 @@ things blow up in peoples hands sometimes
 
 lots of bottles fuck up directional audio and voice
 
-Caught bottles show up as fish for other players
-
 ===============Possibly Fixed Bugs to Test=============
 
 late join fishpole/bobber desync location big lag  -- frames recovered when I became master (everyone left) XXX
@@ -73,3 +71,5 @@ adding fish to pipe straight from pole breaks the pole XXX
 elevators spin the shit out of you XXX
 
 potion duping XXX
+
+Caught bottles show up as fish for other players XXX

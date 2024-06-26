@@ -247,42 +247,44 @@ public class FishForce : UdonSharpBehaviour
     // TODO: Take an optimization pass
     private void FixedUpdate()
     {
-        if (fishingPole.inWater && localOwner)
+        if (fishingPole.inWater)
         {
-            GetFish();
-            ResetOnFishOff();
+            if (localOwner) {
+                GetFish();
+                ResetOnFishOff();
 
-            switch (fish.state)
-            {
-                case FishState.reset:
-                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
-                    CheckBite();
-                    break;
-                case FishState.biting:
-                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
-                    TriggerFight();
-                    break;
-                case FishState.fighting:
-                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
-                    Fight();
-                    ResetOnReelTimeout();
-                    break;
-                case FishState.catchable:
-                    if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
-                    Fight();
-                    Vector3 pos = fishingPole.transform.position;
-                    float yOffset = (pos.y - lure.position.y) / 2f;
-                    pos.y = lure.position.y;
-                    float distance = (lure.position - pos).magnitude;
-                    if (distance < catchDistanceThreshold + yOffset) fish.Catch();
-                    break;
-                case FishState.catching:
-                    if (lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
-                    Caught();
-                    break;
-                case FishState.caught:
-                    RemoveFish();
-                    break;
+                switch (fish.state)
+                {
+                    case FishState.reset:
+                        if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
+                        CheckBite();
+                        break;
+                    case FishState.biting:
+                        if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
+                        TriggerFight();
+                        break;
+                    case FishState.fighting:
+                        if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
+                        Fight();
+                        ResetOnReelTimeout();
+                        break;
+                    case FishState.catchable:
+                        if (!lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(LockLure));
+                        Fight();
+                        Vector3 pos = fishingPole.transform.position;
+                        float yOffset = (pos.y - lure.position.y) / 2f;
+                        pos.y = lure.position.y;
+                        float distance = (lure.position - pos).magnitude;
+                        if (distance < catchDistanceThreshold + yOffset) fish.Catch();
+                        break;
+                    case FishState.catching:
+                        if (lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
+                        Caught();
+                        break;
+                    case FishState.caught:
+                        RemoveFish();
+                        break;
+                }
             }
 
             if (lureLocked) OverrideLurePosition();
