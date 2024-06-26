@@ -25,7 +25,7 @@ progression balancing
 
 potion crit for mre potions
 
-Lava?
+Lava area
 
 Make high drag on bobber and hook temporary (only when spawning in or resetting pole)
 
@@ -33,37 +33,43 @@ catch distance too high on rod upgrades
 
 fish vibration on rod, tick only on reel
 
+flying bouncer boys, big ones have
 ===============BUGS===================
 
 caught fish getting stuck
 
-potion duping
-(owner spawns one too?)
-
-adding fish to pipe straight from pole breaks the pole
-
-rod upgrades dont sync right
-
-late joiner recipe desync
-
-late join rod spaz fishing line XXX
-
-full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker
+remote bobber wiggle
 
 "respawning fish" still exist after being removed
-
-fast or highly stretched bobbers cause some lag? XXX
 
 "the gone witchin lag spike"
 
 bottle spawns at old location???
  
-extreme late join corker died? also dupes still a thing (very high ping consistently duped) XXX
-
 things blow up in peoples hands sometimes
 
 lots of bottles fuck up directional audio and voice
 
+Caught bottles show up as fish for other players
+
+===============Possibly Fixed Bugs to Test=============
+
 late join fishpole/bobber desync location big lag  -- frames recovered when I became master (everyone left) XXX
 
 portable pipe doesnt work remote XXX
+
+extreme late join corker died? also dupes still a thing (very high ping consistently duped) XXX
+
+fast or highly stretched bobbers cause some lag? XXX
+
+late joiner recipe desync XXX
+
+late join rod spaz fishing line XXX
+
+full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker XXX
+
+adding fish to pipe straight from pole breaks the pole XXX
+ 
+elevators spin the shit out of you XXX
+
+potion duping XXX

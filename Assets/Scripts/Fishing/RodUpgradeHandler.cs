@@ -23,6 +23,7 @@ public class RodUpgradeHandler : UdonSharpBehaviour
                 _upgradeLevel = value;
             }
             SetRodUpgrade();
+            RequestSerialization();
         }
         get => _upgradeLevel;
     }
@@ -60,7 +61,7 @@ public class RodUpgradeHandler : UdonSharpBehaviour
                 if (upgradePotion != null && upgradePotion.rodUpgrade != null) {
                     if (upgradePotion.rodUpgrade.level > UpgradeLevel) {
                         UpgradeLevel = upgradePotion.rodUpgrade.level;
-                        upgradePotion.Shatter();
+                        upgradePotion.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(RodUpgradePotion.Shatter));
                     }
                 }
             }
