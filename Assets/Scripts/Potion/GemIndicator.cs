@@ -24,7 +24,7 @@ public class GemIndicator : UdonSharpBehaviour
     private void Start()
     {
         material = rend.materials[0];
-        material.color = neutralColor;
+        // material.color = neutralColor;
         material.SetColor("_EmissionColor", neutralColor * 0f);
     }
 
@@ -32,7 +32,7 @@ public class GemIndicator : UdonSharpBehaviour
     {
         if (state != IndicatorState.valid)
         {
-            material.color = validColor;
+            // material.color = validColor;
             material.SetColor("_EmissionColor", validColor * emissionMultiplier);
             state = IndicatorState.valid;
         }
@@ -42,7 +42,7 @@ public class GemIndicator : UdonSharpBehaviour
     {
         if (state != IndicatorState.invalid)
         {
-            material.color = invalidColor;
+            // material.color = invalidColor;
             material.SetColor("_EmissionColor", invalidColor * emissionMultiplier);
             state = IndicatorState.invalid;
         }
@@ -52,7 +52,7 @@ public class GemIndicator : UdonSharpBehaviour
     {
         if (state != IndicatorState.neutral)
         {
-            material.color = neutralColor;
+            // material.color = neutralColor;
             material.SetColor("_EmissionColor", neutralColor * 0f);
             state = IndicatorState.neutral;
         }

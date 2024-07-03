@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FillAmount: -0.796
+    - _FillAmount: -0.22
     - _LerpCoefficient: 0.2
     - _Rim: 0.0063
     - _RimPower: 0

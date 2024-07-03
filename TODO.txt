@@ -34,6 +34,13 @@ catch distance too high on rod upgrades
 fish vibration on rod, tick only on reel
 
 flying bouncer boys, big ones have
+
+Day/night cycle
+
+boat move potion to spawn at different lakes
+
+Cube and moon bottles have pretty bad fill levels
+
 ===============BUGS===================
 
 caught fish getting stuck
@@ -50,6 +57,18 @@ things blow up in peoples hands sometimes
 
 lots of bottles fuck up directional audio and voice
 
+bait on hook desync
+
+bottle despawn visible
+
+spawned pipes just delete fish
+
+apprentice bait visual bug?
+
+caught a lot of fish and stopped getting bites, remote player fixed it
+
+elevator: rotation comes from head....
+
 ===============Possibly Fixed Bugs to Test=============
 
 late join fishpole/bobber desync location big lag  -- frames recovered when I became master (everyone left) XXX
@@ -64,7 +83,7 @@ late joiner recipe desync XXX
 
 late join rod spaz fishing line XXX
 
-full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker XXX
+full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker XXX ffff
 
 adding fish to pipe straight from pole breaks the pole XXX
  

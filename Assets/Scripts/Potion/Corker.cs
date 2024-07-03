@@ -9,6 +9,7 @@ public class Corker : UdonSharpBehaviour
     public CorkerSnap bottleSnap;
     public GemIndicator indicator;
     public PotionOcean potionPool;
+    public Animator animator;
     public float cooldownTime = 1f;
     public bool coolingDown = false;
 
@@ -19,6 +20,7 @@ public class Corker : UdonSharpBehaviour
                 // TODO update networking -- this is insufficient for remote players. Need to build "animated" corker system that takes its time to properly spawn
                 GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
                 if (spawnedPotion != null) {
+                    SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayAnimation");
                     Vector3 spawnPosition = bottle.transform.position;
                     Quaternion spawnRotation = bottle.transform.rotation;
                     Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
@@ -42,6 +44,12 @@ public class Corker : UdonSharpBehaviour
             Debug.LogFormat("{0}: Invalid bottle type, cooldown, or insufficient fill", name);
         }
         TriggerCooldown();
+    }
+
+    public void PlayAnimation() {
+        if (animator != null) {
+            animator.Play("Base Layer.Squelch");
+        }
     }
 
     public void TriggerCooldown() {

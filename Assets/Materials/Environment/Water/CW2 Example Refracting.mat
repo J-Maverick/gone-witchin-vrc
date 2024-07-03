@@ -84,7 +84,7 @@ Material:
     - _DepthDensity: 0.258
     - _DepthDensityVertical: 0
     - _DepthFar: 0.1
-    - _DepthMultiply: 0.2
+    - _DepthMultiply: 0.762
     - _DepthNear: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -117,7 +117,7 @@ Material:
     - _WaveScrollSpeed: 0.69
     - _WaveScrollX: 0
     - _WaveScrollY: 0.001
-    - _WaveStrength: -0.036
+    - _WaveStrength: 0.22
     - _ZWrite: 1
     - _foamMax: 0
     - _foamMin: 1

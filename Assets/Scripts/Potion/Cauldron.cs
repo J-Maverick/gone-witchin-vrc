@@ -13,6 +13,7 @@ public class Cauldron : UdonSharpBehaviour
     public Material overflowMaterial;
     public GemIndicator indicator;
     private float overflowFlowRate = 0.05f;
+    private float overFlowExponent = 4f;
     public float maxFill = 5f;
     public bool isOverflowing = false;
     [UdonSynced] public float fillLevel = 0f;
@@ -68,7 +69,17 @@ public class Cauldron : UdonSharpBehaviour
         Debug.Log("Adding Liquid");
         float fillAmount = (bottle.pourSpeed * bottle.pourMultiplier * Time.deltaTime) / maxFill;
         fillLevel += fillAmount;
-        liquid.fillLevel = fillLevel;
+        if (fillLevel > 1)
+        {
+            isOverflowing = true;
+            liquid.fillLevel = Mathf.Pow(fillLevel, overFlowExponent);
+        }
+        else 
+        {
+            isOverflowing = false;
+            overflowAnimator.SetFloat("pourSpeed", 0.0f);
+            liquid.fillLevel = fillLevel;
+        }
 
         fillRecipe.AddReagent(bottle.liquid, fillAmount);
 
@@ -77,17 +88,9 @@ public class Cauldron : UdonSharpBehaviour
         liquid.FillBump(fillAmount * 500f);
         liquid.SetStaticColor(fillColor);
 
-        if (liquid.fillLevel > 1)
-        {
-            isOverflowing = true;
-        }
-        else 
-        {
-            isOverflowing = false;
-            overflowAnimator.SetFloat("pourSpeed", 0.0f);
-        }
 
-        liquidColliderAnimator.SetFloat("FillLevel", liquid.fillLevel);
+
+        liquidColliderAnimator.SetFloat("FillLevel", fillLevel);
 
         if (!impossibleRecipe) impossibleRecipe = fillRecipe.nReagents == -1 || recipes.RecipeIsImpossible(fillRecipe);
 
@@ -128,7 +131,12 @@ public class Cauldron : UdonSharpBehaviour
 
     public void UpdateFill()
     {
-        liquid.fillLevel = fillLevel;
+        if (fillLevel > 1) {
+            liquid.fillLevel = Mathf.Pow(fillLevel, overFlowExponent);
+        }
+        else {
+            liquid.fillLevel = fillLevel;
+        }
     }
 
     public void ReduceFill(float reduceAmount)
@@ -160,8 +168,11 @@ public class Cauldron : UdonSharpBehaviour
                 fillLevel = 1f;
                 overflowAnimator.SetFloat("pourSpeed", 0.0f);
                 isOverflowing = false;
+                liquid.fillLevel = fillLevel;
             }
-            liquid.fillLevel = fillLevel;
+            else {
+                liquid.fillLevel = Mathf.Pow(fillLevel, overFlowExponent);
+            }
         }
 
         if (fillLevel > 0f)
