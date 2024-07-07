@@ -43,7 +43,7 @@ public class PotionWobble : UdonSharpBehaviour
 
     bool wobbleActive = true;
 
-    public void Start()
+    public virtual void Start()
     {
         if (isPotion)
         material = rend.materials[1];
@@ -77,10 +77,11 @@ public class PotionWobble : UdonSharpBehaviour
 
     public void UpdateFillLevel()
     {
-        float fill;
+        float fill = 1f;
         if (_fillLevel > 0) fill = minFill + (maxFill - minFill) * _fillLevel;
-        else fill = 1f;
-        material.SetFloat("_FillAmount", fill);
+        if (material != null) {
+            material.SetFloat("_FillAmount", fill);
+        }
     }
 
     public void FillBump(float scale=1f)

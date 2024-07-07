@@ -5,6 +5,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 using UnityEngine.UI;
 using UnityEngine.PlayerLoop;
+using System.Runtime.CompilerServices;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class RecipeBook : UdonSharpBehaviour
@@ -13,6 +14,7 @@ public class RecipeBook : UdonSharpBehaviour
     [UdonSynced] public int currentRecipeIndex = 0;
     public RecipePanel[] panels;
     public Text potionText;
+    public Animator animator;
 
     public override void OnDeserialization() {
         UpdateRecipe();
@@ -26,7 +28,23 @@ public class RecipeBook : UdonSharpBehaviour
         RequestSerialization();
     }
 
+    public void UpdateAnimator() {
+        if (animator.GetCurrentAnimatorStateInfo(1).IsName("Armature|Jangle")) {
+            animator.SetLayerWeight(1, Mathf.Clamp(animator.GetLayerWeight(1) + 0.2f, 0f, 1f));
+        }
+        else {
+            animator.SetLayerWeight(1, 0.2f);
+        }
+        animator.SetBool("Jangle", true);
+        SendCustomEventDelayedFrames(nameof(Unjangle), 5);
+    }
+
+    public void Unjangle() {
+        animator.SetBool("Jangle", false);
+    }
+
     public void NextRecipe() {
+        UpdateAnimator();
         currentRecipeIndex += 1;
         if (currentRecipeIndex >= recipeList.recipes.Length) {
             currentRecipeIndex = 0;
@@ -36,6 +54,7 @@ public class RecipeBook : UdonSharpBehaviour
     }
 
     public void PreviousRecipe() {
+        UpdateAnimator();
         currentRecipeIndex -= 1;
         if (currentRecipeIndex < 0) {
             currentRecipeIndex = recipeList.recipes.Length - 1;

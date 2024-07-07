@@ -62,9 +62,8 @@ public class Elevator : UdonSharpBehaviour
                 moveActive = false;
                 elevatorSwitch.SetOff();
             }
-
             if (playerColliding) {
-                Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetRotation());
+                Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).rotation);
             }
             previousPosition = transform.position;
         }

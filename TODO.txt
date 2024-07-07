@@ -1,6 +1,6 @@
 
+=========================FEATURES====================
 Craftable bait
-Rod Upgrade
 
 Shared potion Inventory system
 
@@ -27,25 +27,25 @@ potion crit for mre potions
 
 Lava area
 
-Make high drag on bobber and hook temporary (only when spawning in or resetting pole)
-
-catch distance too high on rod upgrades
-
-fish vibration on rod, tick only on reel
+Make high drag on bobber and hook temporary? (only when spawning in or resetting pole)
 
 flying bouncer boys, big ones have
 
-Day/night cycle
-
 boat move potion to spawn at different lakes
 
-Cube and moon bottles have pretty bad fill levels
+================================IMPLEMENTED============================================
+
+fish vibration on rod, tick only on reel
+
+Rod Upgrade
+
+Day/night cycle
 
 ===============BUGS===================
 
-caught fish getting stuck
+Cube and moon bottles have pretty bad fill levels
 
-remote bobber wiggle
+caught fish getting stuck ???
 
 "respawning fish" still exist after being removed
 
@@ -57,38 +57,42 @@ things blow up in peoples hands sometimes
 
 lots of bottles fuck up directional audio and voice
 
-bait on hook desync
-
-bottle despawn visible
-
-spawned pipes just delete fish
-
-apprentice bait visual bug?
-
 caught a lot of fish and stopped getting bites, remote player fixed it
-
-elevator: rotation comes from head....
 
 ===============Possibly Fixed Bugs to Test=============
 
-late join fishpole/bobber desync location big lag  -- frames recovered when I became master (everyone left) XXX
+catch distance too high on rod upgrades
 
-portable pipe doesnt work remote XXX
+bottle despawn visible
 
-extreme late join corker died? also dupes still a thing (very high ping consistently duped) XXX
+bait on hook desync
 
-fast or highly stretched bobbers cause some lag? XXX
+late join fishpole/bobber desync location big lag  -- frames recovered when I became master (everyone left)
 
-late joiner recipe desync XXX
+extreme late join corker died? also dupes still a thing (very high ping consistently duped)
 
-late join rod spaz fishing line XXX
+fast or highly stretched bobbers cause some lag
 
-full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker XXX ffff
+late joiner recipe desync
 
-adding fish to pipe straight from pole breaks the pole XXX
+full bottle of mystery liquid name empty bottle -- it happens at spawn. it was eyedrops, so maybe it happens at corker ffff
  
-elevators spin the shit out of you XXX
+elevators spin the shit out of you
 
-potion duping XXX
+potion duping
 
-Caught bottles show up as fish for other players XXX
+======================FIXED===================
+
+remote bobber wiggle
+
+spawned pipes just delete fish
+
+apprentice bait visual bug? 
+
+portable pipe doesnt work remote
+
+late join rod spaz fishing line
+
+adding fish to pipe straight from pole breaks the pole
+
+Caught bottles show up as fish for other players

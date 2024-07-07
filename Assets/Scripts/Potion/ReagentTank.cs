@@ -31,9 +31,13 @@ public class ReagentTank : UdonSharpBehaviour
     private int nJoinSyncs = 10;
     public int joinSyncCounter = 0;
 
+    public bool debugFill = false;
+
     void Start()
     {
-        //if (Networking.LocalPlayer.isMaster) fillLevel = Random.Range(0.05f, 1f);
+        if (Networking.LocalPlayer.isMaster && debugFill) {
+            fillLevel = Random.Range(0.35f, 1f);
+        }
         shaderControl.SetColor(reagent.color);
         particleMaterial = particleRenderer.material;
         particleMaterial.color = reagent.color;
