@@ -1,6 +1,5 @@
 
 =========================FEATURES====================
-Craftable bait
 
 Shared potion Inventory system
 
@@ -29,11 +28,13 @@ Lava area
 
 Make high drag on bobber and hook temporary? (only when spawning in or resetting pole)
 
-flying bouncer boys, big ones have
-
 boat move potion to spawn at different lakes
 
 Bait bonus potions -- luck stat??? 
+
+Launch Pad -- also, launch pad spawn potion
+
+Bounce shroom spawn potion
 
 ================================IMPLEMENTED============================================
 
@@ -42,6 +43,8 @@ fish vibration on rod, tick only on reel
 Rod Upgrade
 
 Day/night cycle
+
+Craftable bait
 
 ===============BUGS===================
 
