@@ -9,6 +9,8 @@ public class Bait : UdonSharpBehaviour
     public BaitType type = BaitType.None;
     public TagModifier[] tagModifiers = null;
     public int castsPerBait = 5;
+    public int craftAmount = 5;
+    public int craftVariance = 1;
     public Mesh mesh;
     public Material material;
     

@@ -14,7 +14,7 @@ public class Corker : UdonSharpBehaviour
     public bool coolingDown = false;
 
     public void TryActivate(Bottle bottle) {
-        if (!coolingDown && bottle.GetUdonTypeName() == GetUdonTypeName<ReagentBottle>() && bottle.fillLevel >= 1f) {
+        if (!coolingDown && bottle.GetUdonTypeName() == GetUdonTypeName<ReagentBottle>() && bottle.fillLevel >= 1f && bottle.liquid != null) {
             indicator.SetValid();
             if (Networking.GetOwner(bottle.gameObject).isLocal) { 
                 // TODO update networking -- this is insufficient for remote players. Need to build "animated" corker system that takes its time to properly spawn

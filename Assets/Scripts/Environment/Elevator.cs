@@ -9,6 +9,7 @@ public class Elevator : UdonSharpBehaviour
     public Transform startLocation;
     public Transform endLocation;
     public Vector3 previousPosition;
+    // public Vector3 previousVelocity;
     private Transform targetLocation;
     public float moveSpeed = .5f;
 
@@ -29,7 +30,7 @@ public class Elevator : UdonSharpBehaviour
         if (player.isLocal)
         {
             playerColliding = true;
-
+            // previousVelocity = Vector3.zero;
         }
     }
 
@@ -49,23 +50,27 @@ public class Elevator : UdonSharpBehaviour
             elevatorSwitch.SetOn();
             targetLocation = targetLocation == startLocation ? endLocation : startLocation;
             previousPosition = transform.position;
+            // previousVelocity = Vector3.zero;
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (moveActive)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.fixedDeltaTime);
+            Vector3 velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
             if (transform.position == targetLocation.position)
             {
                 moveActive = false;
                 elevatorSwitch.SetOff();
             }
             if (playerColliding) {
-                Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).rotation);
+                Networking.LocalPlayer.SetVelocity(velocity);
+                // Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).rotation);
             }
             previousPosition = transform.position;
+            // previousVelocity = velocity;
         }
     }
 }

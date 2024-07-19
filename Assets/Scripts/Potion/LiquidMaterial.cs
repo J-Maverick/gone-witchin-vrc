@@ -10,4 +10,5 @@ public class LiquidMaterial : UdonSharpBehaviour
     public Color color;
     public float UVOffsetX = 0f;
     public float UVOffsetY = 0f;
+    public Bait bait = null;
 }

@@ -3,7 +3,32 @@ guid: 603d013e92728db40bd7500a9301ea8f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AspenBarkRed
+    second: {fileID: 2100000, guid: c9bbbfd765814f84286490e8f0f1ca37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeopardLeaves
+    second: {fileID: 2100000, guid: 65338d7c701e15145bfdb173f5f606b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fish brick trim
+    second: {fileID: 2100000, guid: 8cb4e52704ef8cd4a8c1d20028e36a10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fish interlocking
+    second: {fileID: 2100000, guid: a0a005a46a675124db2b3e2c236f01f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: green clover
+    second: {fileID: 2100000, guid: 065b6ff4534a65f45b32d10616091971, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

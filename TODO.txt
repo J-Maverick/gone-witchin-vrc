@@ -33,6 +33,8 @@ flying bouncer boys, big ones have
 
 boat move potion to spawn at different lakes
 
+Bait bonus potions -- luck stat??? 
+
 ================================IMPLEMENTED============================================
 
 fish vibration on rod, tick only on reel
@@ -42,6 +44,12 @@ Rod Upgrade
 Day/night cycle
 
 ===============BUGS===================
+
+size-based stats are still enabled
+someone left and fish snapped back onto the hook
+bottle snaps need tuning
+no gong for remotes players
+pipes dont sync again
 
 Cube and moon bottles have pretty bad fill levels
 
