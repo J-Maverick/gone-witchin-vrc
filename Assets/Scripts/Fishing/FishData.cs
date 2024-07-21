@@ -110,26 +110,28 @@ public class FishData : UdonSharpBehaviour
     public float GetCaveBonus(Bait bait)
     {
         float bonus = 0f;
-        switch (bait.type)
-        {
-            case BaitType.None:
-                bonus = 0f;
-                break;
-            case BaitType.Apprentice:
-                bonus = apprenticeCaveBaitBonus;
-                break;
-            case BaitType.Journeyman:
-                bonus = journeymanCaveBaitBonus;
-                break;
-            case BaitType.Adept:
-                bonus = adeptCaveBaitBonus;
-                break;
-            case BaitType.Master:
-                bonus = masterCaveBaitBonus;
-                break;
-            case BaitType.Golden:
-                bonus = goldenCaveBaitBonus;
-                break;
+        if (bait != null) {
+            switch (bait.type)
+            {
+                case BaitType.None:
+                    bonus = 0f;
+                    break;
+                case BaitType.Apprentice:
+                    bonus = apprenticeCaveBaitBonus;
+                    break;
+                case BaitType.Journeyman:
+                    bonus = journeymanCaveBaitBonus;
+                    break;
+                case BaitType.Adept:
+                    bonus = adeptCaveBaitBonus;
+                    break;
+                case BaitType.Master:
+                    bonus = masterCaveBaitBonus;
+                    break;
+                case BaitType.Golden:
+                    bonus = goldenCaveBaitBonus;
+                    break;
+            }
         }
         return bonus;
     }

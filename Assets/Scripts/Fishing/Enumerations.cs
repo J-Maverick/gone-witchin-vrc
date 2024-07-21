@@ -63,5 +63,5 @@ public enum Location
 public static class LocationOffset
 {
     public const float Lake = 0.001f;
-    public const float Cave = -9.654f;
+    public const float Cave = -571.88f;
 }

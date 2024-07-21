@@ -47,6 +47,7 @@ public class FishDataPool : UdonSharpBehaviour
             }
         }
 
+        Debug.LogFormat("{0}: Failed to get fish. Location: {1}, Bait: {2}", name, location.ToString(), bait.name);
         return null;
     }
 

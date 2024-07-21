@@ -97,15 +97,21 @@ public class Fish : UdonSharpBehaviour
         material = meshRenderer.material;
         if (location == Location.Lake)
         {
+            Debug.LogFormat("{0}: Set water level for Lake", name);
             material.SetFloat("_WaterLevel", LocationOffset.Lake);
             material.SetColor("_LightShadowColor", underwaterColors.lakeShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.lakeShadowColor);
         }
         else if (location == Location.Cave)
         {
+            Debug.LogFormat("{0}: Set water level for Cave", name);
             material.SetFloat("_WaterLevel", LocationOffset.Cave);
             material.SetColor("_LightShadowColor", underwaterColors.caveShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.caveShadowColor);
+        }
+        else {
+            
+            Debug.LogFormat("{0}: Failed to set water level", name);
         }
     }
 
@@ -198,7 +204,7 @@ public class Fish : UdonSharpBehaviour
         {
             state = FishState.catching;
             animator.SetBool("IsCaught", true);
-            material.SetFloat("_WaterLevel", -100f);
+            material.SetFloat("_WaterLevel", -100000f);
             exhaustion = 0f;
             animator.SetFloat("SwimSpeed", exhaustion);
             EnablePickup();
