@@ -15,6 +15,7 @@ public class GemIndicator : UdonSharpBehaviour
 {
     public Renderer rend;
     public int emissionMultiplier = 4;
+    public AudioSource invalidAudio = null;
     private Material material;
     private Color neutralColor = Color.white;
     private Color invalidColor = Color.red;
@@ -38,13 +39,16 @@ public class GemIndicator : UdonSharpBehaviour
         }
     }
 
-    public void SetInvalid()
+    public void SetInvalid(bool playSound=true)
     {
         if (state != IndicatorState.invalid)
         {
             // material.color = invalidColor;
             material.SetColor("_EmissionColor", invalidColor * emissionMultiplier);
             state = IndicatorState.invalid;
+        }
+        if (playSound && invalidAudio != null) {
+            invalidAudio.Play();
         }
     }
 

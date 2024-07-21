@@ -28,7 +28,7 @@ public class StoveSnap : UdonSharpBehaviour
     }
 
     public void TryActivate(ReagentBottle bottle) {
-        if (!coolingDown && bottle.liquid.bait != null && bottle.fillLevel >= 1f) {
+        if (!coolingDown && bottle.liquid != null && bottle.liquid.bait != null && bottle.fillLevel >= 1f) {
             indicator.SetValid();
             if (Networking.GetOwner(bottle.gameObject).isLocal) { 
                 SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayAnimation");

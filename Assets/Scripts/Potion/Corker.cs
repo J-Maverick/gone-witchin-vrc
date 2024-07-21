@@ -40,7 +40,8 @@ public class Corker : UdonSharpBehaviour
             }
         }
         else {
-            indicator.SetInvalid();
+            bool playSound = bottle.GetUdonTypeName() == GetUdonTypeName<ReagentBottle>();
+            indicator.SetInvalid(playSound);
             Debug.LogFormat("{0}: Invalid bottle type, cooldown, or insufficient fill", name);
         }
         TriggerCooldown();
