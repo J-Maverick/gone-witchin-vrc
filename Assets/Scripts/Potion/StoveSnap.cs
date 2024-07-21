@@ -19,7 +19,7 @@ public class StoveSnap : UdonSharpBehaviour
     public void OnTriggerEnter(Collider other)
     {
         ReagentBottle bottle = other.gameObject.GetComponent<ReagentBottle>();
-        if (bottle != null)
+        if (bottle != null && !other.isTrigger)
         {            
             if (Networking.GetOwner(other.gameObject).isLocal) {
                 TryActivate(bottle);

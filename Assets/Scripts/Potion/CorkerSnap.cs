@@ -23,7 +23,7 @@ public class CorkerSnap : BottleSnap
                 rb.angularVelocity = Vector3.zero;
             }
             
-            if (Networking.GetOwner(other.gameObject).isLocal) {
+            if (Networking.GetOwner(other.gameObject).isLocal && !other.isTrigger) {
                 corker.TryActivate(bottle);
             }
             SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);

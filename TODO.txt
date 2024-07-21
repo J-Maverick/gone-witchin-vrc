@@ -36,6 +36,27 @@ Launch Pad -- also, launch pad spawn potion
 
 Bounce shroom spawn potion
 
+================================AUDIO============================================
+
+Bottle Pouring
+
+Reagent Pouring
+
+Cauldron success? Indicator: add success audio option, also failure sound for cauldron?
+
+Fishing
+ - Reeling
+ - Casting
+ - Giving Line
+ - Slack
+ - Fish On
+ - Fish Fight splashing
+ - Catch splash
+
+Fish Pipe Capture
+
+
+
 ================================IMPLEMENTED============================================
 
 fish vibration on rod, tick only on reel
