@@ -21,7 +21,7 @@ public class StoveSnap : UdonSharpBehaviour
         ReagentBottle bottle = other.gameObject.GetComponent<ReagentBottle>();
         if (bottle != null && !other.isTrigger)
         {            
-            if (Networking.GetOwner(other.gameObject).isLocal) {
+            if (Networking.GetOwner(other.gameObject).isLocal && !other.isTrigger) {
                 TryActivate(bottle);
             }
         }
@@ -36,8 +36,10 @@ public class StoveSnap : UdonSharpBehaviour
                 int nBaits = Random.Range(bottle.liquid.bait.craftAmount - bottle.liquid.bait.craftVariance, bottle.liquid.bait.craftAmount + bottle.liquid.bait.craftVariance);
                 for (int i = 0; i < nBaits; i++) {
                     GameObject spawnedBait = pool.pool.TryToSpawn();
-                    Networking.SetOwner(Networking.LocalPlayer, spawnedBait);
-                    spawnedBait.transform.SetPositionAndRotation(spawners[i].position, spawners[i].rotation);
+                    if (spawnedBait != null) {
+                        Networking.SetOwner(Networking.LocalPlayer, spawnedBait);
+                        spawnedBait.transform.SetPositionAndRotation(spawners[i].position, spawners[i].rotation);
+                    }
                 }
 
                 Debug.LogFormat("{0}: Spawned {1} {2}", name, nBaits, bottle.liquid.bait.name);

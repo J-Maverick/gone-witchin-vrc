@@ -25,6 +25,9 @@ public class DayNightCycle : UdonSharpBehaviour
     public float dayFogDensity;
     public float nightFogDensity;
 
+    public AudioSource dayAudio;
+    public AudioSource nightAudio;
+
     void Start()
     {
         startRotation = transform.localRotation;
@@ -60,6 +63,8 @@ public class DayNightCycle : UdonSharpBehaviour
             float lerpValue = (bufferAngle + modAngle) / (2f * bufferAngle);
             sun.intensity = Mathf.Lerp(0f, sunIntensity, lerpValue );
             moon.intensity = Mathf.Lerp(moonIntensity, 0f, lerpValue);
+            dayAudio.volume = Mathf.Lerp(0f, 0.5f, lerpValue);
+            nightAudio.volume = Mathf.Lerp(0.5f, 0.0f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(nightFogDensity, dayFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(nightFogColor, dayFogColor, lerpValue);
         }
@@ -67,6 +72,8 @@ public class DayNightCycle : UdonSharpBehaviour
             float lerpValue = (modAngle - (360f - bufferAngle)) / (2f * bufferAngle);
             sun.intensity = Mathf.Lerp(0f, sunIntensity, lerpValue);
             moon.intensity = Mathf.Lerp(moonIntensity, 0f, lerpValue);
+            dayAudio.volume = Mathf.Lerp(0f, 0.5f, lerpValue);
+            nightAudio.volume = Mathf.Lerp(0.5f, 0.0f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(nightFogDensity, dayFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(nightFogColor, dayFogColor, lerpValue);
         }
@@ -74,6 +81,8 @@ public class DayNightCycle : UdonSharpBehaviour
             float lerpValue = (modAngle - (180f - bufferAngle)) / (2f * bufferAngle);
             sun.intensity = Mathf.Lerp(sunIntensity, 0f, lerpValue);
             moon.intensity = Mathf.Lerp(0f, moonIntensity, lerpValue);
+            dayAudio.volume = Mathf.Lerp(0.5f, 0f, lerpValue);
+            nightAudio.volume = Mathf.Lerp(0f, 0.5f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(dayFogDensity, nightFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(dayFogColor, nightFogColor, lerpValue);
         }

@@ -49,6 +49,7 @@ public class PourableBottle : Bottle
         fillLevel = 0f;
         syncObj.SetFill(fillLevel, true);
         pickup.InteractionText = "Empty Bottle";
+        pickup.UseText = "Empty Bottle";
         UpdateShaderFill();
     }
 
@@ -111,6 +112,7 @@ public class PourableBottle : Bottle
         {
             potionColor = liquid.color;
             pickup.InteractionText = liquid.name;
+            pickup.UseText = liquid.name;
             particleMaterial.color = potionColor;
             particleMaterial.SetColor("_EmissionColor", potionColor);
             shaderControl.SetStaticColor(potionColor);

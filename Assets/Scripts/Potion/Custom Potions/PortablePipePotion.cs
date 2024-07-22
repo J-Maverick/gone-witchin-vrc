@@ -20,9 +20,9 @@ public class PortablePipePotion : ShatterEffect
 
     public void SpawnPipe() {
         GameObject pipe = pool.TryToSpawn();
-        Networking.SetOwner(Networking.LocalPlayer, pipe);
         if (pipe != null) {
             Debug.LogFormat("{0}: Spawned pipe.", name);
+            Networking.SetOwner(Networking.LocalPlayer, pipe);
             VRCObjectSync sync = pipe.GetComponent<VRCObjectSync>();
             if (sync != null) {
                 sync.FlagDiscontinuity();

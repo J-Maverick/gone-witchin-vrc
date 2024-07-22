@@ -30,6 +30,7 @@ public class Corker : UdonSharpBehaviour
                     sync.SetBottleType(bottle.bottleID);
                     bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
                     bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Empty");
+                    bottle.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
                     spawnedPotion.transform.SetPositionAndRotation(spawnPosition, spawnRotation);
                     bottleSnap.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "ClearBottle");
                 }

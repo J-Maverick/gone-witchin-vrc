@@ -28,6 +28,8 @@ public class ReagentTank : UdonSharpBehaviour
     public float pourMultiplier = 0.1f;
 
     public float intervalTime = 3f;
+
+    public float shaderFillQuotient = 5f;
     private int nJoinSyncs = 10;
     public int joinSyncCounter = 0;
 
@@ -43,6 +45,7 @@ public class ReagentTank : UdonSharpBehaviour
         particleMaterial.color = reagent.color;
         particleMaterial.SetColor("_EmissionColor", reagent.color);
         lever.pickup.InteractionText = reagent.name;
+        lever.pickup.UseText = reagent.name;
 
         labelMaterial = labelRenderer.material;
         labelMaterial.SetTextureOffset("_MainTex", new Vector2(reagent.UVOffsetX, reagent.UVOffsetY));
@@ -52,7 +55,7 @@ public class ReagentTank : UdonSharpBehaviour
         fishMaterial.SetColor("_Color", reagent.color);
 
 
-        shaderControl.fillLevel = fillLevel;
+        UpdateFill();
     }
 
     void PourControl()
@@ -64,7 +67,7 @@ public class ReagentTank : UdonSharpBehaviour
             if (fillLevel == 0f) flow = 0f;
             particleAnimator.SetFloat("pourSpeed", flow);
 
-            if (flow > 0f) shaderControl.FillBump(5f * flow);
+            if (flow > 0f) shaderControl.FillBump(flow);
 
             fillLevel -= flow * pourMultiplier * Time.deltaTime;
             if (fillLevel < 0f) fillLevel = 0f;
@@ -95,7 +98,7 @@ public class ReagentTank : UdonSharpBehaviour
 
     void UpdateFill()
     {
-        shaderControl.fillLevel = fillLevel;
+        shaderControl.fillLevel = fillLevel / shaderFillQuotient;
     }
 
     public void Sync()

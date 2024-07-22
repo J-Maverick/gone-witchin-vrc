@@ -59,15 +59,15 @@ public class Elevator : UdonSharpBehaviour
         if (moveActive)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.fixedDeltaTime);
-            Vector3 velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
+            // Vector3 velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
             if (transform.position == targetLocation.position)
             {
                 moveActive = false;
                 elevatorSwitch.SetOff();
             }
             if (playerColliding) {
-                Networking.LocalPlayer.SetVelocity(velocity);
-                // Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetPosition() + transform.position - previousPosition, Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).rotation);
+                // Networking.LocalPlayer.SetVelocity(velocity);
+                Networking.LocalPlayer.TeleportTo(Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).position + transform.position - previousPosition, Networking.LocalPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Origin).rotation, VRC_SceneDescriptor.SpawnOrientation.AlignRoomWithSpawnPoint, true);
             }
             previousPosition = transform.position;
             // previousVelocity = velocity;

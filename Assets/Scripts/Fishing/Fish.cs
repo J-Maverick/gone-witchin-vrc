@@ -152,6 +152,7 @@ public class Fish : UdonSharpBehaviour
         //meshRenderer.material = material;
 
         pickup.InteractionText = fishData.name;
+        pickup.UseText = fishData.name;
     }
 
 

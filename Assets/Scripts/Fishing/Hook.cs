@@ -24,7 +24,7 @@ public class Hook : UdonSharpBehaviour
 
     public void OnTriggerEnter(Collider other) {
         if (Networking.GetOwner(gameObject).isLocal) {
-            Debug.LogFormat("{0}: Trigger Entered: {1}", name, other.name);
+            // Debug.LogFormat("{0}: Trigger Entered: {1}", name, other.name);
             BaitItem bait = other.GetComponent<BaitItem>();
             if (bait != null) {
                 AddBait(bait.bait);

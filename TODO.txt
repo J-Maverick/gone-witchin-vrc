@@ -1,9 +1,19 @@
 
+=====================FISHING PLAY TEST NOTES========================
+1010 start
+bait 1 in 5 fish
+bait 2 @ 1052, couldve been much sooner
+falling asleep 1118, got rod upgrade 1
+
 =========================FEATURES====================
 
 Shared potion Inventory system
 
 Fish revamp?
+ - Behavior properties: Force disturbance with different frequency properties -- simple fourier series, tunable fish to fish
+  - This could be for both catch and general travel
+  - Up and down on low frequency -- capped 
+  - Add vector 4 influencing weights on travel direction (this fish seems to like to stay over by the dam, or by the boat, etc.)
 
 Fish scale
 leaderboard
@@ -35,6 +45,8 @@ Bait bonus potions -- luck stat???
 Launch Pad -- also, launch pad spawn potion
 
 Bounce shroom spawn potion
+
+Some collectibles could be modifiers for potions -- "toss in something to boost potion power"
 
 ================================AUDIO============================================
 
@@ -68,6 +80,11 @@ Day/night cycle
 Craftable bait
 
 ===============BUGS===================
+corker broke
+
+stove only works for master
+
+remote player bobber teleport??? seems like some sort of collision issue causing bobber to respawn
 
 size-based stats are still enabled
 someone left and fish snapped back onto the hook

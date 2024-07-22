@@ -59,6 +59,7 @@ public class CauldronPour : UdonSharpBehaviour
             particleMaterial.color = cauldron.fillColor;
             particleMaterial.SetColor("_EmissionColor", cauldron.fillColor);
             lever.pickup.InteractionText = "Dump Contents";
+            lever.pickup.UseText = "Dump Contents";
         }
         PourControl();
     }
@@ -70,6 +71,7 @@ public class CauldronPour : UdonSharpBehaviour
         particleMaterial.color = liquid.color;
         particleMaterial.SetColor("_EmissionColor", liquid.color);
         lever.pickup.InteractionText = liquid.name;
+        lever.pickup.UseText = liquid.name;
     }
 
     public void JoinSync() {

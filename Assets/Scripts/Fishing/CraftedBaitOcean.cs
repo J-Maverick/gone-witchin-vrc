@@ -11,6 +11,7 @@ public class CraftedBaitOcean : UdonSharpBehaviour
     public CraftedBaitPool GetPoolByBait(Bait bait) {
         foreach (CraftedBaitPool pool in pools) {
             if (pool.bait == bait) {
+                Networking.SetOwner(Networking.LocalPlayer, pool.gameObject);
                 return pool;
             }
         }

@@ -12,11 +12,14 @@ public class ThrowablePotionBottle : Bottle
 
     protected override void Start()
     {
-        potionColor = liquid.color;
+        if (liquid != null) {
+            potionColor = liquid.color;
+            pickup.InteractionText = liquid.name;
+            pickup.UseText = liquid.name;
+        }
         particleMaterial = particleRenderer.material;
         particleMaterial.color = potionColor;
 
-        pickup.InteractionText = liquid.name;
         base.Start();
     }
 }

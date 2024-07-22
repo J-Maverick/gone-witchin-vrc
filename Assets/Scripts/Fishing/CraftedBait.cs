@@ -11,6 +11,12 @@ public class CraftedBait : UdonSharpBehaviour
     public Bait bait;
     public BaitInventory inventory;
     public VRCObjectPool pool;
+    public bool collectible = true;
+
+    public override void OnSpawn()
+    {
+        collectible = true;
+    }
 
     public override void Interact()
     {
@@ -18,7 +24,9 @@ public class CraftedBait : UdonSharpBehaviour
     }
 
     public void Use() {
-        inventory.AddBait(bait);
-        pool.Return(gameObject);
+        if (Networking.GetOwner(gameObject).isLocal) {
+            inventory.AddBait(bait);
+            pool.Return(gameObject);
+        }
     }
 }
