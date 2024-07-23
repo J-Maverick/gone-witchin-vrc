@@ -166,8 +166,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 498558359234497034}
-  effectStrength: 2
-  effectDuration: 240
+  effectStrength: 4.5
+  effectDuration: 1800
   statBooster: {fileID: 0}
   boostStackingMode: 3
 --- !u!114 &498558359234497034

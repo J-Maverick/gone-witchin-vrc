@@ -54,11 +54,11 @@ public class Elevator : UdonSharpBehaviour
         }
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (moveActive)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.fixedDeltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.deltaTime);
             // Vector3 velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
             if (transform.position == targetLocation.position)
             {

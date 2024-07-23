@@ -12,6 +12,7 @@ public class FishForce : UdonSharpBehaviour
     public Rigidbody lureRigidbody;
     public Hook hook;
     public FishingPole fishingPole;
+    public RandomAudioHandler audioHandler;
     
     public float fishForceMultiplier = 100f;
     public float maxAngleTowardsPlayer = 10f;
@@ -103,6 +104,7 @@ public class FishForce : UdonSharpBehaviour
         //newDirection = new Vector3(Mathf.Cos(angle), 0f, Mathf.Sin(angle));
         newDirection = fishingPole.water.GetRandomPointOnYPlane() - transform.position;
         newDirection = newDirection.normalized;
+        if (Networking.GetOwner(gameObject).isLocal && fish != null && fish.state != FishState.catching) audioHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(audioHandler.PlaySlotOne));
         RandomChangeTime();
     }
 
@@ -278,7 +280,10 @@ public class FishForce : UdonSharpBehaviour
                         if (distance < catchDistanceThreshold + yOffset) fish.Catch();
                         break;
                     case FishState.catching:
-                        if (lureLocked) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
+                        if (lureLocked) {
+                            audioHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(audioHandler.PlaySlotTwo));
+                            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
+                        }
                         Caught();
                         break;
                     case FishState.caught:

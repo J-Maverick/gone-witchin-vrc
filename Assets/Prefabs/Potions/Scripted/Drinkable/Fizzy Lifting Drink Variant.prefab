@@ -167,7 +167,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 5184172320901605453}
   effectStrength: 2
-  effectDuration: 240
+  effectDuration: 1800
   statBooster: {fileID: 0}
   boostStackingMode: 3
 --- !u!114 &5184172320901605453

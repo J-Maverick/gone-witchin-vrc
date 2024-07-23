@@ -20,7 +20,7 @@ leaderboard
 	- Fish are counted when put on the scale or when tossed in the pipe
 	- Jingle for high score?
 
-Collectible recipes
+Collectible recipes -- Tablets
 
 Play a sound when spawning bait to hide the lag
 

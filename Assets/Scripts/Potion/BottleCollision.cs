@@ -10,7 +10,6 @@ public class BottleCollision : UdonSharpBehaviour
     public Transform spawnTarget;
     public Vector3 spawnPosition;
     public Quaternion spawnRotation;
-    public AudioClip[] softHitClips;
     public MeshRenderer mesh;
     public Collider meshCollider;
     public GameObject shatterParticles;
@@ -20,6 +19,7 @@ public class BottleCollision : UdonSharpBehaviour
 
     public VRCPlayerApi owner;
 
+    public AudioClip[] softHitClips;
     public float softHitSpeedLimit = 2f;
     public float softHitVolume = .25f;
     public float softHitMaxDistance = 8f;

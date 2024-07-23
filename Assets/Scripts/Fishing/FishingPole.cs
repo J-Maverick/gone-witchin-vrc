@@ -64,6 +64,7 @@ public class FishingPole : UdonSharpBehaviour
     public bool reeling = true;
     public float reelingTimer = 0f;
     public ReelAngleAccumulator reelAngleAccumulator = null;
+    public RandomAudioHandler bobberAudio;
 
     void Start()
     {
@@ -190,6 +191,7 @@ public class FishingPole : UdonSharpBehaviour
         if (water != splashDownWater) SetWater(splashDownWater);
         if (casted)
         {
+            bobberAudio.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(bobberAudio.PlaySlotZero));
             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetSplashDownParams));
         }
     }

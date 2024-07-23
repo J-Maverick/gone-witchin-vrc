@@ -80,13 +80,13 @@ public class BottleSync : UdonSharpBehaviour
 
     public void RandomizeSoftHit()
     {
-        mediumHitSoundIndex = Random.Range(0, bottleCollision.mediumHitClips.Length);
+        softHitSoundIndex = Random.Range(0, bottleCollision.softHitClips.Length);
         RequestSerialization();
     }
 
     public void RandomizeMediumHit()
     {
-        softHitSoundIndex = Random.Range(0, bottleCollision.softHitClips.Length);
+        mediumHitSoundIndex = Random.Range(0, bottleCollision.mediumHitClips.Length);
         RequestSerialization();
     }
 
