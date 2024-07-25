@@ -27,6 +27,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Fractured Arizona Cliff
+    second: {fileID: 2100000, guid: 5b35715e06188404abe2b0fa1415d46a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LeopardLeaves
     second: {fileID: 2100000, guid: 65338d7c701e15145bfdb173f5f606b4, type: 2}
   - first:

@@ -76,6 +76,9 @@ public class AutoFishTag : MonoBehaviour
         if (fish.nGoldenGumbo > 0f) {
             fishTags.Add(FishTag.GoldenGumbo);
         }
+        if (fish.recipe != null) {
+            fishTags.Add(FishTag.Recipe);
+        }
     }
 
     public void LocationTags(FishData fish, List<FishTag> fishTags) {

@@ -92,20 +92,21 @@ public class Fish : UdonSharpBehaviour
         meshCollider.isTrigger = false;
     }
 
-    private void SetWaterLevel(Location location)
+    private void SetWaterLevel(Water water)
     {
         material = meshRenderer.material;
-        if (location == Location.Lake)
+        
+        if (water.location == Location.Lake)
         {
             Debug.LogFormat("{0}: Set water level for Lake", name);
-            material.SetFloat("_WaterLevel", LocationOffset.Lake);
+            material.SetFloat("_WaterLevel", water.transform.position.y + 0.001f);
             material.SetColor("_LightShadowColor", underwaterColors.lakeShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.lakeShadowColor);
         }
-        else if (location == Location.Cave)
+        else if (water.location == Location.Cave)
         {
             Debug.LogFormat("{0}: Set water level for Cave", name);
-            material.SetFloat("_WaterLevel", LocationOffset.Cave);
+            material.SetFloat("_WaterLevel", water.transform.position.y + 0.001f);
             material.SetColor("_LightShadowColor", underwaterColors.caveShadowColor);
             material.SetColor("_DarkShadowColor", underwaterColors.caveShadowColor);
         }
@@ -115,12 +116,12 @@ public class Fish : UdonSharpBehaviour
         }
     }
 
-    public void GetRandomFish(Location location, Bait bait, float rodUpgradeMultiplier)
+    public void GetRandomFish(Water water, Bait bait, float rodUpgradeMultiplier)
     {
         if (Networking.GetOwner(gameObject).isLocal)
         {
-            fishData = fishDataPool.GetRandomFishData(location, bait);
-            SetWaterLevel(location);
+            fishData = water.GetRandomFishData(bait);
+            SetWaterLevel(water);
             exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio * rodUpgradeMultiplier);
             SetRandomSize();
             fishID = fishData.ID;
@@ -156,9 +157,9 @@ public class Fish : UdonSharpBehaviour
     }
 
 
-    public void Bite(Location location, Bait bait, float rodUpgradeMultiplier)
+    public void Bite(Water water, Bait bait, float rodUpgradeMultiplier)
     {
-        GetRandomFish(location, bait, rodUpgradeMultiplier);
+        GetRandomFish(water, bait, rodUpgradeMultiplier);
         state = FishState.biting;
         exhaustion = 1f;
         animator.SetBool("Bite", true);

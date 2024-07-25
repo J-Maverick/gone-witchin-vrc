@@ -45,27 +45,34 @@ public class RecipeBook : UdonSharpBehaviour
 
     public void NextRecipe() {
         UpdateAnimator();
-        currentRecipeIndex += 1;
-        if (currentRecipeIndex >= recipeList.recipes.Length) {
-            currentRecipeIndex = 0;
+        bool firstRun = true;
+        while (firstRun || !recipeList.recipes[currentRecipeIndex].unlocked) {
+            currentRecipeIndex += 1;
+            if (currentRecipeIndex >= recipeList.recipes.Length) {
+                currentRecipeIndex = 0;
+            }
+            UpdateRecipe();
+            firstRun = false;
         }
         RequestSerialization();
-        UpdateRecipe();
     }
 
     public void PreviousRecipe() {
         UpdateAnimator();
-        currentRecipeIndex -= 1;
-        if (currentRecipeIndex < 0) {
-            currentRecipeIndex = recipeList.recipes.Length - 1;
+        bool firstRun = true;
+        while (firstRun || !recipeList.recipes[currentRecipeIndex].unlocked) {
+            currentRecipeIndex -= 1;
+            if (currentRecipeIndex < 0) {
+                currentRecipeIndex = recipeList.recipes.Length - 1;
+            }
+            UpdateRecipe();
+            firstRun = false;
         }
         RequestSerialization();
-        UpdateRecipe();
     }
 
     public void UpdateRecipe() {
         ClearRecipe();
-        PlayAnimation();
 
         Recipe currentRecipe = recipeList.recipes[currentRecipeIndex];
         if (currentRecipe == null) {
@@ -78,23 +85,23 @@ public class RecipeBook : UdonSharpBehaviour
         }
         Debug.LogFormat("{0}: Updating with recipe: {1} [{2}]", name, currentRecipe.potion.name, currentRecipeIndex);
         if (!currentRecipe.unlocked) {
-            string[] potionStrs = currentRecipe.potion.name.Split(" ");
-            if (potionStrs.Length > 1) {
-                potionText.text = potionStrs[0];
-                for (int i = 1; i < potionStrs.Length; i++) {
-                    potionText.text += " ";
-                    for (int j = 0; j < potionStrs[i].Length; j++) {
-                        potionText.text += "?";
-                    }
-                }
+            // string[] potionStrs = currentRecipe.potion.name.Split(" ");
+            // if (potionStrs.Length > 1) {
+            //     potionText.text = potionStrs[0];
+            //     for (int i = 1; i < potionStrs.Length; i++) {
+            //         potionText.text += " ";
+            //         for (int j = 0; j < potionStrs[i].Length; j++) {
+            //             potionText.text += "?";
+            //         }
+            //     }
 
-            }
-            else {
-                potionText.text = "";
-                for (int j = 0; j < potionStrs[0].Length; j++) {
-                    potionText.text += "?";
-                }
-            }
+            // }
+            // else {
+            //     potionText.text = "";
+            //     for (int j = 0; j < potionStrs[0].Length; j++) {
+            //         potionText.text += "?";
+            //     }
+            // }
             return;
         }
         potionText.text = currentRecipe.potion.name;
@@ -123,10 +130,6 @@ public class RecipeBook : UdonSharpBehaviour
         foreach (RecipePanel panel in panels) {
             panel.ResetPanel();
         }
-    }
-
-    public void PlayAnimation() {
-
     }
 
     public void Start() {

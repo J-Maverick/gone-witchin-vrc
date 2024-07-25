@@ -20,12 +20,15 @@ public class CraftedBait : UdonSharpBehaviour
 
     public override void Interact()
     {
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Use");
+        if (collectible) {
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Use");
+        }
     }
 
     public void Use() {
+        inventory.AddBait(bait);
+        collectible = false;
         if (Networking.GetOwner(gameObject).isLocal) {
-            inventory.AddBait(bait);
             pool.Return(gameObject);
         }
     }

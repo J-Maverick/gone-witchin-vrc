@@ -1,11 +1,9 @@
 
-=====================FISHING PLAY TEST NOTES========================
-1010 start
-bait 1 in 5 fish
-bait 2 @ 1052, couldve been much sooner
-falling asleep 1118, got rod upgrade 1
-
 =========================FEATURES====================
+
+hotspots for certain fish
+
+"reward player for further cast"
 
 Shared potion Inventory system
 
@@ -48,6 +46,18 @@ Bounce shroom spawn potion
 
 Some collectibles could be modifiers for potions -- "toss in something to boost potion power"
 
+Rod Spawner
+
+Potions:
+- Lightning strike
+- Ice potion spawns ice cube on lakes
+- Ensmallening potion
+- Flare potion -- used for identifying your location. Make it cheap
+- Waterbreathing potion -- allows you to go underwater
+- Lake revitalization potion
+
+Each lake has a unique fish -- catching that fish is what counts towards game progression
+
 ================================AUDIO============================================
 
 Bottle Pouring
@@ -65,9 +75,6 @@ Fishing
  - Fish Fight splashing
  - Catch splash
 
-Fish Pipe Capture
-
-
 
 ================================IMPLEMENTED============================================
 
@@ -80,6 +87,12 @@ Day/night cycle
 Craftable bait
 
 ===============BUGS===================
+
+2d audio chomp 
+
+high fps pours more from cauldron for less potion
+
+bait board didnt update from remote
 corker broke
 
 stove only works for master

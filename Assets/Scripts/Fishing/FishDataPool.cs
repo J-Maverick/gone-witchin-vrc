@@ -14,13 +14,13 @@ public class FishDataPool : UdonSharpBehaviour
     public int recursions = 0;
     public int maxRecursions = 20;
 
-    public FishData GetRandomFishData(Location location, Bait bait)
+    public FishData GetRandomFishData(Water water, Bait bait)
     { 
         float[] weights = new float[fishData.Length];
         float sumOfWeights = 0f;
         for (int i = 0; i < fishData.Length; i++)
         {
-            float weight = fishData[i].GetCatchChance(location, bait);
+            float weight = fishData[i].GetCatchChance(water, bait);
             weights[i] = weight;
             sumOfWeights += weight;
         }
@@ -36,18 +36,18 @@ public class FishDataPool : UdonSharpBehaviour
                     recursions++;
                     if (recursions > maxRecursions) {
                         Debug.LogFormat("{0}: Hit max recursions depth [{1}/{2}] looking for recipes, trying without bait", name, recursions, maxRecursions);
-                        return GetRandomFishData(location, null);
+                        return GetRandomFishData(water, null);
                     }
                     // Picked a recipe but it's already unlocked, get another random fish
                     Debug.LogFormat("{0}: Tried to pick catchable recipe {1} but it was already unlocked, getting another fish", name, randomFish.name);
-                    return GetRandomFishData(location, bait);
+                    return GetRandomFishData(water, bait);
                 }
                 recursions = 0;
                 return randomFish;
             }
         }
 
-        Debug.LogFormat("{0}: Failed to get fish. Location: {1}, Bait: {2}", name, location.ToString(), bait.name);
+        Debug.LogFormat("{0}: Failed to get fish. Location: {1}, Bait: {2}", name, water.location.ToString(), bait.name);
         return null;
     }
 

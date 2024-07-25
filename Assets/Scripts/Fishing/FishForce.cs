@@ -153,7 +153,7 @@ public class FishForce : UdonSharpBehaviour
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
         fishBody.rotation = Quaternion.LookRotation(forceDirection);
         fishBody.position = transform.position;
-        fish.Bite(fishingPole.water.location, sync.bait, fishingPole.rodLevelParams.fishExhaustionMultiplier);
+        fish.Bite(fishingPole.water, sync.bait, fishingPole.rodLevelParams.fishExhaustionMultiplier);
         if (sync.baitUsesRemaining > 0) {
             sync.baitUsesRemaining--;
             if (sync.bait != null) Debug.LogFormat("{0}: Used charge of bait {1}, charges remaining: {2}", name, sync.bait.name, sync.baitUsesRemaining);
@@ -171,8 +171,7 @@ public class FishForce : UdonSharpBehaviour
     public void OverrideLurePosition()
     {
         float yOffset = 0f;
-        if (fishingPole.water.location == Location.Lake) yOffset = LocationOffset.Lake;
-        else if (fishingPole.water.location == Location.Cave) yOffset = LocationOffset.Cave;
+        yOffset = fishingPole.water.transform.position.y + 0.001f;
 
         Vector3 pos = lure.position;
         pos.y = yOffset + 0.02f;

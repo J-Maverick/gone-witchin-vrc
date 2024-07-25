@@ -61,23 +61,23 @@ public class FishData : UdonSharpBehaviour
 
     public FishTag[] tags = null;
 
-    public float GetCatchChance(Location location, Bait bait)
+    public float GetCatchChance(Water water, Bait bait)
     {
-        if (location == Location.Lake && foundInLake) return GetBaitModifierBonus(location, bait, lakeCatchChance) + GetLakeBonus(bait);
+        if (water.location == Location.Lake && foundInLake) return GetBaitModifierBonus(water, bait, lakeCatchChance) + GetLakeBonus(bait);
 
-        else if (location == Location.Cave && foundInCave) return GetBaitModifierBonus(location, bait, caveCatchChance) + GetCaveBonus(bait);
+        else if (water.location == Location.Cave && foundInCave) return GetBaitModifierBonus(water, bait, caveCatchChance) + GetCaveBonus(bait);
 
         else return 0f;
     }
 
-    public float GetBaitModifierBonus(Location location, Bait bait, float catchChance) {
+    public float GetBaitModifierBonus(Water water, Bait bait, float catchChance) {
         float modifier = 1f;
         if (bait != null && bait.type == BaitType.Tag) {
-            modifier = bait.UpdateCatchRateModifier(modifier, tags, location);
+            modifier = bait.UpdateCatchRateModifier(modifier, tags, water);
         }
         return catchChance * modifier;
-        
     }
+    
     public float GetLakeBonus(Bait bait)
     {
         float bonus = 0f;

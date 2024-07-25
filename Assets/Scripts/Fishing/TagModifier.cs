@@ -16,32 +16,47 @@ public class TagModifier : UdonSharpBehaviour
     public float caveModifier = 1f;
 
 
-    private float _UpdateCatchRateModifier(float catchRateModifier, Location location)
+    private float _UpdateCatchRateModifier(float catchRateModifier, Water water)
     {
         float mod = 1f;
-        if (location == Location.Lake && activeInLake) {
+        if (water.location == Location.Lake && activeInLake) {
             mod = modifier * lakeModifier;
         }
-        else if (location == Location.Cave && activeInCave) {
+        else if (water.location == Location.Cave && activeInCave) {
             mod = modifier * caveModifier;
         }
 
         return catchRateModifier *= mod;
     }
 
-    public float UpdateCatchRateModifier(float catchRateModifier, FishTag[] fishTags, Location location) {
+    public float UpdateCatchRateModifier(float catchRateModifier, FishTag[] fishTags, Water water) {
         if (!inverse) {
             if (Array.IndexOf(fishTags, modifierTag) >= 0) {
-                return _UpdateCatchRateModifier(catchRateModifier, location);
+                return _UpdateCatchRateModifier(catchRateModifier, water);
             }
         }
         else {
             if (Array.IndexOf(fishTags, modifierTag) < 0) {
-                return _UpdateCatchRateModifier(catchRateModifier, location);
+                return _UpdateCatchRateModifier(catchRateModifier, water);
             }
         }
         return catchRateModifier;
     }
+
+    public float UpdateCatchRateMod(float catchRateModifier, FishTag[] fishTags) {
+        if (!inverse) {
+            if (Array.IndexOf(fishTags, modifierTag) >= 0) {
+                return modifier *= catchRateModifier;
+            }
+        }
+        else {
+            if (Array.IndexOf(fishTags, modifierTag) < 0) {
+                return modifier *= catchRateModifier;
+            }
+        }
+        return catchRateModifier;
+    }
+
 }
 
 

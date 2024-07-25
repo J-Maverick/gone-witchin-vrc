@@ -65,3 +65,28 @@ public static class LocationOffset
     public const float Lake = 0.001f;
     public const float Cave = -571.88f;
 }
+
+public enum RarityEnum {
+    Common = 0,
+    Uncommon = 1,
+    Rare = 2,
+    Epic = 3,
+    Legendary = 4
+}
+
+public static class Rarity 
+{
+    public const float Common = 100f;
+    public const float Uncommon = 60f;
+    public const float Rare = 25f;
+    public const float Epic = 10f;
+    public const float Legendary = 1f;
+}
+
+public static class RarityBonus 
+{
+    public const float Uncommon = 40f;
+    public const float Rare = 35f;
+    public const float Epic = 15f;
+    public const float Legendary = 9f;
+}

@@ -90,7 +90,7 @@ public class ReagentTankFiller : UdonSharpBehaviour
             }
             
             tank.fillLevel += fillUp; 
-            animator.SetFloat(tank.reagent.name, fillUp == 0f || fillUp > 0.01f ? fillUp * 10f : 0.1f);
+            animator.SetFloat(tank.reagent.name, fillUp == 0f || fillUp > 0.015f ? fillUp * 10f : 0.15f);
             tank.Sync();
         }
 
