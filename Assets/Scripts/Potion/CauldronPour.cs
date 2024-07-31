@@ -39,7 +39,7 @@ public class CauldronPour : UdonSharpBehaviour
         
         if (flow > 0f) cauldron.liquid.FillBump(flow);
 
-        cauldron.ReduceFill(flow * pourMultiplier * Time.deltaTime);
+        cauldron.ReduceFill(flow * pourMultiplier * Time.fixedDeltaTime);
     }
 
     void StopPour()
@@ -88,7 +88,7 @@ public class CauldronPour : UdonSharpBehaviour
         JoinSync();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (indicator.IsValid() && cauldron.indicator.IsValid())
         {

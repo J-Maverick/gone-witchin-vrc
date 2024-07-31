@@ -55,8 +55,148 @@ Potions:
 - Flare potion -- used for identifying your location. Make it cheap
 - Waterbreathing potion -- allows you to go underwater
 - Lake revitalization potion
+- Growth potion: "grow a vine to cross the river"
+
+Collectible fucking birds that I hate
 
 Each lake has a unique fish -- catching that fish is what counts towards game progression
+
+Vertex displacement fish
+- They should wiggle on the line a bit
+- Also wiggle occasionally on the ground (maybe add a little force lmao)
+
+================================ Lakes & Fish ================================
+
+Lake (Fish Oil, Mishmash, Essence of Water, Swift)
+- Pike*
+
+Cave (Dark, Pilk, BioBile, Swift)
+- Ghostfish*
+
+Beginner (Essence of Water & a trickle of boiled bladder)
+- Tadpole
+- Elder Tadpole*
+- Baby Frog
+- Frog
+- Toad
+
+River (Mud)
+- The Longname Wiliwilifly Fish*
+- Kamoi (camo koi)
+
+Flying Island (Boiled Bladder)
+- Flying Fish*?
+- Balloon Pufferfish
+- Helial Jellyfish
+- Cumuloshrimpus (LOBBER?)
+- Cirrocfish
+- Balloon-Eye Goldfish
+- PAPER AIRPERCH
+- Clouddie
+
+Hole (Heart)
+- Unearthed Fish*
+- Orefish (rockfish variant)
+- Batfish
+- Plump Perch
+- Wallove
+- Molefish (catfish)
+- Hollie (crappie)
+
+Ocean (Fish Oil, Mishmash, Essence of Water, Swiftfin)
+- Shark*
+- Salty Swiftfin
+- Dorado
+- Dogfish
+- Pufferfish
+- Moray Eel
+- Seabass
+
+Nettles (Stinky Mucus)
+- Vine fish*
+- Thorny trout
+- Reeking Hagfish
+- Spiny Bass
+- Prickly Perch
+- Floral Koi
+
+Ice (Water + Boiled Bladder)
+- Icy Rockfish
+- Snowy Snapper
+- Elfish (santa's elf, you know, from christmas, like with jesus?)
+- Candycane Carp*
+- Albino Halibut
+- Iccie (crappie)
+- Huskyfish (dogfish)
+- Recipes show up as presents
+
+Oil (Fire + Stink)
+- Rainbow Trout
+- Bonefish*
+- Rainbow Sparkfish
+- Rainbow Flamefin
+- Rainbow Catfish
+- Rainbow Perch
+- Rainbow Koi
+
+Oasis (Silver + Pilk)
+- Palmfish
+- Coconut Crab
+- Bananfish
+- Pinapple Piranha
+- Strawbbie
+- Berrycuda*
+- Grape Grouper (school of grapes)
+
+Lava (Mega Fire)
+- Magma Pike
+- White-Hot Flamefin
+- Forge Flounder
+- Molten Mirrorscale
+- Cravawfish (LOBBER)*
+- Kul'Nugget Fish
+
+Sun (Fire + Ocular + Biolum?)
+- Sunfish
+- Flamefin
+- Eaglefish
+- Celestial Eye Goldfish
+- Phoenix Perch
+- Solar Paneel*
+- Crisppie
+
+Moon (Dark + Biolum + Ocular)
+- Moonfish*
+
+Dark (Dark + Biolum + Guano)
+- Vampire Batfish [pilk + mega guano]
+
+Manhole [elec] (Stink + Pilk + Mud)
+- Electric Eel* (literally just a piece of wire)
+- Rusttie
+
+Underwater (MEGA WATER + Gold)
+- Gilded Grouper*
+
+Potted Plant [parkour] (Boiled Bladder + Swift)
+- Pottie
+- Ceramic Chub
+- Rosefish*
+- Floral Koi
+
+maybes:
+
+Tiny
+- 
+
+Shark
+- 
+ 
+Toy
+- 
+
+Ocean Island
+- 
 
 ================================AUDIO============================================
 
@@ -87,8 +227,6 @@ Day/night cycle
 Craftable bait
 
 ===============BUGS===================
-
-2d audio chomp 
 
 high fps pours more from cauldron for less potion
 
