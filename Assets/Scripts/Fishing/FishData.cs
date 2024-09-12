@@ -21,25 +21,25 @@ public class FishData : UdonSharpBehaviour
     public float maxScale = 1f;
 
     [Space(10)]
-    public bool foundInLake = false;
-    public bool foundInCave = false;
+    protected bool foundInLake = false;
+    protected bool foundInCave = false;
 
     [Space(10)]
-    public float lakeCatchChance = 0f;
-    public float caveCatchChance = 0f;
+    protected float lakeCatchChance = 0f;
+    protected float caveCatchChance = 0f;
 
     [Space(10)]
-    public float apprenticeLakeBaitBonus = 0f;
-    public float journeymanLakeBaitBonus = 0f;
-    public float adeptLakeBaitBonus = 0f;
-    public float masterLakeBaitBonus = 0f;
-    public float goldenLakeBaitBonus = 0f;
+    protected float apprenticeLakeBaitBonus = 0f;
+    protected float journeymanLakeBaitBonus = 0f;
+    protected float adeptLakeBaitBonus = 0f;
+    protected float masterLakeBaitBonus = 0f;
+    protected float goldenLakeBaitBonus = 0f;
     [Space(5)]
-    public float apprenticeCaveBaitBonus = 0f;
-    public float journeymanCaveBaitBonus = 0f;
-    public float adeptCaveBaitBonus = 0f;
-    public float masterCaveBaitBonus = 0f;
-    public float goldenCaveBaitBonus = 0f;
+    protected float apprenticeCaveBaitBonus = 0f;
+    protected float journeymanCaveBaitBonus = 0f;
+    protected float adeptCaveBaitBonus = 0f;
+    protected float masterCaveBaitBonus = 0f;
+    protected float goldenCaveBaitBonus = 0f;
 
     [Space(10)]
     public float nFishOil = 0f;

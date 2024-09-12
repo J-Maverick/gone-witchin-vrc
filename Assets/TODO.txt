@@ -11,7 +11,7 @@ Fish revamp?
  - Behavior properties: Force disturbance with different frequency properties -- simple fourier series, tunable fish to fish
   - This could be for both catch and general travel
   - Up and down on low frequency -- capped 
-  - Add vector 4 influencing weights on travel direction (this fish seems to like to stay over by the dam, or by the boat, etc.)
+  - Add vector for influencing weights on travel direction (this fish seems to like to stay over by the dam, or by the boat, etc.)
 
 Fish scale
 leaderboard
@@ -49,8 +49,6 @@ Some collectibles could be modifiers for potions -- "toss in something to boost 
 Rod Spawner
 
 Potions:
-- Lightning strike
-- Ice potion spawns ice cube on lakes
 - Ensmallening potion
 - Flare potion -- used for identifying your location. Make it cheap
 - Waterbreathing potion -- allows you to go underwater
@@ -65,6 +63,8 @@ Vertex displacement fish
 - They should wiggle on the line a bit
 - Also wiggle occasionally on the ground (maybe add a little force lmao)
 
+Bottle inventory
+
 ================================ Lakes & Fish ================================
 
 Lake (Fish Oil, Mishmash, Essence of Water, Swift)
@@ -73,16 +73,23 @@ Lake (Fish Oil, Mishmash, Essence of Water, Swift)
 Cave (Dark, Pilk, BioBile, Swift)
 - Ghostfish*
 
-Beginner (Essence of Water & a trickle of boiled bladder)
+Beginner (Essence of Water & a trickle of boiled bladder) -- ZONE
 - Tadpole
 - Elder Tadpole*
 - Baby Frog
 - Frog
 - Toad
+- Froggie
 
-River (Mud)
+River (Mud) -- ZONE
 - The Longname Wiliwilifly Fish*
 - Kamoi (camo koi)
+- Muddie
+- Upstream Eel
+- Muddy Trout
+- Mud-Crusted Catfish
+- Silver Carp
+- River Piranha
 
 Flying Island (Boiled Bladder)
 - Flying Fish*?
@@ -94,7 +101,7 @@ Flying Island (Boiled Bladder)
 - PAPER AIRPERCH
 - Clouddie
 
-Hole (Heart)
+Hole (Heart) -- SLASH?
 - Unearthed Fish*
 - Orefish (rockfish variant)
 - Batfish
@@ -104,23 +111,28 @@ Hole (Heart)
 - Hollie (crappie)
 
 Ocean (Fish Oil, Mishmash, Essence of Water, Swiftfin)
-- Shark*
+- Blacktip Shark*
 - Salty Swiftfin
 - Dorado
 - Dogfish
 - Pufferfish
 - Moray Eel
 - Seabass
+- Hammerhead
+- Salmon
 
-Nettles (Stinky Mucus)
-- Vine fish*
-- Thorny trout
-- Reeking Hagfish
+Nettles (Stinky Mucus) -- Ocean ZONE
+- Vinefish*
+- Thorny Trout
+- Reeking Hagfish [Eel]
 - Spiny Bass
 - Prickly Perch
-- Floral Koi
+- Sprouting Koi
+- Thorntooth Piranha
+- Overgrown Rockfish
+- Grass Carp
 
-Ice (Water + Boiled Bladder)
+Ice (Water + Boiled Bladder) -- ZONE*
 - Icy Rockfish
 - Snowy Snapper
 - Elfish (santa's elf, you know, from christmas, like with jesus?)
@@ -130,7 +142,7 @@ Ice (Water + Boiled Bladder)
 - Huskyfish (dogfish)
 - Recipes show up as presents
 
-Oil (Fire + Stink)
+Oil (Fire + Stink) -- Ocean Potion Skillshot zone
 - Rainbow Trout
 - Bonefish*
 - Rainbow Sparkfish
@@ -138,6 +150,7 @@ Oil (Fire + Stink)
 - Rainbow Catfish
 - Rainbow Perch
 - Rainbow Koi
+- Rainbow Carp
 
 Oasis (Silver + Pilk)
 - Palmfish
@@ -147,6 +160,9 @@ Oasis (Silver + Pilk)
 - Strawbbie
 - Berrycuda*
 - Grape Grouper (school of grapes)
+- Citrus Swiftfin
+- Apple Angler
+- Fruitbatfish
 
 Lava (Mega Fire)
 - Magma Pike
@@ -155,8 +171,10 @@ Lava (Mega Fire)
 - Molten Mirrorscale
 - Cravawfish (LOBBER)*
 - Kul'Nugget Fish
+- Scorched Ghost Fish
+- Ashfish [mudfish variant]
 
-Sun (Fire + Ocular + Biolum?)
+Sun (Fire + Ocular + Biolum? + ) -- DYNAMIC ZONE
 - Sunfish
 - Flamefin
 - Eaglefish
@@ -164,25 +182,65 @@ Sun (Fire + Ocular + Biolum?)
 - Phoenix Perch
 - Solar Paneel*
 - Crisppie
+- Sunflare Piranha
 
-Moon (Dark + Biolum + Ocular)
+Moon (Dark + Biolum + Ocular + Pilk) -- DYNAMIC ZONE
 - Moonfish*
+- Lurch (Lunar perch)
+- Star-Dappled Trout
+- Astral Angler
+- Crater Piranha
+- Low Gravity Bass
+- Celestial Eye Goldfish
+- Nebulascale
+- Midnight Batfish
 
-Dark (Dark + Biolum + Guano)
-- Vampire Batfish [pilk + mega guano]
+Dark (Dark + Biolum + Guano) -- UNDERGROUND DYNAMIC ZONE
+- Vampire Batfish* [pilk + mega guano]
+- Faux Flamefin
+- Albino Lobster
+- Lost Angler
+- Black Carp
+- Mid Evil Bass
+- Blind Tadpole
+- Dark Ghostfish
 
-Manhole [elec] (Stink + Pilk + Mud)
+Manhole [elec] (Stink + Pilk + Mud + Swift)
 - Electric Eel* (literally just a piece of wire)
+- Copper Swordfish
+- Lightning Perch
+- Charged Swiftfin
+- Flushed Goldfish
 - Rusttie
+- Zappie
+- Jolttie
+- Joullie
+- Dumppie
+- Peeppie
+- All crappies
 
-Underwater (MEGA WATER + Gold)
+Pyrite (MEGA WATER + Gold) -- SMALL DYNAMIC ZONE
 - Gilded Grouper*
+- Goldscale
+- Pyrite Piranha
+- Fool's Goldfish
+- Flakefin
+- Golddie
+- Golden Retrieverfish
+- Plated Pufferfish
+- Alloy Koi
+- Maneki Catfish [Lucky cat]
+- Golden Swordfish
 
-Potted Plant [parkour] (Boiled Bladder + Swift)
+Potted Plant [parkour] (Boiled Bladder + Ocular + Swift) -- STATIC ZONE FLYING LAKE
 - Pottie
 - Ceramic Chub
 - Rosefish*
 - Floral Koi
+- Nine-Life Catfish (Give em some ocular)
+- Blooming Vinefish
+- Poodlefish
+- Fruitbatfish
 
 maybes:
 
@@ -228,7 +286,9 @@ Craftable bait
 
 ===============BUGS===================
 
-high fps pours more from cauldron for less potion
+slide around after jumping???
+
+grabbing fish fron someone elses  rod fucks thingsnup
 
 bait board didnt update from remote
 corker broke
@@ -282,6 +342,10 @@ elevators spin the shit out of you
 potion duping
 
 ======================FIXED===================
+
+adding extra bait endpoints made the buttons stop working
+
+high fps pours more from cauldron for less potion
 
 remote bobber wiggle
 

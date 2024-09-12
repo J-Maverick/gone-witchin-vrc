@@ -20186,6 +20186,12 @@ MonoBehaviour:
   spawnTarget: {fileID: 6181397339819873491}
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  mesh: {fileID: 811001914806958278}
+  meshCollider: {fileID: 5313278273323774793}
+  shatterParticles: {fileID: 916510676509787542}
+  rigidBody: {fileID: 1526321699781546054}
+  pickup: {fileID: 3126968027268955183}
+  objectSync: {fileID: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -20198,12 +20204,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 412ba7ba2e4f82a41a947179bb3ee257, type: 3}
   - {fileID: 8300000, guid: 95a127b349f45954d9867dce5c1b56b2, type: 3}
   - {fileID: 8300000, guid: e528e392a87321249b11ae95111ed31f, type: 3}
-  mesh: {fileID: 811001914806958278}
-  meshCollider: {fileID: 5313278273323774793}
-  shatterParticles: {fileID: 916510676509787542}
-  rigidBody: {fileID: 1526321699781546054}
-  pickup: {fileID: 3126968027268955183}
-  objectSync: {fileID: 0}
   softHitSpeedLimit: 2
   softHitVolume: 0.6
   softHitMaxDistance: 8
@@ -20749,6 +20749,12 @@ MonoBehaviour:
   spawnTarget: {fileID: 1504171235422871336}
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  mesh: {fileID: 4131139731626151279}
+  meshCollider: {fileID: 7024540489283823662}
+  shatterParticles: {fileID: 2863766588810958319}
+  rigidBody: {fileID: 6534471037046368639}
+  pickup: {fileID: 9212858788721140346}
+  objectSync: {fileID: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -20761,12 +20767,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 412ba7ba2e4f82a41a947179bb3ee257, type: 3}
   - {fileID: 8300000, guid: 95a127b349f45954d9867dce5c1b56b2, type: 3}
   - {fileID: 8300000, guid: e528e392a87321249b11ae95111ed31f, type: 3}
-  mesh: {fileID: 4131139731626151279}
-  meshCollider: {fileID: 7024540489283823662}
-  shatterParticles: {fileID: 2863766588810958319}
-  rigidBody: {fileID: 6534471037046368639}
-  pickup: {fileID: 9212858788721140346}
-  objectSync: {fileID: 0}
   softHitSpeedLimit: 2
   softHitVolume: 0.6
   softHitMaxDistance: 8
@@ -26252,6 +26252,12 @@ MonoBehaviour:
   spawnTarget: {fileID: 6447857806223612437}
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  mesh: {fileID: 9010468177089253399}
+  meshCollider: {fileID: 4856391345891042081}
+  shatterParticles: {fileID: 5655000445865188774}
+  rigidBody: {fileID: 2896798562675831922}
+  pickup: {fileID: 7702450446014175859}
+  objectSync: {fileID: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -26264,12 +26270,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 412ba7ba2e4f82a41a947179bb3ee257, type: 3}
   - {fileID: 8300000, guid: 95a127b349f45954d9867dce5c1b56b2, type: 3}
   - {fileID: 8300000, guid: e528e392a87321249b11ae95111ed31f, type: 3}
-  mesh: {fileID: 9010468177089253399}
-  meshCollider: {fileID: 4856391345891042081}
-  shatterParticles: {fileID: 5655000445865188774}
-  rigidBody: {fileID: 2896798562675831922}
-  pickup: {fileID: 7702450446014175859}
-  objectSync: {fileID: 0}
   softHitSpeedLimit: 2
   softHitVolume: 0.6
   softHitMaxDistance: 8
@@ -36475,6 +36475,42 @@ MonoBehaviour:
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
   publicVariablesUnityEngineObjects: []
   publicVariablesSerializationDataFormat: 0
+--- !u!1 &5384450667479984320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6779196910826310291}
+  m_Layer: 0
+  m_Name: Lever
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6779196910826310291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384450667479984320}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.000000014901161, w: 0.7071068}
+  m_LocalPosition: {x: -0.15940073, y: 0.10940167, z: -0.47759986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8184378956052272839}
+  - {fileID: 8184378956167358885}
+  - {fileID: 8184378955689536653}
+  - {fileID: 8184378956872080135}
+  - {fileID: 8184378956905162156}
+  m_Father: {fileID: 8184378955295485465}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5655000445865188774
 GameObject:
   m_ObjectHideFlags: 0
@@ -46640,6 +46676,12 @@ MonoBehaviour:
   spawnTarget: {fileID: 41420937956720011}
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  mesh: {fileID: 2787663123684341164}
+  meshCollider: {fileID: 3191484039041595811}
+  shatterParticles: {fileID: 169026748454712334}
+  rigidBody: {fileID: 7307117689726273275}
+  pickup: {fileID: 3028758069458417317}
+  objectSync: {fileID: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -46652,12 +46694,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 412ba7ba2e4f82a41a947179bb3ee257, type: 3}
   - {fileID: 8300000, guid: 95a127b349f45954d9867dce5c1b56b2, type: 3}
   - {fileID: 8300000, guid: e528e392a87321249b11ae95111ed31f, type: 3}
-  mesh: {fileID: 2787663123684341164}
-  meshCollider: {fileID: 3191484039041595811}
-  shatterParticles: {fileID: 169026748454712334}
-  rigidBody: {fileID: 7307117689726273275}
-  pickup: {fileID: 3028758069458417317}
-  objectSync: {fileID: 0}
   softHitSpeedLimit: 2
   softHitVolume: 0.6
   softHitMaxDistance: 8
@@ -51923,7 +51959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8184378956905162156}
+  - {fileID: 6779196910826310291}
   - {fileID: 3591842364990714736}
   m_Father: {fileID: 7065997237950642280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52107,15 +52143,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184378955689536658}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.43605638, y: -0.33183217, z: 0.23217869}
-  m_LocalScale: {x: 0.125, y: 0.030927496, z: 0.125}
+  m_LocalRotation: {x: 0.000000029802312, y: 0.00000008940694, z: -0.7071068, w: 0.7071067}
+  m_LocalPosition: {x: -0.2993526, y: -0.22780277, z: 0.1593915}
+  m_LocalScale: {x: 0.08581253, y: 0.02123173, z: 0.08581249}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8184378956979176042}
   - {fileID: 8184378955666798490}
   - {fileID: 2458942712645819935}
-  m_Father: {fileID: 8184378956905162156}
+  m_Father: {fileID: 6779196910826310291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &8184378955689536648
 MeshFilter:
@@ -52255,12 +52291,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184378956052272836}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4226182, y: -0.00000061094755, z: -0.0000013113021, w: 0.9063078}
-  m_LocalPosition: {x: -0.43605638, y: -0.044988036, z: -0.10966873}
-  m_LocalScale: {x: 0.072988905, y: 0.05728718, z: 0.06875001}
+  m_LocalRotation: {x: -0.42261827, y: -0.0000006258487, z: -0.0000013017526, w: 0.9063078}
+  m_LocalPosition: {x: -0.2993527, y: -0.030884288, z: -0.07528785}
+  m_LocalScale: {x: 0.050106883, y: 0.039327648, z: 0.047196884}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8184378956905162156}
+  m_Father: {fileID: 6779196910826310291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8184378956167358890
 GameObject:
@@ -52286,12 +52322,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184378956167358890}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.0000014305114, w: 1}
-  m_LocalPosition: {x: -0.43605638, y: 0.11441803, z: 0.23217869}
-  m_LocalScale: {x: 0.072988905, y: 0.057287175, z: 0.06875}
+  m_LocalRotation: {x: -0.000000052683546, y: -0.00000005960463, z: -0.000001422456,
+    w: 1}
+  m_LocalPosition: {x: -0.29935253, y: 0.07854798, z: 0.15939146}
+  m_LocalScale: {x: 0.05010688, y: 0.039327655, z: 0.047196873}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8184378956905162156}
+  m_Father: {fileID: 6779196910826310291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8184378956872080132
 GameObject:
@@ -52323,12 +52360,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184378956872080132}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000004214689, y: -0, z: -0.0000014329927, w: 1}
-  m_LocalPosition: {x: -0.43600067, y: 0.24710023, z: 0.2545991}
-  m_LocalScale: {x: 1.4566641, y: 1.456664, z: 1.4566641}
+  m_LocalRotation: {x: -0.000000052683546, y: -0.00000005960463, z: -0.000001422456,
+    w: 1}
+  m_LocalPosition: {x: -0.29931432, y: 0.16963437, z: 0.17478296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8184378956905162156}
+  m_Father: {fileID: 6779196910826310291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8184378956872080128
 CapsuleCollider:
@@ -52350,7 +52388,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.04
-  m_Height: 0
+  m_Height: 0.08
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8184378956872080129
@@ -52502,7 +52540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8184378956905162156}
   m_Layer: 0
-  m_Name: Lever
+  m_Name: LeverModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52516,16 +52554,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184378956905162157}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.1594, y: 0.1094017, z: -0.4776}
-  m_LocalScale: {x: 0.6865, y: 0.68650013, z: 0.6865}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68649995, y: 0.68650013, z: 0.6864999}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8184378956052272839}
-  - {fileID: 8184378956167358885}
-  - {fileID: 8184378955689536653}
-  - {fileID: 8184378956872080135}
-  m_Father: {fileID: 8184378955295485465}
+  m_Children: []
+  m_Father: {fileID: 6779196910826310291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8184378956979176043
 GameObject:
@@ -53020,6 +53054,12 @@ MonoBehaviour:
   spawnTarget: {fileID: 1421492765888642063}
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  mesh: {fileID: 6956327908428196730}
+  meshCollider: {fileID: 7922598819039640345}
+  shatterParticles: {fileID: 955850849262218468}
+  rigidBody: {fileID: 7042796244651885676}
+  pickup: {fileID: 3346501280511567879}
+  objectSync: {fileID: 0}
   softHitClips:
   - {fileID: 8300000, guid: 8368d0909a845444aab33ad87556daef, type: 3}
   - {fileID: 8300000, guid: 392bfd165af20f84bab5c7aa66b630e2, type: 3}
@@ -53032,12 +53072,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 412ba7ba2e4f82a41a947179bb3ee257, type: 3}
   - {fileID: 8300000, guid: 95a127b349f45954d9867dce5c1b56b2, type: 3}
   - {fileID: 8300000, guid: e528e392a87321249b11ae95111ed31f, type: 3}
-  mesh: {fileID: 6956327908428196730}
-  meshCollider: {fileID: 7922598819039640345}
-  shatterParticles: {fileID: 955850849262218468}
-  rigidBody: {fileID: 7042796244651885676}
-  pickup: {fileID: 3346501280511567879}
-  objectSync: {fileID: 0}
   softHitSpeedLimit: 2
   softHitVolume: 0.6
   softHitMaxDistance: 8

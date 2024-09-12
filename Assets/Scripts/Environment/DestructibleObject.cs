@@ -11,6 +11,7 @@ public class DestructibleObject : UdonSharpBehaviour
     public ParticleSystem destructionParticles = null;
     public AudioSource audioSource = null;
     public Collider selfCollider = null;
+    public UdonSharpBehaviour activatableComponent = null;
 
     [UdonSynced, FieldChangeCallback(nameof(Destroyed))] 
     private bool _destroyed = false;
@@ -38,7 +39,9 @@ public class DestructibleObject : UdonSharpBehaviour
             meshObject.SetActive(false);
         }
         if (audioSource != null) {
+            audioSource.enabled = true;
             audioSource.Play();
+            SendCustomEventDelayedSeconds(nameof(TryDisableAudioSource), audioSource.clip.length + 0.1f);
         }
         if (destructionParticles != null) {
             destructionParticles.Play();
@@ -46,6 +49,16 @@ public class DestructibleObject : UdonSharpBehaviour
         if (selfCollider != null) {
             selfCollider.enabled = false;
         }
+        if (activatableComponent != null) {
+            activatableComponent.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Activate");
+        }
         RequestSerialization();
+
+    }
+
+    public void TryDisableAudioSource()
+    {
+        if (audioSource.isPlaying) return;
+        audioSource.enabled = false;
     }
 }

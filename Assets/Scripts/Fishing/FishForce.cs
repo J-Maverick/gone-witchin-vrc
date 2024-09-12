@@ -5,6 +5,7 @@ using VRC.SDKBase;
 using VRC.Udon;
 using VRC.SDK3.Components;
 using VRC.Udon.Common;
+using VRC.SDK3.Data;
 
 public class FishForce : UdonSharpBehaviour
 {
@@ -45,6 +46,10 @@ public class FishForce : UdonSharpBehaviour
     public bool localOwner = false;
 
     public bool lureLocked = false;
+
+    public bool canReverseDirection = true;
+    public float reverseDirectionAngleBuffer = 25f;
+    public float reverseDirectionWaitTime = 3f;
 
     public int layerSync;
     
@@ -115,7 +120,7 @@ public class FishForce : UdonSharpBehaviour
         if (directionChangeTimer > directionChangeWaitTime) RandomDirection();
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
         fishBody.rotation = Quaternion.LookRotation(forceDirection);
-        fishBody.position = transform.position;
+        fishBody.position = hook.transform.position;
         fishForce = forceDirection * fishForceMultiplier * fish.GetForce();
         lureRigidbody.AddForce(fishForce);
         directionChangeTimer += Time.fixedDeltaTime;
@@ -124,10 +129,8 @@ public class FishForce : UdonSharpBehaviour
     public void Caught()
     {
         gameObject.layer = 27;
-        Debug.LogFormat("{0}: Caught", name);
-        Vector3 rot = fishBody.rotation.eulerAngles;
-        rot.x = -90f;
-        fishBody.rotation = Quaternion.RotateTowards(fishBody.rotation, Quaternion.Euler(rot), 1);
+        Vector3 rot = hook.transform.rotation.eulerAngles;
+        rot.x -= 90f;
         fishBody.rotation = Quaternion.Euler(rot.x, rot.y, rot.z);
         fishBody.position = hook.transform.position;
         fishForce = forceDirection * fishForceMultiplier * fish.GetForce();
@@ -150,10 +153,47 @@ public class FishForce : UdonSharpBehaviour
     {
         Debug.LogFormat("{0}: Bite", name);
         RandomDirection();
+        canReverseDirection = true;
         forceDirection = Vector3.Lerp(forceDirection, newDirection, 0.01f);
         fishBody.rotation = Quaternion.LookRotation(forceDirection);
-        fishBody.position = transform.position;
-        fish.Bite(fishingPole.water, sync.bait, fishingPole.rodLevelParams.fishExhaustionMultiplier);
+        fishBody.position = hook.transform.position;
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 25f);
+        Water[] waters = new Water[1];
+        waters[0] = fishingPole.water;
+        Water[] exclusiveWaters = new Water[0];
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider != null) {
+                FishingZone zone = hitCollider.GetComponent<FishingZone>();
+                if (zone != null && zone.zoneActive) {
+                    FishZoneMode zoneMode = zone.IsInZone(hook.transform.position);
+                    Debug.LogFormat("{0}: Found zone {1} with mode {2}", name, zone.name, zoneMode);
+                    if (zoneMode == FishZoneMode.Inner) {
+                        Water[] tempExclusiveWaters = new Water[exclusiveWaters.Length + 1];
+                        for (int i = 0; i < exclusiveWaters.Length; i++) {
+                            tempExclusiveWaters[i] = exclusiveWaters[i];
+                        }
+                        tempExclusiveWaters[tempExclusiveWaters.Length - 1] = zone.water;
+                        exclusiveWaters = tempExclusiveWaters;
+                    }
+                    else if (zoneMode == FishZoneMode.Outer) {
+                        Water[] tempWaters = new Water[waters.Length + 1];
+                        for (int i = 0; i < waters.Length; i++) {
+                            tempWaters[i] = waters[i];
+                        }
+                        tempWaters[tempWaters.Length - 1] = zone.water;
+                        waters = tempWaters;
+                    }
+                }
+            }
+        }
+        if (exclusiveWaters.Length > 0) { 
+            Debug.LogFormat("{0}: Exclusive waters found, overriding waters.", name);
+            waters = exclusiveWaters;
+        }
+
+        fish.Bite(fishingPole.water, waters, sync.bait, fishingPole.rodLevelParams.fishExhaustionMultiplier);
         if (sync.baitUsesRemaining > 0) {
             sync.baitUsesRemaining--;
             if (sync.bait != null) Debug.LogFormat("{0}: Used charge of bait {1}, charges remaining: {2}", name, sync.bait.name, sync.baitUsesRemaining);
@@ -201,12 +241,37 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject != fishingPole.gameObject && fishingPole.fishOn)
+        if (fishingPole.fishOn)
         {
-            RandomDirection();
+            Debug.LogFormat("{0}: Fish hit {1}", name, other.name);
+            RandomReverseDirection();
         }
+    }
+
+    public void OnCollisionStay(Collision other) {
+        if (other.gameObject.layer != 26 && fishingPole.fishOn) {
+            Debug.LogFormat("{0}: Fish colliding with {1}", name, other.collider.name);
+            newDirection = other.contacts[0].normal;
+            newDirection.y = 0f;
+            newDirection.Normalize();
+        }
+    }
+
+    public void RandomReverseDirection()
+    {
+        if (!canReverseDirection) return;
+        Debug.LogFormat("{0}: Reverse direction", name);
+        newDirection = Quaternion.Euler(0f, Random.Range(180f - reverseDirectionAngleBuffer, 180f + reverseDirectionAngleBuffer), 0f) * forceDirection;
+        if (Networking.GetOwner(gameObject).isLocal && fish != null && fish.state != FishState.catching) audioHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(audioHandler.PlaySlotOne));
+        canReverseDirection = false;
+        SendCustomEventDelayedSeconds(nameof(ResetReverseDirection), reverseDirectionWaitTime);
+    }
+
+    public void ResetReverseDirection()
+    {
+        canReverseDirection = true;
     }
 
     public void ResetOnFishOff()
@@ -282,6 +347,7 @@ public class FishForce : UdonSharpBehaviour
                         if (lureLocked) {
                             audioHandler.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(audioHandler.PlaySlotTwo));
                             SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(UnlockLure));
+                            Debug.LogFormat("{0}: Caught", name);
                         }
                         Caught();
                         break;

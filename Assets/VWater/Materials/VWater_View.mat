@@ -67,10 +67,10 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Density: 0.2
+    - _Density: 0.1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlobalWaterHeight: 1.9
+    - _GlobalWaterHeight: -0.2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -86,8 +86,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _AbsorptionColor: {r: 0.11294053, g: 0.3330771, b: 0.509434, a: 1}
+    - _AbsorptionColor: {r: 0.26980796, g: 0.70241874, b: 0.924, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ScatteringColor: {r: 0.1292274, g: 0.32136738, b: 0.41509423, a: 0.6666667}
+    - _ScatteringColor: {r: 0.08891048, g: 0.27855596, b: 0.34905636, a: 1}
   m_BuildTextureStacks: []

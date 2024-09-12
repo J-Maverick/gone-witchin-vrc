@@ -33,6 +33,14 @@ public class FishSync : UdonSharpBehaviour
         }
     }
 
+    public void SendPickup() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(FishPickup));
+    }
+    
+    public void FishPickup() {
+        fish.OnPickup();
+    }
+
     public override void OnDeserialization()
     {
         if (!Networking.GetOwner(gameObject).isLocal)

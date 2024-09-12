@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GoneWitchin_WiggleFish
+  m_Shader: {fileID: 4800000, guid: 2acffbb3012590b43b6139e8b5cc4e79, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c81d212574318444ab999cac80c95e50, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: b84989522f270614ea4b4a9e95984f9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Frequency: 10
+    - _Glossiness: 0.5
+    - _HorizontalAmplitude: 0.1
+    - _HorizontalFrequency: 10
+    - _HorizontalSpeed: 1
+    - _Metallic: 0
+    - _Scale: 1
+    - _Speed: 0
+    - _VerticalAmplitude: 0.1
+    - _VerticalFrequency: 1
+    - _VerticalSpeed: 0
+    - _WaterLevel: 0
+    - _Wiggle: 0
+    - _WiggleMagnitude: 1
+    - _WiggleOffset: 2.18
+    - _WiggleSphere: 0
+    - _WiggleSphereOffset: -59.9
+    - _WiggleSphereRadius: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

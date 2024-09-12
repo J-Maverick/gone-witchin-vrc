@@ -14,12 +14,28 @@ public class ObjectRespawnZone : UdonSharpBehaviour
         if (!other.isTrigger){
             if (other.gameObject.layer == 24 && Networking.GetOwner(other.gameObject).isLocal)
             {
-                fishPool.Return(other.gameObject);
+                VRCPickup pickup = other.GetComponent<VRCPickup>();
+                if (!pickup.IsHeld) {
+                    fishPool.Return(other.gameObject);
+                }
             }
-            VRCObjectSync sync = other.GetComponent<VRCObjectSync>();
-            
-            if (sync != null) {
-                sync.Respawn();
+
+            BottleCollision collision = other.GetComponent<BottleCollision>();
+            if (collision != null) {
+                if (collision.bottle.spawner != null) {
+                    collision.Despawn();
+                }
+                else {
+                    collision.Respawn();
+                }
+                collision.Respawn();
+            }
+            else {
+                VRCObjectSync sync = other.GetComponent<VRCObjectSync>();
+                
+                if (sync != null) {
+                    sync.Respawn();
+                }
             }
         }
     }

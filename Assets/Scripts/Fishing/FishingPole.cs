@@ -6,6 +6,7 @@ using VRC.Udon;
 using UnityEngine.UI;
 using VRC.SDK3.Components;
 using Unity.Collections;
+using UnityEngine.Video;
 
 public class FishingPole : UdonSharpBehaviour
 {
@@ -13,7 +14,7 @@ public class FishingPole : UdonSharpBehaviour
     public GameObject hook;
     public GameObject[] ownedObjects;
     public VRCPickup pickup;
-
+    public VRCPlayerApi assignedPlayer = null;
     public FishForce fishForce;
 
     public Text lureSpringText = null;
@@ -23,9 +24,9 @@ public class FishingPole : UdonSharpBehaviour
     public Text fishForceText = null;
 
     public SpringJoint lureJoint;
-    private Rigidbody lureRigidBody;
-    private SpringJoint hookJoint;
-    private Rigidbody hookRigidBody;
+    public Rigidbody lureRigidBody;
+    public SpringJoint hookJoint;
+    public Rigidbody hookRigidBody;
 
     public RodUpgrade rodLevelParams = null;
 
@@ -34,15 +35,14 @@ public class FishingPole : UdonSharpBehaviour
 
     public bool isHeld;
 
-    private float staticTension;
-    private float staticMass;
-    private float staticDrag;
-    private float staticDistance;
-
-    private float staticHookTension;
-    private float staticHookMass;
-    private float staticHookDrag;
-    private float staticHookDistance;
+    private float staticTension = 1000f;
+    private float staticMass = 5f; 
+    private float staticDrag = 2f;
+    private float staticDistance = 1f;
+    private float staticHookTension = 1000f;
+    private float staticHookMass = 200f;
+    private float staticHookDrag = 2f;
+    private float staticHookDistance = 0.5f;
 
     private bool casting = false;
     private bool casted = false;
@@ -50,8 +50,6 @@ public class FishingPole : UdonSharpBehaviour
     public bool fishOn = false;
 
     public Water water = null;
-    public Water lakeWater;
-    public Water caveWater;
 
     public float castDistance = 0f;
 
@@ -66,23 +64,24 @@ public class FishingPole : UdonSharpBehaviour
     public ReelAngleAccumulator reelAngleAccumulator = null;
     public RandomAudioHandler bobberAudio;
 
-    void Start()
+    private float maxDistance = 50f;
+    public bool localPlayerClose = false;
+    public int frameOffset = 0;
+
+    public void Start()
     {
-        lureJoint = lure.GetComponent<SpringJoint>();
-        lureRigidBody = lure.GetComponent<Rigidbody>();
-        staticTension = lureJoint.spring;
-        staticMass = lureRigidBody.mass;
-        staticDrag = lureRigidBody.drag;
-        staticDistance = lureJoint.minDistance;
-
-        hookJoint = hook.GetComponent<SpringJoint>();
-        hookRigidBody = hook.GetComponent<Rigidbody>();
-        staticHookTension = hookJoint.spring;
-        staticHookMass = hookRigidBody.mass;
-        staticHookDrag = hookRigidBody.drag;
-        staticHookDistance = hookJoint.minDistance;
-
         SetLureText();
+        CheckLocalPlayerClose();
+        frameOffset = Random.Range(0, 100);
+    }
+
+    public void CheckLocalPlayerClose()
+    {
+        if (Networking.LocalPlayer != null)
+        {
+            float distance = Vector3.Distance(Networking.LocalPlayer.GetPosition(), transform.position);
+            localPlayerClose = distance < maxDistance;
+        }
     }
 
     public override void OnPickup()
@@ -173,19 +172,9 @@ public class FishingPole : UdonSharpBehaviour
 
     public void SetWater(Water newWater)
     {
-        if (newWater == lakeWater) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetLakeWater));
-        else if (newWater == caveWater) SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetCaveWater));
+        water = newWater;
     }
 
-    public void SetLakeWater()
-    {
-        water = lakeWater;
-    }
-
-    public void SetCaveWater()
-    {
-        water = caveWater;
-    }
     public void SplashDown(Water splashDownWater)
     {
         if (water != splashDownWater) SetWater(splashDownWater);
@@ -352,6 +341,17 @@ public class FishingPole : UdonSharpBehaviour
     {
         if (reelingTimer > rodLevelParams.reelingInactiveTime) reeling = false;
         else reelingTimer += Time.deltaTime;
+        if ((Time.frameCount + frameOffset % 100) == 0) CheckLocalPlayerClose();
+    }
+
+    public void Teleport(Vector3 position)
+    {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetFishOffParams));
+        ResetLureSync();
+        Debug.LogFormat("{0}: Teleporting to {1}", name, position);
+        transform.position = position;
+        lure.transform.position = position;
+        hook.transform.position = position;
     }
 
     /* =================================================
@@ -360,15 +360,18 @@ public class FishingPole : UdonSharpBehaviour
                           
       ================================================= */
 
-    public override void OnOwnershipTransferred(VRCPlayerApi player)
-    {
-        if (player.isLocal)
-        {
-            foreach (GameObject obj in ownedObjects) Networking.SetOwner(player, obj);
-            if (fishForce.fish != null) Networking.SetOwner(player, fishForce.fish.gameObject);
-            lureRigidBody.WakeUp();
-            hookRigidBody.WakeUp();
-            //TODO add all required objects -- or make ownership transfer cascade
+    public void DelayedPickup() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(EnablePickup));
+    }
+    
+    public void EnablePickup() {
+        if (Networking.GetOwner(gameObject).isLocal) {
+            Debug.LogFormat("{0}: Enable Pickup", name);
+            pickup.pickupable = true;
+        }
+        else {
+            Debug.LogFormat("{0}: Disable Pickup", name);
+            pickup.pickupable = false;
         }
     }
 }

@@ -32,6 +32,11 @@ public class CombustibleBrew : ShatterEffect
                     Debug.LogFormat("{0}: Found destructible object, blowin it up!", name);
                     destructibleObject.Destruct();
                 }
+                IceBlock iceBlock = hit.GetComponent<IceBlock>();
+                if (iceBlock != null) {
+                    Debug.LogFormat("{0}: Found ice block, blowin it up!", name);
+                    iceBlock.Despawn();
+                }
             }
         }
     }

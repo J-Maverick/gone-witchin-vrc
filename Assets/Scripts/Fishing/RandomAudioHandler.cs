@@ -4,6 +4,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
+[UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class RandomAudioHandler : UdonSharpBehaviour
 {
     public AudioClip[] slotZeroClips;
@@ -21,6 +22,8 @@ public class RandomAudioHandler : UdonSharpBehaviour
     public AudioClip[] slotFourClips;
     public float slotFourVolume = 1f;
     [UdonSynced] public int slotFourSoundIndex = 0;
+    public float maxPitch = 1.1f;
+    public float minPitch = 0.9f;
     public AudioSource audioSource;
     public VRCPlayerApi owner;
 
@@ -29,7 +32,6 @@ public class RandomAudioHandler : UdonSharpBehaviour
         owner = Networking.GetOwner(gameObject);
 
         if (owner != null && owner.isLocal) RandomizeSounds();
-
     }
 
     public override void OnOwnershipTransferred(VRCPlayerApi player)
@@ -39,6 +41,27 @@ public class RandomAudioHandler : UdonSharpBehaviour
         {
             RandomizeSounds();
         }
+    }
+
+
+    public void PlaySlotZeroNetworked() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySlotZero));
+    }
+
+    public void PlaySlotOneNetworked() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySlotOne));
+    }
+
+    public void PlaySlotTwoNetworked() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySlotTwo));
+    }
+
+    public void PlaySlotThreeNetworked() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySlotThree));
+    }
+
+    public void PlaySlotFourNetworked() {
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySlotFour));
     }
 
     public void PlaySlotZero()
@@ -79,9 +102,18 @@ public class RandomAudioHandler : UdonSharpBehaviour
     protected void PlayClip(AudioClip[] clips, float volume, int soundIndex)
     {
         Debug.LogFormat("{0}: Playing clip at volume {1}", name, volume);
+        audioSource.enabled = true;
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
+        audioSource.pitch = Random.Range(minPitch, maxPitch);
         audioSource.Play();
+        SendCustomEventDelayedSeconds(nameof(TryDisableAudioSource), audioSource.clip.length + 0.1f);
+    }
+
+    public void TryDisableAudioSource()
+    {
+        if (audioSource.isPlaying) return;
+        audioSource.enabled = false;
     }
 
     public void RandomizeSounds()

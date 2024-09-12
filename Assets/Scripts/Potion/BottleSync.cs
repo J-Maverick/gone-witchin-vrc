@@ -116,7 +116,7 @@ public class BottleSync : UdonSharpBehaviour
 
     public override void OnDeserialization()
     {
-        Debug.LogFormat("{0}: Deserializing");
+        Debug.LogFormat("{0}: Deserializing", name);
         bottleCollision.isBroken = isBroken;
         if (pourableBottle != null)
         {

@@ -90,3 +90,9 @@ public static class RarityBonus
     public const float Epic = 15f;
     public const float Legendary = 9f;
 }
+
+public enum FishZoneMode {
+    Outside = 0,
+    Outer = 1,
+    Inner = 2,
+}

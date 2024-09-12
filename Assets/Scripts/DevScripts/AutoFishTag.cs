@@ -82,18 +82,18 @@ public class AutoFishTag : MonoBehaviour
     }
 
     public void LocationTags(FishData fish, List<FishTag> fishTags) {
-        if (fish.foundInLake) {
-            fishTags.Add(FishTag.Lake);
-        }
-        if (fish.foundInCave) {
-            fishTags.Add(FishTag.Cave);
-        }
-        if (fish.foundInLake && !fish.foundInCave) {
-            fishTags.Add(FishTag.LakeOnly);
-        }
-        if (!fish.foundInLake && fish.foundInCave) {
-            fishTags.Add(FishTag.CaveOnly);
-        }
+        // if (fish.foundInLake) {
+        //     fishTags.Add(FishTag.Lake);
+        // }
+        // if (fish.foundInCave) {
+        //     fishTags.Add(FishTag.Cave);
+        // }
+        // if (fish.foundInLake && !fish.foundInCave) {
+        //     fishTags.Add(FishTag.LakeOnly);
+        // }
+        // if (!fish.foundInLake && fish.foundInCave) {
+        //     fishTags.Add(FishTag.CaveOnly);
+        // }
     }
     public void SizeTags(FishData fish, List<FishTag> fishTags) {
         // Update if intending to actually use size tags
@@ -102,19 +102,6 @@ public class AutoFishTag : MonoBehaviour
         // Update when personalities are implemented
     }
     public void RarityTags(FishData fish, List<FishTag> fishTags) {
-        float rarity = fish.lakeCatchChance > fish.caveCatchChance ? fish.lakeCatchChance : fish.caveCatchChance;
-        if (rarity >= 80) {
-            fishTags.Add(FishTag.Common);
-        }
-        if (80 > rarity && rarity >= 35) {
-            fishTags.Add(FishTag.Uncommon);
-        }
-        if (35 > rarity && rarity >= 5) {
-            fishTags.Add(FishTag.Rare);
-        }
-        if (5 > rarity) {
-            fishTags.Add(FishTag.Legendary);
-        }
     }
 
 }

@@ -74,7 +74,7 @@ public class BottleCollision : UdonSharpBehaviour
             float speed = collision.relativeVelocity.magnitude;
             if (pickup.IsHeld) speed /= holdSpeedMultiplier;
 
-            Debug.LogFormat("{0}: collision velocity magnitude: {1}", name, speed);
+            Debug.LogFormat("{0}: collision with {1}, velocity magnitude: {2}", name, collision.gameObject.name, speed);
 
             // Determine which audio clips to play based on impact speed, or shatter
             if (speed < softHitSpeedLimit)
@@ -122,6 +122,7 @@ public class BottleCollision : UdonSharpBehaviour
 
     public void PlaySoundEffect()
     {
+        if (soundEffectClips.Length == 0) return;
         AudioClip[] clips = soundEffectClips;
         audioSource.maxDistance = soundEffectMaxDistance;
         if (owner != null && owner.isLocal) syncObj.RandomizeSoundEffect();
@@ -188,9 +189,18 @@ public class BottleCollision : UdonSharpBehaviour
     protected void PlayClip(AudioClip[] clips, float volume, int soundIndex)
     {
         Debug.LogFormat("{0}: Playing clip at volume {1}", name, volume);
+        audioSource.enabled = true;
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
         audioSource.Play();
+        SendCustomEventDelayedSeconds(nameof(TryDisableAudioSource), audioSource.clip.length + 0.1f);
+    }
+
+    public void TryDisableAudioSource()
+    {
+        if (audioSource.isPlaying) return;
+        audioSource.enabled = false;
     }
 
     public void DelayedRespawn() {
@@ -210,6 +220,7 @@ public class BottleCollision : UdonSharpBehaviour
         pickup.pickupable = true;
         brokenSequencePlayed = false;
         isBroken = false;
+        pickup.Drop();
 
         if (owner != null && owner.isLocal)
         {

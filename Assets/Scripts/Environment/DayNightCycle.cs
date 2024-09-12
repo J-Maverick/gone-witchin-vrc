@@ -18,8 +18,7 @@ public class DayNightCycle : UdonSharpBehaviour
 
     public float bufferAngle = 10f;
 
-    [UdonSynced]
-    public float angle = 0f;
+    [UdonSynced] public float angle = 0f;
     public Color dayFogColor;
     public Color nightFogColor;
     public float dayFogDensity;
@@ -27,6 +26,10 @@ public class DayNightCycle : UdonSharpBehaviour
 
     public AudioSource dayAudio;
     public AudioSource nightAudio;
+    
+    public FishingZone sunZone;
+    public FishingZone moonZone;
+    public Collider zoneCollider;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class DayNightCycle : UdonSharpBehaviour
         rotation = transform.localRotation.eulerAngles;
         sunIntensity = sun.intensity;
         moonIntensity = moon.intensity;
+        SetSun();
         OnDeserialization();
     }
 
@@ -43,6 +47,7 @@ public class DayNightCycle : UdonSharpBehaviour
     }
 
     public override void OnDeserialization() {
+        Debug.LogFormat("{0}: OnDeserialization", name);
         float modAngle = angle % 360f;
         if (modAngle > bufferAngle && modAngle < 180f - bufferAngle ) {
             sun.intensity = sunIntensity;
@@ -54,10 +59,30 @@ public class DayNightCycle : UdonSharpBehaviour
         }
     }
 
-    void Update() {
-        angle += rotationSpeed * Time.deltaTime;
+    public void SetAngle(float newAngle) {
+        angle = newAngle;
+        UpdateRotation();
+        CheckRiseSet();
+    }
+
+    public void FinalizeAngle(float newAngle) {
+        angle = newAngle;
+        UpdateRotation();
+        CheckRiseSet();
+        RequestSerialization();
+        SendCustomEventDelayedSeconds(nameof(DelayedRequestSerialization), 0.5f);
+    }
+
+    public void DelayedRequestSerialization() {
+        RequestSerialization();
+    }
+
+    void UpdateRotation() {
         rotation.x = angle;
         transform.localRotation = Quaternion.Euler(rotation);
+    }
+
+    void CheckRiseSet() {
         float modAngle = angle % 360f;
         if (modAngle < bufferAngle) {
             float lerpValue = (bufferAngle + modAngle) / (2f * bufferAngle);
@@ -67,6 +92,7 @@ public class DayNightCycle : UdonSharpBehaviour
             nightAudio.volume = Mathf.Lerp(0.5f, 0.0f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(nightFogDensity, dayFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(nightFogColor, dayFogColor, lerpValue);
+            SetSun();
         }
         else if (modAngle > 360f - bufferAngle) {
             float lerpValue = (modAngle - (360f - bufferAngle)) / (2f * bufferAngle);
@@ -76,6 +102,7 @@ public class DayNightCycle : UdonSharpBehaviour
             nightAudio.volume = Mathf.Lerp(0.5f, 0.0f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(nightFogDensity, dayFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(nightFogColor, dayFogColor, lerpValue);
+            SetSun();
         }
         else if (modAngle > 180f - bufferAngle && modAngle < 180f + bufferAngle) {
             float lerpValue = (modAngle - (180f - bufferAngle)) / (2f * bufferAngle);
@@ -85,6 +112,38 @@ public class DayNightCycle : UdonSharpBehaviour
             nightAudio.volume = Mathf.Lerp(0f, 0.5f, lerpValue);
             RenderSettings.fogDensity = Mathf.Lerp(dayFogDensity, nightFogDensity, lerpValue);
             RenderSettings.fogColor = Color.Lerp(dayFogColor, nightFogColor, lerpValue);
+            SetMoon();
         }
+    }
+
+    void Update() {
+        angle += rotationSpeed * Time.deltaTime;
+        UpdateRotation();
+        CheckRiseSet();
+    }
+
+    public void SetSun() {
+        if (!sunZone.zoneActive && Networking.GetOwner(sunZone.gameObject).isLocal) {
+            Vector3 position = RandomPointInBounds(zoneCollider.bounds);
+            sunZone.Activate(position);
+            moonZone.DeActivate();
+        }
+    }
+
+    public void SetMoon() {
+        if (!moonZone.zoneActive && Networking.GetOwner(moonZone.gameObject).isLocal) {
+            Vector3 position = RandomPointInBounds(zoneCollider.bounds);
+            moonZone.Activate(position);
+            sunZone.DeActivate();
+        }
+    }
+
+    public static Vector3 RandomPointInBounds(Bounds bounds)
+    {
+        return new Vector3(
+            Random.Range(bounds.min.x, bounds.max.x),
+            0,
+            Random.Range(bounds.min.z, bounds.max.z)
+        );
     }
 }

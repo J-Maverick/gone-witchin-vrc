@@ -16,7 +16,9 @@ public class BaitInventory : UdonSharpBehaviour
             }
         }
         if (Networking.GetOwner(gameObject).isLocal) {
-            EnableEndpoint(endpoints[0]);
+            foreach (BaitInventoryEndpoint endpoint in endpoints) {
+                EnableEndpoint(endpoint);
+            }
         }
     }
 
@@ -64,9 +66,9 @@ public class BaitInventory : UdonSharpBehaviour
     }
 
     public void EnableEndpoint(BaitInventoryEndpoint endpointToEnable) {
-        foreach (BaitInventoryEndpoint endpoint in endpoints) {
-            endpoint.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DisableEndPoint");
-        }
+        // foreach (BaitInventoryEndpoint endpoint in endpoints) {
+        //     endpoint.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DisableEndPoint");
+        // }
         endpointToEnable.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "EnableEndPoint");
     }
 }
