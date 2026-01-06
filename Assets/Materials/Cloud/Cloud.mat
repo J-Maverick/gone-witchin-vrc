@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cloud
+  m_Shader: {fileID: 4800000, guid: c1ebd2539c3d9c748b0a055a87009af5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    OptimizedShaderFolder: Cloud-05dda75b
+    OriginalShader: Moriohs Shaders/Enviroment Shaders/Clouds
+    RenderType: Transparent
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - Vector1_2A06FCBD: 0.5
+    - Vector1_A8FABF8F: 0.25
+    - Vector1_D652EA7E: 0.1
+    - _AO_Strength: 0.75
+    - _AmbientIntensity: 2
+    - _BumpScale: 1
+    - _ColorFalloff: 5
+    - _CoreDarkness: 0
+    - _CullMode: 0
+    - _CullingDistance: 5000
+    - _CullingFalloff: 4
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DirectionalIntensity: 2
+    - _DstBlend: 0
+    - _EdgeBrightness: 0.8
+    - _EdgeSmoothingmax: 2.36
+    - _EdgeSmoothingmin: 0.272
+    - _FuzzyPower: 2
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NoisePower: 0.5
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _ShaderOptimizerEnabled: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TransitionDistance: 50
+    - _TransitionFalloff: 2
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - Vector3_DF4CF5A5: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SecColor: {r: 0.45882356, g: 0.4705882, b: 0.6, a: 1}
+  m_BuildTextureStacks: []

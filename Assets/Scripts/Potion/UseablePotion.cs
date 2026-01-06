@@ -10,7 +10,7 @@ public class UseablePotion : DrinkablePotion
 
     public override void OnPickupUseDown()
     {
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "OnUse");
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(OnUse));
     }
 
     public void OnUse()

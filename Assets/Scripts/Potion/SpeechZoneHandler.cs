@@ -24,7 +24,7 @@ public class SpeechZoneHandler : UdonSharpBehaviour
 
     void Update() {
         if (localPlayerListening && !delayTriggered) {
-            SendCustomEventDelayedSeconds("SetLocalPlayerVolumeDistance", delayTime);
+            SendCustomEventDelayedSeconds(nameof(SetLocalPlayerVolumeDistance), delayTime);
             delayTriggered = true;
         }
     }

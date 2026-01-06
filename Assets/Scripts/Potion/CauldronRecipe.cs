@@ -27,8 +27,6 @@ public class CauldronRecipe : Recipe
     public int reagent3ID = -1;
     public int reagent4ID = -1;
 
-    public bool isDS = false;
-
     public override void OnDeserialization()
     {
         if (reagent0ID != syncedReagent0ID)
@@ -57,7 +55,6 @@ public class CauldronRecipe : Recipe
             reagent4ID = syncedReagent4ID;
         }
         nReagents = nReagentsSync;
-        if (!Networking.IsMaster) isDS = true;
     }
 
     public override void OnPreSerialization()

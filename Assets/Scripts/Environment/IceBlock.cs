@@ -18,7 +18,7 @@ public class IceBlock : UdonSharpBehaviour
         Debug.LogFormat("{0}: OnEnable", name);
         if (Networking.GetOwner(gameObject).isLocal) {
             Networking.SetOwner(Networking.LocalPlayer, zone.gameObject);
-            zone.Activate();
+            zone.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(FishingZone.Activate));
         }
         SendCustomEventDelayedSeconds(nameof(Despawn), despawnTime);
     }

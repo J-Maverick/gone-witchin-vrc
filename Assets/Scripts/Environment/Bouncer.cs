@@ -37,7 +37,7 @@ public class Bouncer : UdonSharpBehaviour
                 velocity.y = minBounceImpulse;
             }
             Networking.LocalPlayer.SetVelocity(velocity);
-            SendCustomEventDelayedSeconds("ResetAnimator", 0.1f);
+            SendCustomEventDelayedSeconds(nameof(ResetAnimator), 0.1f);
         }
     }
 

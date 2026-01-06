@@ -5,6 +5,7 @@ using UnityEngine;
 using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon;
+using VRC.SDK3.Persistence;
 
 public class CraftedBait : UdonSharpBehaviour
 {
@@ -21,7 +22,8 @@ public class CraftedBait : UdonSharpBehaviour
     public override void Interact()
     {
         if (collectible) {
-            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Use");
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Use));
+            PlayerData.SetInt(bait.name + DataKeys.BaitCount, PlayerData.GetInt(Networking.LocalPlayer, bait.name + DataKeys.BaitCount) + 1);
         }
     }
 

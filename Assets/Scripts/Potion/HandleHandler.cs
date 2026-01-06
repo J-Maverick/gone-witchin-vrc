@@ -22,19 +22,19 @@ public class HandleHandler : UdonSharpBehaviour
         if (tank != null && Networking.GetOwner(gameObject).isLocal)
         {
             tank.Sync();
-            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sleep");
+            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Lever.Sleep));
         }
         if (lever != null && Networking.GetOwner(gameObject).isLocal) 
         {
-            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Sleep");
+            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Lever.Sleep));
         }
         if (reel != null && Networking.GetOwner(gameObject).isLocal) 
         {
-            reel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Drop");
+            reel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(reel.Drop));
         }
         if (wheel != null && Networking.GetOwner(gameObject).isLocal) 
         {
-            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Drop");
+            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(wheel.Drop));
         }
     }
 
@@ -42,14 +42,14 @@ public class HandleHandler : UdonSharpBehaviour
     {
         isHeld = true;
         if (tank != null && Networking.GetOwner(gameObject).isLocal) {
-            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "WakeUp");
+            tank.lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Lever.WakeUp));
         }
         if (lever != null && Networking.GetOwner(gameObject).isLocal) {
-            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "WakeUp");
+            lever.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Lever.WakeUp));
         }
         if (wheel != null && Networking.GetOwner(gameObject).isLocal) 
         {
-            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PickUp");
+            wheel.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(wheel.PickUp));
         }
     }
 

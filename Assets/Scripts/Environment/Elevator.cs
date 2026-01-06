@@ -12,9 +12,13 @@ public class Elevator : UdonSharpBehaviour
     // public Vector3 previousVelocity;
     private Transform targetLocation;
     public float moveSpeed = .5f;
+    private float currentSpeed = 0f;
+    public float acceleration = 1f;
+    private float currentAcceleration = 0f;
+    public float jerk = 1f;
 
     private bool moveActive = false;
-    public ElevatorSwitch elevatorSwitch;
+    public ElevatorSwitch[] elevatorSwitches;
 
     public bool playerColliding = false;
 
@@ -47,7 +51,14 @@ public class Elevator : UdonSharpBehaviour
         if (!moveActive)
         {
             moveActive = true;
-            elevatorSwitch.SetOn();
+            currentSpeed = acceleration > 0 ? 0f : moveSpeed;
+            currentAcceleration = jerk > 0 ? 0f : acceleration;
+
+            currentAcceleration = 0f;
+            foreach (ElevatorSwitch elevatorSwitch in elevatorSwitches)
+            {
+                elevatorSwitch.SetOn();
+            }
             targetLocation = targetLocation == startLocation ? endLocation : startLocation;
             previousPosition = transform.position;
             // previousVelocity = Vector3.zero;
@@ -58,12 +69,18 @@ public class Elevator : UdonSharpBehaviour
     {
         if (moveActive)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, moveSpeed * Time.deltaTime);
+            currentAcceleration = Mathf.MoveTowards(currentAcceleration, acceleration, jerk * Time.deltaTime);
+            currentSpeed = Mathf.MoveTowards(currentSpeed, moveSpeed, currentAcceleration * Time.deltaTime);
+
+            transform.position = Vector3.MoveTowards(transform.position, targetLocation.position, currentSpeed * Time.deltaTime);
             // Vector3 velocity = (transform.position - previousPosition) / Time.fixedDeltaTime;
             if (transform.position == targetLocation.position)
             {
                 moveActive = false;
-                elevatorSwitch.SetOff();
+                foreach (ElevatorSwitch elevatorSwitch in elevatorSwitches)
+                {
+                    elevatorSwitch.SetOff();
+                }
             }
             if (playerColliding) {
                 // Networking.LocalPlayer.SetVelocity(velocity);

@@ -41,7 +41,7 @@ public class PotionWobble : UdonSharpBehaviour
     float wobbleAmountToAddZ;
     float pulse;
 
-    bool wobbleActive = true;
+    public bool wobbleActive = true;
 
     public virtual void Start()
     {

@@ -96,3 +96,16 @@ public enum FishZoneMode {
     Outer = 1,
     Inner = 2,
 }
+
+public static class DataKeys
+{
+    public const string BaitCount = " BaitCount";
+    public const string LargestCaught = " LargestCaught";
+    public const string SmallestCaught = " SmallestCaught";
+    public const string RodUpgradeLevel = "RodUpgradeLevel";
+    public const string RecipeUnlock = " RecipeUnlock";
+    public const string PoleFlipped = "PoleFlipped";
+    public const string HapticsDisabled = "HapticsDisabled";
+    public const string BGMDisabled = "BGMDisabled";
+    public const string AmbienceDisabled = "AmbienceDisabled";
+}

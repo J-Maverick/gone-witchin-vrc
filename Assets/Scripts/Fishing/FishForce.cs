@@ -1,4 +1,4 @@
-﻿
+
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -14,9 +14,11 @@ public class FishForce : UdonSharpBehaviour
     public Hook hook;
     public FishingPole fishingPole;
     public RandomAudioHandler audioHandler;
+    public Collider bobberCollider;
     
     public float fishForceMultiplier = 100f;
     public float maxAngleTowardsPlayer = 10f;
+    public float bouyancyMultiplier = 1f;
 
     public float maxWaitTime = 10f;
     public float minWaitTime = 5f;
@@ -46,6 +48,7 @@ public class FishForce : UdonSharpBehaviour
     public bool localOwner = false;
 
     public bool lureLocked = false;
+    public float lureBumpForce = 1f;
 
     public bool canReverseDirection = true;
     public float reverseDirectionAngleBuffer = 25f;
@@ -138,6 +141,11 @@ public class FishForce : UdonSharpBehaviour
         directionChangeTimer += Time.fixedDeltaTime;
     }
 
+    public void BumpBobber() 
+    {
+        lureRigidbody.AddForce(-Vector3.up * lureBumpForce, ForceMode.Impulse);
+    }
+
     public void TriggerFight()
     {
         if (fish.TriggerFight())
@@ -145,6 +153,7 @@ public class FishForce : UdonSharpBehaviour
             fishingPole.FishOn(fish.size);
             Fight();
             RandomWaitTime();
+            BumpBobber(); 
             Debug.LogFormat("{0}: Fighting!", name);
         }
     }
@@ -202,7 +211,7 @@ public class FishForce : UdonSharpBehaviour
         }
         if (sync.baitUsesRemaining <= 0 && sync.bait != null) {
             Debug.LogFormat("{0}: Exhausted bait.", name);
-            sync.bait = null;
+            AddBait(null);
             hook.RemoveBait();
             RequestSerialization();
         }
@@ -210,14 +219,25 @@ public class FishForce : UdonSharpBehaviour
 
     public void OverrideLurePosition()
     {
-        float yOffset = 0f;
-        yOffset = fishingPole.water.transform.position.y + 0.001f;
+        // float yOffset = 0f;
+        float yOffset = fishingPole.water.transform.position.y;
 
         Vector3 pos = lure.position;
-        pos.y = yOffset + 0.02f;
-        lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
-        pos.y = yOffset - 0.5f;
+        // pos.y = yOffset + 0.02f;
+        // lure.SetPositionAndRotation(pos, Quaternion.Euler(-180, 0, 0));
+        pos.y -= 0.5f;
         hook.transform.position = pos;
+        if (lure.position.y > fishingPole.water.transform.position.y) {
+            lure.position = new Vector3(lure.position.x, fishingPole.water.transform.position.y, lure.position.z);
+        }
+
+        lure.rotation = Quaternion.Euler(-180, 0, 0);
+    }
+
+    public void ApplyBouyantForce(float verticalDistance) {
+        if (verticalDistance < 0f) {
+            lureRigidbody.AddForce(Vector3.up * (1f + Mathf.Abs(verticalDistance)) * lureRigidbody.mass * bouyancyMultiplier);
+        }
     }
     
     public void ResetFish()
@@ -241,17 +261,8 @@ public class FishForce : UdonSharpBehaviour
         }
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (fishingPole.fishOn)
-        {
-            Debug.LogFormat("{0}: Fish hit {1}", name, other.name);
-            RandomReverseDirection();
-        }
-    }
-
     public void OnCollisionStay(Collision other) {
-        if (other.gameObject.layer != 26 && fishingPole.fishOn) {
+        if (other.gameObject.layer != 26 && fishingPole.fishOn && !fishingPole.runningOut) {
             Debug.LogFormat("{0}: Fish colliding with {1}", name, other.collider.name);
             newDirection = other.contacts[0].normal;
             newDirection.y = 0f;
@@ -368,6 +379,18 @@ public class FishForce : UdonSharpBehaviour
         if (player.isLocal) localOwner = true;
         else localOwner = false;
     }
+
+    
+    public override void OnPlayerRestored(VRCPlayerApi player)
+    {
+        localOwner = Networking.IsOwner(Networking.LocalPlayer, gameObject);
+        if (!localOwner) {
+            bobberCollider.enabled = false;
+            lureRigidbody.isKinematic = true;
+            lureRigidbody.useGravity = false;
+        }
+    }
+
 
     public override void OnPreSerialization()
     {

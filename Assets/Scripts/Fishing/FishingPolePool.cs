@@ -37,10 +37,10 @@ public class FishingPolePool : UdonSharpBehaviour
                     Networking.SetOwner(player, obj);
                 }
                 if (fishingPole.fishForce.fish != null) Networking.SetOwner(player, fishingPole.fishForce.fish.gameObject);
-                fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 1f);
-                fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 5f);
-                fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 10f);
-                fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 20f);
+                // fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 1f);
+                // fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 5f);
+                // fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 10f);
+                // fishingPole.SendCustomEventDelayedSeconds(nameof(FishingPole.DelayedPickup), 20f);
             }
         }
     }
@@ -74,7 +74,7 @@ public class FishingPolePool : UdonSharpBehaviour
         }
     }
 
-    public void SummonRod(Vector3 position)
+    public void SummonRod(Transform position)
     {
         Debug.LogFormat("{0}: SummonRod", name);
         foreach (FishingPole fishingPole in fishingPoles)

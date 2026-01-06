@@ -21,7 +21,8 @@ public class BottlePoolHandler : MonoBehaviour
         }
 
         name = string.Format("Spawner_{0}", bottlePrefab.name);
-        objectPool.Pool = new GameObject[nBottles];
+        
+        GameObject[] objectPoolArray = new GameObject[nBottles];
     
         for (int i = 0; i < nBottles; i++) {
             GameObject bottle = GameObject.Instantiate(bottlePrefab);
@@ -31,7 +32,8 @@ public class BottlePoolHandler : MonoBehaviour
             bottle.GetComponentInChildren<LiquidContact>().cauldron = cauldron;
             bottle.GetComponentInChildren<ReagentBottleSync>().liquidList = recipeList;
             bottle.SetActive(false);
-            objectPool.Pool[i] = bottle;
+            objectPoolArray[i] = bottle;
         }
+        objectPool.Pool = objectPoolArray;
     }
 }

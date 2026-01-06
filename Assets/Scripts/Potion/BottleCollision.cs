@@ -79,19 +79,19 @@ public class BottleCollision : UdonSharpBehaviour
             // Determine which audio clips to play based on impact speed, or shatter
             if (speed < softHitSpeedLimit)
             {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlaySoftHit");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlaySoftHit));
             }
             else if (speed < mediumHitSpeedLimit)
             {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayMediumHit");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlayMediumHit));
             }
             else if (speed < hardHitSpeedLimit || collision.gameObject.layer == 29)
             {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayHardHit");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlayHardHit));
             }
             else
             {
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Shatter");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Shatter));
             }
         }
     }
@@ -165,6 +165,7 @@ public class BottleCollision : UdonSharpBehaviour
     public void Respawn()
     {
         rigidBody.constraints = RigidbodyConstraints.None;
+        rigidBody.velocity = Vector3.zero;
         mesh.enabled = true;
         meshCollider.enabled = true;
         shatterParticles.SetActive(false);
@@ -193,7 +194,10 @@ public class BottleCollision : UdonSharpBehaviour
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
         audioSource.pitch = Random.Range(0.9f, 1.1f);
-        audioSource.Play();
+        if (Vector3.Distance(Networking.LocalPlayer.GetPosition(), transform.position) < audioSource.maxDistance)
+        {
+            audioSource.Play();
+        }
         SendCustomEventDelayedSeconds(nameof(TryDisableAudioSource), audioSource.clip.length + 0.1f);
     }
 

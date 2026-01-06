@@ -3,6 +3,10 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
+using System;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class FishSync : UdonSharpBehaviour
@@ -14,6 +18,8 @@ public class FishSync : UdonSharpBehaviour
     [UdonSynced] public float exhaustion = 1f;
     [UdonSynced] public int stateIDSync = 0;
     [UdonSynced] public bool pickupEnabledSync = false;
+    public VRCPlayerApi fisherman = null;
+    public FishLog fishLog;
 
     public float intervalTime = 3f;
     private int nJoinSyncs = 10;
@@ -35,10 +41,22 @@ public class FishSync : UdonSharpBehaviour
 
     public void SendPickup() {
         SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(FishPickup));
+       
     }
     
     public void FishPickup() {
         fish.OnPickup();
+    }
+
+    public void SetFisherman(VRCPlayerApi player) {
+        fisherman = player;
+    }
+
+    public void UpdateFishLog() {
+        if (fisherman != null && fisherman.isLocal) {
+            fishLog.AddFish(fish.fishData, fish.size);
+        }
+        fisherman = null;
     }
 
     public override void OnDeserialization()
@@ -47,6 +65,7 @@ public class FishSync : UdonSharpBehaviour
         {
             Debug.Log("Deserializing fish data...");
             fish.state = (FishState)stateIDSync;
+            fish.size = size;
             if (fish.pickupEnabled != pickupEnabledSync)
             {
                 switch (pickupEnabledSync)
@@ -70,9 +89,10 @@ public class FishSync : UdonSharpBehaviour
                     else Debug.LogFormat("{0}: fishData updated with null from fishID: {1}", name, fish.fishID);
                 }
             }
-            else if (fish.fishData != null && fish.meshRenderer.sharedMesh != fish.fishData.mesh) fish.SetFishSizeProperties();
+            else if (fish.fishData != null && fish.meshFilter.sharedMesh != fish.fishData.mesh) fish.SetFishSizeProperties();
             SetFishPropertiesFromDeserialization();
             SetStateFromDeserialization();
+            fish.tooltip.UpdateTooltip(fish);
         }
     }
 
@@ -116,7 +136,7 @@ public class FishSync : UdonSharpBehaviour
 
     public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
-            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
+            SendCustomEventDelayedSeconds(nameof(JoinSync), intervalTime);
             Sync();
             joinSyncCounter++;
         }

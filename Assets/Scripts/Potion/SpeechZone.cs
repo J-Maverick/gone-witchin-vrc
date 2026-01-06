@@ -13,6 +13,8 @@ public class SpeechZone : UdonSharpBehaviour
     public SpeechZoneHandler speechZoneHandler = null;
     
     // private bool zoneActive = true;
+    public float speechZoneVolume = 0.8f;
+    public float speechZoneVolumeDistance = 25f;
 
     private float defaultVoiceNear = 0f;
     private float defaultVoiceFar = 25f;
@@ -50,13 +52,14 @@ public class SpeechZone : UdonSharpBehaviour
         }
     }
 
-    private void SetPlayerVoice(VRCPlayerApi player, float nearDistance, float farDistance) {
+    private void SetPlayerVoice(VRCPlayerApi player, float nearDistance, float farDistance, bool lowPass) {
         player.SetVoiceDistanceNear(nearDistance);
         player.SetVoiceDistanceFar(farDistance);
+        player.SetVoiceLowpass(lowPass);
     }
 
     private void ResetPlayerVoice(VRCPlayerApi player) {      
-        SetPlayerVoice(player, defaultVoiceNear,defaultVoiceFar);      
+        SetPlayerVoice(player, defaultVoiceNear, defaultVoiceFar, true);
     }
 
     public void SetPlayerVoices() {
@@ -64,7 +67,7 @@ public class SpeechZone : UdonSharpBehaviour
             VRCPlayerApi player = VRCPlayerApi.GetPlayerById(id);
             if (player != null) {
                 float distance = (player.GetPosition() - Networking.LocalPlayer.GetPosition()).magnitude - speechZoneHandler.localPlayerVolumeDistance;
-                SetPlayerVoice(player, distance, distance + defaultVoiceFar);
+                SetPlayerVoice(player, distance - speechZoneVolumeDistance * (1f - speechZoneVolume), distance + defaultVoiceFar, false);
             }
         }
     }

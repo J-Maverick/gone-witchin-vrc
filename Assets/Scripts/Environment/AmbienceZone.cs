@@ -15,6 +15,7 @@ public class AmbienceZone : UdonSharpBehaviour
             float distance = (player.GetPosition() - transform.position).magnitude;
             float lerp = (distance - switchDistance) / ((transform.localScale.x / 2f) - switchDistance);
             foreach (AudioSource source in sources) {
+                source.enabled = true;
                 if (lerp <= 0f) {
                     // source.spatialize = false;
                     source.spatialBlend = 0.0f;
@@ -32,6 +33,7 @@ public class AmbienceZone : UdonSharpBehaviour
         foreach (AudioSource source in sources) {
             // source.spatialize = true;
             source.spatialBlend = 1.0f;
+            source.enabled = false;
         }
     }
 }

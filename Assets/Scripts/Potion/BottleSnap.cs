@@ -25,7 +25,7 @@ public class BottleSnap : UdonSharpBehaviour
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             }
-            SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
+            SendCustomEventDelayedSeconds(nameof(CheckBottleAlive), checkDelayTime);
         }
     }
 
@@ -35,7 +35,7 @@ public class BottleSnap : UdonSharpBehaviour
                 bottle = null;
             }
             else {
-                SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
+                SendCustomEventDelayedSeconds(nameof(CheckBottleAlive), checkDelayTime);
             }
         }
     }

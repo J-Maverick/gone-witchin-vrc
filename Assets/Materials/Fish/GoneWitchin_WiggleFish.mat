@@ -33,15 +33,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Frequency: 10
-    - _Glossiness: 0.5
-    - _HorizontalAmplitude: 0.1
+    - _Cutoff: 0.5
+    - _Frequency: 25
+    - _Glossiness: 0.75
+    - _HorizontalAmplitude: 0.02
     - _HorizontalFrequency: 10
     - _HorizontalSpeed: 1
+    - _HueShift: 0
     - _Metallic: 0
     - _Scale: 1
     - _Speed: 0
-    - _VerticalAmplitude: 0.1
+    - _VerticalAmplitude: 0.02
     - _VerticalFrequency: 1
     - _VerticalSpeed: 0
     - _WaterLevel: 0

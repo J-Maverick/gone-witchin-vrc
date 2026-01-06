@@ -106,7 +106,7 @@ public class PourableBottle : Bottle
         }
     }
 
-    public void UpdateLiquidProperties()
+    public virtual void UpdateLiquidProperties()
     {
         if (liquid != null)
         {

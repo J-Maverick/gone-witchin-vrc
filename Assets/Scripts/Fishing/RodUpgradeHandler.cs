@@ -1,6 +1,8 @@
 ﻿
+using BestHTTP.SecureProtocol.Org.BouncyCastle.Asn1.Ocsp;
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Persistence;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -53,6 +55,15 @@ public class RodUpgradeHandler : UdonSharpBehaviour
         }
     }
 
+    public override void OnPlayerRestored(VRCPlayerApi player)
+    {
+        if (Networking.IsOwner(player, gameObject) && player.isLocal) {
+            UpgradeLevel = PlayerData.GetInt(player, DataKeys.RodUpgradeLevel);
+            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(SetRodUpgrade));
+            RequestSerialization();
+        }
+    }
+
     public void OnTriggerEnter(Collider coll) {
         if (coll.gameObject.name.Contains("Rod Upgrade")) {
             if (Networking.GetOwner(coll.gameObject).isLocal && Networking.GetOwner(fishingPole.gameObject).isLocal) {
@@ -61,6 +72,14 @@ public class RodUpgradeHandler : UdonSharpBehaviour
                 if (upgradePotion != null && upgradePotion.rodUpgrade != null) {
                     if (upgradePotion.rodUpgrade.level > UpgradeLevel) {
                         UpgradeLevel = upgradePotion.rodUpgrade.level;
+                        PlayerData.SetInt(DataKeys.RodUpgradeLevel, UpgradeLevel);
+                        upgradePotion.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(RodUpgradePotion.Shatter));
+                    }
+                    else if (UpgradeLevel == 999) {
+                        _upgradeLevel = upgradePotion.rodUpgrade.level;
+                        SetRodUpgrade();
+                        RequestSerialization();
+                        PlayerData.SetInt(DataKeys.RodUpgradeLevel, UpgradeLevel);
                         upgradePotion.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(RodUpgradePotion.Shatter));
                     }
                 }

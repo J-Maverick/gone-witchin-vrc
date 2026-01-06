@@ -8,7 +8,7 @@ using VRC.Udon;
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class SunSpinner : UdonSharpBehaviour
 {
-    public DayNightCycle cycle;
+    public NewSuperDayNightCycle cycle;
     public SunSpinnerHandle handle;
     public float maxRotationSpeed = 1f;
     [UdonSynced] public bool spinnerActive = false;
@@ -18,8 +18,13 @@ public class SunSpinner : UdonSharpBehaviour
         RequestSerialization();
     }
 
+    public void DeActivate() {
+        spinnerActive = false;
+        RequestSerialization();
+    }
+
     public void LateUpdate() {
-        if (!spinnerActive) return;
+        if (!spinnerActive || cycle.frozen) return;
         if (!handle.pickup.IsHeld) {
             transform.eulerAngles = new Vector3(0, cycle.angle, 0);
         }

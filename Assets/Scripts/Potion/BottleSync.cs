@@ -48,8 +48,8 @@ public class BottleSync : UdonSharpBehaviour
     public void SetBottleType(int ID) {
         BottleID = ID;
         RequestSerialization();
-        SendCustomEventDelayedSeconds("Sync", 1f);
-        SendCustomEventDelayedSeconds("Sync", 2f);
+        SendCustomEventDelayedSeconds(nameof(Sync), 1f);
+        SendCustomEventDelayedSeconds(nameof(Sync), 2f);
     }
 
     public void Sync() {
@@ -150,7 +150,7 @@ public class BottleSync : UdonSharpBehaviour
         Debug.LogFormat("{0}: FrequencySerialization...", name);
         if (!serializing) {
             Debug.LogFormat("{0}: Triggering Serialize...", name);
-            SendCustomEventDelayedSeconds("Serialize", 1f / freq);
+            SendCustomEventDelayedSeconds(nameof(Serialize), 1f / freq);
             serializing = true;
         }
     }
@@ -163,7 +163,7 @@ public class BottleSync : UdonSharpBehaviour
 
     public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
-            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
+            SendCustomEventDelayedSeconds(nameof(JoinSync), intervalTime);
             RequestSerialization();
             joinSyncCounter++;
         }

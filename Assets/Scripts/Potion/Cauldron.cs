@@ -12,6 +12,8 @@ public class Cauldron : UdonSharpBehaviour
     public Renderer overflowParticleRenderer;
     public Material overflowMaterial;
     public GemIndicator indicator;
+    public MeshRenderer pipeSpurtRenderer;
+    public Material pipeSpurtMaterial;
     private float overflowFlowRate = 0.05f;
     private float overFlowExponent = 4f;
     public float maxFill = 5f;
@@ -23,27 +25,27 @@ public class Cauldron : UdonSharpBehaviour
     public Recipe matchingRecipe = null;
     public bool ratioMatched = false;
     public bool impossibleRecipe = false;
+    public LiveRecipe liveRecipe;
+    public AudioSource cauldronAudio;
 
     void Start()
     {
         overflowMaterial = overflowParticleRenderer.material;
+        pipeSpurtMaterial = pipeSpurtRenderer.material;
     }
 
     public override void OnDeserialization()
     {
-        if (fillRecipe.isDS)
+        fillRecipe.NormalizeReagents();
+        matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
+        if (matchingRecipe != null)
         {
-            fillRecipe.NormalizeReagents();
-            matchingRecipe = recipes.GetMatchingRecipe(fillRecipe);
-            if (matchingRecipe != null)
-            {
-                ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
-                Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
-            }
-            else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
-
-            fillRecipe.LogReagents();
+            ratioMatched = matchingRecipe.CheckRecipeRatio(fillRecipe);
+            Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
         }
+        else Debug.LogFormat("{0}: Current Recipe: null -- Ratio Matched: {1}", name, ratioMatched);
+
+        fillRecipe.LogReagents();
         if (liquid != null)
         {
             liquid.fillLevel = fillLevel;
@@ -82,6 +84,7 @@ public class Cauldron : UdonSharpBehaviour
         }
 
         fillRecipe.AddReagent(bottle.liquid, fillAmount);
+        liveRecipe.UpdateRecipe();
 
         UpdateFillColor(bottle.potionColor, fillAmount);
 
@@ -104,7 +107,7 @@ public class Cauldron : UdonSharpBehaviour
                 fillRecipeLerp(matchingRecipe.RecipeNearRatio(fillRecipe));
 
                 if (ratioMatched && !matchingRecipe.unlocked) {
-                    matchingRecipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Unlock");
+                    matchingRecipe.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(matchingRecipe.Unlock));
                 }
                 Debug.LogFormat("{0}: Current Recipe: {1} -- Ratio Matched: {2}", name, matchingRecipe.name, ratioMatched);
             }
@@ -127,6 +130,7 @@ public class Cauldron : UdonSharpBehaviour
     public void fillRecipeLerp(float ratio) {
         Debug.LogFormat("{0}: Lerping color by ratio: {1}", name, ratio);
         liquid.SetStaticColor(Color.Lerp(fillColor, matchingRecipe.potion.color, ratio));
+        pipeSpurtMaterial.SetColor("_DepthColour", matchingRecipe.potion.color);
     }
 
     public void UpdateFill()
@@ -177,15 +181,31 @@ public class Cauldron : UdonSharpBehaviour
 
         if (fillLevel > 0f)
         {
-            if (ratioMatched) indicator.SetValid();
-            else if (impossibleRecipe) indicator.SetInvalid();
-            else indicator.SetNeutral();
+            if (ratioMatched) {
+                indicator.SetValid();
+                pipeSpurtRenderer.enabled = true;
+            }
+            else if (impossibleRecipe) {
+                indicator.SetInvalid();
+                pipeSpurtRenderer.enabled = false;
+            }
+            else {
+                indicator.SetNeutral();
+                pipeSpurtRenderer.enabled = false;
+            }
+            cauldronAudio.enabled = true;
+            cauldronAudio.pitch = Mathf.Lerp(0.25f, 0.5f, fillLevel / maxFill);
         }
-        else indicator.SetNeutral();
+        else {
+            indicator.SetNeutral();
+            pipeSpurtRenderer.enabled = false;
+            cauldronAudio.enabled = false;
+        }
 
         if (fillLevel == 0f && fillRecipe.nReagents > 0)
         {
             fillRecipe.ResetReagents();
+            liveRecipe.UpdateRecipe();
             impossibleRecipe = false;
         }
     }

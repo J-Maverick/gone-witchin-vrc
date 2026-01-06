@@ -40,6 +40,7 @@ public class FishingZone : UdonSharpBehaviour
 
     public override void OnDeserialization()
     {
+        Debug.LogFormat("{0}: OnDeserialization, zoneActive: {1}", name, zoneActive);
         animator.SetBool("ParticlesOn", zoneActive);
         if (handleOwnMovement) {
             transform.position = zonePosition;
@@ -56,6 +57,11 @@ public class FishingZone : UdonSharpBehaviour
     public void Activate() {
         zoneActive = true;
         animator.SetBool("ParticlesOn", true);
+        RequestSerialization();
+        SendCustomEventDelayedSeconds(nameof(DelayedSerialization), 1f);
+    }
+
+    public void DelayedSerialization() {
         RequestSerialization();
     }
 

@@ -35,6 +35,9 @@ public class ReagentTank : UdonSharpBehaviour
 
     public bool debugFill = false;
 
+    public AudioSource pourAudio;
+    public BottleSnap bottleSnap;
+
     void Start()
     {
         if (Networking.LocalPlayer.isMaster && debugFill) {
@@ -67,7 +70,16 @@ public class ReagentTank : UdonSharpBehaviour
             if (fillLevel == 0f) flow = 0f;
             particleAnimator.SetFloat("pourSpeed", flow);
 
-            if (flow > 0f) shaderControl.FillBump(flow);
+            if (flow > 0f) { 
+                shaderControl.FillBump(flow);
+                pourAudio.enabled = true;
+                if (bottleSnap != null) {
+                    if (bottleSnap.bottle != null) {
+                        pourAudio.pitch = Mathf.Lerp(1f, 2f, bottleSnap.bottle.fillLevel);
+                    }
+                }
+            }
+            else pourAudio.enabled = false;
 
             fillLevel -= flow * pourMultiplier * Time.deltaTime;
             if (fillLevel < 0f) fillLevel = 0f;
@@ -84,7 +96,7 @@ public class ReagentTank : UdonSharpBehaviour
 
     public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
-            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
+            SendCustomEventDelayedSeconds(nameof(JoinSync), intervalTime);
             Sync();
             joinSyncCounter++;
         }

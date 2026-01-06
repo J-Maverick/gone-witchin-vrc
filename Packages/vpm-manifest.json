@@ -1,25 +1,69 @@
 {
   "dependencies": {
-    "com.vrchat.core.vpm-resolver": {
-      "version": "0.1.15"
+    "dev.architech.umbrella": {
+      "version": "0.8.4"
+    },
+    "dev.architech.videoplayershim": {
+      "version": "1.4.0"
+    },
+    "dev.architech.protv": {
+      "version": "3.0.0-beta.24.2"
+    },
+    "dev.architech.protv.extras": {
+      "version": "0.9.3-beta"
     },
     "com.vrchat.worlds": {
-      "version": "3.6.1"
+      "version": "3.8.0"
+    },
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29"
     }
   },
   "locked": {
-    "com.vrchat.core.vpm-resolver": {
-      "version": "0.1.28",
-      "dependencies": {}
+    "dev.architech.umbrella": {
+      "version": "0.8.4",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.3",
+        "dev.architech.sdk": ">=0.18.1"
+      }
+    },
+    "dev.architech.sdk": {
+      "version": "0.19.0",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4"
+      }
+    },
+    "dev.architech.videoplayershim": {
+      "version": "1.4.0",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.3"
+      }
+    },
+    "dev.architech.protv": {
+      "version": "3.0.0-beta.24.2",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4",
+        "dev.architech.sdk": ">=0.19.0 <1"
+      }
+    },
+    "dev.architech.protv.extras": {
+      "version": "0.9.3-beta",
+      "dependencies": {
+        "dev.architech.protv": ">=3.0.0-beta.24.1"
+      }
     },
     "com.vrchat.worlds": {
-      "version": "3.6.1",
+      "version": "3.8.0",
       "dependencies": {
-        "com.vrchat.base": "3.6.1"
+        "com.vrchat.base": "3.8.0"
       }
     },
     "com.vrchat.base": {
-      "version": "3.6.1",
+      "version": "3.8.0",
+      "dependencies": {}
+    },
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29",
       "dependencies": {}
     }
   }

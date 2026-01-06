@@ -30,12 +30,12 @@ public class CombustibleBrew : ShatterEffect
                 DestructibleObject destructibleObject = hit.GetComponent<DestructibleObject>();
                 if (destructibleObject != null) {
                     Debug.LogFormat("{0}: Found destructible object, blowin it up!", name);
-                    destructibleObject.Destruct();
+                    destructibleObject.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(DestructibleObject.Destruct));
                 }
                 IceBlock iceBlock = hit.GetComponent<IceBlock>();
                 if (iceBlock != null) {
                     Debug.LogFormat("{0}: Found ice block, blowin it up!", name);
-                    iceBlock.Despawn();
+                    iceBlock.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(IceBlock.Despawn));
                 }
             }
         }

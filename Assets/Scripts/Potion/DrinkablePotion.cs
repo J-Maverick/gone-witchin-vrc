@@ -10,11 +10,12 @@ public class DrinkablePotion : BottleCollision
 
     public override void OnPickupUseDown()
     {
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Drink");
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Drink));
     }
 
     public void Drink()
     {
+        Debug.LogFormat("{0} Drink Triggered", name);
         audioSource.maxDistance = 25f;
         AudioClip[] clips = soundEffectClips;
         float volume = soundEffectVolume;

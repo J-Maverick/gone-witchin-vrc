@@ -1,4 +1,5 @@
 ﻿
+using System;
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -11,4 +12,5 @@ public class LiquidMaterial : UdonSharpBehaviour
     public float UVOffsetX = 0f;
     public float UVOffsetY = 0f;
     public Bait bait = null;
+    public String description;
 }

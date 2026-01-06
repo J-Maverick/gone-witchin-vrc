@@ -79,6 +79,15 @@ public class AutoFishTag : MonoBehaviour
         if (fish.recipe != null) {
             fishTags.Add(FishTag.Recipe);
         }
+        else if (fish.maxScale <= 0.25f) {
+            fishTags.Add(FishTag.Small);
+        }
+        else if (fish.maxScale >= 0.6f) {
+            fishTags.Add(FishTag.Large);
+        }
+        else {
+            fishTags.Add(FishTag.Medium);
+        }
     }
 
     public void LocationTags(FishData fish, List<FishTag> fishTags) {
@@ -102,6 +111,13 @@ public class AutoFishTag : MonoBehaviour
         // Update when personalities are implemented
     }
     public void RarityTags(FishData fish, List<FishTag> fishTags) {
+    }
+
+    [ContextMenu("Randomize Hue Shift")]
+    public void RandomizeHueShift() {
+        foreach (FishData fish in fishDataPool.fishData) {
+            fish.hueShift = Random.Range(0f, 1f);
+        }
     }
 
 }

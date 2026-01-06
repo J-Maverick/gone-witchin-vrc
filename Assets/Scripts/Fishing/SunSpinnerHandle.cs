@@ -16,6 +16,8 @@ public class SunSpinnerHandle : UdonSharpBehaviour
         if (Networking.GetOwner(gameObject).isLocal) {
             Networking.SetOwner(Networking.LocalPlayer, spinner.gameObject);
             Networking.SetOwner(Networking.LocalPlayer, spinner.cycle.gameObject);
+            Networking.SetOwner(Networking.LocalPlayer, spinner.cycle.sunZone.gameObject);
+            Networking.SetOwner(Networking.LocalPlayer, spinner.cycle.moonZone.gameObject);
         }
     }
 

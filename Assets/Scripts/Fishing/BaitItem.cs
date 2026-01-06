@@ -12,7 +12,7 @@ public class BaitItem : UdonSharpBehaviour
     public VRCObjectSync baitSync;
 
     public void OnEnable() {
-        baitSync.FlagDiscontinuity();
+        // baitSync.FlagDiscontinuity();
     }
 
     public void RemoveBait() {

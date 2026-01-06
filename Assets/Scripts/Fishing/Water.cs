@@ -29,6 +29,8 @@ public class Water : UdonSharpBehaviour
     private int recursions = 0;
     private int maxRecursions = 20;
 
+    public RespawnFollower respawnFollower;
+
     // public void Start() {
     //     int allLength = common.Length + uncommon.Length + rare.Length + epic.Length + legendary.Length;
     //     fishData = new FishData[allLength];
@@ -56,6 +58,22 @@ public class Water : UdonSharpBehaviour
     //     }
 
     // }
+
+    public override void OnPlayerTriggerEnter(VRCPlayerApi player)
+    {
+        if (player.isLocal) {
+            Debug.LogFormat("{0}: Player entered water", name);
+            respawnFollower.StopFollow();
+        }
+    }
+
+    public override void OnPlayerTriggerExit(VRCPlayerApi player)
+    {
+        if (player.isLocal) {
+            Debug.LogFormat("{0}: Player exited water", name);
+            respawnFollower.StartFollow();
+        }
+    }
 
     public FishData GetRandomFishData(Bait bait)
     { 

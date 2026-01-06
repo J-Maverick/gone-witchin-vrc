@@ -31,7 +31,7 @@ public class StoveSnap : UdonSharpBehaviour
         if (!coolingDown && bottle.liquid != null && bottle.liquid.bait != null && bottle.fillLevel >= 0.9f) {
             indicator.SetValid();
             if (Networking.GetOwner(bottle.gameObject).isLocal) { 
-                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayAnimation");
+                SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlayAnimation));
                 CraftedBaitPool pool = craftedBaitPool.GetPoolByBait(bottle.liquid.bait);
                 int nBaits = Random.Range(bottle.liquid.bait.craftAmount - bottle.liquid.bait.craftVariance, bottle.liquid.bait.craftAmount + bottle.liquid.bait.craftVariance);
                 for (int i = 0; i < nBaits; i++) {
@@ -44,8 +44,8 @@ public class StoveSnap : UdonSharpBehaviour
 
                 Debug.LogFormat("{0}: Spawned {1} {2}", name, nBaits, bottle.liquid.bait.name);
                 
-                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
-                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Empty");
+                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(bottle.Despawn));
+                bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(bottle.Empty));
                 
             }
         }

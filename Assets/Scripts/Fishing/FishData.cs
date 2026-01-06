@@ -8,7 +8,10 @@ public class FishData : UdonSharpBehaviour
 {
     public int ID;
     public Mesh mesh = null;
+    public Material material = null;
     public Color color = Color.white;
+    [Range(0f, 1f)]
+    public float hueShift = 0f;
     public Color emissionColor = Color.black;
     public Recipe recipe = null;
 

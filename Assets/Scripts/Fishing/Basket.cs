@@ -26,14 +26,14 @@ public class Basket : UdonSharpBehaviour
         {
             Transform child = transform.GetChild(0);
             child.SetParent(null);
-            child.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DeBasket");
+            child.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Fish.DeBasket));
         }
     }
 
     void AddToBasket(GameObject fish)
     {
         fish.transform.SetParent(transform);
-        fish.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Basket");
+        fish.GetComponent<Fish>().SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(Fish.Basket));
     }
 
     private void OnCollisionEnter(Collision other)
@@ -47,6 +47,6 @@ public class Basket : UdonSharpBehaviour
 
     public override void InputUse(bool value, UdonInputEventArgs args)
     {
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "DumpContents");
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(DumpContents));
     }
 }

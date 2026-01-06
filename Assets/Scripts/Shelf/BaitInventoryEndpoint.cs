@@ -46,8 +46,8 @@ public class BaitInventoryEndpoint : UdonSharpBehaviour
         }
     }
 
-    public int SpawnBait(Bait bait, Transform target) {
-        return baitInventory.SpawnBait(bait, target);
+    public void SpawnBait(Bait bait, Transform target) {
+        baitInventory.SpawnBait(bait, target);
     }
 
     public void UpdateButtonText(Bait bait, int nBait) {

@@ -10,4 +10,9 @@ public class ShatterEffect : UdonSharpBehaviour
     {
         
     }
+
+    public virtual void BypassShatter()
+    {
+
+    }
 }

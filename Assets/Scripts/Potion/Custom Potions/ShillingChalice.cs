@@ -18,7 +18,7 @@ public class ShillingChalice : ShatterEffect
     public override void OnShatter()
     {
         potionCollider.enabled = true;
-        SendCustomEventDelayedSeconds("DisableEffect", collisionEnabledTime);
+        SendCustomEventDelayedSeconds(nameof(DisableEffect), collisionEnabledTime);
     }
 
     public void DisableEffect() {

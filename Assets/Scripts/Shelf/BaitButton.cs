@@ -4,6 +4,7 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 using UnityEngine.UI;
+using VRC.SDK3.Persistence;
 
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class BaitButton : UdonSharpBehaviour
@@ -17,7 +18,7 @@ public class BaitButton : UdonSharpBehaviour
 
     public override void Interact()
     {
-        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.Owner, "Interaction");
+        Interaction();
     }
 
     public override void OnDeserialization()
@@ -26,9 +27,7 @@ public class BaitButton : UdonSharpBehaviour
     }
 
     public void Interaction() {
-        UpdateCountText(
-            baitInventoryEndpoint.SpawnBait(bait, spawnTarget)
-            );
+        baitInventoryEndpoint.SpawnBait(bait, spawnTarget);
     }
 
     public void Enable() {
@@ -45,11 +44,11 @@ public class BaitButton : UdonSharpBehaviour
     }
 
     public void UpdateCountText(int newCount) {
-        if (newCount < 0) {
+        if (newCount < 0 && PlayerData.GetInt(Networking.LocalPlayer, bait.name + DataKeys.BaitCount) == 0) {
             countText = "";
         }
         else {
-            countText = string.Format("{0}", newCount);
+            countText = string.Format("{0}\n[{1}]", newCount, PlayerData.GetInt(Networking.LocalPlayer, bait.name + DataKeys.BaitCount));
         }
         baitCountText.text = countText;
         RequestSerialization();

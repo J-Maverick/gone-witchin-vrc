@@ -20,7 +20,7 @@ public class Corker : UdonSharpBehaviour
                 // TODO update networking -- this is insufficient for remote players. Need to build "animated" corker system that takes its time to properly spawn
                 GameObject spawnedPotion = potionPool.TryToSpawnByID(bottle.liquid.ID);
                 if (spawnedPotion != null) {
-                    SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "PlayAnimation");
+                    SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(PlayAnimation));
                     Vector3 spawnPosition = bottle.transform.position;
                     Quaternion spawnRotation = bottle.transform.rotation;
                     Networking.SetOwner(Networking.LocalPlayer, spawnedPotion);
@@ -28,11 +28,11 @@ public class Corker : UdonSharpBehaviour
                     BottleSync sync = spawnedPotion.GetComponentInChildren<BottleSync>();
                     Networking.SetOwner(Networking.LocalPlayer, sync.gameObject);
                     sync.SetBottleType(bottle.bottleID);
-                    bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Despawn");
-                    bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "Empty");
+                    bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(bottle.Despawn));
+                    bottle.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(ReagentBottle.Empty));
                     bottle.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
                     spawnedPotion.transform.SetPositionAndRotation(spawnPosition, spawnRotation);
-                    bottleSnap.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "ClearBottle");
+                    bottleSnap.SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, nameof(bottleSnap.ClearBottle));
                 }
                 else {
                     indicator.SetInvalid();

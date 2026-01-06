@@ -1,6 +1,7 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
+using VRC.SDK3.Persistence;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -45,7 +46,16 @@ public class Recipe : UdonSharpBehaviour
                 recipeBook.RequestSerialization();
             }
         }
+        PlayerData.SetBool(potion.name + DataKeys.RecipeUnlock, true);
         RequestSerialization();
+    }
+
+    public override void OnPlayerRestored(VRCPlayerApi player)
+    {
+        if (!unlocked) {
+            unlocked = PlayerData.GetBool(player, potion.name + DataKeys.RecipeUnlock);
+            RequestSerialization();
+        }
     }
 
     public void PlayFanfare() {
@@ -169,7 +179,7 @@ float GetReagentPartsAsFloat(LiquidMaterial reagent)
             ratio += (1 - (Mathf.Abs((recipe.fillReagent4 / minReagentFill) - reagentPart) / reagentPart)) / nReagents;
         };
 
-        float minRatio = 0.7f;
+        float minRatio = 0.6f;
         if (ratio < minRatio) {
             ratio = 0f;
         }

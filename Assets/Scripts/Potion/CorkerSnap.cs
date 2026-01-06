@@ -26,7 +26,7 @@ public class CorkerSnap : BottleSnap
             if (Networking.GetOwner(other.gameObject).isLocal && !other.isTrigger) {
                 corker.TryActivate(bottle);
             }
-            SendCustomEventDelayedSeconds("CheckBottleAlive", checkDelayTime);
+            SendCustomEventDelayedSeconds(nameof(CheckBottleAlive), checkDelayTime);
         }
     }
 

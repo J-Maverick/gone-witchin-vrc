@@ -26,6 +26,7 @@ public class RandomAudioHandler : UdonSharpBehaviour
     public float minPitch = 0.9f;
     public AudioSource audioSource;
     public VRCPlayerApi owner;
+    public bool localOnly = false;
 
     private void Start()
     {
@@ -67,35 +68,35 @@ public class RandomAudioHandler : UdonSharpBehaviour
     public void PlaySlotZero()
     {
         AudioClip[] clips = slotZeroClips;
-        if (owner != null && owner.isLocal) RandomizeSlotZero();
+        if ((owner != null && owner.isLocal) || localOnly) RandomizeSlotZero();
         PlayClip(clips, slotZeroVolume, slotZeroSoundIndex);
     }
 
     public void PlaySlotOne()
     {
         AudioClip[] clips = slotOneClips;
-        if (owner != null && owner.isLocal) RandomizeSlotOne();
+        if ((owner != null && owner.isLocal) || localOnly) RandomizeSlotOne();
         PlayClip(clips, slotOneVolume, slotOneSoundIndex);
     }
 
     public void PlaySlotTwo()
     {
         AudioClip[] clips = slotTwoClips;
-        if (owner != null && owner.isLocal) RandomizeSlotTwo();
+        if ((owner != null && owner.isLocal) || localOnly) RandomizeSlotTwo();
         PlayClip(clips, slotTwoVolume, slotTwoSoundIndex);
     }
 
     public void PlaySlotThree()
     {
         AudioClip[] clips = slotThreeClips;
-        if (owner != null && owner.isLocal) RandomizeSlotThree();
+        if ((owner != null && owner.isLocal) || localOnly) RandomizeSlotThree();
         PlayClip(clips, slotThreeVolume, slotThreeSoundIndex);
     }
 
     public void PlaySlotFour()
     {
         AudioClip[] clips = slotFourClips;
-        if (owner != null && owner.isLocal) RandomizeSlotFour();
+        if ((owner != null && owner.isLocal) || localOnly) RandomizeSlotFour();
         PlayClip(clips, slotFourVolume, slotFourSoundIndex);
     }
 
@@ -106,7 +107,10 @@ public class RandomAudioHandler : UdonSharpBehaviour
         audioSource.clip = clips[soundIndex];
         audioSource.volume = volume;
         audioSource.pitch = Random.Range(minPitch, maxPitch);
-        audioSource.Play();
+        if (Vector3.Distance(Networking.LocalPlayer.GetPosition(), transform.position) < audioSource.maxDistance)
+        {
+            audioSource.Play();
+        }
         SendCustomEventDelayedSeconds(nameof(TryDisableAudioSource), audioSource.clip.length + 0.1f);
     }
 
@@ -123,37 +127,49 @@ public class RandomAudioHandler : UdonSharpBehaviour
         slotTwoSoundIndex = Random.Range(0, slotTwoClips.Length);
         slotThreeSoundIndex = Random.Range(0, slotThreeClips.Length);
         slotFourSoundIndex = Random.Range(0, slotFourClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
     public void RandomizeSlotZero()
     {
         slotZeroSoundIndex = Random.Range(0, slotZeroClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
     public void RandomizeSlotOne()
     {
         slotOneSoundIndex = Random.Range(0, slotOneClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
     public void RandomizeSlotTwo()
     {
         slotTwoSoundIndex = Random.Range(0, slotTwoClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
     public void RandomizeSlotThree()
     {
         slotThreeSoundIndex = Random.Range(0, slotThreeClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
     public void RandomizeSlotFour()
     {
         slotFourSoundIndex = Random.Range(0, slotFourClips.Length);
-        RequestSerialization();
+        if (!localOnly) {
+            RequestSerialization();
+        }
     }
 
 }

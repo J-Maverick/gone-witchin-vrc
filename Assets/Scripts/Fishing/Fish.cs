@@ -2,6 +2,7 @@
 using UdonSharp;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon;
 
@@ -31,11 +32,14 @@ public class Fish : UdonSharpBehaviour
     public float weight = 1f;
     public float size = 1f;
 
-    public SkinnedMeshRenderer meshRenderer;
+    public MeshRenderer meshRenderer;
+    public MeshFilter meshFilter;
+
     public Material material;
     public MeshCollider meshCollider;
     public Rigidbody rigidBody;
     public VRC_Pickup pickup;
+    public FishTooltip tooltip;
 
     public Animator animator;
     private AnimatorStateInfo animatorState;
@@ -56,6 +60,7 @@ public class Fish : UdonSharpBehaviour
     private float updateTime = 0f;
 
     public Mesh defaultMesh;
+    public Material defaultMaterial;
     public RandomAudioHandler randomAudioHandler;
     private float minWiggleTime = 0.5f;
     private float maxWiggleTime = 3f;
@@ -81,6 +86,7 @@ public class Fish : UdonSharpBehaviour
 
     public void EnablePickup()
     {
+        Debug.LogFormat("{0}: Enable Pickup", name);
         meshCollider.enabled = true;
         pickup.pickupable = true;
         pickupEnabled = true;
@@ -94,7 +100,7 @@ public class Fish : UdonSharpBehaviour
         {
             state = FishState.caught;
             Debug.LogFormat("{0}: Firing RandomWiggle", name);
-            
+
             float randomTime = Random.Range(minWiggleWait, maxWiggleWait);
             Debug.LogFormat("{0}: RandomWiggle in {1}s", name, randomTime);
             SendCustomEventDelayedSeconds(nameof(RandomWiggle), randomTime);
@@ -102,13 +108,20 @@ public class Fish : UdonSharpBehaviour
             {
                 fishSync.SendPickup();
             }
-        };
+        }
+        ;
         meshCollider.isTrigger = false;
+
+        if (Networking.GetOwner(gameObject).isLocal)
+        {
+            tooltip.Activate();
+        }
     }
 
     public override void OnDrop()
     {
         meshCollider.isTrigger = false;
+        tooltip.Deactivate();
     }
 
     private void SetWaterLevel(Water water)
@@ -144,6 +157,8 @@ public class Fish : UdonSharpBehaviour
             exhaustionRatio = 1f - (fishData.exhaustionMultiplier * exhaustionReductionRatio * rodUpgradeMultiplier);
             SetRandomSize();
             fishID = fishData.ID;
+            fishSync.SetFisherman(Networking.LocalPlayer);
+            tooltip.UpdateTooltip(this);
         }
     }
 
@@ -158,18 +173,34 @@ public class Fish : UdonSharpBehaviour
     {
         weight = fishData.minWeight + size * (fishData.maxWeight - fishData.minWeight);
         transform.localScale = Vector3.one * (fishData.minScale + size * (fishData.maxScale - fishData.minScale));
-        material.SetFloat("_Scale", transform.localScale.x);
+
         if (fishData.mesh != null)
         {
-            meshRenderer.sharedMesh = fishData.mesh;
+            meshFilter.sharedMesh = fishData.mesh;
             meshCollider.sharedMesh = fishData.mesh;
         }
         else {
-            meshRenderer.sharedMesh = defaultMesh;
+            Debug.LogFormat("{0}: Failed to set mesh, using default", name);
+            meshFilter.sharedMesh = defaultMesh;
             meshCollider.sharedMesh = defaultMesh;
         }
+        
 
+        if (fishData.material != null)
+        {
+            meshRenderer.material = fishData.material;
+            material = meshRenderer.material;
+        }
+        else {
+            meshRenderer.material = defaultMaterial;
+            material = meshRenderer.material;
+        }
+
+
+        material.SetFloat("_Scale", transform.localScale.x);
         material.color = fishData.color;
+        material.SetFloat("_HueShift", fishData.hueShift);
+
         //meshRenderer.material = material;
 
         pickup.InteractionText = fishData.name;

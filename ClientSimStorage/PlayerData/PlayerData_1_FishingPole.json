@@ -1,0 +1,1706 @@
+{
+  "RodUpgradeLevel": {
+    "LastUpdated": "2025-09-22T19:13:17.9852842-05:00",
+    "Key": "RodUpgradeLevel",
+    "Value": {
+      "type": "Int",
+      "value": 0
+    }
+  },
+  "Swiftfin LargestCaught": {
+    "LastUpdated": "2025-04-03T17:06:24.226437-05:00",
+    "Key": "Swiftfin LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.831126332
+    }
+  },
+  "Medium Mouth Bass LargestCaught": {
+    "LastUpdated": "2025-04-06T12:44:57.1044393-05:00",
+    "Key": "Medium Mouth Bass LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.890669
+    }
+  },
+  "Journeyman Bait BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:39.4001052-05:00",
+    "Key": "Journeyman Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 6
+    }
+  },
+  "Adept Bait BaitCount": {
+    "LastUpdated": "2025-10-05T18:25:20.443899-05:00",
+    "Key": "Adept Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 5
+    }
+  },
+  "Master Bait BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:38.2541347-05:00",
+    "Key": "Master Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 15
+    }
+  },
+  "Golden Bait BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:37.361462-05:00",
+    "Key": "Golden Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 18
+    }
+  },
+  "Flamefin Bait BaitCount": {
+    "LastUpdated": "2025-04-16T12:40:34.7446676-05:00",
+    "Key": "Flamefin Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 6
+    }
+  },
+  "Recipe Bait BaitCount": {
+    "LastUpdated": "2025-08-04T13:55:52.0778991-05:00",
+    "Key": "Recipe Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 7
+    }
+  },
+  "Mudfish LargestCaught": {
+    "LastUpdated": "2025-04-26T12:12:24.1842629-05:00",
+    "Key": "Mudfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9007715
+    }
+  },
+  "Purperch LargestCaught": {
+    "LastUpdated": "2025-04-03T17:06:01.6503057-05:00",
+    "Key": "Purperch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.498744071
+    }
+  },
+  "Recipe Bait RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:46.8221103-05:00",
+    "Key": "Recipe Bait RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Recipe Bait LargestCaught": {
+    "LastUpdated": "2025-02-21T11:22:52.1706214-06:00",
+    "Key": "Recipe for Recipe Bait LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.188057184
+    }
+  },
+  "Clarp LargestCaught": {
+    "LastUpdated": "2025-04-28T13:22:48.473822-05:00",
+    "Key": "Clarp LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.837048054
+    }
+  },
+  "Apprentice Bait BaitCount": {
+    "LastUpdated": "2025-09-22T18:45:19.3833913-05:00",
+    "Key": "Apprentice Bait BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 11
+    }
+  },
+  "Chirping Crappie LargestCaught": {
+    "LastUpdated": "2025-04-28T13:19:34.7845389-05:00",
+    "Key": "Chirping Crappie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.770218134
+    }
+  },
+  "Hearty Trout LargestCaught": {
+    "LastUpdated": "2025-04-28T13:10:23.0107752-05:00",
+    "Key": "Hearty Trout LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9664197
+    }
+  },
+  "Toad LargestCaught": {
+    "LastUpdated": "2025-04-02T12:23:22.4343241-05:00",
+    "Key": "Toad LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.793334365
+    }
+  },
+  "Kamoi LargestCaught": {
+    "LastUpdated": "2025-04-06T12:43:26.4888457-05:00",
+    "Key": "Kamoi LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.76548636
+    }
+  },
+  "Paper Airperch LargestCaught": {
+    "LastUpdated": "2025-04-02T12:23:41.9368379-05:00",
+    "Key": "Paper Airperch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9313984
+    }
+  },
+  "Dogfish LargestCaught": {
+    "LastUpdated": "2025-04-02T12:24:11.8196618-05:00",
+    "Key": "Dogfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7279935
+    }
+  },
+  "Coral Koi LargestCaught": {
+    "LastUpdated": "2025-04-02T12:24:30.1535731-05:00",
+    "Key": "Coral Koi LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9230683
+    }
+  },
+  "Clouddie LargestCaught": {
+    "LastUpdated": "2025-04-06T12:43:13.4087772-05:00",
+    "Key": "Clouddie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.579554856
+    }
+  },
+  "Adept Bait RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:47.7016748-05:00",
+    "Key": "Adept Bait RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Adept Bait LargestCaught": {
+    "LastUpdated": "2025-04-02T12:25:22.982612-05:00",
+    "Key": "Recipe for Adept Bait LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.856357
+    }
+  },
+  "Baby Frog LargestCaught": {
+    "LastUpdated": "2025-04-06T12:50:29.4432725-05:00",
+    "Key": "Baby Frog LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8910233
+    }
+  },
+  "Wiggling Walleye LargestCaught": {
+    "LastUpdated": "2025-04-28T13:05:03.8111706-05:00",
+    "Key": "Wiggling Walleye LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9217973
+    }
+  },
+  "Reeking Hagfish LargestCaught": {
+    "LastUpdated": "2025-04-02T12:26:26.4331844-05:00",
+    "Key": "Reeking Hagfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.923883557
+    }
+  },
+  "Sandy Salmon LargestCaught": {
+    "LastUpdated": "2025-04-06T12:58:11.8018558-05:00",
+    "Key": "Sandy Salmon LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8172419
+    }
+  },
+  "Spiny Bass LargestCaught": {
+    "LastUpdated": "2025-04-02T12:27:46.1399879-05:00",
+    "Key": "Spiny Bass LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6371591
+    }
+  },
+  "Cordycod LargestCaught": {
+    "LastUpdated": "2025-04-06T12:59:19.675299-05:00",
+    "Key": "Cordycod LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.373440444
+    }
+  },
+  "Mushroom Mullet LargestCaught": {
+    "LastUpdated": "2025-04-06T13:00:28.236402-05:00",
+    "Key": "Mushroom Mullet LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.76704216
+    }
+  },
+  "Rosefish LargestCaught": {
+    "LastUpdated": "2025-04-02T12:28:25.626084-05:00",
+    "Key": "Rosefish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.456904471
+    }
+  },
+  "Muddie LargestCaught": {
+    "LastUpdated": "2025-04-02T12:28:38.4792193-05:00",
+    "Key": "Muddie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.900171041
+    }
+  },
+  "Thorny Trout LargestCaught": {
+    "LastUpdated": "2025-04-06T13:00:04.9495873-05:00",
+    "Key": "Thorny Trout LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8972719
+    }
+  },
+  "Flushed Goldfish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:18:35.5698025-05:00",
+    "Key": "Flushed Goldfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.5305856
+    }
+  },
+  "Zappie LargestCaught": {
+    "LastUpdated": "2025-04-02T12:30:32.4603328-05:00",
+    "Key": "Zappie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9955541
+    }
+  },
+  "Molefish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:30:16.3296558-05:00",
+    "Key": "Molefish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.290655673
+    }
+  },
+  "Flakefin LargestCaught": {
+    "LastUpdated": "2025-04-02T12:31:05.4059164-05:00",
+    "Key": "Flakefin LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7211753
+    }
+  },
+  "Golddie LargestCaught": {
+    "LastUpdated": "2025-04-06T13:22:26.3388683-05:00",
+    "Key": "Golddie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.890454531
+    }
+  },
+  "Blackfish LargestCaught": {
+    "LastUpdated": "2025-04-02T18:33:42.3242076-05:00",
+    "Key": "Blackfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.178318977
+    }
+  },
+  "Icefish LargestCaught": {
+    "LastUpdated": "2025-04-02T18:33:59.2085764-05:00",
+    "Key": "Icefish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6734599
+    }
+  },
+  "Peak Pike LargestCaught": {
+    "LastUpdated": "2025-04-02T18:34:30.4389454-05:00",
+    "Key": "Peak Pike LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.84797287
+    }
+  },
+  "Candycane Carp LargestCaught": {
+    "LastUpdated": "2025-04-07T19:38:50.9910459-05:00",
+    "Key": "Candycane Carp LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.5351694
+    }
+  },
+  "Snowy Snapper LargestCaught": {
+    "LastUpdated": "2025-04-02T18:35:08.280786-05:00",
+    "Key": "Snowy Snapper LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8215145
+    }
+  },
+  "Journeyman Rod Upgrade RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:48.1500668-05:00",
+    "Key": "Journeyman Rod Upgrade RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Journeyman Rod Upgrade LargestCaught": {
+    "LastUpdated": "2025-04-03T17:05:36.5756656-05:00",
+    "Key": "Recipe for Journeyman Rod Upgrade LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7323165
+    }
+  },
+  "PotionInventorySlot0_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:49.4367637-05:00",
+    "Key": "PotionInventorySlot0_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": 1011
+    }
+  },
+  "PotionInventorySlot0_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:49.438275-05:00",
+    "Key": "PotionInventorySlot0_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": 2
+    }
+  },
+  "PotionInventorySlot1_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:53.5382304-05:00",
+    "Key": "PotionInventorySlot1_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": 1011
+    }
+  },
+  "PotionInventorySlot1_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:53.5382304-05:00",
+    "Key": "PotionInventorySlot1_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": 2
+    }
+  },
+  "PotionInventorySlot2_Liquid": {
+    "LastUpdated": "2025-11-06T11:39:53.6164314-06:00",
+    "Key": "PotionInventorySlot2_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot2_Bottle": {
+    "LastUpdated": "2025-11-06T11:39:53.6164314-06:00",
+    "Key": "PotionInventorySlot2_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot3_Liquid": {
+    "LastUpdated": "2025-11-06T11:39:59.5925773-06:00",
+    "Key": "PotionInventorySlot3_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot3_Bottle": {
+    "LastUpdated": "2025-11-06T11:39:59.5925773-06:00",
+    "Key": "PotionInventorySlot3_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot4_Liquid": {
+    "LastUpdated": "2025-10-05T19:42:05.6852928-05:00",
+    "Key": "PotionInventorySlot4_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot4_Bottle": {
+    "LastUpdated": "2025-10-05T19:42:05.6852928-05:00",
+    "Key": "PotionInventorySlot4_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot5_Liquid": {
+    "LastUpdated": "2025-11-06T11:40:18.6206661-06:00",
+    "Key": "PotionInventorySlot5_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot5_Bottle": {
+    "LastUpdated": "2025-11-06T11:40:18.6206661-06:00",
+    "Key": "PotionInventorySlot5_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot6_Liquid": {
+    "LastUpdated": "2025-11-06T11:40:06.1817002-06:00",
+    "Key": "PotionInventorySlot6_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot6_Bottle": {
+    "LastUpdated": "2025-11-06T11:40:06.1817002-06:00",
+    "Key": "PotionInventorySlot6_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot7_Liquid": {
+    "LastUpdated": "2025-10-05T19:42:09.4483205-05:00",
+    "Key": "PotionInventorySlot7_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot7_Bottle": {
+    "LastUpdated": "2025-10-05T19:42:09.4483205-05:00",
+    "Key": "PotionInventorySlot7_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot8_Liquid": {
+    "LastUpdated": "2025-09-22T18:30:24.8897937-05:00",
+    "Key": "PotionInventorySlot8_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot8_Bottle": {
+    "LastUpdated": "2025-09-22T18:30:24.8897937-05:00",
+    "Key": "PotionInventorySlot8_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot9_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot9_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot9_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot9_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot10_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot10_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot10_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot10_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot11_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot11_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot11_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9910181-05:00",
+    "Key": "PotionInventorySlot11_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot12_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot12_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot12_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot12_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot13_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot13_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot13_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot13_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot14_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot14_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot14_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot14_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot15_Liquid": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot15_Liquid",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "PotionInventorySlot15_Bottle": {
+    "LastUpdated": "2025-10-05T19:41:25.9920457-05:00",
+    "Key": "PotionInventorySlot15_Bottle",
+    "Value": {
+      "type": "Int",
+      "value": -1
+    }
+  },
+  "Journeyman Bait RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:48.4576383-05:00",
+    "Key": "Journeyman Bait RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Journeyman Bait LargestCaught": {
+    "LastUpdated": "2025-04-06T12:15:13.7370441-05:00",
+    "Key": "Recipe for Journeyman Bait LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.175259113
+    }
+  },
+  "Frog LargestCaught": {
+    "LastUpdated": "2025-04-26T12:10:13.0015862-05:00",
+    "Key": "Frog LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.5279936
+    }
+  },
+  "Salmon LargestCaught": {
+    "LastUpdated": "2025-05-20T19:30:15.52683-05:00",
+    "Key": "Salmon LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9789486
+    }
+  },
+  "Master Rod Upgrade RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:48.8172655-05:00",
+    "Key": "Master Rod Upgrade RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Master Rod Upgrade LargestCaught": {
+    "LastUpdated": "2025-04-06T12:44:18.9046528-05:00",
+    "Key": "Recipe for Master Rod Upgrade LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6846496
+    }
+  },
+  "Tadpole LargestCaught": {
+    "LastUpdated": "2025-04-07T23:33:25.2946687-05:00",
+    "Key": "Tadpole LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.923500538
+    }
+  },
+  "Flying Fish LargestCaught": {
+    "LastUpdated": "2025-04-06T12:45:44.776461-05:00",
+    "Key": "Flying Fish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.441143572
+    }
+  },
+  "Balloon Pufferfish LargestCaught": {
+    "LastUpdated": "2025-04-06T12:47:29.7714144-05:00",
+    "Key": "Balloon Pufferfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.460729659
+    }
+  },
+  "Poodlefish LargestCaught": {
+    "LastUpdated": "2025-04-06T12:52:21.2907736-05:00",
+    "Key": "Poodlefish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6521144
+    }
+  },
+  "Palmfish LargestCaught": {
+    "LastUpdated": "2025-04-06T12:59:45.19659-05:00",
+    "Key": "Palmfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.528703034
+    }
+  },
+  "Prickly Perch LargestCaught": {
+    "LastUpdated": "2025-04-07T19:42:29.9210739-05:00",
+    "Key": "Prickly Perch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8912965
+    }
+  },
+  "Rattle Eel LargestCaught": {
+    "LastUpdated": "2025-04-28T13:27:43.8010604-05:00",
+    "Key": "Rattle Eel LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.930642962
+    }
+  },
+  "Strawbbie LargestCaught": {
+    "LastUpdated": "2025-04-06T12:57:48.9103062-05:00",
+    "Key": "Strawbbie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7549424
+    }
+  },
+  "Apple Angler LargestCaught": {
+    "LastUpdated": "2025-04-06T12:54:03.7234604-05:00",
+    "Key": "Apple Angler LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.3028944
+    }
+  },
+  "Mud-Crusted Catfish LargestCaught": {
+    "LastUpdated": "2025-04-23T12:09:58.4627162-05:00",
+    "Key": "Mud-Crusted Catfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8733946
+    }
+  },
+  "Muddy Trout LargestCaught": {
+    "LastUpdated": "2025-04-27T13:00:36.061567-05:00",
+    "Key": "Muddy Trout LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8158035
+    }
+  },
+  "Sprouting Koi LargestCaught": {
+    "LastUpdated": "2025-04-08T12:32:13.9440984-05:00",
+    "Key": "Sprouting Koi LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7919508
+    }
+  },
+  "Berrycuda LargestCaught": {
+    "LastUpdated": "2025-04-06T12:57:20.3030301-05:00",
+    "Key": "Berrycuda LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6544759
+    }
+  },
+  "Fungalfin LargestCaught": {
+    "LastUpdated": "2025-04-06T12:55:49.161491-05:00",
+    "Key": "Fungalfin LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.3131582
+    }
+  },
+  "Grass Carp LargestCaught": {
+    "LastUpdated": "2025-04-06T12:55:58.7841305-05:00",
+    "Key": "Grass Carp LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.643788934
+    }
+  },
+  "Spore Smelt LargestCaught": {
+    "LastUpdated": "2025-04-06T12:56:51.6841699-05:00",
+    "Key": "Spore Smelt LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.67913425
+    }
+  },
+  "Power-up Guppy LargestCaught": {
+    "LastUpdated": "2025-04-06T12:58:23.7332422-05:00",
+    "Key": "Power-up Guppy LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.791373968
+    }
+  },
+  "Fingereater Piranha LargestCaught": {
+    "LastUpdated": "2025-04-06T13:04:21.1384711-05:00",
+    "Key": "Fingereater Piranha LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7722602
+    }
+  },
+  "Ghost Fish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:17:21.3987427-05:00",
+    "Key": "Ghost Fish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9607835
+    }
+  },
+  "Mirrorscale LargestCaught": {
+    "LastUpdated": "2025-05-29T00:14:57.6967343-05:00",
+    "Key": "Mirrorscale LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.86882484
+    }
+  },
+  "Vicious Piranha LargestCaught": {
+    "LastUpdated": "2025-04-06T13:19:26.9708606-05:00",
+    "Key": "Vicious Piranha LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.377483547
+    }
+  },
+  "Crystal Cruncher Catfish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:30:19.0193323-05:00",
+    "Key": "Crystal Cruncher Catfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8559027
+    }
+  },
+  "Cat Fish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:24:11.1866594-05:00",
+    "Key": "Cat Fish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.605655253
+    }
+  },
+  "Plump Perch LargestCaught": {
+    "LastUpdated": "2025-04-06T13:19:00.2218638-05:00",
+    "Key": "Plump Perch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.992283463
+    }
+  },
+  "Stinky Mudfish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:20:38.0902606-05:00",
+    "Key": "Stinky Mudfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9178622
+    }
+  },
+  "Orefish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:29:57.8883353-05:00",
+    "Key": "Orefish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.909834862
+    }
+  },
+  "Plated Pufferfish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:19:59.1029364-05:00",
+    "Key": "Plated Pufferfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.926695347
+    }
+  },
+  "Rusttie LargestCaught": {
+    "LastUpdated": "2025-04-06T13:20:24.704399-05:00",
+    "Key": "Rusttie LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.4891159
+    }
+  },
+  "Overgrown Rockfish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:26:33.1236008-05:00",
+    "Key": "Overgrown Rockfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8904216
+    }
+  },
+  "Cavern Angler LargestCaught": {
+    "LastUpdated": "2025-04-17T12:30:51.0079185-05:00",
+    "Key": "Cavern Angler LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8793601
+    }
+  },
+  "Charged Swiftfin LargestCaught": {
+    "LastUpdated": "2025-04-06T13:22:09.2450949-05:00",
+    "Key": "Charged Swiftfin LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.0539814234
+    }
+  },
+  "Pyrite Piranha LargestCaught": {
+    "LastUpdated": "2025-04-06T13:23:50.3809047-05:00",
+    "Key": "Pyrite Piranha LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.0670870543
+    }
+  },
+  "Fool's Goldfish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:27:33.5073489-05:00",
+    "Key": "Fool's Goldfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9098505
+    }
+  },
+  "Lightning Perch LargestCaught": {
+    "LastUpdated": "2025-04-06T13:29:08.0729505-05:00",
+    "Key": "Lightning Perch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.2586766
+    }
+  },
+  "Unearthed Fish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:29:40.6083394-05:00",
+    "Key": "Unearthed Fish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.172048926
+    }
+  },
+  "Slimy Eel LargestCaught": {
+    "LastUpdated": "2025-04-06T13:29:49.8098831-05:00",
+    "Key": "Slimy Eel LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.90349257
+    }
+  },
+  "Adept Rod Upgrade RecipeUnlock": {
+    "LastUpdated": "2025-08-04T13:54:36.4485415-05:00",
+    "Key": "Adept Rod Upgrade RecipeUnlock",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "Recipe for Adept Rod Upgrade LargestCaught": {
+    "LastUpdated": "2025-07-26T20:06:04.1961226-05:00",
+    "Key": "Recipe for Adept Rod Upgrade LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.895343661
+    }
+  },
+  "Golden Swordfish LargestCaught": {
+    "LastUpdated": "2025-04-06T13:35:09.1375595-05:00",
+    "Key": "Golden Swordfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.73117733
+    }
+  },
+  "Winter Walleye LargestCaught": {
+    "LastUpdated": "2025-04-07T18:56:42.6455773-05:00",
+    "Key": "Winter Walleye LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.572701037
+    }
+  },
+  "Chillout Trout LargestCaught": {
+    "LastUpdated": "2025-04-07T18:57:37.4706825-05:00",
+    "Key": "Chillout Trout LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.41479224
+    }
+  },
+  "Yellow Perch LargestCaught": {
+    "LastUpdated": "2025-04-07T19:38:33.3824193-05:00",
+    "Key": "Yellow Perch LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.424381554
+    }
+  },
+  "Pike of Unusual Size LargestCaught": {
+    "LastUpdated": "2025-04-16T12:55:42.3326968-05:00",
+    "Key": "Pike of Unusual Size LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.874244
+    }
+  },
+  "Elder Tadpole LargestCaught": {
+    "LastUpdated": "2025-04-07T23:33:44.1772506-05:00",
+    "Key": "Elder Tadpole LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.422897279
+    }
+  },
+  "Cold Carp LargestCaught": {
+    "LastUpdated": "2025-04-08T20:04:04.6834943-05:00",
+    "Key": "Cold Carp LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.2163949
+    }
+  },
+  "Dorado LargestCaught": {
+    "LastUpdated": "2025-04-10T17:19:26.8544214-05:00",
+    "Key": "Dorado LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.196986318
+    }
+  },
+  "Silver Carp LargestCaught": {
+    "LastUpdated": "2025-04-10T17:19:39.9887882-05:00",
+    "Key": "Silver Carp LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.4328038
+    }
+  },
+  "Medium Mouth Bass SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:31:28.306766-05:00",
+    "Key": "Medium Mouth Bass SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6907996
+    }
+  },
+  "Balloon-Eye Goldfish LargestCaught": {
+    "LastUpdated": "2025-04-28T13:05:56.5534222-05:00",
+    "Key": "Balloon-Eye Goldfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.826159239
+    }
+  },
+  "Balloon-Eye Goldfish SmallestCaught": {
+    "LastUpdated": "2025-04-16T12:43:51.1090184-05:00",
+    "Key": "Balloon-Eye Goldfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.06312239
+    }
+  },
+  "Groope BaitCount": {
+    "LastUpdated": "2025-04-16T12:47:35.9916951-05:00",
+    "Key": "Groope BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 20
+    }
+  },
+  "Flame Flower BaitCount": {
+    "LastUpdated": "2025-07-28T02:11:10.2310414-05:00",
+    "Key": "Flame Flower BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 31
+    }
+  },
+  "Water Berry BaitCount": {
+    "LastUpdated": "2025-09-23T19:32:23.1652597-05:00",
+    "Key": "Water Berry BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 37
+    }
+  },
+  "Tadpole SmallestCaught": {
+    "LastUpdated": "2025-04-28T13:11:17.0813071-05:00",
+    "Key": "Tadpole SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.200281262
+    }
+  },
+  "Pike of Unusual Size SmallestCaught": {
+    "LastUpdated": "2025-04-16T12:54:52.2917656-05:00",
+    "Key": "Pike of Unusual Size SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.07109809
+    }
+  },
+  "Clarp SmallestCaught": {
+    "LastUpdated": "2025-10-05T19:26:01.3379028-05:00",
+    "Key": "Clarp SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.73657155
+    }
+  },
+  "Kamoi SmallestCaught": {
+    "LastUpdated": "2025-05-20T19:28:37.5390247-05:00",
+    "Key": "Kamoi SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.412346423
+    }
+  },
+  "Electric Eel LargestCaught": {
+    "LastUpdated": "2025-04-17T12:25:53.8502014-05:00",
+    "Key": "Electric Eel LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7772771
+    }
+  },
+  "Electric Eel SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:25:53.8502014-05:00",
+    "Key": "Electric Eel SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.7772771
+    }
+  },
+  "Celestial Eye Goldfish LargestCaught": {
+    "LastUpdated": "2025-04-17T12:26:13.3538741-05:00",
+    "Key": "Celestial Eye Goldfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.952819347
+    }
+  },
+  "Celestial Eye Goldfish SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:26:13.3538741-05:00",
+    "Key": "Celestial Eye Goldfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.952819347
+    }
+  },
+  "Crystal Cruncher Catfish SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:27:03.8735209-05:00",
+    "Key": "Crystal Cruncher Catfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.121852636
+    }
+  },
+  "Plump Perch SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:28:25.310405-05:00",
+    "Key": "Plump Perch SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.006331444
+    }
+  },
+  "Flushed Goldfish SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:27:52.5675582-05:00",
+    "Key": "Flushed Goldfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.4263087
+    }
+  },
+  "Slimy Eel SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:28:09.0267508-05:00",
+    "Key": "Slimy Eel SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.573079765
+    }
+  },
+  "Alloy Koi LargestCaught": {
+    "LastUpdated": "2025-04-17T12:28:41.4236033-05:00",
+    "Key": "Alloy Koi LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6859027
+    }
+  },
+  "Alloy Koi SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:28:41.4236033-05:00",
+    "Key": "Alloy Koi SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6859027
+    }
+  },
+  "Vicious Piranha SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:28:57.6561059-05:00",
+    "Key": "Vicious Piranha SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.217240453
+    }
+  },
+  "Golddie SmallestCaught": {
+    "LastUpdated": "2025-04-17T12:30:32.3163109-05:00",
+    "Key": "Golddie SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.341855228
+    }
+  },
+  "Swiftfin SmallestCaught": {
+    "LastUpdated": "2025-08-06T16:11:50.4274951-05:00",
+    "Key": "Swiftfin SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.773043156
+    }
+  },
+  "Mudfish SmallestCaught": {
+    "LastUpdated": "2025-05-20T19:28:40.0239838-05:00",
+    "Key": "Mudfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.04750538
+    }
+  },
+  "Grass Carp SmallestCaught": {
+    "LastUpdated": "2025-04-23T12:08:04.6323801-05:00",
+    "Key": "Grass Carp SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.251922667
+    }
+  },
+  "Thorntooth Piranha LargestCaught": {
+    "LastUpdated": "2025-04-23T12:11:48.8158312-05:00",
+    "Key": "Thorntooth Piranha LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.4442138
+    }
+  },
+  "Thorntooth Piranha SmallestCaught": {
+    "LastUpdated": "2025-04-23T12:11:48.8168351-05:00",
+    "Key": "Thorntooth Piranha SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.4442138
+    }
+  },
+  "The Longname Wiliwilifly Fish LargestCaught": {
+    "LastUpdated": "2025-04-23T13:23:05.2643022-05:00",
+    "Key": "The Longname Wiliwilifly Fish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.556492269
+    }
+  },
+  "The Longname Wiliwilifly Fish SmallestCaught": {
+    "LastUpdated": "2025-04-23T13:23:05.2643022-05:00",
+    "Key": "The Longname Wiliwilifly Fish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.556492269
+    }
+  },
+  "Baby Frog SmallestCaught": {
+    "LastUpdated": "2025-04-23T13:29:59.1231256-05:00",
+    "Key": "Baby Frog SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.6201201
+    }
+  },
+  "Flamefin LargestCaught": {
+    "LastUpdated": "2025-07-07T17:44:50.4971433-05:00",
+    "Key": "Flamefin LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.864700437
+    }
+  },
+  "Flamefin SmallestCaught": {
+    "LastUpdated": "2025-08-01T17:16:19.9063211-05:00",
+    "Key": "Flamefin SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.3150758
+    }
+  },
+  "Clouddie SmallestCaught": {
+    "LastUpdated": "2025-04-26T12:11:12.7635345-05:00",
+    "Key": "Clouddie SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.283670366
+    }
+  },
+  "Reeking Hagfish SmallestCaught": {
+    "LastUpdated": "2025-04-28T13:08:03.1082324-05:00",
+    "Key": "Reeking Hagfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.5412002
+    }
+  },
+  "Spiny Bass SmallestCaught": {
+    "LastUpdated": "2025-04-27T12:56:08.8950566-05:00",
+    "Key": "Spiny Bass SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.08689642
+    }
+  },
+  "Prickly Perch SmallestCaught": {
+    "LastUpdated": "2025-04-27T12:57:20.5975013-05:00",
+    "Key": "Prickly Perch SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.468807876
+    }
+  },
+  "Palmfish SmallestCaught": {
+    "LastUpdated": "2025-04-27T12:58:55.3585996-05:00",
+    "Key": "Palmfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.1584208
+    }
+  },
+  "Small Crocus BaitCount": {
+    "LastUpdated": "2025-09-20T12:10:05.0550423-05:00",
+    "Key": "Small Crocus BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 68
+    }
+  },
+  "Oily Aster BaitCount": {
+    "LastUpdated": "2025-07-28T02:11:13.618286-05:00",
+    "Key": "Oily Aster BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 22
+    }
+  },
+  "Bladder Rose BaitCount": {
+    "LastUpdated": "2025-05-20T18:26:13.9775257-05:00",
+    "Key": "Bladder Rose BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 10
+    }
+  },
+  "Muddy Cattail BaitCount": {
+    "LastUpdated": "2025-09-20T13:34:57.7925187-05:00",
+    "Key": "Muddy Cattail BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 22
+    }
+  },
+  "Heart Pansy BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:49.8702242-05:00",
+    "Key": "Heart Pansy BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 9
+    }
+  },
+  "Swift Tulip BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:51.4372686-05:00",
+    "Key": "Swift Tulip BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 11
+    }
+  },
+  "Ocular Rudbeckia BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:52.4091097-05:00",
+    "Key": "Ocular Rudbeckia BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 11
+    }
+  },
+  "Piranha Poppy BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:54.4548168-05:00",
+    "Key": "Piranha Poppy BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 9
+    }
+  },
+  "Stink Blossom BaitCount": {
+    "LastUpdated": "2025-04-28T13:23:56.53086-05:00",
+    "Key": "Stink Blossom BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 15
+    }
+  },
+  "Mashy Daisy BaitCount": {
+    "LastUpdated": "2025-07-28T02:11:12.0358014-05:00",
+    "Key": "Mashy Daisy BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 30
+    }
+  },
+  "Bat Dahlia BaitCount": {
+    "LastUpdated": "2025-04-28T13:26:13.5832467-05:00",
+    "Key": "Bat Dahlia BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 14
+    }
+  },
+  "Medium Craspedia BaitCount": {
+    "LastUpdated": "2025-07-28T02:11:13.9543066-05:00",
+    "Key": "Medium Craspedia BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 32
+    }
+  },
+  "Large Sunflower BaitCount": {
+    "LastUpdated": "2025-09-22T18:27:21.9275532-05:00",
+    "Key": "Large Sunflower BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 157
+    }
+  },
+  "Luminous Crystal BaitCount": {
+    "LastUpdated": "2025-09-16T12:40:53.4883156-05:00",
+    "Key": "Luminous Crystal BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 11
+    }
+  },
+  "Dark Crystal BaitCount": {
+    "LastUpdated": "2025-09-16T12:41:02.3345023-05:00",
+    "Key": "Dark Crystal BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 16
+    }
+  },
+  "Silver Crystal BaitCount": {
+    "LastUpdated": "2025-09-16T12:41:01.5539907-05:00",
+    "Key": "Silver Crystal BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 12
+    }
+  },
+  "Golden Crystal BaitCount": {
+    "LastUpdated": "2025-09-16T12:40:54.7710324-05:00",
+    "Key": "Golden Crystal BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 15
+    }
+  },
+  "Small Crorcus BaitCount": {
+    "LastUpdated": "2025-04-27T20:07:09.7900593-05:00",
+    "Key": "Small Crorcus BaitCount",
+    "Value": {
+      "type": "Int",
+      "value": 5
+    }
+  },
+  "Coral Koi SmallestCaught": {
+    "LastUpdated": "2025-05-20T19:48:17.7644022-05:00",
+    "Key": "Coral Koi SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.30085665
+    }
+  },
+  "Toad SmallestCaught": {
+    "LastUpdated": "2025-04-28T13:09:01.5669506-05:00",
+    "Key": "Toad SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.565209
+    }
+  },
+  "Sandy Salmon SmallestCaught": {
+    "LastUpdated": "2025-04-28T13:29:11.483228-05:00",
+    "Key": "Sandy Salmon SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.719876647
+    }
+  },
+  "Coral Chip LargestCaught": {
+    "LastUpdated": "2025-09-22T19:15:36.4958055-05:00",
+    "Key": "Coral Chip LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.517229259
+    }
+  },
+  "Coral Chip SmallestCaught": {
+    "LastUpdated": "2025-05-25T02:07:01.3115021-05:00",
+    "Key": "Coral Chip SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.268674433
+    }
+  },
+  "Bog LargestCaught": {
+    "LastUpdated": "2025-05-29T00:07:04.3853678-05:00",
+    "Key": "Bog LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8436929
+    }
+  },
+  "Bog SmallestCaught": {
+    "LastUpdated": "2025-05-29T00:12:20.2229209-05:00",
+    "Key": "Bog SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.145984888
+    }
+  },
+  "Baby Bog LargestCaught": {
+    "LastUpdated": "2025-08-01T17:16:06.9111044-05:00",
+    "Key": "Baby Bog LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.955971241
+    }
+  },
+  "Baby Bog SmallestCaught": {
+    "LastUpdated": "2025-07-28T02:10:41.005111-05:00",
+    "Key": "Baby Bog SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.06298566
+    }
+  },
+  "Chum Chip LargestCaught": {
+    "LastUpdated": "2025-05-29T00:13:54.4364778-05:00",
+    "Key": "Chum Chip LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.8830185
+    }
+  },
+  "Chum Chip SmallestCaught": {
+    "LastUpdated": "2025-09-16T18:29:33.8823874-05:00",
+    "Key": "Chum Chip SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.5814176
+    }
+  },
+  "Toadfish LargestCaught": {
+    "LastUpdated": "2025-07-07T17:44:46.9559823-05:00",
+    "Key": "Toadfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.700684667
+    }
+  },
+  "Toadfish SmallestCaught": {
+    "LastUpdated": "2025-07-07T17:44:46.9559823-05:00",
+    "Key": "Toadfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.700684667
+    }
+  },
+  "Reeking Hogfish LargestCaught": {
+    "LastUpdated": "2025-07-07T17:44:49.0136627-05:00",
+    "Key": "Reeking Hogfish LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.380430043
+    }
+  },
+  "Reeking Hogfish SmallestCaught": {
+    "LastUpdated": "2025-07-07T17:44:49.0136627-05:00",
+    "Key": "Reeking Hogfish SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.380430043
+    }
+  },
+  "Gwam LargestCaught": {
+    "LastUpdated": "2025-07-28T02:09:52.7065239-05:00",
+    "Key": "Gwam LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.138379574
+    }
+  },
+  "Gwam SmallestCaught": {
+    "LastUpdated": "2025-07-28T02:09:52.7065239-05:00",
+    "Key": "Gwam SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.138379574
+    }
+  },
+  "LazyPortal (Ice2Lake)": {
+    "LastUpdated": "2025-08-04T13:00:00.2462932-05:00",
+    "Key": "LazyPortal (Ice2Lake)",
+    "Value": {
+      "type": "Bool",
+      "value": true
+    }
+  },
+  "LazyPortal (Mud2Lake)": {
+    "LastUpdated": "2025-08-04T13:13:54.0889648-05:00",
+    "Key": "LazyPortal (Mud2Lake)",
+    "Value": {
+      "type": "Bool",
+      "value": true
+    }
+  },
+  "LazyPortal (Cave2Lake)": {
+    "LastUpdated": "2025-08-04T13:14:33.5604374-05:00",
+    "Key": "LazyPortal (Cave2Lake)",
+    "Value": {
+      "type": "Bool",
+      "value": true
+    }
+  },
+  "Wiggley LargestCaught": {
+    "LastUpdated": "2025-09-16T18:29:51.5555174-05:00",
+    "Key": "Wiggley LargestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9616083
+    }
+  },
+  "Wiggley SmallestCaught": {
+    "LastUpdated": "2025-09-16T18:29:51.5555174-05:00",
+    "Key": "Wiggley SmallestCaught",
+    "Value": {
+      "type": "Float",
+      "value": 0.9616083
+    }
+  },
+  "BGMDisabled": {
+    "LastUpdated": "2025-09-22T19:42:41.7734342-05:00",
+    "Key": "BGMDisabled",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "AmbienceDisabled": {
+    "LastUpdated": "2025-09-22T19:42:40.1351949-05:00",
+    "Key": "AmbienceDisabled",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "PoleFlipped": {
+    "LastUpdated": "2025-09-22T19:45:39.7851529-05:00",
+    "Key": "PoleFlipped",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  },
+  "HapticsDisabled": {
+    "LastUpdated": "2025-09-22T19:45:42.4126805-05:00",
+    "Key": "HapticsDisabled",
+    "Value": {
+      "type": "Bool",
+      "value": false
+    }
+  }
+}

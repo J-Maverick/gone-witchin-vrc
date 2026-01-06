@@ -21,18 +21,18 @@ public class ElevatorSwitch : UdonSharpBehaviour
         }
     }
 
-    public void SetOn()
+    public virtual void SetOn()
     {
         animator.SetBool("Moving", true);
     }
 
-    public void SetOff()
+    public virtual void SetOff()
     {
         animator.SetBool("Moving", false);
         SendCustomEventDelayedSeconds(nameof(EnableSwitch), 0.25f);
     }
 
-    public void EnableSwitch() {
+    public virtual void EnableSwitch() {
         switchEnabled = true;
     }
 }

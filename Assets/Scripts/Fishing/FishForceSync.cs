@@ -14,7 +14,11 @@ public class FishForceSync : UdonSharpBehaviour
     [UdonSynced] public int baitUsesRemaining = 0;
 
     public void AddBait(Bait newBait) {
-        if (newBait == null) return;
+        if (newBait == null) {
+            bait = null;
+            RequestSerialization();
+            return;
+        }
         // Stacks bait if same bait, else replaces
         if (bait == newBait) {
             baitUsesRemaining += newBait.castsPerBait;
@@ -25,6 +29,7 @@ public class FishForceSync : UdonSharpBehaviour
             baitUsesRemaining = newBait.castsPerBait;
             Debug.LogFormat("{0}: Added New Bait {1}, casts remaining: {2}", name, newBait.name, baitUsesRemaining);
         }
+        
         RequestSerialization();
     }
 
@@ -39,7 +44,7 @@ public class FishForceSync : UdonSharpBehaviour
             bait = baitInventory.GetBaitByIndex(baitIndex);
             if (bait != null) {
                 hook.baitMesh.sharedMesh = bait.mesh;
-                hook.meshRenderer.material.color = bait.material.color;
+                hook.meshRenderer.material = bait.material;
             }
             else {
                 hook.baitMesh.sharedMesh = null;

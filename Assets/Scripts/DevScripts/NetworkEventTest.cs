@@ -12,6 +12,6 @@ public class NetworkEventTest : UdonSharpBehaviour
     }
 
     void RecursiveEvent() {
-        SendCustomEventDelayedSeconds("RecursiveEvent", Random.Range(60,240));
+        SendCustomEventDelayedSeconds(nameof(RecursiveEvent), Random.Range(60,240));
     }
 }

@@ -123,4 +123,19 @@ public class CatchRatesToCSV : MonoBehaviour
             fish.ID = ID;
         }
     }
+
+    [ContextMenu("Make Fish from CSV")]
+    public void CSVToFish() {
+        string[] lines = File.ReadAllLines(path);
+        int lineIndex = 0;
+        foreach (string line in lines)
+        {
+            GameObject fishObject = new GameObject(line);
+            FishData fishData = fishObject.AddComponent<FishData>();
+            fishObject.transform.SetParent(fishDataPool.transform);
+            fishData.name = line;
+            fishData.ID = lineIndex;
+            lineIndex++;
+        }
+    }
 }

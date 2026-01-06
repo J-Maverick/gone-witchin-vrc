@@ -6,11 +6,19 @@ using VRC.Udon;
 
 public class FishingPoleSpawnButton : UdonSharpBehaviour
 {  
-    public FishingPolePool fishingPolePool;
     public Transform spawnPoint;
 
-    public override void Interact()
+    public void SpawnFishingPole()
     {
-        fishingPolePool.SummonRod(spawnPoint.position);
+        var objects = Networking.GetPlayerObjects(Networking.LocalPlayer);
+        for (int i = 0; i < objects.Length; i++)
+        {
+            if (!Utilities.IsValid(objects[i])) continue;
+            FishingPole fishingPole = objects[i].GetComponentInChildren<FishingPole>();
+            if (Utilities.IsValid(fishingPole)) {
+                fishingPole.Teleport(spawnPoint);
+                break;
+            }
+        }
     }
 }

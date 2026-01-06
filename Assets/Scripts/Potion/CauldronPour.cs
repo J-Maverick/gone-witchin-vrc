@@ -1,4 +1,5 @@
-﻿using UdonSharp;
+﻿using System;
+using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
@@ -23,6 +24,7 @@ public class CauldronPour : UdonSharpBehaviour
     public int joinSyncCounter = 0;
 
     LiquidMaterial liquid = null;
+    public AudioSource pourAudio = null;
 
     void Start()
     {
@@ -37,7 +39,11 @@ public class CauldronPour : UdonSharpBehaviour
         if (cauldron.fillLevel == 0f) flow = 0f;
         particleAnimator.SetFloat("pourSpeed", flow);
         
-        if (flow > 0f) cauldron.liquid.FillBump(flow);
+        if (flow > 0f) {
+            cauldron.liquid.FillBump(flow);
+            pourAudio.enabled = true;
+        }
+        else pourAudio.enabled = false;
 
         cauldron.ReduceFill(flow * pourMultiplier * Time.fixedDeltaTime);
     }
@@ -49,6 +55,7 @@ public class CauldronPour : UdonSharpBehaviour
             flow = 0f;
             particleAnimator.SetFloat("pourSpeed", flow);
         }
+        pourAudio.enabled = false;
     }
 
     void DumpControl()
@@ -76,7 +83,7 @@ public class CauldronPour : UdonSharpBehaviour
 
     public void JoinSync() {
         if (joinSyncCounter < nJoinSyncs) {
-            SendCustomEventDelayedSeconds("JoinSync", intervalTime);
+            SendCustomEventDelayedSeconds(nameof(JoinSync), intervalTime);
             RequestSerialization();
             joinSyncCounter++;
         }
@@ -100,6 +107,7 @@ public class CauldronPour : UdonSharpBehaviour
         
         if (bottleSnap.GetBottle() != null)
         {
+            pourAudio.pitch = Mathf.Lerp(1f, 2.0f, bottleSnap.GetBottle().fillLevel);
             if (bottleSnap.CheckFill(0f))
             {
                 indicator.SetValid();

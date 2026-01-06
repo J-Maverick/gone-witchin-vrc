@@ -43,7 +43,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Seaweed
-    second: {fileID: 2100000, guid: 623ad1d00b101614bb5e93e5a00a9785, type: 2}
+    second: {fileID: 2100000, guid: 04a103d23950b954e9f5fbca0bdc739c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: e33bacbeaea11b1498d92b38abc2c17c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -54,6 +59,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: fish interlocking
     second: {fileID: 2100000, guid: a0a005a46a675124db2b3e2c236f01f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flowingWater
+    second: {fileID: 2100000, guid: ed1996b0218fc7243b448a733037d776, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glowing lake
+    second: {fileID: 2100000, guid: 6cc7d1a7e2924dc40b3ff882d873a185, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -92,7 +107,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

@@ -53,7 +53,7 @@ public class Lever : UdonSharpBehaviour
 
     public void Sleep()
     {
-        SendCustomEventDelayedSeconds("GoToSleep", sleepTime);
+        SendCustomEventDelayedSeconds(nameof(GoToSleep), sleepTime);
     }
 
     public void GoToSleep()

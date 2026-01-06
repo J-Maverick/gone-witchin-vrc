@@ -19,6 +19,7 @@ public class DayNightCycle : UdonSharpBehaviour
     public float bufferAngle = 10f;
 
     [UdonSynced] public float angle = 0f;
+    [UdonSynced] public bool frozen = false;
     public Color dayFogColor;
     public Color nightFogColor;
     public float dayFogDensity;
@@ -52,10 +53,18 @@ public class DayNightCycle : UdonSharpBehaviour
         if (modAngle > bufferAngle && modAngle < 180f - bufferAngle ) {
             sun.intensity = sunIntensity;
             moon.intensity = 0f;
+            dayAudio.volume = 0.5f;
+            nightAudio.volume = 0f;
+            RenderSettings.fogDensity = dayFogDensity;
+            RenderSettings.fogColor = dayFogColor;
         }
         else if (modAngle < 360f - bufferAngle && modAngle > 180f - bufferAngle) {
             sun.intensity = 0f;
             moon.intensity = moonIntensity;
+            dayAudio.volume = 0f;
+            nightAudio.volume = 0.5f;
+            RenderSettings.fogDensity = nightFogDensity;
+            RenderSettings.fogColor = nightFogColor;
         }
     }
 
@@ -117,14 +126,30 @@ public class DayNightCycle : UdonSharpBehaviour
     }
 
     void Update() {
+        if (frozen) {
+            return;
+        }
         angle += rotationSpeed * Time.deltaTime;
         UpdateRotation();
         CheckRiseSet();
     }
 
+    public void Freeze()
+    {
+        frozen = true;
+        RequestSerialization();
+    }
+    
+    public void Unfreeze()
+    {
+        frozen = false;
+        RequestSerialization();
+    }
+
     public void SetSun() {
         if (!sunZone.zoneActive && Networking.GetOwner(sunZone.gameObject).isLocal) {
             Vector3 position = RandomPointInBounds(zoneCollider.bounds);
+            position.y = sunZone.zonePosition.y;
             sunZone.Activate(position);
             moonZone.DeActivate();
         }
@@ -133,6 +158,7 @@ public class DayNightCycle : UdonSharpBehaviour
     public void SetMoon() {
         if (!moonZone.zoneActive && Networking.GetOwner(moonZone.gameObject).isLocal) {
             Vector3 position = RandomPointInBounds(zoneCollider.bounds);
+            position.y = moonZone.zonePosition.y;
             moonZone.Activate(position);
             sunZone.DeActivate();
         }
